@@ -1,5 +1,7 @@
 using System.Runtime.CompilerServices;
+using System.Text;
 using DotNetty.Buffers;
+using Mass.Application.Models;
 using Mass.Bedrock.Proxy.Minecraft;
 using Mass.Bedrock.Proxy.Network.Minecraft.Enums;
 using Mass.Bedrock.Proxy.Network.Packet;
@@ -23,10 +25,12 @@ public class ServerboundHandshakePacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ServerboundHandshakePacket()
+	public unsafe ServerboundHandshakePacket()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
+		_ = ((EntityLaunchBedrockProxy)(object)this).EqualityContract;
 	}
 }

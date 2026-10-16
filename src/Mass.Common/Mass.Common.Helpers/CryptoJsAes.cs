@@ -1,6 +1,18 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Text.Json;
+using System.Threading;
+using Mass.Common.Localization;
+using Mass.Common.Models;
+using Serilog;
 
 namespace Mass.Common.Helpers;
 
@@ -69,11 +81,11 @@ public static class CryptoJsAes
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_2300()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (ApiResponseBase<>.ManageProvider == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -85,36 +97,32 @@ public static class CryptoJsAes
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_2700(object P_0, object P_1)
+	internal unsafe static object _FF00_2700(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_004a: Expected I4, but got Obj
-		//IL_02ec: Expected Obj, but got I4
-		//IL_0313: Expected Obj, but got I4
-		//IL_031c: Expected Obj, but got I4
-		//IL_035a: Expected Obj, but got I4
-		//IL_00de: Expected Obj, but got I4
-		//IL_0102: Expected I4, but got Obj
-		//IL_0132: Expected I4, but got Obj
-		//IL_0161: Expected I4, but got Obj
-		//IL_0082->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0343->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0326->IL0019: Incompatible stack heights: 7 vs 1
-		//IL_005c->IL034e: Incompatible stack heights: 2 vs 0
-		//IL_0334->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0303->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0366->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_034e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0068->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0386->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0371->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00c5->IL00a2: Incompatible stack heights: 1 vs 2
-		//IL_0073->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00d0->IL00a2: Incompatible stack heights: 1 vs 2
-		//IL_00f5->IL00f9: Incompatible stack types: I4 vs Obj
-		//IL_0125->IL0129: Incompatible stack types: I4 vs Obj
-		//IL_0154->IL0158: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0057: Expected I4, but got Obj
+		//IL_03b6: Expected Obj, but got I4
+		//IL_03bb: Expected Obj, but got I4
+		//IL_043a: Expected native int or pointer, but got Obj
+		//IL_03f6: Expected Obj, but got I4
+		//IL_03ff: Expected Obj, but got I4
+		//IL_03ff: Expected Obj, but got I4
+		//IL_0406: Expected Obj, but got I4
+		//IL_0406: Expected Obj, but got I4
+		//IL_041f: Expected Obj, but got I4
+		//IL_0463: Expected Obj, but got I4
+		//IL_00f6: Expected Obj, but got VT
+		//IL_03d1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0444->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0417->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0429->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_03dc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0477->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_044f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0497->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0482->IL0026: Incompatible stack heights: 3 vs 1
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 9;
@@ -124,24 +132,15 @@ public static class CryptoJsAes
 			switch ((int)obj2)
 			{
 			case 7:
-				_ = 0;
-				if (8 == 0)
-				{
-					if (0 == 0)
-					{
-						_ = 2;
-					}
-					continue;
-				}
-				goto case 3;
+				/*Error near IL_005c: Member reference must be method, but was: Field*/;
 			case 1:
-				obj = P_1;
-				obj2 = 6;
-				continue;
+				((ApiResponseBase<_00210>)/*Error near IL_009d: Stack underflow*/).Msg = (string)/*Error near IL_009d: Stack underflow*/;
+				/*Error near IL_009e: Member reference must be method, but was: Field*/;
 			case 5:
 			{
-				int num = 2;
-				if (0 == 0)
+				_ = ((AsyncTaskMethodBuilder<_00210>*)2)->Task;
+				int num = 0;
+				if (((ErrorResponse)(object)ErrorResponse.Errors__BackingField).TraceId__BackingField == null)
 				{
 					num = 0;
 				}
@@ -149,97 +148,70 @@ public static class CryptoJsAes
 				{
 					switch (num)
 					{
-					default:
-						obj = obj;
-						if (1 == 0)
-						{
-							_ = 0;
-						}
-						continue;
 					case 1:
-						break;
+						/*Error near IL_011e: Member reference must be method, but was: Field*/;
 					}
-					break;
+					obj = new AsyncTaskMethodBuilder<_00210>(ref *(TStateMachine*)obj);
+					num = 1;
+					if (ErrorResponse._003C_003Ec._003C_003E9__22_0 == null)
+					{
+						num = 0;
+					}
 				}
-				object obj3 = obj;
-				object obj4 = obj;
-				object obj5 = obj;
-				obj = 0;
-				if (0 == 0)
-				{
-					obj5 = 0;
-				}
-				switch ((int)obj5)
-				{
-				}
-				obj = obj;
-				if (false)
-				{
-					obj4 = 0;
-				}
-				switch ((int)obj4)
-				{
-				}
-				obj = obj;
-				if (false)
-				{
-					obj3 = 0;
-				}
-				switch ((int)obj3)
-				{
-				}
-				break;
 			}
 			default:
-				obj2 = obj;
-				obj = 16;
-				if (1 == 0)
+				obj = ((IEnumerable)((IEnumerable<IPEndPoint>)obj).Any((Func<IPEndPoint, bool>)16)).OfType<string>();
+				obj2 = 1;
+				if ((int)((FileHelper._003CReadAllBytesAsync_003Ed__11*)FileHelper._003CReadAllBytesAsync_003Ed__11._003C_003E1__state)->_003C_003Et__builder == 0)
 				{
 					obj2 = 0;
 				}
-				continue;
+				break;
 			case 6:
-				_ = 32;
-				_ = 16;
-				obj = 32;
-				_ = 32;
-				obj = 16;
-				_ = 4;
-				continue;
+			{
+				object obj3 = obj;
+				LocalizationManager.SetCulture((string)obj);
+				((AsyncTaskMethodBuilder*)obj3)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter*)obj3, ref *(ProcessHelper._003CWaitProcessModule_003Ed__3*)32);
+				obj = ((IEnumerable)16).Cast<ProcessModule>();
+				obj = ((IEnumerable<_00210>)((IEnumerable<byte>)((IEnumerable<ProcessModule>)32).Any((Func<ProcessModule, bool>)32)).Select((Func<byte, string>)16)).Reverse();
+				obj2 = 4;
+				break;
+			}
 			case 9:
-				obj = P_0;
+				obj = ((Dictionary<_00210, _00211>)P_0).Count;
 				obj2 = 8;
-				continue;
+				break;
 			case 4:
-				obj = (object)/*Error near IL_0337: Stack underflow*/;
-				if (5 != 0)
+				obj = ((Dictionary<_00210, _00211>)/*Error near IL_042e: Stack underflow*/).Keys;
+				obj2 = 5;
+				if (((FileHelper._003CWriteAllLinesAsync_003Ed__6*)(nint)FileHelper._003CWriteAllBytesAsync_003Ed__3.CheckResponsiveAuditor)->_003C_003E1__state != 0)
 				{
 					obj2 = 1;
 				}
-				continue;
+				break;
 			case 3:
-				throw /*Error near IL_0351: Stack underflow*/;
+				_ = AssemblyHelper.Name;
+				/*Error near IL_0454: Member reference must be method, but was: Field*/;
 			case 2:
 				_ = 8;
 				obj = 8;
-				if (0 == 0)
+				_ = 0;
+				if ((int)((FileHelper._003CWriteAllTextAsync_003Ed__5*)FileHelper._003CWriteAllTextAsync_003Ed__5._003C_003E1__state)->_003C_003Et__builder == 0)
 				{
 					_ = 0;
 				}
-				continue;
+				break;
 			case 8:
 				if (((Array)obj).Length >= 16)
 				{
 					obj2 = 7;
-					continue;
+					break;
 				}
 				goto case 3;
 			case 10:
-				break;
+				return obj;
 			}
-			break;
 		}
-		return obj;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -253,10 +225,11 @@ public static class CryptoJsAes
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_2900()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -268,30 +241,20 @@ public static class CryptoJsAes
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_2B00(object P_0, object P_1)
+	internal unsafe static object _FF00_2B00(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_004e: Expected Obj, but got I4
-		//IL_0057: Expected Obj, but got I4
-		//IL_006f: Expected Obj, but got I4
-		//IL_0078: Expected Obj, but got I4
-		//IL_00f0: Expected Obj, but got I4
-		//IL_0148: Expected Obj, but got I4
-		//IL_0091->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004a->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0082->IL0019: Incompatible stack heights: 7 vs 1
-		//IL_009c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00dd->IL00bc: Incompatible stack heights: 0 vs 2
-		//IL_00e8->IL00bc: Incompatible stack heights: 1 vs 2
-		//IL_013b->IL0111: Incompatible stack heights: 9 vs 5
-		//IL_0154->IL0111: Incompatible stack heights: 8 vs 5
-		//IL_015f->IL0111: Incompatible stack heights: 8 vs 5
-		//IL_01cb->IL0180: Incompatible stack heights: 8 vs 4
-		//IL_01d8->IL0180: Incompatible stack heights: 5 vs 4
-		//IL_01ac->IL0180: Incompatible stack heights: 3 vs 4
-		//IL_01b7->IL0180: Incompatible stack heights: 3 vs 4
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0065: Expected Obj, but got I4
+		//IL_0070: Expected Obj, but got I4
+		//IL_008d: Expected VT, but got I4
+		//IL_0092: Expected VT, but got Obj
+		//IL_0094: Expected Obj, but got I4
+		//IL_009b: Expected Obj, but got I4
+		//IL_00a2: Expected Obj, but got I4
+		//IL_00b3->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 4;
@@ -303,114 +266,33 @@ public static class CryptoJsAes
 				switch ((int)obj2)
 				{
 				case 3:
-					obj = P_1;
-					obj2 = 5;
-					continue;
+					/*Error near IL_0048: Member reference must be method, but was: Field*/;
 				case 4:
 					break;
 				case 1:
 					return obj;
 				case 5:
-					_ = 32;
-					_ = 16;
-					obj = 32;
-					_ = 32;
-					obj = 16;
-					_ = 2;
-					continue;
+					goto IL_0078;
 				case 2:
-					obj = (object)/*Error near IL_0085: Stack underflow*/;
-					if (false)
-					{
-						obj2 = 0;
-					}
-					continue;
+					/*Error near IL_00b3: Member reference must be method, but was: Field*/;
 				default:
-				{
-					object obj3 = obj;
-					int num = 2;
-					if (0 == 0)
-					{
-						num = 0;
-					}
-					while (true)
-					{
-						switch (num)
-						{
-						default:
-							obj = obj3;
-							if (true)
-							{
-								_ = 1;
-							}
-							continue;
-						case 1:
-							break;
-						}
-						break;
-					}
-					obj = 8;
-					_ = ref obj;
-					int num2 = 0;
-					int num3 = 8;
-					if (1 == 0)
-					{
-						num3 = 1;
-					}
-					while (true)
-					{
-						switch (num3)
-						{
-						case 1:
-							_ = 0;
-							_ = ((Array)obj).Length;
-							_ = 2;
-							continue;
-						case 2:
-							obj = 1;
-							if (0 == 0)
-							{
-								_ = 0;
-							}
-							continue;
-						}
-						break;
-					}
-					obj = P_0;
-					if (0 == 0)
-					{
-						num2 = 0;
-					}
-					while (true)
-					{
-						switch (num2)
-						{
-						case 1:
-							break;
-						case 3:
-							obj = obj;
-							if (true)
-							{
-								_ = 1;
-							}
-							continue;
-						default:
-							_ = 0;
-							_ = ((Array)obj).Length;
-							_ = 2;
-							continue;
-						case 2:
-							_ = 3;
-							continue;
-						}
-						break;
-					}
-					goto case 1;
-				}
+					_ = 2;
+					/*Error near IL_00dd: Member reference must be method, but was: Field*/;
 				}
 				break;
+				IL_0078:
+				object obj3 = obj;
+				((NonDVMAttribute)obj)._002Ector();
+				((DefaultInterpolatedStringHandler*)obj3)->AppendFormatted((_00210)32);
+				((DefaultInterpolatedStringHandler*)16)->AppendFormatted((_00211)obj3);
+				obj = 32;
+				((ILogger)/*Error near IL_009b: Stack underflow*/).Warning<string>((string)/*Error near IL_009b: Stack underflow*/, (string)32);
+				((ILogger)/*Error near IL_00a2: Stack underflow*/).Debug<string>((string)/*Error near IL_00a2: Stack underflow*/, (string)16);
+				obj = JsonSerializer.Serialize((_0021_00210)/*Error near IL_00a7: Stack underflow*/, (JsonSerializerOptions?)/*Error near IL_00a7: Stack underflow*/);
+				obj2 = 2;
 			}
-			obj = 8;
+			((ApiResponseBase<ApiResponse<_00210>>)8)._002Ector();
+			obj = (object)/*Error near IL_0067: Stack underflow*/;
 			obj = 3;
 		}
 	}
@@ -424,84 +306,78 @@ public static class CryptoJsAes
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static object _FF00ⴀ(uint P_0, uint P_1, object P_2, object P_3)
+	private unsafe static object _FF00ⴀ(uint P_0, uint P_1, object P_2, object P_3)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003a: Expected I4, but got Obj
-		//IL_0097: Expected Obj, but got I4
-		//IL_00dc: Expected I4, but got Obj
-		//IL_0117: Expected Obj, but got I4
-		//IL_0066->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_004e->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_008f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0059->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01f1->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00ac->IL00bb: Incompatible stack heights: 0 vs 5
-		//IL_01fc->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00dc->IL00e1: Incompatible stack heights: 4 vs 0
-		//IL_0103->IL00bb: Incompatible stack types: I4 vs Obj
-		//IL_00b7->IL00bb: Incompatible stack heights: 1 vs 5
-		//IL_0171->IL00bb: Incompatible stack heights: 9 vs 5
-		//IL_013c->IL00bb: Incompatible stack types: I4 vs Obj
-		//IL_014d->IL00bb: Incompatible stack heights: 6 vs 5
-		//IL_012d->IL00bb: Incompatible stack heights: 7 vs 5
-		//IL_017c->IL00bb: Incompatible stack heights: 9 vs 5
-		//IL_0158->IL00bb: Incompatible stack heights: 6 vs 5
-		//IL_00bb->IL00bb: Incompatible stack heights: 10 vs 5
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0047: Expected I4, but got Obj
+		//IL_00c2: Expected Obj, but got I4
+		//IL_0262: Expected I4, but got Obj
+		//IL_0265: Invalid comparison between Unknown and I4
+		//IL_0187: Expected Obj, but got I4
+		//IL_016c: Expected I4, but got Obj
+		//IL_016c: Expected Obj, but got I4
+		//IL_0083->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_027e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e5->IL00f4: Incompatible stack heights: 1 vs 4
+		//IL_0289->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0115->IL011a: Incompatible stack heights: 3 vs 0
+		//IL_00f0->IL00f4: Incompatible stack heights: 1 vs 4
+		//IL_01de->IL00f4: Incompatible stack heights: 6 vs 4
+		//IL_0191->IL00f4: Incompatible stack heights: 3 vs 4
+		//IL_01e9->IL00f4: Incompatible stack heights: 6 vs 4
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
 		object obj2 = obj;
 		while (true)
 		{
-			object obj3;
+			int num;
 			switch ((int)obj2)
 			{
 			case 1:
-				obj = (object)/*Error near IL_0042: Stack underflow*/;
-				if (false)
-				{
-					obj2 = 0;
-				}
-				break;
+				/*Error near IL_004c: Member reference must be method, but was: Field*/;
 			default:
-				obj = (object)/*Error near IL_005c: Stack underflow*/;
+				obj = Interlocked.CompareExchange(ref *(Action<CultureInfo>*)/*Error near IL_0077: Stack underflow*/, (Action<CultureInfo>)/*Error near IL_0077: Stack underflow*/, (Action<CultureInfo>)/*Error near IL_0077: Stack underflow*/);
 				obj2 = 3;
 				break;
 			case 5:
-				obj = (object)/*Error near IL_0085: Stack underflow*/;
+				((ApiResponseBase<_00210>)/*Error near IL_00ac: Stack underflow*/).Msg = (string)/*Error near IL_00ac: Stack underflow*/;
+				obj = (object)/*Error near IL_00ae: Stack underflow*/;
 				obj2 = 6;
 				break;
 			case 2:
-				return P_0 + P_1;
+				((ILogger)/*Error near IL_00c2: Stack underflow*/).Debug<string>((string)obj, (string)(P_0 + P_1));
+				return JsonSerializer.Serialize((_0021_00210)/*Error near IL_00c7: Stack underflow*/, (JsonSerializerOptions?)/*Error near IL_00c7: Stack underflow*/);
 			case 6:
 				if (((Array)obj).Length != 0)
 				{
-					if (0 == 0)
+					_ = 0;
+					if (((ErrorResponse)(object)ErrorResponse.Errors__BackingField).TraceId__BackingField == null)
 					{
 						_ = 0;
 					}
-					goto IL_00bb;
+					goto IL_00f4;
 				}
-				goto IL_00e1;
+				goto IL_011a;
 			case 3:
 			case 4:
-				goto IL_01da;
-				IL_00e1:
-				_ = 0;
+				goto IL_025b;
+				IL_011a:
 				_ = ((Array)P_2).Length;
-				obj3 = null;
-				_ = 0;
-				if (1 == 0)
+				((AsyncTaskMethodBuilder<_00210>*)null)->Start<TStateMachine>(ref *(TStateMachine*)null);
+				num = 1;
+				if (ErrorResponse._003C_003Ec._003C_003E9__22_0 == null)
 				{
-					obj3 = 5;
+					num = 5;
 				}
-				goto IL_00bb;
-				IL_00bb:
+				goto IL_00f4;
+				IL_00f4:
 				while (true)
 				{
-					switch ((int)obj3)
+					switch (num)
 					{
 					case 1:
 						break;
@@ -510,43 +386,40 @@ public static class CryptoJsAes
 						_ = ((Array)P_3).Length;
 						_ = null;
 						_ = 0;
-						obj = 4;
-						continue;
+						/*Error near IL_0151: Member reference must be method, but was: Field*/;
 					case 4:
+						((IEnumerable<byte>)0).Skip((int)obj);
 						_ = 0;
 						_ = 0;
-						_ = 2;
-						continue;
+						/*Error near IL_016e: Member reference must be method, but was: Field*/;
 					case 2:
-						obj = obj;
-						obj3 = 3;
+						((IAsyncStateMachine)obj).MoveNext();
+						obj = 0;
+						_ = 3;
 						continue;
 					case 3:
-						if (true)
-						{
-							_ = 6;
-						}
-						continue;
+						/*Error near IL_0195: Member reference must be method, but was: Field*/;
 					default:
 						_ = 0;
-						_ = ((Array)obj).Length;
-						_ = null;
-						_ = 0;
-						if (true)
+						((AsyncTaskMethodBuilder<_00210>*)((Array)obj).Length)->AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref *(TAwaiter*)null, ref *(TStateMachine*)null);
+						_ = 1;
+						if (AssemblyHelper.Path__BackingField != null)
 						{
 							_ = 1;
 						}
 						continue;
 					case 6:
-						goto IL_01da;
+						goto IL_025b;
 					}
 					break;
 				}
-				goto IL_00e1;
-				IL_01da:
-				if ((nint)obj >= (int)(P_0 + P_1))
+				goto IL_011a;
+				IL_025b:
+				CollectionsMarshal.SetCount<T>((List<T>)/*Error near IL_0262: Stack underflow*/, (int)obj);
+				if ((int)/*Error near IL_026a: Stack underflow*/ >= (int)(P_0 + P_1))
 				{
-					if (2 != 0)
+					obj2 = 2;
+					if (ConsoleHelper.DecorateIntegratedDecryptor != null)
 					{
 						obj2 = 2;
 					}

@@ -1,9 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using DotNetty.Buffers;
+using Mass.Application.Event;
 using Mass.Game.Proxy.Enums;
 using Mass.Game.Proxy.Minecraft;
+using Mass.Game.Proxy.Minecraft.Events;
 using Mass.Game.Proxy.Network;
 using Mass.Game.Proxy.Network.Interface;
 using Mass.Game.Proxy.Network.Packet;
@@ -49,17 +54,21 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public CookieResponsePacket(EnumProtocolVersion version)
 	{
-		//IL_0042: Expected I4, but got Obj
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got I4
+		//IL_0027: Expected Obj, but got Ref
+		//IL_0041: Expected Obj, but got VT
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		CookieResponsePacket cookieResponsePacket = this;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)version;
+		_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter = this;
+		string.Format((IFormatProvider?)/*Error near IL_0032: Stack underflow*/, (string)/*Error near IL_0032: Stack underflow*/, (object?[])(object)this);
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 		{
-			cookieResponsePacket = (CookieResponsePacket)0;
+			num = 0;
 		}
-		switch ((int)cookieResponsePacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -106,10 +115,12 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_ED00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -121,19 +132,27 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void _FF00_FF00_FF00_FF00_EF00(object P_0)
+	internal unsafe sealed void _FF00_FF00_FF00_FF00_EF00(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0091: Expected Obj, but got I4
-		//IL_0077: Expected Obj, but got I4
-		//IL_0096->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_00a6->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0052->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_006b->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00b1->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_005d->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_00bb: Expected Obj, but got VT
+		//IL_00c5: Expected Obj, but got I4
+		//IL_00cf: Expected Obj, but got I4
+		//IL_0055: Expected Obj, but got VT
+		//IL_0062: Expected Obj, but got I
+		//IL_0062: Expected Obj, but got I4
+		//IL_0067: Expected I4, but got Obj
+		//IL_0067: Expected Obj, but got Ref
+		//IL_0077: Expected Obj, but got VT
+		//IL_00a9: Expected Obj, but got I4
+		//IL_00d4->IL0022: Incompatible stack heights: 2 vs 1
+		//IL_00f0->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_007c->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0099->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00fb->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0087->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 5;
@@ -145,26 +164,32 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 				switch ((int)obj2)
 				{
 				case 3:
-					if (1 == 0)
+					((EventBus)/*Error near IL_0067: Stack underflow*/).Register((Action<EventConnectServer>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (int)new string((IFormatProvider?)((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType1<, , >)obj)._003Cuuid_003Ei__Field).Equals(this), (string)obj, (object?[])__ldftn(_003C_003Ef__AnonymousType0<>.GetHashCode)));
+					_ = 1;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 					{
 						_ = 0;
 					}
 					continue;
 				case 4:
-					_ = 2;
+					_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic = P_0;
+					obj2 = 2;
 					continue;
 				case 5:
-					obj = (object)/*Error near IL_006e: Stack underflow*/;
+					obj = new { };
 					obj = 4;
 					break;
 				default:
-					_ = 32767;
+					((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType3<, >)obj)._003Csid_003Ei__Field).Equals(this);
+					((_003C_003Ef__AnonymousType1<, , >)32767).GetHashCode();
 					obj = 3;
 					break;
 				case 2:
-					if (false)
+					_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate = this;
+					obj2 = 0;
+					if ((int)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_defaultTimeout != 0)
 					{
-						_ = 0;
+						obj2 = 0;
 					}
 					continue;
 				case 1:
@@ -186,11 +211,12 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_F100()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -212,10 +238,12 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_F400()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -235,20 +263,24 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void _FF00_FF00_FF00_FF00_F700(object P_0)
+	internal unsafe sealed void _FF00_FF00_FF00_FF00_F700(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_00a8->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00b7->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006c->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_008f->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_004b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00c2->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0077->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_009a->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0056->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_00ec: Expected I4, but got Obj
+		//IL_00c0: Expected Obj, but got I4
+		//IL_00c5: Expected Obj, but got I4
+		//IL_0050: Expected VT, but got Obj
+		//IL_005f: Expected Obj, but got VT
+		//IL_00f6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0111->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d9->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_011c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e4->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_006f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -258,32 +290,36 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 			switch ((int)obj2)
 			{
 			case 5:
-				if (2 != 0)
+				((_003C_003Ef__AnonymousType1<, , >)obj)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)this;
+				obj2 = 2;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 4;
+					obj2 = 4;
 				}
 				break;
 			case 2:
-				if (1 == 0)
-				{
-					_ = 3;
-				}
-				break;
+				_ = ((_003C_003Ef__AnonymousType2<, , , >)obj)._003Curl_003Ei__Field;
+				_ = (delegate*<bool>)(&_003C_003Ef__AnonymousType0<>.ReflectActiveCalc);
+				/*Error near IL_007f: Member reference must be method, but was: Field*/;
 			case 3:
 				return;
 			case 4:
-				_ = 32767;
-				if (2 != 0)
+				_ = _003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument;
+				((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType1<, , >)32767).GetHashCode()).ToString();
+				_ = 2;
+				if ((int)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_defaultTimeout != 0)
 				{
 					_ = 2;
 				}
 				break;
 			default:
-				_ = 5;
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout = (byte)(int)P_0 != 0;
+				obj2 = 5;
 				break;
 			case 1:
-				obj = (object)/*Error near IL_00ab: Stack underflow*/;
-				if (0 == 0)
+				obj = new { };
+				obj2 = 0;
+				if (((EntitySocks5Account)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.GuideMap).Username__BackingField == null)
 				{
 					obj2 = 0;
 				}
@@ -303,24 +339,30 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00豈(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -340,10 +382,12 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal Optional<byte[]> _FF00_FF00_FF00_FF00ﬀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (Optional<byte[]>)(object)this;
+		return (Optional<byte[]>)((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -365,26 +409,32 @@ public class CookieResponsePacket : IPacket, IBufferCodec, IBufferSerializable, 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FE00(Optional<byte[]> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got Obj
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}

@@ -72,213 +72,10 @@ public class MassIrcService
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private unsafe sealed void _FF00_FF00_ED00()
+		private sealed void _FF00_FF00_ED00()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_0391: Expected Obj, but got Ref
-			//IL_039a: Expected Obj, but got I4
-			//IL_0376: Expected Obj, but got Ref
-			//IL_0126: Expected Obj, but got I4
-			//IL_01bb: Expected Obj, but got I4
-			//IL_0162: Expected Obj, but got I4
-			//IL_01ea: Expected Obj, but got I4
-			//IL_00c4: Expected Obj, but got Ref
-			//IL_0236: Expected Obj, but got I4
-			//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-			//IL_0382->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0367->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_038d->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_03b9->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_0372->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_005a->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_0215->IL005e: Incompatible stack heights: 2 vs 0
-			//IL_0131->IL005e: Incompatible stack heights: 3 vs 0
-			//IL_00f3->IL005e: Incompatible stack heights: 2 vs 0
-			//IL_01d2->IL005e: Incompatible stack heights: 3 vs 0
-			//IL_013e->IL005e: Incompatible stack heights: 2 vs 0
-			//IL_01a0->IL005e: Incompatible stack heights: 3 vs 0
-			//IL_016d->IL005e: Incompatible stack heights: 3 vs 0
-			//IL_00db->IL005e: Incompatible stack heights: 2 vs 0
-			//IL_01ef->IL005a: Incompatible stack heights: 2 vs 0
-			//IL_0121->IL005e: Incompatible stack heights: 2 vs 0
-			//IL_0183->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_00ce->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_00fe->IL005e: Incompatible stack heights: 2 vs 0
-			//IL_01dd->IL005e: Incompatible stack heights: 3 vs 0
-			//IL_02a7->IL005e: Incompatible stack heights: 2 vs 0
-			//IL_005e->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_018e->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_028c->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_02c9->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_015d->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_02d4->IL005e: Incompatible stack heights: 1 vs 0
-			//IL_026a->IL005e: Incompatible stack heights: 1 vs 0
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 2;
-			while (true)
-			{
-				ref _003CConnectAsync_003Ed__11 reference = ref *(_003CConnectAsync_003Ed__11*)obj;
-				while (true)
-				{
-					switch ((uint)Unsafe.AsPointer(ref reference))
-					{
-					default:
-						return;
-					case 5u:
-						if (obj == null)
-						{
-							if (false)
-							{
-								_ = 0;
-							}
-							goto IL_005e;
-						}
-						goto IL_01ef;
-					case 0u:
-						return;
-					case 4u:
-						goto IL_0357;
-					case 2u:
-						obj = (object)Unsafe.AsPointer(ref this);
-						if (1 == 0)
-						{
-							reference = ref *(_003CConnectAsync_003Ed__11*)1;
-						}
-						continue;
-					case 1u:
-						break;
-					case 3u:
-						{
-							reference = ref this;
-							if (false)
-							{
-								reference = ref *(_003CConnectAsync_003Ed__11*)null;
-							}
-							continue;
-						}
-						IL_005e:
-						while (true)
-						{
-							switch ((int)/*Error near IL_00bb: Stack underflow*/)
-							{
-							default:
-								obj = (object)Unsafe.AsPointer(ref this);
-								_ = 7;
-								continue;
-							case 14:
-								_ = ref obj;
-								_ = 9;
-								continue;
-							case 3:
-								_ = ref obj;
-								obj = obj;
-								if (21 == 0)
-								{
-									_ = 18;
-								}
-								continue;
-							case 16:
-								_ = 10;
-								continue;
-							case 2:
-								obj = 0;
-								_ = 15;
-								continue;
-							case 7:
-								_ = 12;
-								continue;
-							case 21:
-								if (&obj == null)
-								{
-									if (2 != 0)
-									{
-										_ = 2;
-									}
-									continue;
-								}
-								goto case 14;
-							case 12:
-								obj = -1;
-								_ = 14;
-								continue;
-							case 17:
-								if (13 == 0)
-								{
-									_ = 13;
-								}
-								continue;
-							case 10:
-								_ = 6;
-								continue;
-							case 18:
-								return;
-							case 9:
-								obj = 11;
-								continue;
-							case 5:
-								_ = ref obj;
-								if (3 != 0)
-								{
-									_ = 18;
-								}
-								continue;
-							case 15:
-								obj = 5;
-								continue;
-							case 8:
-								break;
-							case 13:
-								_ = obj ?? ((object)/*Error near IL_0229: Stack underflow*/);
-								obj = 20;
-								continue;
-							case 20:
-								_ = obj ?? ((object)/*Error near IL_024f: Stack underflow*/);
-								if (true)
-								{
-									_ = 1;
-								}
-								continue;
-							case 1:
-								_ = obj ?? ((object)/*Error near IL_027e: Stack underflow*/);
-								_ = 16;
-								continue;
-							case 6:
-								_ = obj ?? ((object)/*Error near IL_029a: Stack underflow*/);
-								_ = 4;
-								continue;
-							case 4:
-								_ = obj ?? ((object)/*Error near IL_02ba: Stack underflow*/);
-								if (3 == 0)
-								{
-									_ = 1;
-								}
-								continue;
-							case 11:
-								goto IL_0357;
-							}
-							break;
-						}
-						goto IL_01ef;
-						IL_01ef:
-						_ = obj ?? ((object)/*Error near IL_0205: Stack underflow*/);
-						_ = 17;
-						goto IL_005e;
-						IL_0357:
-						_ = -2;
-						if (3 == 0)
-						{
-							_ = 3;
-						}
-						continue;
-					}
-					break;
-				}
-				obj = (object)Unsafe.AsPointer(ref this);
-				obj = 5;
-			}
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -300,30 +97,8 @@ public class MassIrcService
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private sealed void _FF00_FF00_F000(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 1;
-			while (true)
-			{
-				switch ((int)obj)
-				{
-				default:
-					return;
-				case 1:
-					if (0 == 0)
-					{
-						_ = 0;
-					}
-					break;
-				case 0:
-					return;
-				}
-			}
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -337,20 +112,15 @@ public class MassIrcService
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static byte _FF00_FF00_F200()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static object _FF00_FF00_F300()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 	}
 
@@ -414,161 +184,10 @@ public class MassIrcService
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private unsafe sealed void _FF00_FF00_FFFD()
+		private sealed void _FF00_FF00_FFFD()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_023d: Expected Obj, but got Ref
-			//IL_0258: Expected Obj, but got Ref
-			//IL_0234: Expected Obj, but got I4
-			//IL_0133: Expected Obj, but got Ref
-			//IL_0142: Expected Obj, but got I4
-			//IL_00b2: Expected Obj, but got I4
-			//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-			//IL_0249->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0264->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0239->IL0015: Incompatible stack heights: 2 vs 0
-			//IL_013d->IL0051: Incompatible stack types: I4 vs Ref
-			//IL_004d->IL0051: Incompatible stack types: I4 vs Ref
-			//IL_0254->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_026f->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_0226->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_00a0->IL0051: Incompatible stack heights: 2 vs 1
-			//IL_018e->IL0051: Incompatible stack heights: 4 vs 1
-			//IL_014d->IL0051: Incompatible stack heights: 3 vs 1
-			//IL_0101->IL0051: Incompatible stack heights: 3 vs 1
-			//IL_0173->IL0051: Incompatible stack heights: 2 vs 1
-			//IL_0163->IL0051: Incompatible stack heights: 3 vs 1
-			//IL_00ad->IL0051: Incompatible stack types: I4 vs Ref
-			//IL_00bf->IL0051: Incompatible stack heights: 2 vs 1
-			//IL_00f3->IL0051: Incompatible stack types: I4 vs Ref
-			//IL_017e->IL0051: Incompatible stack heights: 2 vs 1
-			//IL_012f->IL0051: Incompatible stack types: I4 vs Ref
-			//IL_00ca->IL0051: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 2;
-			while (true)
-			{
-				ref _003CDisconnectAsync_003Ed__12 reference = ref *(_003CDisconnectAsync_003Ed__12*)obj;
-				while (true)
-				{
-					ref _003CDisconnectAsync_003Ed__12 reference2;
-					switch ((uint)Unsafe.AsPointer(ref reference))
-					{
-					default:
-						if (obj != null)
-						{
-							reference2 = ref *(_003CDisconnectAsync_003Ed__12*)8;
-							goto IL_0051;
-						}
-						goto IL_012f;
-					case 4u:
-						reference = ref this;
-						if (0 == 0)
-						{
-							reference = ref *(_003CDisconnectAsync_003Ed__12*)3;
-						}
-						continue;
-					case 3u:
-						return;
-					case 5u:
-						break;
-					case 1u:
-						obj = (object)Unsafe.AsPointer(ref this);
-						if (0 == 0)
-						{
-							reference = ref *(_003CDisconnectAsync_003Ed__12*)null;
-						}
-						continue;
-					case 2u:
-						{
-							obj = (object)Unsafe.AsPointer(ref this);
-							if (0 == 0)
-							{
-								reference = ref *(_003CDisconnectAsync_003Ed__12*)1;
-							}
-							continue;
-						}
-						IL_0051:
-						while (true)
-						{
-							switch ((uint)Unsafe.AsPointer(ref reference2))
-							{
-							default:
-								_ = ref obj;
-								_ = 4;
-								continue;
-							case 12u:
-								reference2 = ref *(_003CDisconnectAsync_003Ed__12*)10;
-								continue;
-							case 13u:
-								obj = -1;
-								if (false)
-								{
-									_ = 0;
-								}
-								continue;
-							case 5u:
-								return;
-							case 2u:
-								reference2 = ref this;
-								if (11 != 0)
-								{
-									reference2 = ref *(_003CDisconnectAsync_003Ed__12*)13;
-								}
-								continue;
-							case 4u:
-								_ = 0;
-								_ = 12;
-								continue;
-							case 9u:
-								if (&obj != null)
-								{
-									reference2 = ref *(_003CDisconnectAsync_003Ed__12*)11;
-									continue;
-								}
-								goto case 3u;
-							case 7u:
-								break;
-							case 3u:
-								obj = 0;
-								_ = 6;
-								continue;
-							case 8u:
-								_ = ref obj;
-								obj = obj;
-								_ = 9;
-								continue;
-							case 6u:
-								if (false)
-								{
-									_ = 1;
-								}
-								continue;
-							case 1u:
-								_ = ref obj;
-								_ = 5;
-								continue;
-							case 10u:
-								goto end_IL_0019;
-							}
-							break;
-						}
-						goto IL_012f;
-						IL_012f:
-						obj = (object)Unsafe.AsPointer(ref this);
-						reference2 = ref *(_003CDisconnectAsync_003Ed__12*)2;
-						goto IL_0051;
-						end_IL_0019:
-						break;
-					}
-					break;
-				}
-				_ = -2;
-				obj = 4;
-			}
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -582,30 +201,8 @@ public class MassIrcService
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private sealed void _FF00_FF00_E100(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 1;
-			while (true)
-			{
-				switch ((int)obj)
-				{
-				default:
-					return;
-				case 0:
-					return;
-				case 1:
-					if (0 == 0)
-					{
-						_ = 0;
-					}
-					break;
-				}
-			}
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -619,11 +216,8 @@ public class MassIrcService
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static byte _FF00_FF00_E300()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -637,10 +231,8 @@ public class MassIrcService
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static object _FF00_FF00_E500()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 	}
 
@@ -706,168 +298,10 @@ public class MassIrcService
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private unsafe sealed void _FF00_FF00혀()
+		private sealed void _FF00_FF00혀()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_005a: Expected Obj, but got Ref
-			//IL_0063: Expected Obj, but got I4
-			//IL_006d: Expected Obj, but got Ref
-			//IL_019d: Expected Obj, but got Ref
-			//IL_0171: Expected Obj, but got I4
-			//IL_0161: Expected Obj, but got I4
-			//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-			//IL_0079->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_004b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0084->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_02bc->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_0056->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_01b4->IL00a7: Incompatible stack heights: 1 vs 0
-			//IL_00a3->IL00a7: Incompatible stack heights: 1 vs 0
-			//IL_017c->IL00a7: Incompatible stack heights: 3 vs 0
-			//IL_020a->IL00a7: Incompatible stack heights: 4 vs 0
-			//IL_0199->IL00a7: Incompatible stack heights: 4 vs 0
-			//IL_01c4->IL00a7: Incompatible stack heights: 2 vs 0
-			//IL_0219->IL00a7: Incompatible stack heights: 1 vs 0
-			//IL_016c->IL00a7: Incompatible stack heights: 3 vs 0
-			//IL_0189->IL00a7: Incompatible stack heights: 2 vs 0
-			//IL_011f->IL00a7: Incompatible stack heights: 1 vs 0
-			//IL_01cf->IL00a7: Incompatible stack heights: 2 vs 0
-			//IL_0224->IL00a7: Incompatible stack heights: 1 vs 0
-			//IL_0103->IL00a7: Incompatible stack heights: 1 vs 0
-			//IL_013e->IL00a7: Incompatible stack heights: 1 vs 0
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 1;
-			while (true)
-			{
-				ref _003CSendMessageAsync_003Ed__13 reference = ref *(_003CSendMessageAsync_003Ed__13*)obj;
-				while (true)
-				{
-					switch ((uint)Unsafe.AsPointer(ref reference))
-					{
-					case 5u:
-						_ = -2;
-						if (3 != 0)
-						{
-							_ = 4;
-						}
-						continue;
-					case 2u:
-						return;
-					case 1u:
-						obj = (object)Unsafe.AsPointer(ref this);
-						if (false)
-						{
-							reference = ref *(_003CSendMessageAsync_003Ed__13*)null;
-						}
-						continue;
-					case 3u:
-						if (obj != null)
-						{
-							if (false)
-							{
-								_ = 1;
-							}
-							goto IL_00a7;
-						}
-						goto IL_0199;
-					case 4u:
-						{
-							reference = ref this;
-							if (true)
-							{
-								reference = ref *(_003CSendMessageAsync_003Ed__13*)2;
-							}
-							continue;
-						}
-						IL_00a7:
-						while (true)
-						{
-							switch ((int)/*Error near IL_00ec: Stack underflow*/)
-							{
-							case 4:
-							case 9:
-								break;
-							case 13:
-								return;
-							case 12:
-								if (&obj != null)
-								{
-									_ = 2;
-									continue;
-								}
-								goto case 3;
-							case 5:
-								if (8 == 0)
-								{
-									_ = 9;
-								}
-								continue;
-							case 1:
-								if (obj != null)
-								{
-									if (0 == 0)
-									{
-										_ = 0;
-									}
-									continue;
-								}
-								goto case 5;
-							case 11:
-								obj = -1;
-								_ = 15;
-								continue;
-							case 3:
-								obj = 0;
-								_ = 8;
-								continue;
-							case 2:
-							case 15:
-								_ = ref obj;
-								_ = 4;
-								continue;
-							case 7:
-								_ = ref obj;
-								_ = 13;
-								continue;
-							case 14:
-								goto IL_0199;
-							case 8:
-								if (3 == 0)
-								{
-									_ = 7;
-								}
-								continue;
-							default:
-								_ = ref obj;
-								obj = obj;
-								_ = 12;
-								continue;
-							case 10:
-								if (11 == 0)
-								{
-									_ = 4;
-								}
-								continue;
-							}
-							break;
-						}
-						goto case 5u;
-						IL_0199:
-						obj = (object)Unsafe.AsPointer(ref this);
-						if (10 == 0)
-						{
-							_ = 0;
-						}
-						goto IL_00a7;
-					}
-					break;
-				}
-				obj = (object)Unsafe.AsPointer(ref this);
-				obj = 3;
-			}
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -881,40 +315,15 @@ public class MassIrcService
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private sealed void _FF00_FF00_FFFD(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 1;
-			while (true)
-			{
-				switch ((int)obj)
-				{
-				default:
-					return;
-				case 0:
-					return;
-				case 1:
-					if (0 == 0)
-					{
-						_ = 0;
-					}
-					break;
-				}
-			}
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static byte _FF00_FF00_FFFD()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -928,10 +337,8 @@ public class MassIrcService
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static object _FF00_FF00_FFFD()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1018,9 +425,8 @@ public class MassIrcService
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public MassIrcService()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
-		{
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	static MassIrcService()
@@ -1084,67 +490,8 @@ public class MassIrcService
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00刀(Func<EntityMassContent[], Task> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0069->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0098->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00b8->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0050->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0088->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c3->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_005b->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 2;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 3:
-				if (obj == obj)
-				{
-					if (0 == 0)
-					{
-						obj2 = 0;
-					}
-					break;
-				}
-				goto case 1;
-			case 1:
-				obj = obj;
-				obj2 = 4;
-				break;
-			case 0:
-				return;
-			case 4:
-				obj2 = obj;
-				obj = P_0;
-				if (5 == 0)
-				{
-					obj2 = 3;
-				}
-				break;
-			case 2:
-				obj = this;
-				if (false)
-				{
-					obj2 = 1;
-				}
-				break;
-			case 5:
-				obj = obj;
-				if (3 == 0)
-				{
-					_ = 3;
-				}
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1166,67 +513,15 @@ public class MassIrcService
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private void _FF00_FF00_FF00圀(byte P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_009f->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b8->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0084->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00aa->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0072->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008f->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 2;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 5:
-				obj2 = P_1;
-				if (2 != 0)
-				{
-					obj2 = 4;
-				}
-				break;
-			case 2:
-				if (P_0 != 0)
-				{
-					if (true)
-					{
-						obj2 = 1;
-					}
-					break;
-				}
-				goto case 5;
-			case 0:
-				return;
-			case 3:
-				_ = 1;
-				if (0 == 0)
-				{
-					_ = 0;
-				}
-				break;
-			case 4:
-				return;
-			case 1:
-				obj2 = 3;
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00堀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1248,11 +543,8 @@ public class MassIrcService
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00嬀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1304,69 +596,8 @@ public class MassIrcService
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00愀(Func<EntityMassContent[], Task> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0087->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0067->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00a7->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00d0->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0092->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0072->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b2->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 5;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			case 4:
-				obj = obj;
-				if (0 == 0)
-				{
-					obj2 = 1;
-				}
-				break;
-			case 2:
-				return;
-			case 5:
-				obj = this;
-				if (3 != 0)
-				{
-					obj2 = 4;
-				}
-				break;
-			case 3:
-				obj = obj;
-				if (0 == 0)
-				{
-					_ = 0;
-				}
-				break;
-			default:
-				if (obj == obj)
-				{
-					if (2 == 0)
-					{
-						obj2 = 2;
-					}
-					break;
-				}
-				goto case 4;
-			case 1:
-				obj2 = obj;
-				obj = P_0;
-				if (3 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1411,10 +642,8 @@ public class MassIrcService
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00_FF00昀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1428,10 +657,8 @@ public class MassIrcService
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00栀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1445,42 +672,8 @@ public class MassIrcService
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private void _FF00_FF00_FF00樀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0045->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0050->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 1;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 2:
-				return;
-			case 1:
-				obj2 = this;
-				if (obj2 == null)
-				{
-					if (0 == 0)
-					{
-						obj2 = 0;
-					}
-				}
-				else if (2 == 0)
-				{
-					obj2 = 2;
-				}
-				break;
-			case 0:
-				return;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

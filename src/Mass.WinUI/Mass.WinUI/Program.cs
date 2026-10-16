@@ -3,6 +3,10 @@ using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using ABI.System.Collections.Generic;
+using WinRT;
+using WinRT.Mass_WinUIGenericHelpers;
 
 namespace Mass.WinUI;
 
@@ -40,12 +44,15 @@ public static class Program
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00䐀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00䐀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -57,13 +64,14 @@ public static class Program
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00䘀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00䘀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -83,23 +91,28 @@ public static class Program
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static void _FF00_FF00_FF00_FF00_FF00䤀(object P_0)
+	private unsafe static void _FF00_FF00_FF00_FF00_FF00䤀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0040->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0059->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004c->IL0069: Incompatible stack heights: 0 vs 1
-		//IL_0081->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0064->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_009c: Expected I, but got Obj
+		//IL_0071: Expected Obj, but got I
+		//IL_0051->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00b0->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0076->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0061->IL0097: Incompatible stack heights: 1 vs 2
+		//IL_00bb->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0081->IL0026: Incompatible stack types: I4 vs Obj
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 3;
 		object obj2 = obj;
 		while (true)
 		{
-			_003F val;
+			object val;
 			switch ((int)obj2)
 			{
 			default:
@@ -107,27 +120,30 @@ public static class Program
 			case 0:
 				return;
 			case 3:
-				_ = null;
+				ExceptionHelpers.GetHRForException((Exception)null);
 				_ = 2;
 				continue;
 			case 2:
-				if ((int)/*Error near IL_0041: Stack underflow*/ != 0)
+				if (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged.JoinAttribute != null)
 				{
 					break;
 				}
-				if (1 == 0)
+				obj2 = 1;
+				if (IEnumerable_System_ComponentModel_INotifyPropertyChanged.ReflectConfigurableAttribute == null)
 				{
 					obj2 = 1;
 				}
 				continue;
 			case 1:
-				val = /*Error near IL_0067: Stack underflow*/;
+				_ = IList_object._initialized;
+				val = (IEnumerator_System_ComponentModel_INotifyPropertyChanged.RunAttribute = new IEnumeratorMethods<object>((IntPtr)(nint)(delegate* unmanaged[Stdcall]<nint, nint*, uint>)(&IEnumerator_object.Do_Abi_get_Current_0)));
 				break;
 			}
-			obj2 = (object)val;
-			if (0 == 0)
+			IEnumeratorMethods<object>.Abi_get_HasCurrent_1((IntPtr)val);
+			_ = 0;
+			if (IReadOnlyList_object._initialized == 0)
 			{
-				obj2 = 0;
+				_ = 0;
 			}
 		}
 	}

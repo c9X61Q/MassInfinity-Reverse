@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace Mass.Game.Proxy.Network;
 
@@ -24,36 +26,44 @@ public readonly struct Position
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public Position(long x, long y, long z)
+	public unsafe Position(long x, long y, long z)
 	{
-		//IL_0021: Expected I4, but got I8
-		//IL_0040->IL0010: Incompatible stack types: I4 vs I8
-		//IL_004e->IL0010: Incompatible stack heights: 4 vs 2
-		//IL_005d->IL0010: Incompatible stack heights: 3 vs 2
-		//IL_0068->IL0010: Incompatible stack heights: 3 vs 2
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_003a: Expected VT, but got I8
+		//IL_003a: Expected Obj, but got Ref
+		//IL_0049: Expected Obj, but got VT
+		//IL_0061: Expected VT, but got I8
+		//IL_0061: Expected Obj, but got Ref
+		//IL_0072: Expected VT, but got I8
+		//IL_0072: Expected Obj, but got Ref
+		//IL_0081: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		long num = x;
-		if (true)
+		((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)x;
+		int num = 1;
+		if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 		{
-			num = 1L;
+			num = 1;
 		}
 		while (true)
 		{
-			switch ((int)num)
+			switch (num)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				_ = 2;
+				((_003C_003Ef__AnonymousType2<, , , >)Unsafe.AsPointer(ref this))._003Curl_003Ei__Field = (_003Curl_003Ej__TPar)y;
+				num = 2;
 				break;
 			case 2:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType2<, , , >)Unsafe.AsPointer(ref this))._003Cpayload_003Ei__Field = (_003Cpayload_003Ej__TPar)z;
+				num = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 				{
-					_ = 0;
+					num = 0;
 				}
 				break;
 			}
@@ -63,19 +73,21 @@ public readonly struct Position
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public Position(long encoded)
 	{
-		//IL_0044: Expected I4, but got I8
-		//IL_0032->IL003b: Incompatible stack types: I4 vs I8
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_002c: Expected VT, but got I8
+		//IL_002c: Expected Obj, but got I8
+		//IL_003b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		_ = encoded >> 38;
-		_ = encoded << 52 >> 52;
-		long num = encoded << 26 >> 38;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType0<>)(encoded << 52 >> 52))._002Ector((_003Caction_003Ej__TPar)(encoded << 26 >> 38));
+		int num = 0;
+		if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 		{
-			num = 0L;
+			num = 0;
 		}
-		switch ((int)num)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -105,20 +117,33 @@ public readonly struct Position
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe long _FF00_FF00_FF00_FF00匀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got Ref
+		//IL_0020: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0023: Unknown result type (might be due to invalid IL or missing references)
+		//IL_002a: Expected Obj, but got Ref
+		//IL_0030: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0033: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0034: Unknown result type (might be due to invalid IL or missing references)
+		//IL_003b: Expected Obj, but got Ref
+		//IL_0041: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0042: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0044: Expected I8, but got Unknown
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (long)((((ulong)(nint)Unsafe.AsPointer(ref this) & 0x3FFFFFFuL) << 38) | (((ulong)(nint)Unsafe.AsPointer(ref this) & 0x3FFFFFFuL) << 12) | ((ulong)(nint)Unsafe.AsPointer(ref this) & 0xFFFuL));
+		return ((((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuuid_003Ei__Field & 0x3FFFFFF) << 38) | ((((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuser_id_003Ei__Field & 0x3FFFFFF) << 12) | (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter & 0xFFF);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00吀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -132,9 +157,11 @@ public readonly struct Position
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00嘀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 }

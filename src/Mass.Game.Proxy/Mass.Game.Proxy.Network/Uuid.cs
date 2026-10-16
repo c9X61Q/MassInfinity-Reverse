@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using DotNetty.Buffers;
 using Mass.Game.Proxy.Enums;
 
@@ -43,15 +46,18 @@ public static class Uuid
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00㘀(object P_0, Guid P_1, EnumProtocolVersion P_2)
+	internal unsafe static object _FF00_FF00_FF00_FF00㘀(object P_0, Guid P_1, EnumProtocolVersion P_2)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_004d->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_006e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00a1->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00ac->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003f: Expected I4, but got Obj
+		//IL_0052: Expected VT, but got Ref
+		//IL_005c: Expected Obj, but got I4
+		//IL_0071: Expected Obj, but got Ref
+		//IL_0067->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_00e3->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ee->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -61,25 +67,21 @@ public static class Uuid
 			switch ((int)obj2)
 			{
 			default:
-				_ = ref P_1;
-				_ = 32767;
+				((EqualityComparer<_00210>)(object)(*(RegexRunner*)P_0)/*cast due to constrained. prefix*/).GetHashCode((_00210)(&P_1));
+				((_003C_003Ef__AnonymousType0<>)32767).GetHashCode();
 				_ = 4;
 				break;
 			case 3:
 			case 4:
 				return P_0;
 			case 1:
-				obj2 = P_0;
-				_ = ref P_1;
-				if (3 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
+				((_003C_003Ef__AnonymousType0<>)(&P_1)).ToString();
+				/*Error near IL_0071: Member reference must be method, but was: Field*/;
 			case 2:
 				if (P_2 >= EnumProtocolVersion.V1181)
 				{
-					if (true)
+					obj2 = 1;
+					if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate != null)
 					{
 						obj2 = 0;
 					}
@@ -101,10 +103,12 @@ public static class Uuid
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00㠀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -118,13 +122,14 @@ public static class Uuid
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static Guid _FF00_FF00_FF00_FF00㨀(object P_0, EnumProtocolVersion P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0083: Expected VT, but got I4
-		//IL_0081->IL0081: Incompatible stack heights: 3 vs 2
-		//IL_0070->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_007b->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0044: Expected VT, but got I4
+		//IL_008c: Expected Obj, but got VT
+		//IL_0091->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009c->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -134,34 +139,36 @@ public static class Uuid
 			switch ((int)obj2)
 			{
 			case 2:
-				break;
+				((_003C_003Ef__AnonymousType0<>)P_0)._002Ector((_003Caction_003Ej__TPar)36);
+				/*Error near IL_00aa: Member reference must be method, but was: Field*/;
 			case 1:
 				if (P_1 >= EnumProtocolVersion.V1181)
 				{
-					if (0 == 0)
+					obj2 = 0;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field == 0)
 					{
 						obj2 = 0;
 					}
-					continue;
+					break;
 				}
 				goto case 2;
 			default:
 				_ = 16;
+				_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
 				_ = 0;
-				break;
+				/*Error near IL_00a5: Member reference must be method, but was: Field*/;
 			}
-			break;
 		}
-		return (Guid)36;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00㬀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 }

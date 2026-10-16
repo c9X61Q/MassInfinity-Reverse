@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
 using DotNetty.Buffers;
+using Mass.Application.Mobile;
+using Mass.Application.Models;
 
 namespace Mass.Bedrock.Proxy.Network;
 
@@ -42,12 +46,13 @@ public static class Utf8String
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00씀()
+	internal unsafe static object _FF00_FF00_FF00씀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityLaunchBedrockProxy.Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -59,13 +64,13 @@ public static class Utf8String
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00윀()
+	internal unsafe static byte _FF00_FF00_FF00윀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityLaunchBedrockProxy.Name__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -116,16 +121,20 @@ public static class Utf8String
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00촀(object P_0, object P_1)
+	internal unsafe static void _FF00_FF00_FF00촀(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0061->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0044->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0088->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_004f->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0076: Expected Obj, but got I4
+		//IL_005c: Expected Obj, but got I
+		//IL_00b2->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_008a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0061->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00bd->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0095->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006c->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 3;
@@ -137,24 +146,31 @@ public static class Utf8String
 			default:
 				return;
 			case 3:
-				obj = P_1;
-				if (2 != 0)
+			{
+				StringBuilder stringBuilder = ((StringBuilder)/*Error near IL_0045: Stack underflow*/).Append((char)/*Error near IL_0045: Stack underflow*/);
+				((StringBuilder)P_1)._002Ector();
+				obj = stringBuilder;
+				obj2 = 2;
+				if ((object)EntityLaunchBedrockProxy.ReflectScheduledLogger != null)
 				{
 					obj2 = 2;
 				}
 				break;
+			}
 			case 2:
-				_ = ((Array)obj).Length;
-				if (true)
+				((EntityLaunchBedrockProxy)P_0).GameId = (string)((Array)obj).Length;
+				obj2 = 1;
+				if (((BedrockProxy)(object)BedrockProxy.Name).GameId != null)
 				{
-					_ = 1;
+					obj2 = 1;
 				}
 				break;
 			case 1:
-				obj2 = P_0;
-				if (false)
+				_ = EqualityComparer<MobileSession>.Default;
+				_ = 0;
+				if (((BedrockProxy)(object)BedrockProxy.ServerAddress).ServerPort != 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 0:

@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Mass.Common.Extensions;
+using Mass.Common.Localization;
+using Mass.Common.Models;
 using Serilog;
 
 namespace Mass.Common.Helpers;
@@ -104,10 +107,11 @@ public static class DirectoryHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00騀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -121,50 +125,43 @@ public static class DirectoryHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00鴀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (ApiResponseBase<>.ManageProvider == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00鼀(object P_0)
+	internal unsafe static void _FF00鼀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0066: Expected I4, but got Obj
-		//IL_00b7: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0119: Expected Obj, but got I4
-		//IL_01e8: Expected Obj, but got I4
-		//IL_0155: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0158: Expected Obj, but got Unknown
-		//IL_0176: Expected Obj, but got I4
-		//IL_00d9: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00a5: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0191: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0194: Expected Obj, but got Unknown
-		//IL_0169: Expected Obj, but got I4
-		//IL_00c5->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_01f2->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0162->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0182->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00e7->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b1->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_01a0->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0173->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00d0->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0130->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0147->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_018d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00f2->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0091->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_01ab->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01cb->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0103->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0152->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_009c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01d6->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0073: Expected I4, but got Obj
+		//IL_0265: Expected Obj, but got I4
+		//IL_01ae: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01b1: Expected Obj, but got Unknown
+		//IL_01d7: Expected Obj, but got I4
+		//IL_010a: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00be: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01fa: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01fd: Expected Obj, but got Unknown
+		//IL_01ca: Expected Obj, but got I4
+		//IL_009c: Expected native int or pointer, but got Obj
+		//IL_026f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01bb->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01eb->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0211->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01d4->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01a0->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01f6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_021c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0248->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01ab->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0253->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 16;
@@ -177,7 +174,8 @@ public static class DirectoryHelper
 			case 8:
 				if ((nint)obj >= ((Array)obj).Length)
 				{
-					if (false)
+					obj2 = 0;
+					if (((ApiResponseBase<>._003CThen_003Ed__10*)(nint)ApiResponseBase<>.ManageProvider)->_003C_003E1__state != 0)
 					{
 						obj2 = 2;
 					}
@@ -185,61 +183,49 @@ public static class DirectoryHelper
 				}
 				goto case 9;
 			case 9:
-				_ = ((object[])obj)[obj] & -2;
-				_ = 11;
-				break;
+			{
+				object obj3 = ((object[])obj)[obj];
+				((ApiResponseBase<ApiResponse<_00210>>)obj3)._002Ector();
+				_ = obj3 & -2;
+				/*Error near IL_00bf: Member reference must be method, but was: Field*/;
+			}
 			default:
-				_ = obj & -2;
-				if (13 == 0)
-				{
-					_ = 12;
-				}
-				break;
+				/*Error near IL_00d1: Member reference must be method, but was: Field*/;
 			case 7:
 			case 10:
-				_ = ((object[])obj)[obj] & -2;
-				if (5 == 0)
-				{
-					_ = 3;
-				}
-				break;
+				_ = ((AsyncTaskMethodBuilder<_00210>*)((object[])obj)[obj])->Task & -2;
+				/*Error near IL_010b: Member reference must be method, but was: Field*/;
 			case 16:
-				if (P_0 == null)
+				/*Error near IL_0130: Member reference must be method, but was: Field*/;
+			case 2:
+				_ = ((ApiResponseBase<>)obj).Msg;
+				_ = 1;
+				/*Error near IL_015b: Member reference must be method, but was: Field*/;
+			case 4:
+			case 14:
+				if ((nint)obj >= ((Array)obj).Length)
 				{
 					return;
 				}
-				obj2 = 15;
-				break;
-			case 2:
-				obj2 = obj;
-				obj = 1;
-				if (3 != 0)
+				obj2 = 10;
+				if (((ResourceLocalizer)LocalizationManager.ReflectAdaptableSingleton)._003CresourceManager_003EP != null)
 				{
-					obj2 = 0;
+					obj2 = 9;
 				}
 				break;
-			case 4:
-			case 14:
-				if ((nint)obj < ((Array)obj).Length)
-				{
-					if (10 != 0)
-					{
-						obj2 = 9;
-					}
-					break;
-				}
-				return;
 			case 5:
 				obj++;
 				obj2 = 4;
 				break;
 			case 13:
-				obj = 1;
-				_ = 6;
+				((ApiResponseBase<>)obj)._002Ector();
+				obj = ((TaskAwaiter*)1)->IsCompleted;
+				obj2 = 6;
 				break;
 			case 6:
 				obj = 0;
-				if (1 == 0)
+				obj2 = 1;
+				if (AssemblyHelper.Name__BackingField == null)
 				{
 					obj2 = 0;
 				}
@@ -248,7 +234,8 @@ public static class DirectoryHelper
 				return;
 			case 11:
 				obj++;
-				if (3 != 0)
+				obj2 = 3;
+				if (AssemblyHelper.Directory__BackingField != null)
 				{
 					obj2 = 8;
 				}
@@ -256,8 +243,9 @@ public static class DirectoryHelper
 			case 17:
 				return;
 			case 15:
-				obj = P_0;
-				if (false)
+				obj = new IAsyncStateMachine((IAsyncStateMachine)P_0);
+				obj2 = 0;
+				if (((BiDictionary<, >)(object)BiDictionary<, >._forward)._reverse != null)
 				{
 					obj2 = 0;
 				}
@@ -271,39 +259,43 @@ public static class DirectoryHelper
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00ꄀ(object P_0, object P_1)
+	internal unsafe static void _FF00ꄀ(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_006a: Expected I4, but got Obj
-		//IL_010d: Expected Obj, but got I4
-		//IL_008f: Expected Obj, but got I4
-		//IL_01cd: Unknown result type (might be due to invalid IL or missing references)
-		//IL_01d0: Expected Obj, but got Unknown
-		//IL_00fd: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0100: Expected Obj, but got Unknown
-		//IL_0117->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01b1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_009b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00d3->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0158->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_01da->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_010a->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008b->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_01ea->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00e2->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_01ca->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00a6->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00fa->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b9->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0163->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_01f5->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0198->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_012e->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00ed->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00c4->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01a3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0139->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0077: Expected I4, but got Obj
+		//IL_0156: Expected Obj, but got I4
+		//IL_0216: Expected VT, but got Obj
+		//IL_00a8: Expected Obj, but got I4
+		//IL_00b2: Expected native int or pointer, but got Obj
+		//IL_00cd: Expected I4, but got Obj
+		//IL_024a: Unknown result type (might be due to invalid IL or missing references)
+		//IL_024d: Expected Obj, but got Unknown
+		//IL_0146: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0149: Expected Obj, but got Unknown
+		//IL_025d: Expected I4, but got Obj
+		//IL_0113: Expected Obj, but got I4
+		//IL_023c->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0160->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0222->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00bc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_010c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0257->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0153->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0273->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0127->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0247->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00c7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0143->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_027e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0205->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_017f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0132->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00f1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0210->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_018a->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 7;
@@ -313,38 +305,43 @@ public static class DirectoryHelper
 			switch ((int)obj2)
 			{
 			case 11:
-				obj = ((object[])obj)[obj];
-				obj = obj;
-				_ = 10;
-				continue;
+				_ = ((object[])obj)[obj];
+				/*Error near IL_0082: Member reference must be method, but was: Field*/;
 			case 17:
 				return;
 			case 5:
 				obj = 0;
-				if (false)
+				obj2 = 0;
+				if (((ApiResponseBase<>._003CThen_003Ed__10*)(nint)ApiResponseBase<>._003CThen_003Ed__10.task)->_003C_003E4__this != null)
 				{
 					obj2 = 0;
 				}
 				continue;
 			case 7:
-				if (P_0 == null)
+				((ApiResponseBase<_00210>)/*Error near IL_00cd: Stack underflow*/).Code = (int)P_0;
+				if ((int)/*Error near IL_00d2: Stack underflow*/ == 0)
 				{
-					if (5 != 0)
+					obj2 = 5;
+					if (((ErrorResponse)ErrorResponse.Type__BackingField).Title__BackingField != null)
 					{
 						obj2 = 6;
 					}
 				}
 				else
 				{
-					_ = 2;
+					((ApiResponseBase<>)/*Error near IL_0139: Stack underflow*/).Msg = (string)P_0;
+					obj2 = 2;
 				}
 				continue;
 			case 6:
-				_ = 16;
+				((ApiResponse<>)/*Error near IL_00f6: Stack underflow*/).Data = (T?)/*Error near IL_00f6: Stack underflow*/;
+				((ILogger)/*Error near IL_0102: Stack underflow*/).Warning<string>((Exception)(object)((ApiResponse<>)/*Error near IL_00fb: Stack underflow*/).SetData((T)/*Error near IL_00fb: Stack underflow*/), (string)P_0, (string)P_1);
+				obj2 = 16;
 				continue;
 			case 15:
-				_ = 0;
-				if (4 != 0)
+				_ = ((ApiResponseBase<>)0).Code;
+				_ = 4;
+				if (ErrorResponse._003C_003Ec._003C_003E9__22_0 != null)
 				{
 					_ = 3;
 				}
@@ -362,7 +359,8 @@ public static class DirectoryHelper
 			default:
 				if ((nint)obj >= ((Array)obj).Length)
 				{
-					if (5 != 0)
+					obj2 = 5;
+					if (LocalizationManager.CultureChanged != null)
 					{
 						obj2 = 17;
 					}
@@ -371,19 +369,18 @@ public static class DirectoryHelper
 				goto case 11;
 			case 1:
 			case 8:
-				obj = ((object[])obj)[obj];
-				obj = obj;
-				_ = 1;
-				if (9 != 0)
-				{
-					_ = 9;
-				}
-				continue;
+			{
+				object obj3 = ((object[])obj)[obj];
+				((IAsyncStateMachine)obj3).MoveNext();
+				obj = obj3;
+				/*Error near IL_019a: Member reference must be method, but was: Field*/;
+			}
 			case 13:
 			case 18:
 				if ((nint)obj < ((Array)obj).Length)
 				{
-					if (true)
+					obj2 = 1;
+					if (AssemblyHelper.Path__BackingField != null)
 					{
 						obj2 = 1;
 					}
@@ -391,14 +388,16 @@ public static class DirectoryHelper
 				}
 				break;
 			case 4:
-				obj = P_0;
+				((AsyncTaskMethodBuilder<_00210>*)/*Error near IL_0216: Stack underflow*/)->SetResult((_00210)P_0);
+				obj = (object)/*Error near IL_0218: Stack underflow*/;
 				obj2 = 3;
 				continue;
 			case 2:
-				obj2 = P_1;
-				if (15 == 0)
+				ApiResponseBase<>._003CThen_003Ed__10.CheckOrderedMap();
+				_ = 15;
+				if (((BiDictionary<, >)(object)BiDictionary<, >._forward)._reverse == null)
 				{
-					obj2 = 13;
+					_ = 13;
 				}
 				continue;
 			case 9:
@@ -408,8 +407,10 @@ public static class DirectoryHelper
 			case 12:
 				break;
 			}
-			obj = P_0;
-			if (5 != 0)
+			((List<string>)/*Error near IL_025d: Stack underflow*/)._002Ector((int)P_0);
+			obj = (object)/*Error near IL_025f: Stack underflow*/;
+			obj2 = 5;
+			if (ConfigHelper.CheckIsolatedTester != null)
 			{
 				obj2 = 4;
 			}
@@ -427,23 +428,25 @@ public static class DirectoryHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00ꌀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static void _FF00ꔀ(object P_0, byte P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0059->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0085->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_006c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0077->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0070: Expected VT, but got Obj
+		//IL_00ae->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0089->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0059->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0094->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 2;
@@ -464,20 +467,22 @@ public static class DirectoryHelper
 				}
 				goto case 3;
 			case 3:
-				obj2 = 4;
-				break;
+				/*Error near IL_005a: Member reference must be method, but was: Field*/;
 			case 2:
-				if (P_0 != null)
+				((ApiResponse<_00210>)/*Error near IL_0070: Stack underflow*/).Data = (_00210?)P_0;
+				if ((int)/*Error near IL_0075: Stack underflow*/ != 0)
 				{
 					return;
 				}
-				if (1 == 0)
+				obj2 = 1;
+				if (((ApiResponseBase<>._003CThen_003Ed__10)ApiResponseBase<>._003CThen_003Ed__10._003C_003Et__builder).task == null)
 				{
 					obj2 = 1;
 				}
 				break;
 			case 5:
-				_ = 3;
+				((ILogger)ApiResponse.Create()).Warning<string>((string)(object)ApiResponse.Create<T>(), (string)P_0);
+				obj2 = 3;
 				break;
 			case 4:
 				return;
@@ -527,14 +532,13 @@ public static class DirectoryHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static void _FF00ꨀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_007b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0086->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0051->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0098: Expected Obj, but got I4
+		//IL_00ac->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b7->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 3;
@@ -544,31 +548,17 @@ public static class DirectoryHelper
 			switch ((int)obj2)
 			{
 			case 3:
-				if (P_0 == null)
-				{
-					if (true)
-					{
-						obj2 = 2;
-					}
-					break;
-				}
-				obj2 = P_0;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
+				/*Error near IL_0041: Member reference must be method, but was: Field*/;
 			case 2:
 				return;
 			case 1:
 				return;
-			default:
-				_ = 1;
-				if (true)
-				{
-					_ = 0;
-				}
-				break;
+			}
+			((ApiResponseBase<_00210>)P_0).Msg = (string)1;
+			obj2 = 1;
+			if (((ErrorResponse)ErrorResponse.Title__BackingField).Status__BackingField != 0)
+			{
+				obj2 = 0;
 			}
 		}
 	}

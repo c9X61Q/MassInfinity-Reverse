@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -237,11 +238,11 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00븀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (DesktopAuthentication._003CuserId_003EP == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -255,11 +256,14 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static uint _FF00_FF00_FF00_FF00_FF00쀀(object P_0, uint P_1, uint P_2)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_001e: Expected I4, but got VT
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		_ = 0;
-		return P_2;
+		return (uint)(int)((_003C_003Ef__AnonymousType0<, >)P_2).buy_type;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -281,11 +285,14 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static uint _FF00_FF00_FF00_FF00_FF00쌀(uint P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0047->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0052->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0049: Expected VT, but got I4
+		//IL_0049: Expected VT, but got I4
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006f->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -295,14 +302,15 @@ public class Crc32 : HashAlgorithm
 			switch ((int)obj2)
 			{
 			default:
-				throw /*Error near IL_002d: Stack underflow*/;
+				throw new EqualityComparer<_00211>();
 			case 1:
 				if (P_1 != null)
 				{
-					_ = 0;
-					return (uint)((Array)P_1).Length;
+					((_003C_003Ef__AnonymousType0<, >)P_1)._002Ector((_003Corderid_003Ej__TPar)0, (_003Cbuy_type_003Ej__TPar)((Array)P_1).Length);
+					return P_0;
 				}
-				if (false)
+				obj2 = 0;
+				if (((DesktopAuthentication)DesktopAuthentication._003CgameVersion_003EP)._003CserverId_003EP != null)
 				{
 					obj2 = 0;
 				}
@@ -314,15 +322,19 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static uint _FF00_FF00_FF00_FF00_FF00였(uint P_0, object P_1, uint P_2, uint P_3)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003e: Expected I4, but got Obj
-		//IL_0094->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00b0->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0053->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_009f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0072->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_007d->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004b: Expected I4, but got Obj
+		//IL_007f: Expected VT, but got I4
+		//IL_0074: Expected Obj, but got I4
+		//IL_0074: Expected Obj, but got I4
+		//IL_00c5->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0060->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d0->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a6->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 7;
@@ -339,7 +351,8 @@ public class Crc32 : HashAlgorithm
 				}
 				if ((int)P_2 < 0)
 				{
-					if (5 == 0)
+					obj2 = 5;
+					if (DesktopAuthentication.TokenKey == null)
 					{
 						obj2 = 3;
 					}
@@ -349,15 +362,16 @@ public class Crc32 : HashAlgorithm
 			case 3:
 			case 4:
 			case 5:
-				throw /*Error near IL_0056: Stack underflow*/;
+				throw new EqualityComparer<_00211>((_00211?)/*Error near IL_006a: Stack underflow*/, (_00211?)((_003C_003Ef__AnonymousType0<, >)/*Error near IL_0065: Stack underflow*/).buy_type);
 			case 1:
-				return P_3;
+				return ((_003C_003Ef__AnonymousType0<, >)P_2).Equals(P_3) ? 1u : 0u;
 			case 6:
-				throw /*Error near IL_005f: Stack underflow*/;
+				throw new EqualityComparer<_00210>((_00210)((_003C_003Ef__AnonymousType0<, >)/*Error near IL_007a: Stack underflow*/).GetHashCode());
 			default:
 				if ((int)(P_2 + P_3) <= ((Array)P_1).Length)
 				{
-					if (0 == 0)
+					obj2 = 0;
+					if (((DesktopAuthentication)DesktopAuthentication._client)._connected == 0)
 					{
 						obj2 = 1;
 					}
@@ -394,11 +408,13 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00쨀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0073->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_007e->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0057: Expected Obj, but got I4
+		//IL_00a0->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ab->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 2;
@@ -408,15 +424,17 @@ public class Crc32 : HashAlgorithm
 			switch ((int)obj2)
 			{
 			default:
-				throw /*Error near IL_0033: Stack underflow*/;
+				((_003C_003Ef__AnonymousType0<, >)/*Error near IL_0046: Stack underflow*/)._002Ector((_003Corderid_003Ej__TPar)/*Error near IL_0046: Stack underflow*/, ((_003C_003Ef__AnonymousType0<, >)/*Error near IL_0041: Stack underflow*/).buy_type);
+				throw new EqualityComparer<_00210>();
 			case 1:
 				_ = 0;
 				_ = 0;
-				return (((Array)P_0).Length == 558161692) ? ((byte)1) : ((byte)0);
+				return (((_003C_003Ef__AnonymousType0<, >)((Array)P_0).Length).GetHashCode() == 558161692) ? ((byte)1) : ((byte)0);
 			case 2:
 				if (((Array)P_0).Length >= 4)
 				{
-					if (1 == 0)
+					obj2 = 1;
+					if (((DesktopAuthentication)(object)DesktopAuthentication.TokenKey)._client == null)
 					{
 						obj2 = 1;
 					}
@@ -438,11 +456,14 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static uint _FF00_FF00_FF00_FF00_FF00찀(uint P_0, object P_1, uint P_2, uint P_3)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_004a: Expected VT, but got I4
+		//IL_004a: Expected VT, but got I4
+		//IL_0068->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0073->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 2;
@@ -452,13 +473,16 @@ public class Crc32 : HashAlgorithm
 			switch ((int)obj2)
 			{
 			default:
-				return P_3;
+				_ = DesktopAuthentication._003CuserId_003EP;
+				((_003C_003Ef__AnonymousType0<, >)P_1)._002Ector((_003Corderid_003Ej__TPar)P_2, (_003Cbuy_type_003Ej__TPar)P_3);
+				return P_0;
 			case 1:
 				return P_0;
 			case 2:
 				if ((int)P_3 <= 0)
 				{
-					if (1 == 0)
+					obj2 = 1;
+					if (((DesktopAuthentication)DesktopAuthentication._003CgameVersion_003EP)._003CserverId_003EP == null)
 					{
 						obj2 = 1;
 					}
@@ -480,23 +504,25 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static uint _FF00_FF00_FF00_FF00_FF00케(object P_0, uint P_1, uint P_2)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0042: Expected I4, but got Obj
-		//IL_00b1: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00ec: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0076: Expected Obj, but got I4
-		//IL_00c6: Expected I4, but got Obj
-		//IL_00ca: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0067: Expected Obj, but got I4
-		//IL_00c3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00fe->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0091->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0080->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00dd->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0071->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_005c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00e8->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004f: Expected I4, but got Obj
+		//IL_00d6: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0119: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0093: Expected Obj, but got I4
+		//IL_00eb: Expected I4, but got Obj
+		//IL_00ef: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0082: Expected Obj, but got I4
+		//IL_0084: Expected Obj, but got I4
+		//IL_00e8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_012b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ae->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_010a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008e->IL0026: Incompatible stack heights: 4 vs 1
+		//IL_0069->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0115->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 6;
@@ -513,10 +539,11 @@ public class Crc32 : HashAlgorithm
 				}
 				goto default;
 			default:
-				throw /*Error near IL_0060: Stack underflow*/;
+				((_003C_003Ef__AnonymousType0<, >)/*Error near IL_0073: Stack underflow*/)._002Ector((_003Corderid_003Ej__TPar)/*Error near IL_0073: Stack underflow*/, ((_003C_003Ef__AnonymousType0<, >)/*Error near IL_006e: Stack underflow*/).buy_type);
+				throw new EqualityComparer<_00210>();
 			case 5:
 				_ = 0;
-				obj = P_2;
+				obj = ((_003C_003Ef__AnonymousType0<, >)P_2).GetHashCode();
 				_ = 4;
 				break;
 			case 4:
@@ -535,7 +562,8 @@ public class Crc32 : HashAlgorithm
 				return (uint)(int)obj;
 			case 8:
 				((sbyte[])P_0)[obj + 1] = (sbyte)(byte)(obj >> 8);
-				if (true)
+				obj2 = 1;
+				if (((DesktopAuthentication)(object)DesktopAuthentication.TokenKey)._client != null)
 				{
 					obj2 = 0;
 				}
@@ -559,12 +587,13 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static uint _FF00_FF00_FF00_FF00_FF00턀(object P_0)
 	{
-		//IL_000b: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001c: Expected I4, but got VT
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		_ = 0;
-		return (uint)(int)P_0;
+		return (uint)(int)((_003C_003Ef__AnonymousType0<, >)P_0).buy_type;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -578,26 +607,36 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	protected void _FF00_FF00_FF00_FF00_FF00팀(object P_0, uint P_1, uint P_2)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003f->IL0019: Incompatible stack heights: 5 vs 1
-		//IL_004a->IL0019: Incompatible stack heights: 5 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0047: Expected VT, but got I4
+		//IL_0047: Expected VT, but got I4
+		//IL_0060->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006b->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+			{
+				object obj3 = ((DesktopAuthentication)(object)this)._003CuserId_003EP;
+				((_003C_003Ef__AnonymousType0<, >)P_0)._002Ector((_003Corderid_003Ej__TPar)P_1, (_003Cbuy_type_003Ej__TPar)P_2);
+				((DesktopAuthentication)(object)this)._003CgameVersion_003EP = obj3;
+				obj2 = 0;
+				if (DesktopAuthentication.Crc32 == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
+			}
 			case 0:
 				return;
 			}
@@ -615,11 +654,14 @@ public class Crc32 : HashAlgorithm
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static uint _FF00_FF00_FF00_FF00_FF00픀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0044->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004f->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_00a4: Expected Obj, but got I4
+		//IL_00a4: Expected Obj, but got I4
+		//IL_0059->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -631,7 +673,8 @@ public class Crc32 : HashAlgorithm
 			case 1:
 				if (((Array)P_0).Length >= 4)
 				{
-					if (0 == 0)
+					obj2 = 0;
+					if (((DesktopAuthentication)DesktopAuthentication._003CuserId_003EP)._003CuserToken_003EP == null)
 					{
 						obj2 = 0;
 					}
@@ -639,10 +682,12 @@ public class Crc32 : HashAlgorithm
 				}
 				goto case 2;
 			case 2:
-				throw /*Error near IL_006f: Stack underflow*/;
+				((_003C_003Ef__AnonymousType0<, >)/*Error near IL_008d: Stack underflow*/).ToString();
+				_003C_003Ef__AnonymousType0<, >.ControlDriver();
+				throw new object();
 			default:
-				_ = 0;
-				return (uint)(((Array)P_0).Length - 4);
+				((DesktopAuthentication)/*Error near IL_00a4: Stack underflow*/)._002Ector((string)/*Error near IL_00a4: Stack underflow*/, (string)P_0, (string)0, (string)(((Array)P_0).Length - 4));
+				return (uint)/*Error near IL_00a5: Stack underflow*/;
 			}
 		}
 	}

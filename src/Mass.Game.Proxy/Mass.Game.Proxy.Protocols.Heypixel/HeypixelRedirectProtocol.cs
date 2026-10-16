@@ -1,6 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
+using DotNetty.Transport.Channels;
 using Mass.Application.Event;
 using Mass.Game.Proxy.Minecraft;
 using Mass.Game.Proxy.Minecraft.Events;
@@ -80,11 +84,14 @@ public class HeypixelRedirectProtocol : Protocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public HeypixelRedirectProtocol()
+	public unsafe HeypixelRedirectProtocol()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected Obj, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
+		((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)this);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -110,24 +117,30 @@ public class HeypixelRedirectProtocol : Protocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void 礀(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got I4
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -139,26 +152,32 @@ public class HeypixelRedirectProtocol : Protocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void 稀(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got I4
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -176,11 +195,12 @@ public class HeypixelRedirectProtocol : Protocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte 簀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -200,29 +220,42 @@ public class HeypixelRedirectProtocol : Protocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 缀(object P_0)
+	internal unsafe void 缀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got I4
+		//IL_003f: Expected VT, but got Obj
+		//IL_0044: Expected VT, but got Obj
+		//IL_0044: Expected Obj, but got Ref
+		//IL_0058->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0058->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0063->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0063->IL0026: Incompatible stack types: I4 vs Ref
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				_ = 1;
-				if (false)
+			{
+				int hashCode = ((EqualityComparer<_00210>)Unsafe.AsPointer(ref reference)).GetHashCode((_00210)new EqualityComparer<_00210>((_00210?)P_0, (_00210?)1));
+				obj2 = 0;
+				reference = ref *(_003Caction_003Ej__TPar*)hashCode;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 				{
-					_ = 0;
+					obj2 = 0;
+					reference = ref *(_003Caction_003Ej__TPar*)hashCode;
 				}
 				break;
+			}
 			case 0:
 				return;
 			}
@@ -240,11 +273,12 @@ public class HeypixelRedirectProtocol : Protocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte 脀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -266,20 +300,23 @@ public class HeypixelRedirectProtocol : Protocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object 萀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte 蔀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -291,47 +328,60 @@ public class HeypixelRedirectProtocol : Protocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 蠀(object P_0)
+	internal unsafe void 蠀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_006d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00bc->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0089->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_009c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0053->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0078->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_005e->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_004e: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got Ref
+		//IL_0058: Expected Obj, but got VT
+		//IL_00b3: Expected VT, but got Obj
+		//IL_00b3: Expected VT, but got Obj
+		//IL_00b3: Expected Obj, but got Ref
+		//IL_00b8: Expected Obj, but got I4
+		//IL_0073: Expected Obj, but got VT
+		//IL_009e->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_0109->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c2->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00dd->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0078->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00a9->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_00e8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0083->IL0026: Incompatible stack heights: 1 vs 2
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 4;
 		object obj2 = obj;
 		while (true)
 		{
-			object obj3;
 			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 3:
-				obj3 = this;
-				if (obj3 == null)
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref reference))._002Ector((_003Caction_003Ej__TPar)this);
+				if (((_003C_003Ef__AnonymousType0<>)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter).ToString() == null)
 				{
-					if (1 == 0)
+					_ = 1;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 					{
-						obj2 = 1;
+						_ = 1;
 					}
-					continue;
+					break;
 				}
-				break;
+				_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
+				/*Error near IL_00f3: Member reference must be method, but was: Field*/;
 			case 4:
-				if (3 == 0)
+				_ = ((_003C_003Ef__AnonymousType1<, , >)P_0).name;
+				_ = 3;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field == 0)
 				{
 					_ = 1;
 				}
-				continue;
+				break;
 			case 5:
 				return;
 			case 0:
@@ -339,19 +389,22 @@ public class HeypixelRedirectProtocol : Protocol
 			case 2:
 				if (obj != null)
 				{
-					_ = 5;
+					bool flag = ((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_00b8: Stack underflow*/).Equals((object)((EqualityComparer<_00212>)Unsafe.AsPointer(ref reference)).Equals((_00212?)this, (_00212?)obj));
+					obj2 = 5;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+					break;
 				}
-				else if (false)
+				obj2 = 0;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate != null)
 				{
 					obj2 = 0;
 				}
-				continue;
+				break;
 			case 1:
-				obj3 = null;
+				obj = ((null is ChannelHandlerAdapter) ? null : null);
+				obj2 = 2;
 				break;
 			}
-			obj = obj3;
-			obj2 = 2;
 		}
 	}
 
@@ -372,16 +425,18 @@ public class HeypixelRedirectProtocol : Protocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 謀(object P_0)
+	internal unsafe void 謀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_0067->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0084->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0072->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0054->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003f: Expected I4, but got Obj
+		//IL_004c: Expected VT, but got Obj
+		//IL_004c: Expected Obj, but got Ref
+		//IL_0066->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0066->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0071->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0071->IL0026: Incompatible stack types: I4 vs Ref
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -397,26 +452,20 @@ public class HeypixelRedirectProtocol : Protocol
 			case 0:
 				return;
 			case 4:
-				if (2 != 0)
+			{
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref reference))._002Ector((_003Caction_003Ej__TPar)this);
+				bool flag = ((_003C_003Ef__AnonymousType0<>)/*Error near IL_0052: Stack underflow*/).Equals(P_0);
+				obj2 = 2;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 				{
-					_ = 3;
+					obj2 = 3;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 				}
 				break;
+			}
 			case 2:
-				if (P_0 != null)
-				{
-					if (1 == 0)
-					{
-						obj2 = 1;
-					}
-					break;
-				}
-				if (this == null)
-				{
-					return;
-				}
-				obj2 = 4;
-				break;
+				/*Error near IL_0072: Member reference must be method, but was: Field*/;
 			case 1:
 				return;
 			}
@@ -426,68 +475,51 @@ public class HeypixelRedirectProtocol : Protocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void 谀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_005e: Expected I4, but got Obj
-		//IL_0166->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0149->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0049->IL004d: Incompatible stack heights: 1 vs 3
-		//IL_0171->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0154->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_005e->IL007f: Incompatible stack heights: 2 vs 0
-		//IL_009f->IL004d: Incompatible stack types: I4 vs Obj
-		//IL_0063->IL007f: Incompatible stack heights: 2 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 3;
-		object obj2 = obj;
-		while (true)
-		{
-			object obj3;
-			switch ((int)obj2)
-			{
-			default:
-				if (obj == null)
-				{
-					_ = 2;
-					goto IL_004d;
-				}
-				goto IL_007f;
-			case 3:
-				obj = P_0;
-				if (0 == 0)
-				{
-					obj2 = 2;
-				}
-				break;
-			case 2:
-				obj = obj;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-			case 1:
-				return;
-				IL_004d:
-				switch ((int)obj3)
-				{
-				case 2:
-					return;
-				case 1:
-					return;
-				}
-				goto IL_007f;
-				IL_007f:
-				obj3 = obj;
-				if (true)
-				{
-					obj3 = 0;
-				}
-				goto IL_004d;
-			}
-		}
+		// ILSpy could not decompile this. Please report the exception below,
+		// along with the assembly it came from, at https://github.com/icsharpcode/ILSpy/issues/new
+		// System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+		//    at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+		//    at System.Linq.Enumerable.Skip[TSource](IEnumerable`1 source, Int32 count)
+		//    at ICSharpCode.Decompiler.CSharp.ArgumentList.GetArgumentResolveResultsDirect(Int32 skipCount) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 124
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Probe() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 493
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Run() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 438
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.ForMethodReference(ExpressionBuilder expressionBuilder, IMethod method, IType targetType, TranslatedExpression target, Boolean requireTarget, ExpectedTargetDetails expectedTargetDetails, Boolean isExtensionMethodReference, Boolean castTargetUpFront) in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 131
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.DisambiguateDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1718
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1648
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildMethodReference(IMethod method, Boolean isVirtual) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1639
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitLdFtn(LdFtn inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 5058
+		//    at ICSharpCode.Decompiler.IL.LdFtn.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 3175
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitConv(Conv inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 2307
+		//    at ICSharpCode.Decompiler.IL.Conv.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2298
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildArgumentList(ExpectedTargetDetails expectedTargetDetails, ResolveResult target, IMethod method, Int32 firstParamIndex, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, Boolean writtenAsAssignment) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1070
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(OpCode callOpCode, IMethod method, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, IType constrainedTo) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 461
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(CallInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 255
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitCall(Call inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 2530
+		//    at ICSharpCode.Decompiler.IL.Call.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2192
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Default(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 93
+		//    at ICSharpCode.Decompiler.IL.ILVisitor`1.VisitCall(Call inst) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 7663
+		//    at ICSharpCode.Decompiler.IL.Call.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2188
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.TranslateSwitch(BlockContainer switchContainer, SwitchInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 307
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1334
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1338
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertAsBlock(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 87
+		//    at ICSharpCode.Decompiler.CSharp.CSharpDecompiler.DecompileBody(IMethod method, EntityDeclaration entityDecl, DecompileRun decompileRun, ITypeResolveContext decompilationContext, ExtensionInfo extensionInfo) in /_/ICSharpCode.Decompiler/CSharp/CSharpDecompiler.cs:line 2435
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -507,54 +539,68 @@ public class HeypixelRedirectProtocol : Protocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 退(EventPacket<ClientboundJoinGamePacket> P_0)
+	internal unsafe void 退(EventPacket<ClientboundJoinGamePacket> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003a: Expected I4, but got Obj
-		//IL_006c->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_005f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00a4->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00be->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0050->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0047: Expected I4, but got Obj
+		//IL_006d: Expected Obj, but got Ref
+		//IL_00b9: Expected Obj, but got VT
+		//IL_00be: Expected VT, but got Ref
+		//IL_00f7: Expected Obj, but got VT
+		//IL_0052: Expected VT, but got Obj
+		//IL_0052: Expected Obj, but got Ref
+		//IL_0089->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_0078->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00d2->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00fc->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_0057->IL00dd: Incompatible stack heights: 0 vs 1
+		//IL_00dd->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0107->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_0061->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 6;
-		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj2)
+			switch ((int)obj)
 			{
 			case 6:
-				if (this != null)
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)this);
+				if ((int)/*Error near IL_0057: Stack underflow*/ != 0)
 				{
-					obj2 = 5;
+					_ = 5;
 					continue;
 				}
 				break;
 			case 1:
-				obj2 = 2;
+				string.Format((IFormatProvider?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (string)(object)this, (object?[])new { });
+				_ = 2;
 				continue;
 			default:
 				_ = 1;
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
 				_ = 4;
 				continue;
 			case 4:
 				return;
 			case 2:
-				obj2 = this;
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_00be: Stack underflow*/)._002Ector((_003Cname_003Ej__TPar)/*Error near IL_00be: Stack underflow*/, (_003Cuuid_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), ((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType1<, , >)(object)this).uuid).user_id);
+				_ = 0;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance == null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				continue;
 			case 3:
 				break;
 			}
-			obj2 = this;
-			if (1 == 0)
+			((_003C_003Ef__AnonymousType1<, , >)(object)this).ToString();
+			_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
+			_ = 1;
+			if (!_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout)
 			{
-				obj2 = 1;
+				_ = 1;
 			}
 		}
 	}

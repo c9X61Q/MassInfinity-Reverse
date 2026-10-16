@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using Mass.Game.Proxy.Enums;
 using Mass.Game.Proxy.Minecraft;
 using Mass.Game.Proxy.Network.Packet;
@@ -15,19 +17,21 @@ public class ServerboundPingRequestPacket : PingPacket
 	internal static ServerboundPingRequestPacket ControlConverter;
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ServerboundPingRequestPacket(EnumProtocolVersion version)
+	public unsafe ServerboundPingRequestPacket(EnumProtocolVersion version)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got I4
+		//IL_0026: Expected Obj, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		ServerboundPingRequestPacket serverboundPingRequestPacket = this;
-		if (false)
+		((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)version;
+		((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals(this);
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 		{
-			serverboundPingRequestPacket = (ServerboundPingRequestPacket)0;
+			num = 0;
 		}
-		switch ((int)serverboundPingRequestPacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -63,10 +67,12 @@ public class ServerboundPingRequestPacket : PingPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_0C00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -80,11 +86,12 @@ public class ServerboundPingRequestPacket : PingPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_0E00()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -98,11 +105,14 @@ public class ServerboundPingRequestPacket : PingPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte _FF00_FF00_FF00က(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0040->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_004b->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0046: Expected Obj, but got VT
+		//IL_0060: Expected Obj, but got VT
+		//IL_0065->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_0070->IL0026: Incompatible stack heights: 5 vs 2
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -112,7 +122,10 @@ public class ServerboundPingRequestPacket : PingPacket
 			{
 			case 1:
 				_ = 1;
-				if (false)
+				((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field).Equals(this);
+				((_003C_003Ef__AnonymousType0<>)new { }).ToString();
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field != 0)
 				{
 					_ = 0;
 				}

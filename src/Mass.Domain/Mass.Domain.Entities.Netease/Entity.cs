@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
+using Mass.Domain.Value;
 
 namespace Mass.Domain.Entities.Netease;
 
@@ -12,8 +14,8 @@ public class Entity<T> : EntityResponse
 		[CompilerGenerated]
 		get
 		{
-			//IL_000a: Expected VT, but got Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0017: Expected VT, but got Obj
+			if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 			{
 			}
 			return (T?)this;
@@ -22,7 +24,7 @@ public class Entity<T> : EntityResponse
 		[CompilerGenerated]
 		set
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+			if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key != null)
 			{
 			}
 		}
@@ -31,8 +33,10 @@ public class Entity<T> : EntityResponse
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public Entity()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_001a: Expected I4, but got Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
+		((BoolValue)/*Error near IL_001a: Stack underflow*/).Value = (byte)(int)this != 0;
 	}
 }

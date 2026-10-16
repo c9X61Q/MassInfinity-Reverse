@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
 using DotNetty.Buffers;
+using Mass.Application.Models;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Bedrock.Proxy.Network;
 
@@ -42,12 +46,13 @@ public static class Triad
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00케()
+	internal unsafe static object _FF00_FF00_FF00케()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityLaunchBedrockProxy.Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -67,25 +72,29 @@ public static class Triad
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00툀()
+	internal unsafe static byte _FF00_FF00_FF00툀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityLaunchBedrockProxy.Name__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00픀(object P_0, uint P_1)
+	internal unsafe static void _FF00_FF00_FF00픀(object P_0, uint P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0059->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0095->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00ca->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b5->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0067->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b7->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0072->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c2->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00ef->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_010f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00fa->IL0026: Incompatible stack heights: 3 vs 1
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 5;
@@ -95,9 +104,9 @@ public static class Triad
 			switch ((int)obj2)
 			{
 			default:
-				obj2 = P_0;
-				_ = (byte)(P_1 >> 8);
-				if (3 == 0)
+				((StringBuilder)P_0).Append((char)(byte)(P_1 >> 8));
+				obj2 = 3;
+				if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.ServerAddress__BackingField).ServerPort__BackingField == 0)
 				{
 					obj2 = 3;
 				}
@@ -105,21 +114,24 @@ public static class Triad
 			case 1:
 				return;
 			case 3:
-				obj2 = P_0;
 				_ = (byte)(P_1 >> 16);
-				if (1 == 0)
+				_ = EqualityComparer<Type>.Default;
+				_ = 1;
+				if (((BedrockProxy)(object)BedrockProxy.GameId).GameType == 0)
 				{
-					obj2 = 1;
+					_ = 1;
 				}
 				break;
 			case 2:
-				throw /*Error near IL_0099: Stack underflow*/;
+				((EntityLaunchBedrockProxy)/*Error near IL_00c7: Stack underflow*/).Name = (string)/*Error near IL_00c7: Stack underflow*/;
+				throw new EqualityComparer<string>(((EntityLaunchBedrockProxy)/*Error near IL_00cc: Stack underflow*/).ServerAddress);
 			case 4:
-				obj2 = P_0;
 				_ = (byte)P_1;
-				if (0 == 0)
+				_ = EqualityComparer<EnumGameType>.Default;
+				_ = 0;
+				if (((BedrockProxy)BedrockProxy.Listener__BackingField).EndPoints__BackingField == null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 5:
@@ -142,15 +154,21 @@ public static class Triad
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static uint _FF00_FF00_FF00휀(object P_0)
+	internal unsafe static uint _FF00_FF00_FF00휀(object P_0)
 	{
-		//IL_001d: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected I4, but got Obj
+		//IL_002e: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0034: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0036: Expected I4, but got Unknown
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		object obj = P_0;
-		obj = P_0;
-		return (uint)((object)(P_0 | (object)(obj << 8)) | (object)(obj << 16));
+		StringBuilder stringBuilder = ((StringBuilder)/*Error near IL_001a: Stack underflow*/).Append((char)(int)P_0);
+		((StringBuilder)P_0)._002Ector();
+		object obj = stringBuilder;
+		obj = P_0.ToString();
+		return (uint)(/*Error near IL_002f: Stack underflow*/ | (obj << 8) | (obj << 16));
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

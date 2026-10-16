@@ -77,179 +77,10 @@ public class NeteaseMgbSdk
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private unsafe sealed void _FF00鐀()
+		private sealed void _FF00鐀()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_003f: Expected Obj, but got Ref
-			//IL_0292: Expected Obj, but got Ref
-			//IL_01ce: Expected Obj, but got Ref
-			//IL_01b3: Expected Obj, but got I4
-			//IL_00bd: Expected Obj, but got I4
-			//IL_0102: Expected Obj, but got I4
-			//IL_0131: Expected Obj, but got I4
-			//IL_0282->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_029c->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_0267->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_028d->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_01d8->IL006c: Incompatible stack types: I4 vs Ref
-			//IL_0068->IL006c: Incompatible stack types: I4 vs Ref
-			//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_0272->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_017f->IL006c: Incompatible stack heights: 3 vs 1
-			//IL_010f->IL006c: Incompatible stack heights: 2 vs 1
-			//IL_0157->IL006c: Incompatible stack types: I4 vs Ref
-			//IL_013e->IL006c: Incompatible stack heights: 2 vs 1
-			//IL_01ab->IL006c: Incompatible stack heights: 6 vs 1
-			//IL_01ca->IL006c: Incompatible stack types: I4 vs Ref
-			//IL_006c->IL006c: Incompatible stack heights: 4 vs 1
-			//IL_00fd->IL006c: Incompatible stack types: I4 vs Ref
-			//IL_00db->IL006c: Incompatible stack heights: 0 vs 1
-			//IL_0171->IL006c: Incompatible stack types: I4 vs Ref
-			//IL_012c->IL006c: Incompatible stack types: I4 vs Ref
-			//IL_011a->IL006c: Incompatible stack heights: 2 vs 1
-			//IL_0149->IL006c: Incompatible stack heights: 2 vs 1
-			//IL_00e6->IL006c: Incompatible stack types: I4 vs Ref
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 4;
-			object obj2 = obj;
-			while (true)
-			{
-				ref byte reference;
-				switch ((int)obj2)
-				{
-				case 3:
-					obj = (object)Unsafe.AsPointer(ref this);
-					if (0 == 0)
-					{
-						obj2 = 2;
-					}
-					break;
-				case 2:
-					if (obj != null)
-					{
-						reference = ref *(byte*)12;
-						goto IL_006c;
-					}
-					goto IL_01ca;
-				case 5:
-					if (0 == 0)
-					{
-						_ = 1;
-					}
-					break;
-				default:
-					goto IL_0272;
-				case 1:
-					return;
-				case 4:
-					{
-						obj = (object)Unsafe.AsPointer(ref this);
-						obj2 = 3;
-						break;
-					}
-					IL_0272:
-					_ = -2;
-					if (5 == 0)
-					{
-						_ = 5;
-					}
-					break;
-					IL_01ca:
-					obj = (object)Unsafe.AsPointer(ref this);
-					reference = ref *(byte*)4;
-					goto IL_006c;
-					IL_006c:
-					while (true)
-					{
-						switch ((uint)Unsafe.AsPointer(ref reference))
-						{
-						case 2u:
-							_ = ref obj;
-							obj = 13;
-							continue;
-						case 3u:
-							break;
-						case 10u:
-							throw obj;
-						case 6u:
-							obj = 0;
-							if (1 == 0)
-							{
-								_ = 1;
-							}
-							continue;
-						case 5u:
-							if (&obj == null)
-							{
-								reference = ref *(byte*)6;
-								continue;
-							}
-							goto default;
-						case 11u:
-							obj = -1;
-							if (false)
-							{
-								_ = 0;
-							}
-							continue;
-						case 9u:
-							obj = obj;
-							reference = ref *(byte*)8;
-							continue;
-						case 4u:
-							reference = ref Unsafe.As<_003CAuthSessionAsync_003Ed__11, byte>(ref this);
-							if (10 != 0)
-							{
-								reference = ref *(byte*)11;
-							}
-							continue;
-						case 1u:
-							_ = 2;
-							continue;
-						case 13u:
-							return;
-						case 12u:
-							_ = 1;
-							_ = null;
-							_ = ref obj;
-							obj = obj;
-							_ = 5;
-							continue;
-						default:
-							reference = ref *(byte*)(&obj);
-							obj = 1;
-							if (2 != 0)
-							{
-								reference = ref *(byte*)3;
-							}
-							continue;
-						case 7u:
-							goto end_IL_006c;
-						case 8u:
-							goto IL_0272;
-						}
-						if ((nint)obj != 200)
-						{
-							if (10 != 0)
-							{
-								reference = ref *(byte*)10;
-							}
-						}
-						else
-						{
-							reference = ref *(byte*)9;
-						}
-						continue;
-						end_IL_006c:
-						break;
-					}
-					goto IL_01ca;
-				}
-			}
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -271,30 +102,8 @@ public class NeteaseMgbSdk
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private sealed void _FF00需(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 1;
-			while (true)
-			{
-				switch ((int)obj)
-				{
-				default:
-					return;
-				case 0:
-					return;
-				case 1:
-					if (false)
-					{
-						_ = 0;
-					}
-					break;
-				}
-			}
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -316,20 +125,15 @@ public class NeteaseMgbSdk
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static byte _FF00騀()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static object _FF00鬀()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+			/*Error near IL_0006: Member reference must be method, but was: Field*/;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -387,29 +191,8 @@ public class NeteaseMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public NeteaseMgbSdk(bool isDesktop)
 	{
-		//IL_004e: Expected I4, but got Obj
-		//IL_0017->IL0018: Incompatible stack heights: 2 vs 3
-		//IL_003c->IL0045: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		if (isDesktop)
-		{
-			_ = null;
-		}
-		_ = null;
-		_ = null;
-		_ = 0;
-		NeteaseMgbSdk neteaseMgbSdk = this;
-		if (0 == 0)
-		{
-			neteaseMgbSdk = (NeteaseMgbSdk)0;
-		}
-		switch ((int)neteaseMgbSdk)
-		{
-		case 0:
-			break;
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -496,10 +279,8 @@ public class NeteaseMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00ᨀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -513,11 +294,8 @@ public class NeteaseMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00ᴀ()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -562,10 +340,8 @@ public class NeteaseMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00_FF00_FF00_2200()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -579,10 +355,8 @@ public class NeteaseMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00_FF00_FF00_2400()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -596,19 +370,15 @@ public class NeteaseMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_2600()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_2900()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

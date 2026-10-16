@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
+using Mass.Domain.Desktop.Models;
 using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Domain.Desktop.Entities;
@@ -62,20 +63,25 @@ public class EntityGetCppGameClientInfoDto
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public EntityGetCppGameClientInfoDto()
+	public unsafe EntityGetCppGameClientInfoDto()
 	{
-		//IL_004e: Expected I4, but got Obj
-		//IL_003c->IL0045: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_002a: Expected native int or pointer, but got Obj
+		//IL_003b: Expected I4, but got Obj
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		_ = 300000000;
-		EntityGetCppGameClientInfoDto entityGetCppGameClientInfoDto = this;
-		if (0 == 0)
+		((PageModel<>)/*Error near IL_001a: Stack underflow*/).Items = (T[])(object)this;
+		((EnumGameType*)(nint)/*Error near IL_001f: Stack underflow*/)->value__ = (int)/*Error near IL_001f: Stack underflow*/;
+		EnumGameType.None = (EnumGameType)300000000;
+		EnumGameType.NetGame = (EnumGameType)this;
+		((Guid*)/*Error near IL_0046: Stack underflow*/)->ToString((string?)(object)this);
+		int num = 0;
+		if (EnumGameType.LanGame == (EnumGameType)0)
 		{
-			entityGetCppGameClientInfoDto = (EntityGetCppGameClientInfoDto)0;
+			num = 0;
 		}
-		switch ((int)entityGetCppGameClientInfoDto)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -105,10 +111,12 @@ public class EntityGetCppGameClientInfoDto
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FF00攀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EnumGameClientType.cpp;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -122,11 +130,11 @@ public class EntityGetCppGameClientInfoDto
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00栀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return ((nint)2 == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -140,35 +148,44 @@ public class EntityGetCppGameClientInfoDto
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00樀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		//IL_001b: Expected Obj, but got I4
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		return EnumGameClientType.cpp;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00欀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected I4, but got Obj
+		//IL_003b: Expected native int or pointer, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				EnumGameClientType.cpp = (EnumGameClientType)P_0;
+				obj2 = 0;
+				if (EnumGameType.None == (EnumGameType)0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -194,24 +211,30 @@ public class EntityGetCppGameClientInfoDto
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00渀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected I4, but got Obj
+		//IL_003a: Expected native int or pointer, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				EnumGameClientType.cpp = (EnumGameClientType)P_0;
+				obj2 = 0;
+				if (EnumGameType.None != (EnumGameType)0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -231,20 +254,24 @@ public class EntityGetCppGameClientInfoDto
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal EnumGameVersion _FF00_FF00_FF00_FF00_FF00_FF00瀀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (EnumGameVersion)(int)this;
+		return (EnumGameVersion)2u;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00焀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		//IL_001b: Expected Obj, but got I4
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		return EnumGameClientType.cpp;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -266,24 +293,29 @@ public class EntityGetCppGameClientInfoDto
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00琀(EnumGameVersion P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003a: Expected native int or pointer, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				EnumGameClientType.cpp = (EnumGameClientType)P_0;
+				obj2 = 0;
+				if (EnumGameType.None != (EnumGameType)0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:

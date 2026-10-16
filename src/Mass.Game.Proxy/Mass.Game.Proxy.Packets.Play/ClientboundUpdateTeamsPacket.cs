@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using DotNetty.Buffers;
 using Mass.Game.Proxy.Enums;
 using Mass.Game.Proxy.Minecraft;
@@ -39,19 +41,22 @@ public class ClientboundUpdateTeamsPacket : IPacket, IBufferCodec, IBufferSerial
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ClientboundUpdateTeamsPacket(EnumProtocolVersion version)
+	public unsafe ClientboundUpdateTeamsPacket(EnumProtocolVersion version)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got I4
+		//IL_0026: Expected VT, but got Obj
+		//IL_0026: Expected Obj, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		ClientboundUpdateTeamsPacket clientboundUpdateTeamsPacket = this;
-		if (false)
+		((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)version;
+		((EqualityComparer<_00210>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).GetHashCode((_00210)this);
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 		{
-			clientboundUpdateTeamsPacket = (ClientboundUpdateTeamsPacket)0;
+			num = 0;
 		}
-		switch ((int)clientboundUpdateTeamsPacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -98,10 +103,12 @@ public class ClientboundUpdateTeamsPacket : IPacket, IBufferCodec, IBufferSerial
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object 鐀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -115,11 +122,15 @@ public class ClientboundUpdateTeamsPacket : IPacket, IBufferCodec, IBufferSerial
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal sealed void 阀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003d->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0048->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0045: Expected Obj, but got VT
+		//IL_004a: Expected Obj, but got I4
+		//IL_0059: Expected Obj, but got VT
+		//IL_005e->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_0069->IL0026: Incompatible stack heights: 4 vs 2
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -130,7 +141,9 @@ public class ClientboundUpdateTeamsPacket : IPacket, IBufferCodec, IBufferSerial
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType0<>)P_0).Equals((object)((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field)).GetHashCode();
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field == 0)
 				{
 					_ = 0;
 				}
@@ -160,11 +173,12 @@ public class ClientboundUpdateTeamsPacket : IPacket, IBufferCodec, IBufferSerial
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte 餀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -184,30 +198,43 @@ public class ClientboundUpdateTeamsPacket : IPacket, IBufferCodec, IBufferSerial
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void 鰀(object P_0)
+	internal unsafe sealed void 鰀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got Obj
+		//IL_0045: Expected Obj, but got Ref
+		//IL_0059->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0059->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Ref
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+			{
+				((_003C_003Ef__AnonymousType0<>)P_0)._002Ector((_003Caction_003Ej__TPar)this);
+				bool flag = ((_003C_003Ef__AnonymousType0<>)/*Error near IL_0045: Stack underflow*/).Equals((object)Unsafe.AsPointer(ref reference));
+				obj2 = 0;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 				{
-					_ = 0;
+					obj2 = 0;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 				}
 				break;
+			}
 			}
 		}
 	}
@@ -215,10 +242,12 @@ public class ClientboundUpdateTeamsPacket : IPacket, IBufferCodec, IBufferSerial
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object 鴀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -240,26 +269,32 @@ public class ClientboundUpdateTeamsPacket : IPacket, IBufferCodec, IBufferSerial
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void ꀀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got Obj
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}

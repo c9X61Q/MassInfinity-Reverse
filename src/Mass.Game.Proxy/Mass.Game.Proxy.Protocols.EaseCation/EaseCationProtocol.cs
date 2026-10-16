@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using Mass.Application.Event;
 using Mass.Common.Extensions;
 using Mass.Game.Proxy.Minecraft.Events;
@@ -29,32 +31,32 @@ public class EaseCationProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public EaseCationProtocol()
+	public unsafe EaseCationProtocol()
 	{
-		//IL_000b: Expected Obj, but got I4
-		//IL_0019: Expected Obj, but got I4
-		//IL_0023: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0026: Expected Obj, but got Unknown
-		//IL_0057: Expected I4, but got Obj
-		//IL_0045->IL004e: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0018: Expected Obj, but got I4
+		//IL_001f: Expected VT, but got Obj
+		//IL_001f: Expected VT, but got Obj
+		//IL_002d: Expected I4, but got Obj
+		//IL_002d: Expected Obj, but got Ref
+		//IL_0032: Expected Obj, but got I4
+		//IL_003b: Expected Obj, but got Ref
+		//IL_0041: Expected Obj, but got I4
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_0044: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0047: Expected Obj, but got Unknown
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
-		object obj2 = (obj = obj);
+		EqualityComparer<_00210> equalityComparer = (EqualityComparer<_00210>)new EqualityComparer<_00210>((_00210?)this, (_00210?)obj);
+		((AsyncTaskMethodBuilder*)equalityComparer)->Start(ref *(GameProxy._003CListenAsync_003Ed__69*)obj);
+		((EventBus)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Register((Action<EventPluginChanged>)(object)equalityComparer, (int)equalityComparer);
+		obj = (object)/*Error near IL_002f: Stack underflow*/;
 		obj = 0;
-		obj = obj;
+		Unsafe.Write((void*)(nint)string.Format((IFormatProvider?)/*Error near IL_003b: Stack underflow*/, (string)(&obj), (object?[])obj), (object)_003C_003Ef__AnonymousType0<>.ReflectActiveCalc());
 		obj++;
-		obj = obj;
-		if (0 == 0)
-		{
-			obj2 = 0;
-		}
-		switch ((int)obj2)
-		{
-		case 0:
-			break;
-		}
+		_ = ref obj;
+		/*Error near IL_004b: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -129,10 +131,12 @@ public class EaseCationProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00퀀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -144,32 +148,27 @@ public class EaseCationProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00팀(object P_0)
+	internal unsafe void _FF00_FF00팀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0048->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_0053->IL0019: Incompatible stack heights: 4 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003d: Expected VT, but got Ref
+		//IL_004d: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
-		while (true)
+		switch ((int)obj)
 		{
-			switch ((int)obj)
-			{
-			default:
-				return;
-			case 1:
-				_ = 1;
-				if (false)
-				{
-					_ = 0;
-				}
-				break;
-			case 0:
-				return;
-			}
+		case 1:
+			((_003C_003Ef__AnonymousType0<>)/*Error near IL_003d: Stack underflow*/)._002Ector((_003Caction_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+			((_003C_003Ef__AnonymousType0<>)/*Error near IL_0042: Stack underflow*/).Equals((object)/*Error near IL_0042: Stack underflow*/);
+			((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType0<>)P_0).GetHashCode()).ToString();
+			_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+			_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
+			/*Error near IL_0058: Member reference must be method, but was: Field*/;
+		case 0:
+			break;
 		}
 	}
 
@@ -192,11 +191,12 @@ public class EaseCationProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00혀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -216,42 +216,37 @@ public class EaseCationProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FFFD(EventPacket<ClientboundJoinGamePacket> P_0)
+	internal unsafe void _FF00_FF00_FFFD(EventPacket<ClientboundJoinGamePacket> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_004a->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003e: Expected VT, but got Obj
+		//IL_003e: Expected Obj, but got Ref
+		//IL_0048: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
-		object obj2 = obj;
-		while (true)
+		switch ((int)obj)
 		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 1:
-				obj2 = this;
-				if (false)
-				{
-					obj2 = 0;
-				}
-				break;
-			case 0:
-				return;
-			}
+		case 1:
+			((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)this);
+			((_003C_003Ef__AnonymousType0<>)(object)((object)((_003C_003Ef__AnonymousType0<>)/*Error near IL_0043: Stack underflow*/).Equals((object)/*Error near IL_0043: Stack underflow*/)).ToString()).ToString();
+			/*Error near IL_004d: Member reference must be method, but was: Field*/;
+		case 0:
+			break;
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FFFD()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -271,32 +266,27 @@ public class EaseCationProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_E200(object P_0)
+	internal unsafe void _FF00_FF00_E200(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0048->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_0053->IL0019: Incompatible stack heights: 4 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003d: Expected VT, but got Ref
+		//IL_004d: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
-		while (true)
+		switch ((int)obj)
 		{
-			switch ((int)obj)
-			{
-			default:
-				return;
-			case 1:
-				_ = 1;
-				if (0 == 0)
-				{
-					_ = 0;
-				}
-				break;
-			case 0:
-				return;
-			}
+		case 1:
+			((_003C_003Ef__AnonymousType0<>)/*Error near IL_003d: Stack underflow*/)._002Ector((_003Caction_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+			((_003C_003Ef__AnonymousType0<>)/*Error near IL_0042: Stack underflow*/).Equals((object)/*Error near IL_0042: Stack underflow*/);
+			((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType0<>)P_0).GetHashCode()).ToString();
+			_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+			_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
+			/*Error near IL_0058: Member reference must be method, but was: Field*/;
+		case 0:
+			break;
 		}
 	}
 

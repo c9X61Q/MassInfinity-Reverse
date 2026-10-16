@@ -2,13 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Net.Http;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Mass.Common.Extensions;
+using Mass.Game.Launcher.Entities.Fever;
+using RestSharp;
 using Serilog;
 
 namespace Mass.Game.Launcher.Helpers;
@@ -818,98 +822,110 @@ public static class DownloadHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private unsafe static object _FF00_FF00_FF00_FF00_FF00一(object P_0, object P_1, object P_2, long P_3, Action<int> P_4, uint P_5, CancellationToken P_6)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_004a: Expected I4, but got Obj
-		//IL_00c6: Expected Obj, but got Ref
-		//IL_010a: Expected Obj, but got I4
-		//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-		//IL_00c1->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00b3->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00f2->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00d6->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_006c->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_010f->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_005e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_011f->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0099->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00fd->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00e1->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0087->IL0019: Incompatible stack types: I4 vs Ref
-		//IL_012a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a4->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0057: Expected I4, but got Obj
+		//IL_00f4: Expected I4, but got I8
+		//IL_00e2: Expected Obj, but got VT
+		//IL_0077: Expected VT, but got Obj
+		//IL_0088: Expected Obj, but got Ref
+		//IL_008d: Expected VT, but got Obj
+		//IL_0097: Expected native int or pointer, but got Obj
+		//IL_016b: Expected Obj, but got I4
+		//IL_0065: Expected I4, but got Obj
+		//IL_0178: Expected Obj, but got I4
+		//IL_00c4: Expected native int or pointer, but got Obj
+		//IL_00fe->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ec->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_014f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0127->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0081->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_018c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ce->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_015a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0132->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ac->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0197->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d9->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = 6;
+		object stateMachine = 6;
 		while (true)
 		{
-			ref object reference = ref *(object*)obj;
+			object obj = stateMachine;
 			while (true)
 			{
-				switch ((uint)Unsafe.AsPointer(ref reference))
+				switch ((int)obj)
 				{
-				case 8u:
-					_ = ref obj;
-					_ = 2;
+				case 8:
+					((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003E1__state = (int)P_4;
+					obj = 2;
 					continue;
-				case 5u:
-					_ = ref obj;
-					_ = 7;
+				case 5:
+					((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003Et__builder = (AsyncTaskMethodBuilder)P_0;
+					obj = 7;
 					continue;
-				case 6u:
-					reference = ref obj;
-					if (2 == 0)
+				case 6:
+					Unsafe.Write(&((Authenticator._003CListenAsync_003Ed__7*)(nint)/*Error near IL_008d: Stack underflow*/)->_003C_003Eu__1, (TaskAwaiter)Task.Run((Func<Task?>)(&stateMachine)));
+					obj = 2;
+					if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton)->_003C_003E1__state == 0)
 					{
-						reference = ref *(object*)5;
+						obj = 5;
 					}
 					continue;
-				case 10u:
-					_ = ref obj;
-					_ = ref obj;
-					if (true)
+				case 10:
+					((AsyncTaskMethodBuilder<EntityFeverManifest>*)(&((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003Et__builder))->Start(ref *(FeverInstaller._003CGetFeverManifestAsync_003Ed__12*)(&stateMachine));
+					obj = 1;
+					if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E4__this)->_003C_003Eu__1 != 0)
 					{
-						_ = 4;
+						obj = 4;
 					}
 					continue;
-				case 1u:
-					_ = ref obj;
-					_ = 9;
+				case 1:
+					Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler = P_6;
+					obj = 9;
 					continue;
 				default:
-					_ = ref obj;
-					_ = 8;
+					((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003E1__state = (int)P_3;
+					obj = 8;
 					continue;
-				case 4u:
-					return (object)(&obj);
-				case 3u:
-					_ = ref obj;
-					if (0 == 0)
+				case 4:
+					((TaskAwaiter*)(&((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003Et__builder))->GetResult();
+					return (object)/*Error near IL_010b: Stack underflow*/;
+				case 3:
+					((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->client = (TcpClient)P_2;
+					obj = 0;
+					if (Authenticator._003CReceiveAsync_003Ed__9.CheckCustomChain == null)
 					{
-						_ = 0;
+						obj = 0;
 					}
 					continue;
-				case 2u:
-					_ = ref obj;
-					if (0 == 0)
+				case 2:
+					((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(&stateMachine))->_003C_003E1__state = (int)P_5;
+					obj = 0;
+					if (((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10._003C_003Et__builder).client == null)
 					{
-						_ = 1;
+						obj = 1;
 					}
 					continue;
-				case 7u:
+				case 7:
 					break;
-				case 9u:
-					_ = ref obj;
-					_ = -1;
-					if (10 != 0)
+				case 9:
+					((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(&stateMachine))->_003Cstream_003E5__2 = -1;
+					obj = 10;
+					if (Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10.ReflectMixedGateway != null)
 					{
-						_ = 3;
+						obj = 3;
 					}
 					continue;
 				}
 				break;
 			}
-			_ = ref obj;
-			obj = 3;
+			((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(&stateMachine))->_003C_003E4__this = (Authenticator)P_1;
+			stateMachine = 3;
 		}
 	}
 
@@ -922,31 +938,49 @@ public static class DownloadHelper
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00倀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00倀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static object _FF00_FF00_FF00_FF00_FF00儀(uint P_0, long P_1)
+	private unsafe static object _FF00_FF00_FF00_FF00_FF00儀(uint P_0, long P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0074: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00a5: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00c0->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0085->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_0059->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b1->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00cb->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0090->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_0064->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_004b: Expected native int or pointer, but got Obj
+		//IL_0116: Expected Obj, but got VT
+		//IL_0120: Expected native int or pointer, but got Obj
+		//IL_0085: Expected native int or pointer, but got Obj
+		//IL_008e: Expected native int or pointer, but got Obj
+		//IL_00a5: Expected Obj, but got I4
+		//IL_00aa: Expected Obj, but got I8
+		//IL_0062: Expected VT, but got I8
+		//IL_005d: Expected native int or pointer, but got Obj
+		//IL_006c: Expected native int or pointer, but got Obj
+		//IL_00cc: Expected native int or pointer, but got Obj
+		//IL_00e3: Expected Obj, but got I
+		//IL_00de: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00e8: Expected Obj, but got Unknown
+		//IL_00ed: Expected VT, but got Obj
+		//IL_00f2: Expected native int or pointer, but got Obj
+		//IL_00f9: Expected native int or pointer, but got Obj
+		//IL_0105: Expected Obj, but got I8
+		//IL_0100: Expected native int or pointer, but got Obj
+		//IL_005a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_012a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00be->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0076->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_010f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0135->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c9->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0081->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -956,32 +990,42 @@ public static class DownloadHelper
 			switch ((int)obj2)
 			{
 			default:
-				_ = 3;
+				((Authenticator._003CListenAsync_003Ed__7*)(nint)obj)->_003C_003E1__state = (int)P_0;
+				obj2 = 3;
 				break;
 			case 3:
-				if (false)
+				Unsafe.Write(&((Authenticator._003CListenAsync_003Ed__7*)(nint)obj)->_003C_003Et__builder, (AsyncTaskMethodBuilder)P_1);
+				obj2 = 0;
+				if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 != 0)
 				{
-					_ = 2;
+					obj2 = 2;
 				}
 				break;
 			case 2:
-				_ = 1;
-				_ = obj / 1048576;
-				if (2 != 0)
+			{
+				_ = Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton;
+				long num = 1L;
+				long num2 = (long)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)obj)->_003C_003E1__state / 1048576L;
+				GC.SuppressFinalize((int)AsyncTaskMethodBuilder.Create());
+				Unsafe.Write(&((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)num)->_003C_003E4__this, (Authenticator)num2);
+				_ = 2;
+				if (Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler != null)
 				{
 					_ = 5;
 				}
 				break;
+			}
 			case 4:
-				_ = 0;
-				return obj;
+				((AsyncTaskMethodBuilder*)/*Error near IL_00d6: Stack underflow*/)->AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref *(TAwaiter*)null, ref *(TStateMachine*)((Authenticator._003CReceiveAsync_003Ed__9*)(nint)obj)->_003C_003E1__state);
+				return RestClientExtensions.ExecuteAsync<EntityFeverManifest>((IRestClient)/*Error near IL_00ed: Stack underflow*/, (RestRequest)/*Error near IL_00ed: Stack underflow*/, (CancellationToken)((FeverInstaller)/*Error near IL_00e8: Stack underflow*/).FeverRequest<EntityFeverApp>((RestRequest)(object)new ILogger((Exception)obj, (string)(delegate*<bool>)(&Authenticator._003CListenAsync_003Ed__7.DecorateExpandableParser))));
 			case 5:
-				_ = obj / (long)obj;
-				_ = 4;
+				Unsafe.Write(&((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)obj)->client, (TcpClient)(((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)obj)->_003C_003E1__state / (long)((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)obj)->_003C_003Et__builder));
+				obj2 = 4;
 				break;
 			case 1:
-				obj = (object)/*Error near IL_00b4: Stack underflow*/;
-				if (false)
+				obj = new Authenticator._003CReceiveAsync_003Ed__9((IAsyncStateMachine)/*Error near IL_0114: Stack underflow*/);
+				obj2 = 0;
+				if ((int)((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10._003Cstream_003E5__2)->_003C_003Eu__1 != 0)
 				{
 					obj2 = 0;
 				}
@@ -1001,23 +1045,29 @@ public static class DownloadHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private unsafe static object _FF00_FF00_FF00_FF00_FF00匀(object P_0, object P_1, object P_2, Action<int> P_3, CancellationToken P_4)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0042: Expected I4, but got Obj
-		//IL_007b: Expected Obj, but got Ref
-		//IL_00a3: Expected Obj, but got I4
-		//IL_0062: Expected Obj, but got I4
-		//IL_00e3->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_008b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0076->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00c6->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b6->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0055->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00a8->IL0015: Incompatible stack heights: 1 vs 0
-		//IL_0067->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_00ee->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0096->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00d1->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004f: Expected I4, but got Obj
+		//IL_0124: Expected Obj, but got Ref
+		//IL_0124: Expected Obj, but got Ref
+		//IL_012e: Expected native int or pointer, but got Obj
+		//IL_0085: Expected Obj, but got VT
+		//IL_00f7: Expected I4, but got Obj
+		//IL_005c: Expected I4, but got Obj
+		//IL_00ca: Expected Obj, but got Ref
+		//IL_00d8: Expected Obj, but got I4
+		//IL_006e: Expected VT, but got Obj
+		//IL_0077: Expected Obj, but got I4
+		//IL_0138->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00b8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_010b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ef->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0066->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0143->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00c3->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0116->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 7;
@@ -1029,46 +1079,49 @@ public static class DownloadHelper
 				switch ((int)obj2)
 				{
 				case 6:
-					_ = ref obj;
-					_ = 5;
+					((Authenticator._003CListenAsync_003Ed__7*)(&obj))->_003C_003E1__state = (int)P_0;
+					obj2 = 5;
 					continue;
 				case 8:
-					_ = ref obj;
+					((Authenticator._003CListenAsync_003Ed__7*)(&obj))->_003C_003Et__builder = (AsyncTaskMethodBuilder)P_3;
 					obj = 3;
 					break;
 				case 3:
-					_ = ref obj;
-					_ = 2;
+					((Authenticator._003CListenAsync_003Ed__7*)(&obj))->_003C_003E4__this = (Authenticator)P_4;
+					obj2 = 2;
 					continue;
 				default:
-					return (object)(&obj);
+					((AsyncTaskMethodBuilder*)/*Error near IL_009b: Stack underflow*/)->Start<TStateMachine>(ref *(TStateMachine*)(&((Authenticator._003CListenAsync_003Ed__7*)(&obj))->_003C_003Eu__1));
+					return (object)/*Error near IL_009c: Stack underflow*/;
 				case 2:
-					_ = ref obj;
-					_ = -1;
-					if (0 == 0)
+					((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&obj))->_003C_003E1__state = -1;
+					obj2 = 0;
+					if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003Et__builder).listener == null)
 					{
-						_ = 1;
+						obj2 = 1;
 					}
 					continue;
 				case 7:
-					_ = ref obj;
+					((TcpListener)(&obj)).Dispose();
+					Unsafe.Write(&((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)/*Error near IL_00cf: Stack underflow*/)->_003C_003Eu__1, /*Error near IL_00cf: Stack underflow*/);
 					obj = 6;
 					break;
 				case 5:
-					_ = ref obj;
-					_ = 4;
+					Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler = P_1;
+					obj2 = 4;
 					continue;
 				case 4:
-					_ = ref obj;
-					if (8 == 0)
+					((Authenticator._003CReceiveAsync_003Ed__9*)(&obj))->_003C_003E1__state = (int)P_2;
+					obj2 = 8;
+					if (((Authenticator._003CReceiveAsync_003Ed__9)Authenticator._003CReceiveAsync_003Ed__9._003C_003Et__builder)._003C_003E4__this == null)
 					{
-						_ = 7;
+						obj2 = 7;
 					}
 					continue;
 				case 1:
-					_ = ref obj;
-					_ = ref obj;
-					if (false)
+					((FeverInstaller)(&((Authenticator._003CReceiveAsync_003Ed__9*)(&obj))->client)).FeverRequest<EntityFeverApp>((RestRequest)(object)(&obj));
+					_ = 0;
+					if (((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)Authenticator._003CReceiveAsync_003Ed__9.CheckCustomChain)->_003C_003E1__state != 0)
 					{
 						_ = 0;
 					}
@@ -1090,82 +1143,96 @@ public static class DownloadHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe static object _FF00_FF00_FF00_FF00_FF00嘀(object P_0, object P_1, object P_2, Action<int> P_3, uint P_4, CancellationToken P_5)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0046: Expected I4, but got Obj
-		//IL_00b3: Expected Obj, but got Ref
-		//IL_00c4->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0090->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_005c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00ae->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0077->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a0->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0106->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00df->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00f8->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00cf->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0067->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0082->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00ea->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0053: Expected I4, but got Obj
+		//IL_0103: Expected native int or pointer, but got Obj
+		//IL_00af: Expected VT, but got Obj
+		//IL_00d9: Expected VT, but got Obj
+		//IL_0088: Expected VT, but got Obj
+		//IL_0092: Expected native int or pointer, but got Obj
+		//IL_00ef: Expected Obj, but got Ref
+		//IL_00f0: Expected Obj, but got VT
+		//IL_015d: Expected Obj, but got I4
+		//IL_0120: Expected VT, but got Obj
+		//IL_012a: Expected native int or pointer, but got Obj
+		//IL_0146: Expected Obj, but got Ref
+		//IL_010d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0075->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e3->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0167->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0134->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0155->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0118->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0080->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_013f->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = 9;
-		object obj2 = obj;
+		object stateMachine = 9;
+		object obj = stateMachine;
 		while (true)
 		{
-			switch ((int)obj2)
+			switch ((int)obj)
 			{
 			case 2:
-				_ = ref obj;
-				if (false)
+				((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003E1__state = (int)P_4;
+				obj = 0;
+				if (((Authenticator._003CListenAsync_003Ed__7)Authenticator._003CListenAsync_003Ed__7._003C_003Et__builder)._003C_003E4__this != null)
 				{
-					_ = 0;
+					obj = 0;
 				}
 				break;
 			case 4:
-				_ = ref obj;
-				if (3 != 0)
+				((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003Eu__1 = (TaskAwaiter)P_2;
+				obj = 3;
+				if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton)->_003C_003E1__state != 0)
 				{
-					_ = 3;
+					obj = 3;
 				}
 				break;
 			case 1:
-				_ = ref obj;
-				_ = 4;
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003Et__builder = (AsyncTaskMethodBuilder)P_1;
+				obj = 4;
 				break;
 			case 5:
-				_ = ref obj;
-				_ = ref obj;
-				_ = 6;
+				((AsyncTaskMethodBuilder<EntityFeverManifestInfo>*)(&((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->listener))->Start(ref *(FeverInstaller._003CGetFeverManifestInfoAsync_003Ed__13*)(&stateMachine));
+				obj = 6;
 				break;
 			case 3:
-				_ = ref obj;
-				_ = 2;
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003Eu__1 = (TaskAwaiter<TcpClient>)P_3;
+				obj = 2;
 				break;
 			case 6:
-				return (object)(&obj);
+				return ((Task)(&Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler)).GetAwaiter();
 			default:
-				_ = ref obj;
-				if (7 == 0)
+				((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003Et__builder = (AsyncTaskMethodBuilder)P_5;
+				obj = 7;
+				if (((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CReceiveAsync_003Ed__9._003C_003E4__this)->client == null)
 				{
-					_ = 1;
+					obj = 1;
 				}
 				break;
 			case 8:
-				_ = ref obj;
-				if (true)
+				((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003Eu__1 = (TaskAwaiter)P_0;
+				obj = 1;
+				if (((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)Authenticator._003CReceiveAsync_003Ed__9.CheckCustomChain)->_003C_003E1__state != 0)
 				{
-					_ = 1;
+					obj = 1;
 				}
 				break;
 			case 9:
-				_ = ref obj;
-				_ = 8;
+				((AsyncTaskMethodBuilder*)/*Error near IL_0146: Stack underflow*/)->SetStateMachine((IAsyncStateMachine)(&stateMachine));
+				Unsafe.Write(&((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)/*Error near IL_014b: Stack underflow*/)->client, /*Error near IL_014b: Stack underflow*/);
+				obj = 8;
 				break;
 			case 7:
-				_ = ref obj;
-				_ = -1;
-				_ = 5;
+				((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(&stateMachine))->_003C_003E4__this = (Authenticator)(-1);
+				obj = 5;
 				break;
 			}
 		}
@@ -1182,73 +1249,78 @@ public static class DownloadHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe static object _FF00_FF00_FF00_FF00_FF00堀(List<(string, string)> P_0, Action<int> P_1, uint P_2, CancellationToken P_3)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003e: Expected I4, but got Obj
-		//IL_0050: Expected Obj, but got I4
-		//IL_005a: Expected Obj, but got Ref
-		//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-		//IL_0055->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_007a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_006a->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0093->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00a1->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00b1->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0085->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00d7->IL0019: Incompatible stack types: I4 vs Ref
-		//IL_00bc->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004b: Expected I4, but got Obj
+		//IL_0061: Expected Obj, but got I4
+		//IL_0093: Expected I4, but got VT
+		//IL_0072: Expected Obj, but got Ref
+		//IL_00cc: Expected VT, but got Obj
+		//IL_00de: Expected Obj, but got I4
+		//IL_00a7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c4->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_011d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0128->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00fd->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = 6;
+		object stateMachine = 6;
 		while (true)
 		{
-			ref object reference = ref *(object*)obj;
+			object obj = stateMachine;
 			while (true)
 			{
-				switch ((uint)Unsafe.AsPointer(ref reference))
+				switch ((int)obj)
 				{
-				case 2u:
-					return (object)(&obj);
-				case 3u:
-					_ = ref obj;
-					_ = ref obj;
-					_ = 2;
+				case 2:
+					return Task.Run((Func<Task?>)(&((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003Et__builder));
+				case 3:
+					((AsyncTaskMethodBuilder*)/*Error near IL_0081: Stack underflow*/)->AwaitUnsafeOnCompleted(ref ((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003Eu__1, ref *(Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine));
+					obj = 2;
 					continue;
-				case 1u:
-					_ = ref obj;
-					if (0 == 0)
+				case 1:
+					((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003E1__state = (int)P_3;
+					obj = 0;
+					if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003Et__builder).listener == null)
 					{
-						_ = 0;
+						obj = 0;
 					}
 					continue;
-				case 4u:
-					_ = ref obj;
-					_ = 7;
+				case 4:
+					((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003E4__this = (Authenticator)(object)P_1;
+					obj = 7;
 					continue;
-				case 5u:
-					_ = ref obj;
-					_ = 4;
+				case 5:
+					((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003Eu__1 = (TaskAwaiter<TcpClient>)P_0;
+					obj = 4;
 					continue;
-				case 7u:
-					_ = ref obj;
-					if (0 == 0)
+				case 7:
+					Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler = P_2;
+					obj = 0;
+					if ((int)((Authenticator._003CReceiveAsync_003Ed__9*)Authenticator._003CReceiveAsync_003Ed__9._003C_003E1__state)->_003C_003Et__builder == 0)
 					{
-						_ = 1;
+						obj = 1;
 					}
 					continue;
-				case 6u:
-					reference = ref obj;
-					if (5 == 0)
+				case 6:
+					((TaskAwaiter*)(&stateMachine))->GetResult();
+					Unsafe.Write(&((Authenticator._003CReceiveAsync_003Ed__9*)(nint)/*Error near IL_0109: Stack underflow*/)->client, /*Error near IL_0109: Stack underflow*/);
+					obj = 5;
+					if (Authenticator._003CReceiveAsync_003Ed__9.CheckCustomChain == null)
 					{
-						reference = ref *(object*)3;
+						obj = 3;
 					}
 					continue;
 				}
 				break;
 			}
-			_ = ref obj;
-			_ = -1;
-			obj = 3;
+			((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003E1__state = -1;
+			stateMachine = 3;
 		}
 	}
 
@@ -1263,80 +1335,90 @@ public static class DownloadHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe static object _FF00_FF00_FF00_FF00_FF00娀(object P_0, object P_1, Action<int> P_2, uint P_3, CancellationToken P_4)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0042: Expected I4, but got Obj
-		//IL_00b7: Expected Obj, but got Ref
-		//IL_0092: Expected Obj, but got I4
-		//IL_0056: Expected Obj, but got I4
-		//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-		//IL_00c5->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00f0->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a7->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_007a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0097->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_006a->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_005b->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_00e0->IL0019: Incompatible stack types: I4 vs Ref
-		//IL_00fb->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b2->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0085->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004f: Expected I4, but got Obj
+		//IL_00fc: Expected VT, but got Obj
+		//IL_00f3: Expected Obj, but got Ref
+		//IL_00f4: Expected Obj, but got VT
+		//IL_00c8: Expected Obj, but got I4
+		//IL_00d2: Expected native int or pointer, but got Obj
+		//IL_008b: Expected VT, but got Obj
+		//IL_0095: Expected native int or pointer, but got Obj
+		//IL_00b2: Expected VT, but got Obj
+		//IL_00bb: Expected Obj, but got I4
+		//IL_0079: Expected Obj, but got VT
+		//IL_006b: Expected Obj, but got I4
+		//IL_0106->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0126->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_014d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00dc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0083->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0131->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0158->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00aa->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = 1;
+		object stateMachine = 1;
 		while (true)
 		{
-			ref object reference = ref *(object*)obj;
+			object obj = stateMachine;
 			while (true)
 			{
-				switch ((uint)Unsafe.AsPointer(ref reference))
+				switch ((int)obj)
 				{
-				case 8u:
-					_ = ref obj;
-					_ = ref obj;
-					obj = 3;
+				case 8:
+					((AsyncTaskMethodBuilder*)(&((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003E1__state))->Start(ref *(Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(&stateMachine));
+					stateMachine = 3;
 					break;
-				case 7u:
-					_ = ref obj;
-					_ = 4;
+				case 7:
+					((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003E4__this = (Authenticator)P_4;
+					obj = 4;
 					continue;
-				case 5u:
-					_ = ref obj;
-					if (2 == 0)
+				case 5:
+					((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003Eu__1 = (TaskAwaiter)P_2;
+					obj = 2;
+					if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton)->_003C_003E1__state == 0)
 					{
-						_ = 0;
+						obj = 0;
 					}
 					continue;
-				case 6u:
-					_ = ref obj;
-					obj = 5;
+				case 6:
+					((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003Et__builder = (AsyncTaskMethodBuilder)P_1;
+					stateMachine = 5;
 					break;
-				case 4u:
-					_ = ref obj;
-					_ = -1;
-					if (8 == 0)
+				case 4:
+					((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->listener = (TcpListener)(-1);
+					obj = 8;
+					if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E4__this)->_003C_003Eu__1 == 0)
 					{
-						_ = 2;
+						obj = 2;
 					}
 					continue;
-				case 3u:
-					return (object)(&obj);
+				case 3:
+					return ((Task)(&Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler)).GetAwaiter();
 				default:
-					_ = ref obj;
-					_ = 6;
+					((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003Et__builder = (AsyncTaskMethodBuilder)P_0;
+					obj = 6;
 					continue;
-				case 1u:
-					reference = ref obj;
-					if (0 == 0)
+				case 1:
+					((TaskAwaiter*)(&stateMachine))->GetResult();
+					Unsafe.Write(&((Authenticator._003CReceiveAsync_003Ed__9*)(nint)/*Error near IL_0112: Stack underflow*/)->client, /*Error near IL_0112: Stack underflow*/);
+					obj = 0;
+					if (Authenticator._003CReceiveAsync_003Ed__9.CheckCustomChain == null)
 					{
-						reference = ref *(object*)null;
+						obj = 0;
 					}
 					continue;
-				case 2u:
-					_ = ref obj;
-					if (5 == 0)
+				case 2:
+					((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(&stateMachine))->_003C_003E1__state = (int)P_3;
+					obj = 5;
+					if (((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10._003C_003Et__builder).client == null)
 					{
-						_ = 7;
+						obj = 7;
 					}
 					continue;
 				}
@@ -1354,21 +1436,25 @@ public static class DownloadHelper
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00尀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00尀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static object _FF00_FF00_FF00_FF00_FF00崀()
+	private unsafe static object _FF00_FF00_FF00_FF00_FF00崀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

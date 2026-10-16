@@ -1,7 +1,13 @@
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
+using DotNetty.Transport.Bootstrapping;
+using DotNetty.Transport.Channels;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Game.Proxy.Protocols;
 
@@ -57,23 +63,18 @@ public class CpsDetector
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public CpsDetector()
+	public unsafe CpsDetector()
 	{
-		//IL_004a: Expected I4, but got Obj
-		//IL_0038->IL0041: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_001f: Expected VT, but got Obj
+		//IL_002f: Expected VT, but got Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		CpsDetector cpsDetector = this;
-		if (false)
-		{
-			cpsDetector = (CpsDetector)0;
-		}
-		switch ((int)cpsDetector)
-		{
-		case 0:
-			break;
-		}
+		((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_001f: Stack underflow*/)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)new EqualityComparer<_00210>((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		((_003C_003Ef__AnonymousType2<, , , >)this)._003Curl_003Ei__Field = (_003Curl_003Ej__TPar)new object();
+		/*Error near IL_0035: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -97,19 +98,22 @@ public class CpsDetector
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00ጀ(Action<double, double> P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00ጀ(Action<double, double> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_00aa->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00c3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b5->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_006b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0094->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0076->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_00d1: Expected I4, but got Obj
+		//IL_00d1: Expected Obj, but got Ref
+		//IL_005b: Expected Obj, but got VT
+		//IL_00e7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0060->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0104->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0088->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0093->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 4;
@@ -122,7 +126,8 @@ public class CpsDetector
 				return;
 			case 3:
 				obj = obj;
-				if (5 != 0)
+				obj2 = 5;
+				if ((int)((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field)._003Cuser_id_003Ei__Field != 0)
 				{
 					obj2 = 4;
 				}
@@ -130,7 +135,8 @@ public class CpsDetector
 			case 2:
 				if (obj == obj)
 				{
-					if (false)
+					obj2 = 0;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 					{
 						obj2 = 0;
 					}
@@ -138,24 +144,19 @@ public class CpsDetector
 				}
 				goto case 3;
 			case 5:
-				obj2 = obj;
-				obj = P_0;
-				if (1 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
+				/*Error near IL_0096: Member reference must be method, but was: Field*/;
 			case 0:
 				return;
 			case 1:
-				obj = obj;
-				if (2 != 0)
+				obj = ((AbstractBootstrap<ServerBootstrap, IServerChannel>)(object)Unsafe.AsPointer(ref ((_003C_003Ef__AnonymousType3<, >)this)._003Centry_003Ei__Field)).Option<int>((ChannelOption<int>)obj, (int)obj);
+				obj2 = 2;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance != null)
 				{
-					_ = 1;
+					obj2 = 1;
 				}
 				break;
 			case 4:
-				obj = this;
+				obj = _003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate;
 				obj2 = 3;
 				break;
 			}
@@ -173,17 +174,20 @@ public class CpsDetector
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00ᔀ()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_010b: Expected Obj, but got I4
-		//IL_0117->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0043->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0122->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_004e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006c->IL0070: Incompatible stack types: I4 vs Ref
-		//IL_0092->IL0070: Incompatible stack types: Obj vs Ref
-		//IL_009d->IL0070: Incompatible stack types: I4 vs Ref
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0160: Expected Obj, but got I4
+		//IL_0048: Expected Obj, but got VT
+		//IL_0057: Expected Obj, but got VT
+		//IL_0072: Expected Obj, but got Ref
+		//IL_0072: Expected Obj, but got Ref
+		//IL_0081: Expected Obj, but got VT
+		//IL_0174->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_017f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0067->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00db->IL0067: Incompatible stack heights: 0 vs 1
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -193,8 +197,9 @@ public class CpsDetector
 			switch ((int)obj2)
 			{
 			case 1:
-				obj = this;
-				if (false)
+				obj = ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
 					obj2 = 0;
 				}
@@ -203,28 +208,24 @@ public class CpsDetector
 				return;
 			case 3:
 			{
-				ref object reference = ref obj;
-				if (0 == 0)
+				string.Format((IFormatProvider?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (string)obj, (object?[])(&obj));
+				int num = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 				{
-					reference = ref *(object*)null;
+					num = 0;
 				}
-				while (true)
+				switch (num)
 				{
-					switch ((uint)Unsafe.AsPointer(ref reference))
-					{
-					case 1u:
-						return;
-					}
-					reference = ref *(object*)this;
-					if (1 != 0)
-					{
-						reference = ref *(object*)1;
-					}
+				case 1:
+					return;
 				}
+				_ = ((_003C_003Ef__AnonymousType2<, , , >)this)._003Cuser_id_003Ei__Field;
+				/*Error near IL_00ad: Member reference must be method, but was: Field*/;
 			}
 			default:
 				obj = 0;
-				if (3 != 0)
+				obj2 = 3;
+				if (((EntitySocks5Account)EntitySocks5Account.Username__BackingField).Password__BackingField != null)
 				{
 					obj2 = 1;
 				}
@@ -252,11 +253,12 @@ public class CpsDetector
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_1800()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -278,43 +280,47 @@ public class CpsDetector
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_1B00()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_02dd: Expected Obj, but got I4
-		//IL_00f9: Expected Obj, but got F8
-		//IL_01ca: Expected Obj, but got Ref
-		//IL_01ff: Expected Obj, but got F8
-		//IL_00c4: Invalid comparison between Obj and F8
-		//IL_0218: Invalid comparison between Obj and F8
-		//IL_01f4: Expected Obj, but got I4
-		//IL_00b0: Expected I4, but got Obj
-		//IL_02e9->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0043->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_005f->IL0063: Incompatible stack types: I4 vs Obj
-		//IL_02f4->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_004e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0103->IL0063: Incompatible stack types: I4 vs Obj
-		//IL_01d6->IL0063: Incompatible stack heights: 1 vs 3
-		//IL_0141->IL0063: Incompatible stack heights: 4 vs 3
-		//IL_0199->IL0063: Incompatible stack heights: 2 vs 3
-		//IL_0126->IL0063: Incompatible stack heights: 4 vs 3
-		//IL_0189->IL0063: Incompatible stack types: I4 vs Obj
-		//IL_0209->IL0063: Incompatible stack types: I4 vs Obj
-		//IL_0116->IL0063: Incompatible stack types: I4 vs Obj
-		//IL_01e1->IL0063: Incompatible stack heights: 1 vs 3
-		//IL_014c->IL0063: Incompatible stack heights: 4 vs 3
-		//IL_01a4->IL0063: Incompatible stack heights: 2 vs 3
-		//IL_0131->IL0063: Incompatible stack heights: 4 vs 3
-		//IL_017b->IL0063: Incompatible stack types: I4 vs Obj
-		//IL_024a->IL0063: Incompatible stack heights: 2 vs 3
-		//IL_00d5->IL0063: Incompatible stack heights: 2 vs 3
-		//IL_0229->IL0063: Incompatible stack heights: 2 vs 3
-		//IL_0269->IL0063: Incompatible stack heights: 6 vs 3
-		//IL_00f3->IL0063: Incompatible stack types: I4 vs Obj
-		//IL_0255->IL0063: Incompatible stack heights: 2 vs 3
-		//IL_00e0->IL0063: Incompatible stack heights: 2 vs 3
-		//IL_0234->IL0063: Incompatible stack heights: 2 vs 3
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_03ba: Expected Obj, but got I4
+		//IL_0048: Expected Obj, but got VT
+		//IL_0057: Expected Obj, but got VT
+		//IL_0072: Expected Obj, but got Ref
+		//IL_0072: Expected Obj, but got Ref
+		//IL_0132: Expected Obj, but got F8
+		//IL_0147: Expected VT, but got Obj
+		//IL_024e: Expected VT, but got Obj
+		//IL_0254: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0257: Expected Obj, but got Unknown
+		//IL_0266: Expected Obj, but got I
+		//IL_0215: Expected Obj, but got I4
+		//IL_016e: Expected Obj, but got VT
+		//IL_02a1: Expected I4, but got Obj
+		//IL_02a4: Expected Obj, but got F8
+		//IL_02f4: Expected VT, but got Obj
+		//IL_00da: Unknown result type (might be due to invalid IL or missing references)
+		//IL_02bc: Expected VT, but got Obj
+		//IL_02c5: Invalid comparison between I4 and F8
+		//IL_030a: Expected Obj, but got I4
+		//IL_03ce->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_03d9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0067->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_013c->IL0080: Incompatible stack heights: 3 vs 2
+		//IL_014d->IL0124: Incompatible stack heights: 0 vs 1
+		//IL_026b->IL0080: Incompatible stack heights: 1 vs 2
+		//IL_021a->IL0080: Incompatible stack heights: 1 vs 2
+		//IL_02ae->IL0080: Incompatible stack heights: 1 vs 2
+		//IL_0337->IL0067: Incompatible stack heights: 0 vs 1
+		//IL_031f->IL0067: Incompatible stack heights: 0 vs 1
+		//IL_02ca->IL017e: Incompatible stack heights: 0 vs 1
+		//IL_0157->IL0080: Incompatible stack heights: 1 vs 2
+		//IL_0276->IL0080: Incompatible stack heights: 1 vs 2
+		//IL_0225->IL0080: Incompatible stack heights: 1 vs 2
+		//IL_02de->IL0080: Incompatible stack heights: 1 vs 2
+		//IL_0332->IL0080: Incompatible stack heights: 5 vs 2
+		//IL_02e9->IL0080: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -324,8 +330,9 @@ public class CpsDetector
 			switch ((int)obj2)
 			{
 			case 1:
-				obj = this;
-				if (0 == 0)
+				obj = ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
 					obj2 = 0;
 				}
@@ -334,127 +341,120 @@ public class CpsDetector
 				return;
 			case 2:
 			{
-				object obj3 = 2;
+				string text = string.Format((IFormatProvider?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (string)obj, (object?[])(&obj));
+				int num = 2;
 				while (true)
 				{
-					switch ((int)obj3)
+					switch (num)
 					{
 					case 10:
 						return;
 					case 11:
 						return;
 					case 15:
-					{
-						object obj4 = obj - (object)this;
-						if (Unsafe.As<object, UIntPtr>(ref obj4) <= Unsafe.As<object, UIntPtr>(ref (object)0.01))
-						{
-							return;
-						}
-						if (3 != 0)
-						{
-							_ = 1;
-						}
-						break;
-					}
+						_ = obj - ((_003C_003Ef__AnonymousType2<, , , >)this)._003Cpayload_003Ei__Field;
+						/*Error near IL_00db: Member reference must be method, but was: Field*/;
 					case 17:
-						if (this == null)
+						if ((int)((_003C_003Ef__AnonymousType3<, >)this)._003Centry_003Ei__Field == 0)
 						{
-							obj3 = 11;
+							num = 11;
+							break;
 						}
-						else
-						{
-							_ = 10;
-						}
+						AppContext.GetData((string)obj);
+						_ = 10;
 						break;
 					default:
-						obj = (double)this;
-						obj3 = 8;
+						_ = ((_003C_003Ef__AnonymousType3<, >)this)._003Csid_003Ei__Field;
+						obj = (double)EqualityComparer<_00211>.Default;
+						_ = 8;
 						break;
 					case 1:
 					case 13:
-						if ((nint)this > 0)
+						if (((EqualityComparer<_00211>)(object)text).GetHashCode((_00211)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance) > 0)
 						{
-							obj3 = 14;
+							_ = 14;
 							break;
 						}
 						goto default;
 					case 5:
-						if (6 == 0)
+						_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.StoreConverter = obj;
+						num = 6;
+						if (!_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout)
 						{
-							_ = 17;
+							num = 17;
 						}
 						break;
 					case 3:
-						if (3 == 0)
+						_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_ascii_68FF03FEFFFF87FEFFFF07 = (SearchValues<char>)obj;
+						num = 3;
+						if (((EntitySocks5Account)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.GuideMap).Username__BackingField == null)
 						{
-							_ = 5;
+							num = 5;
 						}
 						break;
 					case 9:
 					case 12:
-						if ((nint)this > 0)
-						{
-							obj3 = 7;
-							break;
-						}
-						goto case 1;
+						_ = ((EntitySocks5)this).Address__BackingField;
+						/*Error near IL_01cf: Member reference must be method, but was: Field*/;
 					case 6:
-						obj3 = 9;
-						break;
+						_ = ((EntitySocks5)this).Account__BackingField;
+						/*Error near IL_01ea: Member reference must be method, but was: Field*/;
 					case 4:
-						if (0 == 0)
+						((Regex)((EntityLaunchGameProxy)this).Session__BackingField)._002Ector();
+						_ = 0;
+						if (((EntityLaunchGameProxy)EntityLaunchGameProxy.GameType__BackingField).GameVersion__BackingField == EnumGameVersion.None)
 						{
 							_ = 1;
 						}
 						break;
 					case 2:
-						obj = (object)Unsafe.AsPointer(ref Unsafe.SubtractByteOffset(ref obj, 1000));
-						if (10 == 0)
+						Regex.ValidateMatchTimeout((TimeSpan)text);
+						obj = /*Error near IL_0255: Stack underflow*/- 1000;
+						_ = 10;
+						if (((EntityLaunchGameProxy)EntityLaunchGameProxy.ServerPort__BackingField).Socks5__BackingField == null)
 						{
 							_ = 12;
 						}
 						break;
 					case 7:
-						if (Unsafe.As<CpsDetector, UIntPtr>(ref this) >= Unsafe.As<object, UIntPtr>(ref obj))
-						{
-							obj = 13;
-							obj3 = obj;
-							break;
-						}
-						goto case 6;
+						_ = ((EntityLaunchGameProxy)this).Value__BackingField;
+						/*Error near IL_027c: Member reference must be method, but was: Field*/;
 					case 8:
-						obj = (double)this;
-						obj3 = 16;
+						obj = (double)((ReadOnlySpan<char>*)text)->Slice((int)EntityLaunchGameProxy.ReflectAlphabeticProcessor);
+						_ = 16;
 						break;
 					case 16:
-					{
-						object obj5 = obj - (object)this;
-						if (Unsafe.As<object, UIntPtr>(ref obj5) <= Unsafe.As<object, UIntPtr>(ref (object)0.01))
+						if (!((double)MemoryExtensions.IndexOfAnyExcept<T>((ReadOnlySpan<T>)text, (SearchValues<T>)(obj - GameProxy.Logger__BackingField)) > 0.01))
 						{
-							if (1 == 0)
+							_ = 1;
+							if (GameProxy.OnlineClients == null)
 							{
 								_ = 15;
 							}
 							break;
 						}
 						goto case 3;
-					}
 					case 14:
-						if (Unsafe.As<CpsDetector, UIntPtr>(ref this) >= Unsafe.As<object, UIntPtr>(ref obj))
+					{
+						SearchValues<char> searchValues = SearchValues.Create((ReadOnlySpan<char>)((GameProxy)this).Name__BackingField);
+						if (Unsafe.As<SearchValues<char>, UIntPtr>(ref searchValues) >= Unsafe.As<object, UIntPtr>(ref obj))
 						{
-							if (0 == 0)
+							num = 0;
+							if (((GameProxy)GameProxy.GameType__BackingField).GameId__BackingField == null)
 							{
-								_ = 0;
+								num = 0;
 							}
 							break;
 						}
 						goto case 4;
 					}
+					}
 				}
 			}
 			default:
 				obj = 0;
-				if (2 == 0)
+				obj2 = 2;
+				if ((object)((GameProxy)GameProxy.Section__BackingField).Socks5 == null)
 				{
 					obj2 = 2;
 				}
@@ -474,26 +474,36 @@ public class CpsDetector
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FF00ᴀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00Ḁ(Action<double, double> P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00Ḁ(Action<double, double> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0098->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00b8->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0088->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00a3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c3->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_006a->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_008b: Expected Obj, but got Ref
+		//IL_0092: Expected Obj, but got VT
+		//IL_00a1: Expected Obj, but got VT
+		//IL_0050: Expected Obj, but got VT
+		//IL_005f: Expected Obj, but got VT
+		//IL_00e3: Expected VT, but got Obj
+		//IL_00e3: Expected Obj, but got Ref
+		//IL_00a6->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00c9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b1->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00d4->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0104->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0083->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -503,41 +513,46 @@ public class CpsDetector
 			switch ((int)obj2)
 			{
 			case 2:
-				obj = this;
-				if (true)
+				obj = ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
+				obj2 = 1;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
 					obj2 = 1;
 				}
-				continue;
+				break;
 			case 3:
 				return;
 			case 5:
 				if (obj == obj)
 				{
 					obj2 = 3;
-					continue;
+					break;
 				}
 				goto case 1;
+			default:
+				obj = (_00212)string.Format((IFormatProvider?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (string)obj, (object?[])(object)P_0);
+				_ = 1;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
+				{
+					_ = 4;
+				}
+				break;
 			case 1:
 				obj = obj;
-				if (false)
+				obj2 = 0;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field != 0)
 				{
 					obj2 = 0;
 				}
-				continue;
+				break;
 			case 4:
-				obj = obj;
-				if (5 == 0)
+				obj = ((AbstractBootstrap<ServerBootstrap, IServerChannel>)(object)Unsafe.AsPointer(ref ((_003C_003Ef__AnonymousType3<, >)this)._003Csid_003Ei__Field)).Option<TimeSpan>((ChannelOption<TimeSpan>)obj, (TimeSpan)obj);
+				obj2 = 5;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
-				continue;
-			}
-			obj2 = obj;
-			obj = P_0;
-			if (1 == 0)
-			{
-				obj2 = 4;
+				break;
 			}
 		}
 	}
@@ -561,17 +576,20 @@ public class CpsDetector
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_2100()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0102: Expected Obj, but got I4
-		//IL_010e->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_012a->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0050->IL0054: Incompatible stack types: I4 vs Ref
-		//IL_0119->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0135->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0076->IL0054: Incompatible stack types: Obj vs Ref
-		//IL_0081->IL0054: Incompatible stack types: I4 vs Ref
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_004a: Expected VT, but got Ref
+		//IL_004a: Expected VT, but got Obj
+		//IL_004a: Expected Obj, but got Ref
+		//IL_0059: Expected Obj, but got VT
+		//IL_014b: Expected Obj, but got I4
+		//IL_015a: Expected Obj, but got I4
+		//IL_015f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0187->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_016a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0192->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b3->IL016a: Incompatible stack heights: 0 vs 1
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -582,7 +600,8 @@ public class CpsDetector
 			{
 			case 1:
 				obj = 0;
-				if (0 == 0)
+				obj2 = 0;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_ascii_68FF03FEFFFF87FEFFFF07 == null)
 				{
 					obj2 = 0;
 				}
@@ -590,35 +609,29 @@ public class CpsDetector
 			case 3:
 				return;
 			case 2:
-				obj = this;
-				if (true)
+				obj = _003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.GuideMap;
+				obj2 = 1;
+				if (((EntitySocks5Account)EntitySocks5Account.Username__BackingField).Password__BackingField != null)
 				{
 					obj2 = 1;
 				}
 				continue;
 			}
-			ref object reference = ref obj;
-			if (1 == 0)
+			((EqualityComparer<_00210>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals((_00210?)obj, (_00210?)(&obj));
+			int num = 1;
+			if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 			{
-				reference = ref *(object*)1;
+				num = 1;
 			}
-			while (true)
+			switch (num)
 			{
-				switch ((uint)Unsafe.AsPointer(ref reference))
-				{
-				default:
-					return;
-				case 1u:
-					reference = ref *(object*)this;
-					if (0 == 0)
-					{
-						reference = ref *(object*)null;
-					}
-					break;
-				case 0u:
-					return;
-				}
+			case 1:
+				_ = ((_003C_003Ef__AnonymousType2<, , , >)this)._003Curl_003Ei__Field;
+				/*Error near IL_0085: Member reference must be method, but was: Field*/;
+			case 0:
+				break;
 			}
+			return;
 		}
 	}
 

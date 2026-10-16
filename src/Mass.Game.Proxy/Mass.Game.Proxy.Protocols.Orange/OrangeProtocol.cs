@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using Mass.Game.Proxy.Protocols.FakeForge;
 
 namespace Mass.Game.Proxy.Protocols.Orange;
@@ -10,23 +12,17 @@ public class OrangeProtocol : FakeForgeProtocol
 	private static object StartMapper;
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public OrangeProtocol()
+	public unsafe OrangeProtocol()
 	{
-		//IL_00fa: Expected I4, but got Obj
-		//IL_00e8->IL00f1: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_0025: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		OrangeProtocol orangeProtocol = this;
-		if (false)
-		{
-			orangeProtocol = (OrangeProtocol)0;
-		}
-		switch ((int)orangeProtocol)
-		{
-		case 0:
-			break;
-		}
+		EqualityComparer<_00210> equalityComparer = (EqualityComparer<_00210>)new EqualityComparer<_00210>((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		((_003C_003Ef__AnonymousType0<>)(object)((object)((_003C_003Ef__AnonymousType0<>)(object)equalityComparer).Equals((object)equalityComparer)).ToString()).ToString();
+		/*Error near IL_002b: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -52,20 +48,23 @@ public class OrangeProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00樀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00欀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

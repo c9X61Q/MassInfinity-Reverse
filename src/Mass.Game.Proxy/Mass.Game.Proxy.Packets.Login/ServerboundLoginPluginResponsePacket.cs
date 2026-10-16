@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using DotNetty.Buffers;
 using Mass.Game.Proxy.Enums;
 using Mass.Game.Proxy.Minecraft;
@@ -72,19 +75,22 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ServerboundLoginPluginResponsePacket(EnumProtocolVersion version)
+	public unsafe ServerboundLoginPluginResponsePacket(EnumProtocolVersion version)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		//IL_001b: Expected Obj, but got Ref
+		//IL_0035: Expected Obj, but got VT
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		ServerboundLoginPluginResponsePacket serverboundLoginPluginResponsePacket = this;
-		if (false)
+		((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)this;
+		base.ToString();
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field != 0)
 		{
-			serverboundLoginPluginResponsePacket = (ServerboundLoginPluginResponsePacket)0;
+			num = 0;
 		}
-		switch ((int)serverboundLoginPluginResponsePacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -131,10 +137,12 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00踀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -148,11 +156,12 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal uint _FF00_FF00_FF00_FF00_FF00_FF00退()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -174,11 +183,12 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00錀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -192,25 +202,35 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte _FF00_FF00_FF00_FF00_FF00_FF00销()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void _FF00_FF00_FF00_FF00_FF00_FF00阀(object P_0)
+	internal unsafe sealed void _FF00_FF00_FF00_FF00_FF00_FF00阀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_005b: Expected Obj, but got I4
-		//IL_0043->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0071->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0060->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_004e->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_007c->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0047: Expected VT, but got Obj
+		//IL_0047: Expected VT, but got Obj
+		//IL_0047: Expected Obj, but got Ref
+		//IL_004c: Expected Obj, but got I4
+		//IL_0092: Expected Obj, but got VT
+		//IL_00a1: Expected Obj, but got VT
+		//IL_0080: Expected Obj, but got I4
+		//IL_0060->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0060->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00a6->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_0085->IL0022: Incompatible stack heights: 5 vs 1
+		//IL_006b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006b->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00b1->IL0026: Incompatible stack heights: 4 vs 2
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -222,17 +242,25 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 				switch ((int)obj2)
 				{
 				default:
-					if (2 == 0)
+				{
+					bool flag = ((_003C_003Ef__AnonymousType0<>)/*Error near IL_004c: Stack underflow*/).Equals((object)((EqualityComparer<_00210>)Unsafe.AsPointer(ref reference)).Equals((_00210?)this, (_00210?)P_0));
+					obj2 = 2;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 					{
-						_ = 0;
+						obj2 = 0;
+						reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 					}
 					continue;
+				}
 				case 2:
 					break;
 				case 3:
 					return;
 				case 1:
-					if (false)
+					_ = ((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType1<, , >)P_0).name).uuid;
+					_ = 0;
+					if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field != 0)
 					{
 						_ = 0;
 					}
@@ -240,6 +268,8 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 				}
 				break;
 			}
+			_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+			_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
 			obj = 3;
 		}
 	}
@@ -261,49 +291,52 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void _FF00_FF00_FF00_FF00_FF00_FF00餀(object P_0)
+	internal unsafe sealed void _FF00_FF00_FF00_FF00_FF00_FF00餀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_0062: Expected Obj, but got I4
-		//IL_0067->IL0015: Incompatible stack heights: 1 vs 0
-		//IL_0075->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0053->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0091->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003f: Expected I4, but got Obj
+		//IL_004b: Expected VT, but got Obj
+		//IL_0050: Expected VT, but got Ref
+		//IL_00ae: Expected VT, but got Obj
+		//IL_00ae: Expected VT, but got Ref
+		//IL_0065->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00c3->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0070->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00ce->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
 		while (true)
 		{
-			object obj2 = obj;
-			while (true)
+			switch ((int)obj)
 			{
-				switch ((int)obj2)
+			case 1:
+				((_003C_003Ef__AnonymousType0<>)P_0)._002Ector((_003Caction_003Ej__TPar)this);
+				((EqualityComparer<_00210>)/*Error near IL_0050: Stack underflow*/).GetHashCode((_00210)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 				{
-				case 1:
-					obj2 = P_0;
-					if (false)
-					{
-						obj2 = 0;
-					}
-					continue;
-				case 3:
-					return;
-				case 4:
-					obj2 = 3;
-					continue;
-				case 2:
-					obj2 = P_0;
-					if (true)
-					{
-						obj2 = 1;
-					}
-					continue;
+					_ = 0;
+				}
+				break;
+			case 3:
+				return;
+			default:
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+				/*Error near IL_0078: Member reference must be method, but was: Field*/;
+			case 4:
+				_ = ((_003C_003Ef__AnonymousType1<, , >)this).name;
+				/*Error near IL_0092: Member reference must be method, but was: Field*/;
+			case 2:
+				((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_00ae: Stack underflow*/)._002Ector((_003Cname_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_003Cuuid_003Ej__TPar)P_0, ((_003C_003Ef__AnonymousType1<, , >)this).user_id);
+				_ = 1;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance != null)
+				{
+					_ = 1;
 				}
 				break;
 			}
-			obj = 4;
 		}
 	}
 
@@ -318,24 +351,30 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00鬀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -363,10 +402,12 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FF00鸀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -380,26 +421,32 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00ꀀ(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got I4
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -417,24 +464,30 @@ public class ServerboundLoginPluginResponsePacket : IPacket, IBufferCodec, IBuff
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00ꈀ(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got I4
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:

@@ -1,9 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Mass.Domain.Desktop.ValueObjects;
+using Mass.Game.Launcher.Entities.Fever;
+using Serilog;
 
 namespace Mass.Game.Launcher.Java.Option;
 
@@ -122,19 +127,25 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public JavaGameOption(EnumGameVersion version, string fileName)
+	public unsafe JavaGameOption(EnumGameVersion version, string fileName)
 	{
-		//IL_004b: Expected I4, but got Obj
-		//IL_0039->IL0042: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got Obj
+		//IL_0016: Expected native int or pointer, but got Obj
+		//IL_0026: Expected I, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		JavaGameOption javaGameOption = this;
-		if (false)
+		((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state = (int)fileName;
+		Unsafe.Write(&((Authenticator._003CListenAsync_003Ed__7*)(nint)/*Error near IL_002b: Stack underflow*/)->_003C_003E4__this, new Func<Task>((object)/*Error near IL_0026: Stack underflow*/, (nint)this));
+		Unsafe.Write(&Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton, new Authenticator());
+		_ = ((AsyncTaskMethodBuilder*)this)->Task;
+		int num = 0;
+		if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003Et__builder).listener != null)
 		{
-			javaGameOption = (JavaGameOption)0;
+			num = 0;
 		}
-		switch ((int)javaGameOption)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -222,21 +233,32 @@ public class JavaGameOption
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe T GetEnum<T>(string key, T defaultValue = default(T)) where T : struct
 	{
-		//IL_000e: Expected Obj, but got VT
-		//IL_0013: Expected VT, but got Ref
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001c: Expected Obj, but got VT
+		//IL_0021: Expected I, but got Obj
+		//IL_002e: Expected Obj, but got Ref
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = defaultValue;
-		return (T)(&obj);
+		((Func<Task>)this)._002Ector((object)key, (nint)(object)defaultValue);
+		((Authenticator)/*Error near IL_0026: Stack underflow*/).StartListening((int)/*Error near IL_0026: Stack underflow*/);
+		object obj = (object)/*Error near IL_0027: Stack underflow*/;
+		((TcpListener)(&obj)).Start();
+		((AsyncTaskMethodBuilder*)/*Error near IL_0033: Stack underflow*/)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter*)/*Error near IL_0033: Stack underflow*/, ref *(Authenticator._003CReceiveAsync_003Ed__9*)/*Error near IL_0033: Stack underflow*/);
+		return (T)/*Error near IL_0034: Stack underflow*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public void SetEnum<T>(string key, T value) where T : struct
+	public unsafe void SetEnum<T>(string key, T value) where T : struct
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_001c: Expected Obj, but got VT
+		//IL_0021: Expected I, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		((Func<Task>)this)._002Ector((object)key, (nint)(object)value);
+		((Authenticator)/*Error near IL_0026: Stack underflow*/).StartListening((int)/*Error near IL_0026: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -272,13 +294,20 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00紀(Size P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00紀(Size P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0041->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_004c->IL0019: Incompatible stack heights: 4 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_004b: Expected I4, but got Obj
+		//IL_004b: Expected Obj, but got VT
+		//IL_004b: Expected native int or pointer, but got Obj
+		//IL_0056: Expected Obj, but got VT
+		//IL_0056: Expected Obj, but got VT
+		//IL_006a->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0075->IL0026: Incompatible stack heights: 2 vs 1
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -291,7 +320,10 @@ public class JavaGameOption
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((Authenticator)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder).StartListening((int)this);
+				((Authenticator)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003Eu__1).ListenAuthenticationConnectAsync((object)P_0);
+				_ = 0;
+				if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E1__state)->_003C_003Et__builder == 0)
 				{
 					_ = 0;
 				}
@@ -317,12 +349,17 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00耀()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00耀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected native int or pointer, but got Obj
+		//IL_0026: Expected Obj, but got VT
+		//IL_0027: Expected I4, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return 0;
+		((Authenticator)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder).StartListening(0);
+		return (byte)(int)this;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -357,13 +394,13 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00萀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00_FF00萀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -383,12 +420,16 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal JavaGuiScale _FF00_FF00_FF00_FF00_FF00_FF00蜀()
+	internal unsafe JavaGuiScale _FF00_FF00_FF00_FF00_FF00_FF00蜀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected native int or pointer, but got Obj
+		//IL_0026: Expected Ref, but got VT
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return JavaGuiScale.Auto;
+		((AsyncTaskMethodBuilder*)this)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter*)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder, ref *(Authenticator._003CListenAsync_003Ed__7*)null);
+		return (JavaGuiScale)/*Error near IL_0027: Stack underflow*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -408,13 +449,16 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00言(byte P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00言(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_004b: Expected Obj, but got VT
+		//IL_005f->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_006a->IL0026: Incompatible stack heights: 2 vs 1
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -427,7 +471,9 @@ public class JavaGameOption
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((Authenticator)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder).StartListening(P_0);
+				_ = 0;
+				if (Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton != null)
 				{
 					_ = 0;
 				}
@@ -445,23 +491,35 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal JavaNarrator _FF00_FF00_FF00_FF00_FF00_FF00谀()
+	internal unsafe JavaNarrator _FF00_FF00_FF00_FF00_FF00_FF00谀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected native int or pointer, but got Obj
+		//IL_0026: Expected Ref, but got VT
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return JavaNarrator.Off;
+		((AsyncTaskMethodBuilder*)this)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter*)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder, ref *(Authenticator._003CListenAsync_003Ed__7*)null);
+		return (JavaNarrator)/*Error near IL_0027: Stack underflow*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal Size _FF00_FF00_FF00_FF00_FF00_FF00贀()
+	internal unsafe Size _FF00_FF00_FF00_FF00_FF00_FF00贀()
 	{
-		//IL_001a: Expected VT, but got I4
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected native int or pointer, but got Obj
+		//IL_0026: Expected I4, but got Obj
+		//IL_0026: Expected Obj, but got VT
+		//IL_0026: Expected native int or pointer, but got Obj
+		//IL_003a: Expected Obj, but got I4
+		//IL_003a: Expected Obj, but got I4
+		//IL_003b: Expected VT, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		_ = 1740;
-		return (Size)1080;
+		((Authenticator)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder).StartListening((int)this);
+		_ = ((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003Eu__1;
+		return (Size)((Authenticator)1740).ListenAuthenticationConnectAsync((object)1080);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -473,27 +531,33 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00輀(object P_0, byte P_1)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00輀(object P_0, byte P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0041: Expected VT, but got Ref
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				_ = ref P_1;
-				if (0 == 0)
+				((ILogger)this).Debug<_0021_00210>((string)P_0, (_0021_00210)(&P_1));
+				((Func<Task>)/*Error near IL_0046: Stack underflow*/)._002Ector((object)/*Error near IL_0046: Stack underflow*/, (nint)/*Error near IL_0046: Stack underflow*/);
+				((Authenticator)/*Error near IL_004b: Stack underflow*/).StartListening((int)/*Error near IL_004b: Stack underflow*/);
+				obj2 = 0;
+				if (Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -511,12 +575,14 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_FF00鄀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_FF00鄀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -528,13 +594,16 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00錀(byte P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00錀(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003d->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0048->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected native int or pointer, but got Obj
+		//IL_004a: Expected Obj, but got VT
+		//IL_005e->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0069->IL0026: Incompatible stack heights: 2 vs 1
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -545,7 +614,9 @@ public class JavaGameOption
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((Authenticator)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder).StartListening(P_0);
+				_ = 0;
+				if (Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton == null)
 				{
 					_ = 0;
 				}
@@ -559,10 +630,15 @@ public class JavaGameOption
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00销(object P_0, byte P_1)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected VT, but got Ref
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (byte)(&P_1);
+		((ILogger)this).Debug<_0021_00210>((string)P_0, (_0021_00210)(&P_1));
+		((Authenticator)/*Error near IL_0022: Stack underflow*/).Listener = (TcpListener?)/*Error near IL_0022: Stack underflow*/;
+		((AsyncTaskMethodBuilder*)/*Error near IL_0031: Stack underflow*/)->Start<TStateMachine>(ref *(TStateMachine*)((Authenticator)(object)Task.Run((Func<Task?>)/*Error near IL_0027: Stack underflow*/)).ListenAsync());
+		return (byte)/*Error near IL_0032: Stack underflow*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -574,12 +650,17 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00需()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00需()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected native int or pointer, but got Obj
+		//IL_0026: Expected Obj, but got VT
+		//IL_0027: Expected I4, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return 0;
+		((Authenticator)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder).StartListening(0);
+		return (byte)(int)this;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -591,14 +672,20 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00餀(object P_0, object P_1)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00餀(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0041->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0065->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_004c->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_003e: Expected native int or pointer, but got Obj
+		//IL_004a: Expected I, but got Obj
+		//IL_004a: Expected Obj, but got I4
+		//IL_0054: Expected native int or pointer, but got Obj
+		//IL_0083->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008e->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0069->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 2;
@@ -612,16 +699,19 @@ public class JavaGameOption
 			case 0:
 				return;
 			case 2:
-				if (0 == 0)
+				((Func<Task>)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state)._002Ector(P_0, (nint)P_1);
+				obj2 = 0;
+				if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 == 0)
 				{
-					_ = 1;
+					obj2 = 1;
 				}
 				break;
 			case 1:
-				obj2 = this;
-				if (false)
+				((Authenticator)/*Error near IL_006f: Stack underflow*/).ListenAuthenticationConnectAsync((object)this);
+				_ = 0;
+				if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E1__state)->_003C_003Et__builder != 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			}
@@ -629,34 +719,42 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00騀(object P_0, object P_1, Size P_2)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00騀(object P_0, object P_1, Size P_2)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_005f->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0042->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_006a->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_004d->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0046: Expected VT, but got Ref
+		//IL_0055: Expected native int or pointer, but got Obj
+		//IL_008c->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0097->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			case 2:
 				return;
 			case 1:
-				_ = ref P_2;
-				if (0 == 0)
+				((ILogger)this).Debug<_0021_00210>((string)P_0, (_0021_00210)(&P_2));
+				((Authenticator)/*Error near IL_004b: Stack underflow*/).Listener = (TcpListener?)/*Error near IL_004b: Stack underflow*/;
+				obj2 = 0;
+				if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 == 0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			default:
-				_ = ref P_2;
-				if (2 != 0)
+				((AsyncTaskMethodBuilder*)P_1)->Start<TStateMachine>(ref *(TStateMachine*)(&P_2));
+				((Authenticator)/*Error near IL_0078: Stack underflow*/).ReceiveAsync((object)this);
+				_ = 2;
+				if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003Et__builder).listener != null)
 				{
 					_ = 2;
 				}
@@ -674,40 +772,49 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal Size _FF00_FF00_FF00_FF00_FF00_FF00鰀(object P_0, object P_1, uint P_2, uint P_3)
+	internal unsafe Size _FF00_FF00_FF00_FF00_FF00_FF00鰀(object P_0, object P_1, uint P_2, uint P_3)
 	{
-		//IL_0012: Expected Obj, but got I4
-		//IL_0016: Expected VT, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001c: Expected Obj, but got I4
+		//IL_0025: Expected Obj, but got I4
+		//IL_002f: Expected VT, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = P_3;
-		return (Size)obj;
+		_ = ((Authenticator)P_2).Listener;
+		((Authenticator)P_1).Listener = (TcpListener?)P_3;
+		return (Size)new Task((Func<Task?>)(object)this);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00鴀(JavaGuiScale P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00鴀(JavaGuiScale P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_004b: Expected Ref, but got VT
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((AsyncTaskMethodBuilder*)this)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter*)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder, ref *(Authenticator._003CListenAsync_003Ed__7*)(int)P_0);
+				obj2 = 0;
+				if (Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -723,29 +830,35 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00鼀(object P_0, uint P_1)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00鼀(object P_0, uint P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0042: Expected VT, but got Ref
+		//IL_0051: Expected native int or pointer, but got Obj
+		//IL_005b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0066->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				_ = ref P_1;
-				if (0 == 0)
+				((ILogger)this).Debug<_0021_00210>((string)P_0, (_0021_00210)(&P_1));
+				((Authenticator)/*Error near IL_0047: Stack underflow*/).Listener = (TcpListener?)/*Error near IL_0047: Stack underflow*/;
+				obj2 = 0;
+				if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 == 0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -769,13 +882,17 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00ꈀ(object P_0)
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00ꈀ(object P_0)
 	{
-		//IL_000c: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		//IL_0020: Expected I, but got Obj
+		//IL_0020: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (byte)(int)P_0;
+		((Func<Task>)/*Error near IL_0020: Stack underflow*/)._002Ector((object)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state, (nint)P_0);
+		return (byte)/*Error near IL_0021: Stack underflow*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -795,28 +912,34 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00ꔀ(JavaNarrator P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00ꔀ(JavaNarrator P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_004b: Expected Ref, but got VT
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((AsyncTaskMethodBuilder*)this)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter*)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder, ref *(Authenticator._003CListenAsync_003Ed__7*)(int)P_0);
+				obj2 = 0;
+				if (Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -824,13 +947,20 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private void _FF00_FF00_FF00_FF00_FF00_FF00ꘀ()
+	private unsafe void _FF00_FF00_FF00_FF00_FF00_FF00ꘀ()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_004e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0059->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003a: Expected native int or pointer, but got Obj
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_004a: Expected Ref, but got VT
+		//IL_0071: Expected Ref, but got VT
+		//IL_006c: Expected Obj, but got VT
+		//IL_0090->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_006c->IL006c: Incompatible stack heights: 3 vs 1
+		//IL_009b->IL0026: Incompatible stack heights: 3 vs 1
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -843,12 +973,25 @@ public class JavaGameOption
 			case 0:
 				return;
 			case 1:
+			{
+				((AsyncTaskMethodBuilder*)/*Error near IL_004a: Stack underflow*/)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter*)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state, ref *(Authenticator._003CListenAsync_003Ed__7*)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003Et__builder);
+				TaskAwaiter taskAwaiter = Authenticator._003CListenAsync_003Ed__7._003C_003Eu__1;
+				if ((int)taskAwaiter == 0)
+				{
+					_ = Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton;
+					__ldftn(Authenticator.ReceiveAsync);
+					Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.listener = (TcpListener)new AsyncTaskMethodBuilder();
+				}
+				((AsyncTaskMethodBuilder<EntityFeverManifestInfo>*)/*Error near IL_0071: Stack underflow*/)->Start(ref *(FeverInstaller._003CGetFeverManifestInfoAsync_003Ed__13*)taskAwaiter);
 				_ = 0;
-				if (false)
+				_ = ((TaskAwaiter*)new IAsyncStateMachine())->IsCompleted;
+				_ = 0;
+				if ((int)((Authenticator._003CReceiveAsync_003Ed__9*)Authenticator._003CReceiveAsync_003Ed__9._003C_003E1__state)->_003C_003Et__builder != 0)
 				{
 					_ = 0;
 				}
 				break;
+			}
 			}
 		}
 	}
@@ -862,13 +1005,17 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00ꠀ(object P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00ꠀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_004b: Expected I4, but got Obj
+		//IL_004b: Expected Obj, but got VT
+		//IL_005f->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_006a->IL0026: Incompatible stack heights: 2 vs 1
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -881,7 +1028,9 @@ public class JavaGameOption
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((Authenticator)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder).StartListening((int)P_0);
+				_ = 0;
+				if (Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton == null)
 				{
 					_ = 0;
 				}
@@ -891,12 +1040,15 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_FF00꤀(EnumGameVersion P_0, object P_1)
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_FF00꤀(EnumGameVersion P_0, object P_1)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0021: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return P_1;
+		((Authenticator)P_1).Listener = new Authenticator();
+		return P_0;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -939,21 +1091,29 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00글(object P_0, object P_1)
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00글(object P_0, object P_1)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		//IL_0022: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return P_1;
+		int num = ((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state;
+		((AsyncTaskMethodBuilder*)P_0)->Start(ref *(Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)P_1);
+		return num;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00꼀()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00꼀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		//IL_001b: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		return ((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -967,15 +1127,20 @@ public class JavaGameOption
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00넀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_009b: Expected Obj, but got Ref
-		//IL_005b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_004c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b2->IL007c: Incompatible stack heights: 1 vs 0
-		//IL_00d1->IL007c: Incompatible stack heights: 1 vs 0
-		//IL_00e4->IL007c: Incompatible stack heights: 4 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0066: Expected native int or pointer, but got Obj
+		//IL_0070: Expected Ref, but got VT
+		//IL_00c6: Expected Obj, but got Ref
+		//IL_00d2: Expected native int or pointer, but got Obj
+		//IL_0113: Expected native int or pointer, but got Obj
+		//IL_011f: Expected Obj, but got Ref
+		//IL_0126: Expected Obj, but got Ref
+		//IL_005a->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_007c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0065->IL0026: Incompatible stack heights: 2 vs 1
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 3;
@@ -987,51 +1152,58 @@ public class JavaGameOption
 			default:
 				return;
 			case 1:
-				obj2 = this;
-				if (0 == 0)
+				_ = ((Authenticator)this).Listener;
+				_ = 0;
+				if (((Authenticator._003CListenAsync_003Ed__7)Authenticator._003CListenAsync_003Ed__7._003C_003Et__builder)._003C_003E4__this == null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 3:
-				obj = P_0;
+				((AsyncTaskMethodBuilder*)/*Error near IL_0070: Stack underflow*/)->Start<TStateMachine>(ref *(TStateMachine*)((Authenticator._003CListenAsync_003Ed__7*)(nint)P_0)->_003C_003Eu__1);
+				obj = (object)/*Error near IL_0072: Stack underflow*/;
 				obj2 = 2;
 				break;
 			case 2:
 				while (true)
 				{
-					IL_00b2:
-					if (&obj == null)
+					IL_00e7:
+					int num;
+					if (!((TaskAwaiter*)(&obj))->IsCompleted)
 					{
-						if (0 == 0)
+						num = 0;
+						if ((int)((Authenticator._003CReceiveAsync_003Ed__9*)Authenticator._003CReceiveAsync_003Ed__9._003C_003E1__state)->_003C_003Et__builder == 0)
 						{
-							_ = 1;
+							num = 1;
 						}
-						goto IL_007c;
+						goto IL_00a5;
 					}
-					goto IL_0096;
-					IL_0096:
-					obj = (object)(&obj);
-					if (3 == 0)
+					goto IL_00bf;
+					IL_00bf:
+					GC.SuppressFinalize((object)(&obj));
+					obj = (object)/*Error near IL_00c8: Stack underflow*/;
+					num = 3;
+					if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E4__this)->_003C_003Eu__1 == 0)
 					{
-						_ = 1;
+						num = 1;
 					}
-					goto IL_007c;
-					IL_007c:
+					goto IL_00a5;
+					IL_00a5:
 					while (true)
 					{
-						switch ((int)/*Error near IL_0091: Stack underflow*/)
+						switch (num)
 						{
 						case 1:
 							break;
 						default:
-							goto IL_0096;
+							goto IL_00bf;
 						case 2:
-							goto IL_00b2;
+							goto IL_00e7;
 						case 3:
-							_ = ref obj;
-							_ = ref obj;
-							_ = 2;
+							((ILogger)/*Error near IL_011f: Stack underflow*/).Error((Exception)(object)((Authenticator._003CReceiveAsync_003Ed__9*)(nint)this)->_003C_003E4__this, (string)(&obj));
+							((AsyncTaskMethodBuilder*)/*Error near IL_0126: Stack underflow*/)->SetException((Exception)(&obj));
+							((AsyncTaskMethodBuilder*)/*Error near IL_012b: Stack underflow*/)->SetResult();
+							num = 2;
 							continue;
 						}
 						break;
@@ -1048,38 +1220,42 @@ public class JavaGameOption
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe uint _FF00_FF00_FF00_FF00_FF00_FF00눀(object P_0, uint P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_004c: Expected I4, but got Obj
-		//IL_0032: Expected Obj, but got I4
-		//IL_003e->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_005a->IL0049: Incompatible stack heights: 3 vs 0
-		//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0066->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0071->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0061: Expected I4, but got Obj
+		//IL_003f: Expected Obj, but got I4
+		//IL_006a: Expected Obj, but got Ref
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_007b->IL005e: Incompatible stack heights: 1 vs 0
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008f->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_009a->IL0026: Incompatible stack heights: 2 vs 1
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = 2;
-		object obj2 = obj;
+		object stateMachine = 2;
+		object obj = stateMachine;
 		while (true)
 		{
-			switch ((int)obj2)
+			switch ((int)obj)
 			{
 			case 1:
-				obj = P_1;
-				if (false)
+				stateMachine = P_1;
+				obj = 0;
+				if ((int)((Authenticator._003CListenAsync_003Ed__7*)Authenticator._003CListenAsync_003Ed__7._003C_003E1__state)->_003C_003Et__builder != 0)
 				{
-					obj2 = 0;
+					obj = 0;
 				}
 				break;
 			default:
-				return (uint)(int)obj;
+				return (uint)(int)stateMachine;
 			case 2:
-				_ = ref P_1;
-				if (&obj == null)
+				((AsyncTaskMethodBuilder*)((Authenticator)(object)Task.Run((Func<Task?>)(&P_1))).ListenAsync())->Start<TStateMachine>(ref *(TStateMachine*)(&stateMachine));
+				if (P_0 == null)
 				{
-					if (1 == 0)
+					_ = 1;
+					if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E1__state)->_003C_003Et__builder == 0)
 					{
 						_ = 1;
 					}
@@ -1099,28 +1275,34 @@ public class JavaGameOption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00됀(object P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00됀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_004b: Expected Ref, but got VT
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((AsyncTaskMethodBuilder*)this)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter*)((Authenticator._003CListenAsync_003Ed__7*)(nint)((Authenticator)this).Listener)->_003C_003Et__builder, ref *(Authenticator._003CListenAsync_003Ed__7*)P_0);
+				obj2 = 0;
+				if (Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}

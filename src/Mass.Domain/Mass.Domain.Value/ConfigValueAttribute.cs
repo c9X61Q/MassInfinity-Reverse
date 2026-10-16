@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
@@ -52,17 +53,23 @@ public class ConfigValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public ConfigValueAttribute(ValueIcon icon, string key, string displayName, string? description = null)
 	{
-		//IL_0053: Expected I4, but got Obj
-		//IL_0041->IL004a: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got I4
+		//IL_0040: Expected I4, but got Obj
+		//IL_004b: Expected I, but got Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		ConfigValueAttribute configValueAttribute = this;
-		if (false)
+		BoolValueAttribute.DecorateIdentifiableAggregator = icon;
+		((ConfigValue)(object)this).Id__BackingField = key;
+		((ConfigValue)(object)this).Key__BackingField = displayName;
+		((ConfigValue)(object)this).Icon__BackingField = (ValueIcon)description;
+		((Action<ConfigValue>)/*Error near IL_004b: Stack underflow*/)._002Ector((object)/*Error near IL_004b: Stack underflow*/, (nint)this);
+		int num = 0;
+		if (ConfigValue.ReflectInternalTransmitter != null)
 		{
-			configValueAttribute = (ConfigValueAttribute)0;
+			num = 0;
 		}
-		switch ((int)configValueAttribute)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -92,10 +99,10 @@ public class ConfigValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_2800()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -109,10 +116,10 @@ public class ConfigValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_2A00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -126,10 +133,10 @@ public class ConfigValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00Ⰰ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -143,11 +150,11 @@ public class ConfigValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal ValueIcon _FF00_FF00_FF00_2E00()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (ValueIcon)this;
+		return (ValueIcon)BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -161,10 +168,10 @@ public class ConfigValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_3000()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -186,10 +193,9 @@ public class ConfigValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_3300()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (BoolValueAttribute.DecorateIdentifiableAggregator == null) ? ((byte)1) : ((byte)0);
 	}
 }

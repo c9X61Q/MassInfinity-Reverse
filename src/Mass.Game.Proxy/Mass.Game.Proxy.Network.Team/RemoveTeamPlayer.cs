@@ -2,8 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using DotNetty.Buffers;
+using Mass.Application.Event;
 using Mass.Game.Proxy.Enums;
+using Mass.Game.Proxy.Minecraft.Events;
 
 namespace Mass.Game.Proxy.Network.Team;
 
@@ -30,17 +34,22 @@ public class RemoveTeamPlayer : TeamActionBase
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public RemoveTeamPlayer(EnumProtocolVersion version)
 	{
-		//IL_0042: Expected I4, but got Obj
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got I4
+		//IL_0026: Expected VT, but got Obj
+		//IL_002b: Expected Obj, but got Ref
+		//IL_0045: Expected Obj, but got VT
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		RemoveTeamPlayer removeTeamPlayer = this;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)version;
+		_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter = new EqualityComparer<_00210>((_00210)this);
+		((_003C_003Ef__AnonymousType0<>)(object)this).ToString();
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 		{
-			removeTeamPlayer = (RemoveTeamPlayer)0;
+			num = 0;
 		}
-		switch ((int)removeTeamPlayer)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -82,10 +91,12 @@ public class RemoveTeamPlayer : TeamActionBase
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00鐀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -99,24 +110,30 @@ public class RemoveTeamPlayer : TeamActionBase
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00阀(HashSet<string> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -134,29 +151,35 @@ public class RemoveTeamPlayer : TeamActionBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00頀(object P_0)
+	internal unsafe void _FF00_FF00_FF00頀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0056: Expected I4, but got Obj
-		//IL_0152: Expected Obj, but got I4
-		//IL_00c9: Expected Obj, but got I4
-		//IL_016b: Unknown result type (might be due to invalid IL or missing references)
-		//IL_016e: Expected Obj, but got Unknown
-		//IL_013d: Expected Obj, but got I4
-		//IL_0157->IL0015: Incompatible stack heights: 1 vs 0
-		//IL_00d5->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0168->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00f4->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0088->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_017a->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00e0->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0125->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0093->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0185->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c6->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0130->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0063: Expected I4, but got Obj
+		//IL_019d: Expected Obj, but got I4
+		//IL_01a7: Expected Obj, but got I4
+		//IL_00fa: Expected Obj, but got I4
+		//IL_0109: Expected Obj, but got VT
+		//IL_0126: Expected Obj, but got I4
+		//IL_015d: Invalid comparison between VT and I4
+		//IL_0097: Expected Obj, but got Ref
+		//IL_00a8: Expected Obj, but got VT
+		//IL_01c0: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01c3: Expected Obj, but got Unknown
+		//IL_018e: Expected Obj, but got I4
+		//IL_0171: Expected Obj, but got I4
+		//IL_01ac->IL0022: Incompatible stack heights: 2 vs 1
+		//IL_010e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01bd->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0131->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_00ad->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_01d7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0119->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0176->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b8->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_01e2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0181->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 8;
@@ -168,20 +191,17 @@ public class RemoveTeamPlayer : TeamActionBase
 				switch ((int)obj2)
 				{
 				case 8:
-					obj = this;
-					if (7 == 0)
+					((EventBus)/*Error near IL_0097: Stack underflow*/).Register((Action<EventMinecraft>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), ((_003C_003Ef__AnonymousType0<>)(object)this).GetHashCode());
+					obj = (object)/*Error near IL_0099: Stack underflow*/;
+					_ = 7;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 					{
-						obj2 = 1;
+						_ = 1;
 					}
 					continue;
 				case 6:
-					obj2 = P_0;
 					_ = ((Array)obj).Length;
-					if (11 == 0)
-					{
-						obj2 = 3;
-					}
-					continue;
+					/*Error near IL_00bd: Member reference must be method, but was: Field*/;
 				case 1:
 				case 12:
 					if ((nint)obj >= ((Array)obj).Length)
@@ -192,21 +212,23 @@ public class RemoveTeamPlayer : TeamActionBase
 					goto case 4;
 				case 2:
 					obj = 0;
-					if (true)
+					obj2 = 1;
+					if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument != null)
 					{
 						obj2 = 1;
 					}
 					continue;
 				case 5:
-					_ = 32767;
+					((_003C_003Ef__AnonymousType1<, , >)32767).GetHashCode();
 					_ = 9;
 					continue;
 				case 3:
 					return;
 				case 7:
-					if ((nint)this > 5)
+					if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_defaultTimeout > (object)5)
 					{
-						if (13 != 0)
+						obj2 = 13;
+						if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_ascii_68FF03FEFFFF87FEFFFF07 != null)
 						{
 							obj2 = 13;
 						}
@@ -219,7 +241,7 @@ public class RemoveTeamPlayer : TeamActionBase
 					obj = 2;
 					break;
 				default:
-					_ = ((Array)obj).Length;
+					_ = ((_003C_003Ef__AnonymousType2<, , , >)((Array)obj).Length).context;
 					obj = 10;
 					break;
 				case 4:
@@ -228,7 +250,8 @@ public class RemoveTeamPlayer : TeamActionBase
 					continue;
 				case 9:
 					obj++;
-					if (12 == 0)
+					obj2 = 12;
+					if (((EntitySocks5Account)EntitySocks5Account.Username__BackingField).Password__BackingField == null)
 					{
 						obj2 = 6;
 					}
@@ -258,11 +281,12 @@ public class RemoveTeamPlayer : TeamActionBase
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00鬀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -274,23 +298,28 @@ public class RemoveTeamPlayer : TeamActionBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00鴀(object P_0)
+	internal unsafe void _FF00_FF00_FF00鴀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0046: Expected I4, but got Obj
-		//IL_00c1: Expected Obj, but got I4
-		//IL_004f: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0052: Expected Obj, but got Unknown
-		//IL_005b: Expected Obj, but got I4
-		//IL_00cb->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0093->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0124->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_009e->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00ec->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b3->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_012f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00be->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0053: Expected I4, but got Obj
+		//IL_00f2: Expected Obj, but got I4
+		//IL_0127: Expected Obj, but got Ref
+		//IL_005c: Unknown result type (might be due to invalid IL or missing references)
+		//IL_005f: Expected Obj, but got Unknown
+		//IL_0068: Expected Obj, but got I4
+		//IL_00a2: Expected Obj, but got I4
+		//IL_0112: Invalid comparison between VT and I4
+		//IL_015d: Expected Obj, but got I4
+		//IL_016c: Expected Obj, but got VT
+		//IL_015b: Expected VT, but got Obj
+		//IL_015b: Expected Obj, but got Ref
+		//IL_00fc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0171->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0121->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e4->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_017c->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00ef->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 8;
@@ -299,27 +328,25 @@ public class RemoveTeamPlayer : TeamActionBase
 			object obj2 = obj;
 			while (true)
 			{
-				object obj3;
+				int num;
 				switch ((int)obj2)
 				{
 				case 2:
 					return;
 				case 4:
-					goto end_IL_0019;
+					goto end_IL_0026;
 				default:
-					_ = 32767;
-					if (4 == 0)
-					{
-						_ = 4;
-					}
-					continue;
+					((_003C_003Ef__AnonymousType0<>)(object)this).GetHashCode();
+					((_003C_003Ef__AnonymousType0<>)32767).ToString();
+					/*Error near IL_00a2: Member reference must be method, but was: Field*/;
 				case 6:
 				case 9:
 					if (Unsafe.As<object, UIntPtr>(ref obj) >= Unsafe.As<object, UIntPtr>(ref obj))
 					{
 						return;
 					}
-					if (false)
+					obj2 = 0;
+					if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field != 0)
 					{
 						obj2 = 0;
 					}
@@ -329,26 +356,27 @@ public class RemoveTeamPlayer : TeamActionBase
 					obj2 = 6;
 					continue;
 				case 8:
-					if ((nint)this <= 5)
+					if (((_003C_003Ef__AnonymousType3<, >)(object)this)._003Csid_003Ei__Field <= (object)5)
 					{
 						obj2 = 7;
 						continue;
 					}
 					goto case 3;
 				case 3:
-					obj3 = P_0;
+					num = (((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals(P_0) ? 1 : 0);
 					break;
 				case 7:
-					obj3 = P_0;
+					num = ((EqualityComparer<_00212>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).GetHashCode((_00212)P_0);
 					break;
 				}
-				obj = obj3;
-				if (0 == 0)
+				obj = num;
+				_ = 0;
+				if (!_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout)
 				{
-					obj2 = 1;
+					_ = 1;
 				}
 				continue;
-				end_IL_0019:
+				end_IL_0026:
 				break;
 			}
 			obj++;
@@ -359,10 +387,12 @@ public class RemoveTeamPlayer : TeamActionBase
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal HashSet<string> _FF00_FF00_FF00鸀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (HashSet<string>)(object)this;
+		return (HashSet<string>)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

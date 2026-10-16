@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using Mass.Application.Event;
 using Mass.Game.Proxy.Minecraft.Events.Play;
 using Mass.Game.Proxy.Protocols.FakeForge;
@@ -12,23 +15,17 @@ public class AelyProtocol : FakeForgeProtocol
 	private static object DecorateResponsiveStrategy;
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public AelyProtocol()
+	public unsafe AelyProtocol()
 	{
-		//IL_004b: Expected I4, but got Obj
-		//IL_0039->IL0042: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_0025: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		AelyProtocol aelyProtocol = this;
-		if (0 == 0)
-		{
-			aelyProtocol = (AelyProtocol)0;
-		}
-		switch ((int)aelyProtocol)
-		{
-		case 0:
-			break;
-		}
+		EqualityComparer<_00210> equalityComparer = (EqualityComparer<_00210>)new EqualityComparer<_00210>((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		((_003C_003Ef__AnonymousType0<>)(object)((object)((_003C_003Ef__AnonymousType0<>)(object)equalityComparer).Equals((object)equalityComparer)).ToString()).ToString();
+		/*Error near IL_002b: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -61,10 +58,12 @@ public class AelyProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00ﰀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -78,11 +77,12 @@ public class AelyProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FE00()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -94,23 +94,23 @@ public class AelyProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00Ѐ(object P_0)
+	internal unsafe void _FF00_FF00_FF00Ѐ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003e: Expected I4, but got Obj
-		//IL_004f: Expected Obj, but got I4
-		//IL_0054->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_00a3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00fb->IL00ff: Incompatible stack heights: 1 vs 0
-		//IL_0066->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0084->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00d2->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0125->IL00ff: Incompatible stack heights: 1 vs 0
-		//IL_0071->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00dd->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0130->IL00ff: Incompatible stack heights: 1 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004b: Expected I4, but got Obj
+		//IL_00c4: Expected Obj, but got VT
+		//IL_00c9: Expected VT, but got Ref
+		//IL_0057: Expected VT, but got Obj
+		//IL_0060: Expected Obj, but got I4
+		//IL_0109: Expected VT, but got Obj
+		//IL_0109: Expected Obj, but got Ref
+		//IL_010b: Expected Obj, but got I4
+		//IL_011a: Expected Obj, but got VT
+		//IL_00ce->IL00fc: Incompatible stack heights: 0 vs 1
+		//IL_00d8->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_011f->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_012a->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 5;
@@ -130,60 +130,30 @@ public class AelyProtocol : FakeForgeProtocol
 				case 0:
 					return;
 				case 4:
-					if (P_0 == null)
-					{
-						obj = P_0;
-						if (2 == 0)
-						{
-							obj2 = 2;
-						}
-					}
-					else if (false)
-					{
-						obj2 = 0;
-					}
-					continue;
+					/*Error near IL_008f: Member reference must be method, but was: Field*/;
 				case 2:
-					if (obj == null)
+					if (!((EqualityComparer<_00212>)/*Error near IL_00c9: Stack underflow*/).Equals((_00212?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00212?)((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType1<, , >)obj).uuid).user_id))
 					{
-						obj2 = 6;
+						_ = 6;
 						continue;
 					}
 					return;
 				case 1:
 					return;
 				case 6:
-					obj = obj;
-					if (2 == 0)
+					obj = ((EqualityComparer<_00212>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).GetHashCode((_00212)((_003C_003Ef__AnonymousType1<, , >)obj).ToString());
+					_ = 2;
+					if (!_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout)
 					{
-						obj2 = 3;
+						_ = 3;
 					}
 					continue;
 				case 3:
-					obj = obj;
-					if (1 == 0)
-					{
-						_ = 0;
-					}
-					while (true)
-					{
-						switch ((int)/*Error near IL_010c: Stack underflow*/)
-						{
-						default:
-							return;
-						case 0:
-							return;
-						case 1:
-							if (false)
-							{
-								_ = 0;
-							}
-							break;
-						}
-					}
+					/*Error near IL_012e: Member reference must be method, but was: Field*/;
 				}
 				break;
 			}
+			((_003C_003Ef__AnonymousType0<>)(object)this)._002Ector((_003Caction_003Ej__TPar)P_0);
 			obj = 4;
 		}
 	}

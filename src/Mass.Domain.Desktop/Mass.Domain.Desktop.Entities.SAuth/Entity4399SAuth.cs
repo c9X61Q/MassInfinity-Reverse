@@ -3,6 +3,9 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 using Mass.Domain.Converters;
+using Mass.Domain.Desktop.Interfaces;
+using Mass.Domain.Desktop.Models;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Domain.Desktop.Entities.SAuth;
 
@@ -63,44 +66,54 @@ public class Entity4399SAuth : EntitySAuth
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public Entity4399SAuth()
+	public unsafe Entity4399SAuth()
 	{
-		//IL_0046: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		//IL_008d->IL0031: Incompatible stack heights: 3 vs 2
-		//IL_0080->IL0031: Incompatible stack types: I4 vs Obj
-		//IL_0066->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001f: Expected I4, but got Obj
+		//IL_002a: Expected I4, but got Obj
+		//IL_00b6->IL0052: Incompatible stack heights: 2 vs 1
+		//IL_008c->IL0052: Incompatible stack heights: 3 vs 1
+		//IL_00d6->IL0052: Incompatible stack heights: 2 vs 1
+		//IL_00c1->IL0052: Incompatible stack heights: 2 vs 1
+		//IL_0097->IL0052: Incompatible stack heights: 3 vs 1
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		Entity4399SAuth entity4399SAuth = this;
-		if (3 == 0)
+		((EnumGameType*)(nint)/*Error near IL_001f: Stack underflow*/)->value__ = (int)new PageModel<>((T[])(object)this);
+		((PageModel<>)/*Error near IL_002a: Stack underflow*/).TotalPage = (int)this;
+		int num = 3;
+		if (EnumGameType.NetGame == (EnumGameType)0)
 		{
-			entity4399SAuth = (Entity4399SAuth)2;
+			num = 2;
 		}
 		while (true)
 		{
-			switch ((int)entity4399SAuth)
+			switch (num)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 2:
-				entity4399SAuth = this;
-				if (false)
+				_ = ((IDesktopGame)PageModel<>.AssembleParameter()).EntityId;
+				_ = 0;
+				if (EnumGameType.OnlineLobbyGame != (EnumGameType)0)
 				{
-					entity4399SAuth = (Entity4399SAuth)1;
+					_ = 1;
 				}
 				break;
 			case 1:
-				entity4399SAuth = this;
-				if (false)
+				((IDesktopGame)/*Error near IL_009d: Stack underflow*/).Name = (string)(object)this;
+				_ = ((IDesktopGame)/*Error near IL_00a2: Stack underflow*/).Author;
+				_ = 0;
+				if (EnumGameVersion.V_X64_CPP != EnumGameVersion.None)
 				{
-					entity4399SAuth = (Entity4399SAuth)0;
+					_ = 0;
 				}
 				break;
 			case 3:
+				((IDesktopGame)/*Error near IL_00c7: Stack underflow*/).Description = (string)(object)this;
+				_ = ((IDesktopGame)/*Error near IL_00cc: Stack underflow*/).PlayerCount;
 				_ = 2;
 				break;
 			}
@@ -130,10 +143,12 @@ public class Entity4399SAuth : EntitySAuth
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00가()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EnumGameClientType.cpp;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -147,24 +162,30 @@ public class Entity4399SAuth : EntitySAuth
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00글(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected I4, but got Obj
+		//IL_003a: Expected native int or pointer, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				EnumGameClientType.cpp = (EnumGameClientType)P_0;
+				obj2 = 0;
+				if (EnumGameType.None == (EnumGameType)0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -184,11 +205,11 @@ public class Entity4399SAuth : EntitySAuth
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00뀀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return ((nint)2 == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -202,24 +223,30 @@ public class Entity4399SAuth : EntitySAuth
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00눀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected I4, but got Obj
+		//IL_003a: Expected native int or pointer, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				EnumGameClientType.cpp = (EnumGameClientType)P_0;
+				obj2 = 0;
+				if (EnumGameType.None == (EnumGameType)0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -239,19 +266,25 @@ public class Entity4399SAuth : EntitySAuth
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00됀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		//IL_001b: Expected Obj, but got I4
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		return EnumGameClientType.cpp;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00딀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		//IL_001b: Expected Obj, but got I4
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		return EnumGameClientType.cpp;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -265,26 +298,32 @@ public class Entity4399SAuth : EntitySAuth
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00뜀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected I4, but got Obj
+		//IL_003b: Expected native int or pointer, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				EnumGameClientType.cpp = (EnumGameClientType)P_0;
+				obj2 = 0;
+				if (EnumGameType.None != (EnumGameType)0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -302,10 +341,13 @@ public class Entity4399SAuth : EntitySAuth
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00묀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		//IL_001b: Expected Obj, but got I4
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		return EnumGameClientType.cpp;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

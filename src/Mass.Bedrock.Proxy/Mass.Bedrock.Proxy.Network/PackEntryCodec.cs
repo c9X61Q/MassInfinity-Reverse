@@ -1,7 +1,11 @@
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
 using DotNetty.Buffers;
+using Mass.Application.Mobile;
+using Mass.Application.Models;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Bedrock.Proxy.Network;
 
@@ -42,12 +46,13 @@ public static class PackEntryCodec
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00ༀ()
+	internal unsafe static object _FF00_FF00_FF00_FF00ༀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityLaunchBedrockProxy.Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -67,13 +72,13 @@ public static class PackEntryCodec
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00ሀ()
+	internal unsafe static byte _FF00_FF00_FF00_FF00ሀ()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityLaunchBedrockProxy.Name__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -108,17 +113,19 @@ public static class PackEntryCodec
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00_FF00ᘀ(object P_0, object P_1)
+	internal unsafe static void _FF00_FF00_FF00_FF00ᘀ(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0040: Expected Obj, but got I4
-		//IL_0071->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0055->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_007c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0060->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_008d: Expected I4, but got Obj
+		//IL_0055: Expected Obj, but got I4
+		//IL_00a6->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_007a->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_005a->IL0022: Incompatible stack heights: 2 vs 0
+		//IL_00b1->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0085->IL0026: Incompatible stack heights: 2 vs 1
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
@@ -132,7 +139,10 @@ public static class PackEntryCodec
 				case 2:
 					break;
 				case 1:
-					if (0 == 0)
+					((EntityLaunchBedrockProxy)P_0).Session = (MobileSession)P_1;
+					_ = ((EntityLaunchBedrockProxy)/*Error near IL_0066: Stack underflow*/).GameId;
+					_ = 0;
+					if (((BedrockProxy)BedrockProxy.Logger__BackingField).Name == null)
 					{
 						_ = 0;
 					}
@@ -140,7 +150,10 @@ public static class PackEntryCodec
 				case 3:
 					return;
 				default:
-					if (2 == 0)
+					((EntityLaunchBedrockProxy)P_0).GameType = (EnumGameType)P_1;
+					_ = ((EntityLaunchBedrockProxy)/*Error near IL_0092: Stack underflow*/).Name;
+					_ = 2;
+					if (((BedrockProxy)(object)BedrockProxy.ServerAddress).ServerPort == 0)
 					{
 						_ = 0;
 					}
@@ -148,6 +161,7 @@ public static class PackEntryCodec
 				}
 				break;
 			}
+			_ = ((EntityLaunchBedrockProxy)(object)((EntityLaunchBedrockProxy)P_1).EqualityContract).Session;
 			obj = 3;
 		}
 	}

@@ -1,9 +1,13 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
 using DotNetty.Buffers;
+using Mass.Application.Models;
 using Mass.Bedrock.Proxy.Network.Minecraft.Enums;
 using Mass.Bedrock.Proxy.Network.Packet;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Bedrock.Proxy.Packets.Minecraft;
 
@@ -89,19 +93,21 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ClientboundDisconnectPacket()
+	public unsafe ClientboundDisconnectPacket()
 	{
-		//IL_0042: Expected I4, but got Obj
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		ClientboundDisconnectPacket clientboundDisconnectPacket = this;
-		if (0 == 0)
+		((EntityLaunchBedrockProxy)/*Error near IL_001b: Stack underflow*/).ServerAddress__BackingField = this;
+		EntityLaunchBedrockProxy.ReflectScheduledLogger = (EntityLaunchBedrockProxy)(object)this;
+		((EntityLaunchBedrockProxy)/*Error near IL_0032: Stack underflow*/).GameId = (string)(object)this;
+		int num = 0;
+		if (((BedrockProxy)(object)BedrockProxy.Name).GameId == null)
 		{
-			clientboundDisconnectPacket = (ClientboundDisconnectPacket)0;
+			num = 0;
 		}
-		switch ((int)clientboundDisconnectPacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -129,19 +135,24 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FFFD(object P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FFFD(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003a: Expected I4, but got Obj
-		//IL_0086->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_006b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00cd->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00b4->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_005b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0091->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0076->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00bf->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0047: Expected I4, but got Obj
+		//IL_00e4: Expected I4, but got Obj
+		//IL_0068: Expected Obj, but got I
+		//IL_0114: Expected Obj, but got I4
+		//IL_006d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c3->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0098->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_011e->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00fd->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0078->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ce->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00a3->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0108->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 2;
@@ -151,20 +162,27 @@ public class ClientboundDisconnectPacket : PacketBase
 			switch ((int)obj2)
 			{
 			case 1:
-				obj2 = P_0;
-				if (0 == 0)
+				((StringBuilder)(object)((EntityLaunchBedrockProxy)(object)this).EqualityContract)._002Ector();
+				obj2 = 0;
+				if ((object)EntityLaunchBedrockProxy.ReflectScheduledLogger == null)
 				{
 					obj2 = 0;
 				}
 				continue;
 			case 4:
-				if (6 == 0)
+				((EntityLaunchBedrockProxy)P_0).GameId = (string)(object)this;
+				_ = ((EntityLaunchBedrockProxy)/*Error near IL_0084: Stack underflow*/).GameType;
+				_ = 6;
+				if (((BedrockProxy)(object)BedrockProxy.GameId).GameType == 0)
 				{
 					_ = 6;
 				}
 				continue;
 			case 2:
-				if (1 == 0)
+				((EntityLaunchBedrockProxy)P_0).Name = (string)(object)this;
+				_ = ((EntityLaunchBedrockProxy)/*Error near IL_00af: Stack underflow*/).ServerAddress;
+				_ = 1;
+				if ((object)((BedrockProxy)(object)BedrockProxy.Session).PatchInfo == null)
 				{
 					_ = 1;
 				}
@@ -174,9 +192,11 @@ public class ClientboundDisconnectPacket : PacketBase
 			case 6:
 				return;
 			default:
-				if (this != null)
+				((EntityLaunchBedrockProxy)/*Error near IL_00e4: Stack underflow*/).ServerPort = (int)this;
+				if ((int)/*Error near IL_00e9: Stack underflow*/ != 0)
 				{
-					if (2 != 0)
+					obj2 = 2;
+					if (((BedrockProxy)BedrockProxy.EndPoints__BackingField).EndPointIndex__BackingField != 0)
 					{
 						obj2 = 3;
 					}
@@ -186,6 +206,7 @@ public class ClientboundDisconnectPacket : PacketBase
 			case 5:
 				break;
 			}
+			_ = (EntityLaunchBedrockProxy?)/*Error near IL_0114: Stack underflow*/ == (EntityLaunchBedrockProxy?)((EntityLaunchBedrockProxy?)P_0 != (EntityLaunchBedrockProxy?)(object)this);
 			_ = 4;
 		}
 	}
@@ -199,19 +220,20 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_E000(object P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_E000(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003a: Expected I4, but got Obj
-		//IL_00a3: Expected Obj, but got I4
-		//IL_00a8->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_006e->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b6->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0096->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0052->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0079->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_005d->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0047: Expected I4, but got Obj
+		//IL_00dc: Expected Obj, but got I4
+		//IL_00ed: Expected I4, but got Obj
+		//IL_0097->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f7->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00c7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0076->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 5;
@@ -225,9 +247,10 @@ public class ClientboundDisconnectPacket : PacketBase
 				default:
 					return;
 				case 2:
-					if (this != null)
+					if ((object)((EntityLaunchBedrockProxy)(object)this).EqualityContract != null)
 					{
-						if (false)
+						obj2 = 0;
+						if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.ServerAddress__BackingField).ServerPort__BackingField != 0)
 						{
 							obj2 = 0;
 						}
@@ -239,47 +262,56 @@ public class ClientboundDisconnectPacket : PacketBase
 				case 6:
 					return;
 				case 3:
-					if (false)
+					((EntityLaunchBedrockProxy)(object)this).GameId = ((EntityLaunchBedrockProxy)P_0).GameId;
+					obj2 = 0;
+					if (((BedrockProxy)(object)BedrockProxy.Name).GameId != null)
 					{
-						_ = 1;
+						obj2 = 1;
 					}
 					continue;
 				case 5:
-					_ = 4;
+					((EntityLaunchBedrockProxy)(object)this).Name = ((EntityLaunchBedrockProxy)P_0).Name;
+					obj2 = 4;
 					continue;
 				case 1:
 					break;
 				case 4:
+					((EntityLaunchBedrockProxy)P_0).ServerPort = (int)EqualityComparer<EnumGameType>.Default;
 					_ = 2;
 					continue;
 				}
 				break;
 			}
+			((EntityLaunchBedrockProxy)(object)this).ServerAddress = ((EntityLaunchBedrockProxy)P_0).ServerAddress;
 			obj = 6;
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_E100(object P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_E100(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((EntityLaunchBedrockProxy)(object)this).Name__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.ServerAddress__BackingField).ServerPort__BackingField != 0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -297,26 +329,31 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_E300(uint P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_E300(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected Obj, but got I4
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityLaunchBedrockProxy)(object)this).Name__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.ServerAddress__BackingField).ServerPort__BackingField == 0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -326,22 +363,23 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_E400()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_E400()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityLaunchBedrockProxy)(object)this).Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00_E500()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00_E500()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityLaunchBedrockProxy.Name__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -353,26 +391,30 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_E700(object P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_E700(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityLaunchBedrockProxy)(object)this).Name__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.ServerAddress__BackingField).ServerPort__BackingField == 0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -382,13 +424,14 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal uint _FF00_FF00_FF00_FF00_FF00_E800()
+	internal unsafe uint _FF00_FF00_FF00_FF00_FF00_E800()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001b: Expected I4, but got Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)((EntityLaunchBedrockProxy)(object)this).Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -400,12 +443,13 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_EA00()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_EA00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityLaunchBedrockProxy.Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -417,12 +461,13 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_EC00()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_EC00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityLaunchBedrockProxy)(object)this).Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -442,38 +487,44 @@ public class ClientboundDisconnectPacket : PacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_EF00()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_EF00()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001b: Expected I4, but got Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)((EntityLaunchBedrockProxy)(object)this).Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_F000(byte P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_F000(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected Obj, but got I4
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((EntityLaunchBedrockProxy)(object)this).Name__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.ServerAddress__BackingField).ServerPort__BackingField != 0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}

@@ -2,16 +2,24 @@ using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using System.Threading.Tasks;
+using ABI.System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel.__Internals;
 using CommunityToolkit.Mvvm.Input;
+using Mass.WinUI.Mass_WinUI_XamlTypeInfo;
 using Mass.WinUI.Models;
+using Microsoft.UI.Xaml.Controls;
 using WinRT;
+using WinRT.Mass_WinUIGenericHelpers;
 using WinRT.Mass_WinUIVtableClasses;
 
 namespace Mass.WinUI.ViewModels;
@@ -82,37 +90,41 @@ public class InstanceViewModel : ObservableObject
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00开()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0032: Expected I4, but got Obj
-			//IL_0219: Expected Obj, but got Ref
-			//IL_0165: Expected Obj, but got Ref
-			//IL_009b: Expected Obj, but got Ref
-			//IL_0139: Expected Obj, but got I4
-			//IL_00e5: Expected Obj, but got I4
-			//IL_0225->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0208->IL0019: Incompatible stack heights: 3 vs 1
-			//IL_0215->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0230->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_017c->IL005b: Incompatible stack heights: 1 vs 0
-			//IL_0057->IL005b: Incompatible stack heights: 1 vs 0
-			//IL_00a5->IL005b: Incompatible stack heights: 1 vs 0
-			//IL_0146->IL005b: Incompatible stack heights: 2 vs 0
-			//IL_0134->IL005b: Incompatible stack heights: 2 vs 0
-			//IL_011c->IL005b: Incompatible stack heights: 2 vs 0
-			//IL_00f2->IL005b: Incompatible stack heights: 2 vs 0
-			//IL_0161->IL005b: Incompatible stack heights: 4 vs 0
-			//IL_00c1->IL005b: Incompatible stack heights: 2 vs 0
-			//IL_0151->IL005b: Incompatible stack heights: 2 vs 0
-			//IL_0127->IL005b: Incompatible stack heights: 2 vs 0
-			//IL_00fd->IL005b: Incompatible stack heights: 2 vs 0
-			//IL_00e0->IL005b: Incompatible stack heights: 1 vs 0
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0011: Expected Obj, but got Ref
+			//IL_001d: Expected Obj, but got I4
+			//IL_003f: Expected I4, but got Obj
+			//IL_02bd: Expected Obj, but got Ref
+			//IL_0298: Expected VT, but got I4
+			//IL_0298: Expected Obj, but got Ref
+			//IL_02a8: Expected Obj, but got Ref
+			//IL_01cd: Expected Obj, but got Ref
+			//IL_005c: Expected Obj, but got I
+			//IL_00b0: Expected Obj, but got Ref
+			//IL_018b: Expected Obj, but got I4
+			//IL_0190: Expected Obj, but got I4
+			//IL_0190: Expected Obj, but got Ref
+			//IL_0156: Expected Obj, but got Ref
+			//IL_0165: Expected Obj, but got I
+			//IL_011b: Expected Obj, but got I4
+			//IL_0120: Expected Obj, but got Ref
+			//IL_01b5: Expected Obj, but got Ref
+			//IL_00db: Expected Obj, but got Ref
+			//IL_00db: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0106: Expected Obj, but got I
+			//IL_02d3->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_02a2->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_02b7->IL0026: Incompatible stack heights: 2 vs 1
+			//IL_02de->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_01c7->IL0070: Incompatible stack heights: 2 vs 1
+			((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 1;
 			object obj2 = obj;
 			while (true)
 			{
+				int num;
 				switch ((int)obj2)
 				{
 				case 3:
@@ -120,98 +132,112 @@ public class InstanceViewModel : ObservableObject
 				default:
 					if (obj != null)
 					{
-						if (1 == 0)
+						num = 1;
+						if (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged.JoinAttribute == null)
 						{
-							_ = 1;
+							num = 1;
 						}
-						goto IL_005b;
+						goto IL_0070;
 					}
-					goto IL_0161;
+					goto IL_01c7;
 				case 2:
-					goto IL_01fa;
+					goto IL_0290;
 				case 4:
+					IEnumeratorMethods<INotifyPropertyChanged, nint>.InitCcw((delegate* unmanaged[Stdcall]<IntPtr, nint*, int>)/*Error near IL_02ad: Stack underflow*/, (delegate* unmanaged[Stdcall]<IntPtr, byte*, int>)/*Error near IL_02ad: Stack underflow*/, (delegate* unmanaged[Stdcall]<IntPtr, byte*, int>)/*Error near IL_02ad: Stack underflow*/, (delegate* unmanaged[Stdcall]<IntPtr, int, IntPtr, uint*, int>)Unsafe.AsPointer(ref _003CRegexGenerator_g_003EF913B518315CAC4435BB177D208F0E66F2B48B47DD3BAE12B2F89258425FEDE89__Utilities.s_hasTimeout));
 					_ = 3;
 					break;
 				case 1:
 					{
-						obj = (object)Unsafe.AsPointer(ref this);
-						if (0 == 0)
+						obj = __KnownINotifyPropertyChangingArgs.Notes;
+						obj2 = 0;
+						if (__KnownINotifyPropertyChangingArgs.Username == null)
 						{
 							obj2 = 0;
 						}
 						break;
 					}
-					IL_0161:
-					obj = (object)Unsafe.AsPointer(ref this);
-					if (3 == 0)
+					IL_01c7:
+					obj = Mass_WinUI_Controls_MobileGameCardWinRTTypeDetails.UpdateAttribute;
+					num = 3;
+					if (Mass_WinUI_ViewModels_ChatViewModelWinRTTypeDetails.DecorateCustomizableAttribute == null)
 					{
-						_ = 9;
+						num = 9;
 					}
-					goto IL_005b;
-					IL_01fa:
-					_ = -2;
-					_ = 4;
+					goto IL_0070;
+					IL_0290:
+					_003CRegexGenerator_g_003EF913B518315CAC4435BB177D208F0E66F2B48B47DD3BAE12B2F89258425FEDE89__Utilities.s_defaultTimeout = (TimeSpan)(-2);
+					obj2 = 4;
 					break;
-					IL_005b:
+					IL_0070:
 					while (true)
 					{
-						switch ((int)/*Error near IL_0090: Stack underflow*/)
+						switch (num)
 						{
 						case 10:
 							return;
 						case 1:
-							obj = (object)Unsafe.AsPointer(ref this);
-							_ = 3;
+							((ValueTuple<int, nint>*)/*Error near IL_00ba: Stack underflow*/)->_002Ector((int)/*Error near IL_00ba: Stack underflow*/, (nint)(int)IEnumerator_object.Do_Abi_MoveNext_2((nint)/*Error near IL_00b5: Stack underflow*/, (byte*)IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized));
+							obj = (object)/*Error near IL_00bc: Stack underflow*/;
+							num = 3;
 							continue;
 						case 9:
-							_ = 2;
+							IList_object.PatchAttribute = (object)default(ObservableObject);
+							num = 2;
 							continue;
 						case 3:
-							if (&obj != null)
+							if (MarshalInspectable<object>.FromManaged((object)/*Error near IL_00f2: Stack underflow*/, (byte)(&obj) != 0) != (IntPtr)0)
 							{
-								if (0 == 0)
+								num = 0;
+								if (IReadOnlyList_System_IDisposable.ReflectConnectedAttribute == null)
 								{
-									_ = 0;
+									num = 0;
 								}
 								continue;
 							}
 							goto case 6;
 						case 6:
 							obj = 0;
-							if (5 == 0)
+							IReadOnlyList_object._initialized = 0;
+							num = 5;
+							if (IEnumerator_System_IDisposable._initialized == 0)
 							{
-								_ = 5;
+								num = 5;
 							}
 							continue;
 						case 5:
-							if (false)
+							IEnumerator_System_IDisposable.ReflectTransferableAttribute = obj;
+							num = 0;
+							if (IEnumerable_System_IDisposable.CombineAttribute != null)
 							{
-								_ = 8;
+								num = 8;
 							}
 							continue;
 						default:
-							_ = ref obj;
-							_ = 11;
+							MarshalInterface<INotifyPropertyChanged>.CopyManagedArray((INotifyPropertyChanged[])/*Error near IL_017c: Stack underflow*/, (IntPtr)(nint)(&obj));
+							num = 11;
 							continue;
 						case 2:
 							obj = -1;
-							if (4 == 0)
+							IEnumerable_object.ReflectSetAttribute = -1;
+							num = 4;
+							if (Mass_WinUI_Controls_PaymentDialogWinRTTypeDetails.ReflectDividedAttribute == null)
 							{
-								_ = 4;
+								num = 4;
 							}
 							continue;
 						case 8:
-							_ = ref obj;
+							_ = ref Mass_WinUI_Models_DesktopGameCharacterModelWinRTTypeDetails.ReflectVisibleAttribute;
+							((AsyncTaskMethodBuilder*)(&obj))->Start(ref Unsafe.As<_003COperation_003Ed__11, AccountViewModel._003CCreateAccount_003Ed__21>(ref this));
 							_ = 10;
 							continue;
 						case 7:
 							break;
 						case 11:
-							goto IL_01fa;
+							goto IL_0290;
 						}
 						break;
 					}
-					goto IL_0161;
+					goto IL_01c7;
 				}
 			}
 		}
@@ -225,22 +251,26 @@ public class InstanceViewModel : ObservableObject
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static byte _FF00_FF00_FF00_FF00_FF00愀()
+		internal unsafe static byte _FF00_FF00_FF00_FF00_FF00愀()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0011: Expected Obj, but got Ref
+			((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			return (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static object _FF00_FF00_FF00_FF00_FF00戀()
+		internal unsafe static object _FF00_FF00_FF00_FF00_FF00戀()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0011: Expected Obj, but got Ref
+			//IL_001a: Expected Obj, but got I
+			((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -252,13 +282,17 @@ public class InstanceViewModel : ObservableObject
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private sealed void _FF00_FF00_FF00_FF00_FF00搀(object P_0)
+		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00搀(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0011: Expected Obj, but got Ref
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_003e: Expected Obj, but got Ref
+			//IL_0053: Expected Obj, but got I
+			//IL_0058->IL0026: Incompatible stack heights: 2 vs 1
+			//IL_0063->IL0026: Incompatible stack heights: 2 vs 1
+			((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 1;
@@ -269,7 +303,9 @@ public class InstanceViewModel : ObservableObject
 				default:
 					return;
 				case 1:
-					if (0 == 0)
+					IEnumeratorMethods<object>.Abi_GetMany_3((IntPtr)(nint)Unsafe.AsPointer(ref IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized), ref *(object[]*)P_0);
+					_ = 0;
+					if (IEnumerable_System_ComponentModel_INotifyPropertyChanged.ReflectConfigurableAttribute == null)
 					{
 						_ = 0;
 					}
@@ -356,36 +392,17 @@ public class InstanceViewModel : ObservableObject
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public InstanceViewModel()
+	public unsafe InstanceViewModel()
 	{
-		//IL_0046: Expected I4, but got Obj
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		//IL_0065->IL0039: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0015: Unknown result type (might be due to invalid IL or missing references)
+		//IL_001f: Expected Obj, but got Unknown
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		InstanceViewModel instanceViewModel = this;
-		if (1 == 0)
-		{
-			instanceViewModel = (InstanceViewModel)1;
-		}
-		while (true)
-		{
-			switch ((int)instanceViewModel)
-			{
-			default:
-				return;
-			case 0:
-				return;
-			case 1:
-				instanceViewModel = this;
-				if (false)
-				{
-					instanceViewModel = (InstanceViewModel)0;
-				}
-				break;
-			}
-		}
+		IReadOnlyList_System_ComponentModel_INotifyPropertyChanged.JoinAttribute = new ExceptionHelpers((Exception)(object)this);
+		/*Error near IL_0025: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -443,19 +460,26 @@ public class InstanceViewModel : ObservableObject
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_1B00(uint P_0)
+	internal unsafe void _FF00_FF00_1B00(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003a: Expected I4, but got Obj
-		//IL_004b: Expected Obj, but got I4
-		//IL_00b4: Expected Obj, but got I4
-		//IL_005d->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00ab->IL0087: Incompatible stack heights: 1 vs 0
-		//IL_0050->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_0077->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b9->IL0015: Incompatible stack heights: 1 vs 0
-		//IL_00a1->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0047: Expected I4, but got Obj
+		//IL_0068: Expected Obj, but got I4
+		//IL_008c: Expected Obj, but got I
+		//IL_005c: Expected Obj, but got I4
+		//IL_00c6: Expected Obj, but got I
+		//IL_00f5: Expected Obj, but got I4
+		//IL_0072->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0091->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ec->IL00ac: Incompatible stack heights: 2 vs 0
+		//IL_0061->IL0022: Incompatible stack heights: 3 vs 0
+		//IL_00cb->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_009c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00fa->IL0022: Incompatible stack heights: 2 vs 0
+		//IL_00d6->IL0026: Incompatible stack heights: 2 vs 1
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 4;
@@ -467,14 +491,17 @@ public class InstanceViewModel : ObservableObject
 				switch ((int)obj2)
 				{
 				case 5:
+					_003CModule_003E.CheckAccessibleAttribute();
 					obj = 2;
 					break;
 				default:
-					_ = 5;
+					IReadOnlyList_System_ComponentModel_INotifyPropertyChanged.JoinAttribute = P_0;
+					obj2 = 5;
 					continue;
 				case 2:
-					obj2 = this;
-					if (1 == 0)
+					/*Error near IL_007d: Stack underflow*/((object[])(object)this, IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized);
+					obj2 = 1;
+					if (IList_object.PatchAttribute == null)
 					{
 						obj2 = 1;
 					}
@@ -484,14 +511,17 @@ public class InstanceViewModel : ObservableObject
 				case 1:
 					return;
 				case 6:
-					obj2 = this;
-					if (0 == 0)
+					MarshalInspectable<object>.FromManaged((object)this, (byte)IEnumerator_System_ComponentModel_INotifyPropertyChanged._initialized != 0);
+					_ = 0;
+					if (IReadOnlyList_System_IDisposable.ReflectConnectedAttribute == null)
 					{
-						obj2 = 0;
+						_ = 0;
 					}
 					continue;
 				case 4:
-					if (P_0 != 0)
+					IReadOnlyListMethods<INotifyPropertyChanged>.Abi_GetAt_0((IntPtr)/*Error near IL_00db: Stack underflow*/, (uint)/*Error near IL_00db: Stack underflow*/);
+					_ = IReadOnlyList_object.ReflectLogicalAttribute;
+					if (MarshalInterface<INotifyPropertyChanged>.FromAbi((IntPtr)(int)P_0) != null)
 					{
 						obj = 3;
 						break;
@@ -520,11 +550,14 @@ public class InstanceViewModel : ObservableObject
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private void _FF00_FF00Ḁ(uint P_0)
+	private unsafe void _FF00_FF00Ḁ(uint P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		_003CModule_003E.CheckAccessibleAttribute();
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -544,13 +577,23 @@ public class InstanceViewModel : ObservableObject
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private void _FF00_FF00_2100()
+	private unsafe void _FF00_FF00_2100()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008a->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0068: Expected I, but got Obj
+		//IL_008f: Expected I, but got Obj
+		//IL_00b5: Expected I, but got Obj
+		//IL_00bb: Expected I, but got Obj
+		//IL_0057->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0062->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0078->IL008f: Incompatible stack types: I vs Obj
+		//IL_00a4->IL00bb: Incompatible stack heights: 2 vs 1
+		//IL_00de->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e9->IL0026: Incompatible stack types: I4 vs Obj
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -562,23 +605,42 @@ public class InstanceViewModel : ObservableObject
 			case 2:
 				return;
 			default:
-				obj2 = this;
-				if (2 == 0)
+				_003CModule_003E.CheckAccessibleAttribute();
+				_ = 2;
+				if (IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized == 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 1:
-				obj2 = ((object)this) ?? ((object)/*Error near IL_005b: Stack underflow*/);
-				if (obj2 == null)
+			{
+				/*Error near IL_0068: Stack underflow*/((object[])/*Error near IL_0068: Stack underflow*/, (nint)this);
+				nint initialized = IList_object._initialized;
+				MarshalInspectable<object> val;
+				if (initialized != 0)
 				{
-					obj2 = (object)/*Error near IL_006e: Stack underflow*/;
+					val = (MarshalInspectable<object>)(object)initialized;
 				}
-				if (false)
+				else
+				{
+					val = (MarshalInspectable<object>)(nint)new MarshalInspectable<object>(IList_object.PatchAttribute, (byte)(delegate* unmanaged[Stdcall]<nint, byte*, uint>)(&IEnumerator_object.Do_Abi_get_HasCurrent_1) != 0);
+					IReadOnlyList_System_IDisposable._initialized = (nint)val;
+				}
+				Grid val2 = CastExtensions.As<Grid>((object)val);
+				IReadOnlyListMethods<INotifyPropertyChanged> val3;
+				if (IReadOnlyList_object._initialized == 0)
+				{
+					val3 = (IReadOnlyListMethods<INotifyPropertyChanged>)new IReadOnlyListMethods<INotifyPropertyChanged>((IntPtr)val2, (INotifyPropertyChanged)IReadOnlyList_object.ReflectLogicalAttribute, ref *(uint*)(delegate* unmanaged[Stdcall]<nint, uint, nint*, uint>)(&IReadOnlyList_System_ComponentModel_INotifyPropertyChanged.Do_Abi_GetAt_0));
+					IEnumerable_System_IDisposable._initialized = (nint)val3;
+				}
+				IEnumerable_object.ReflectSetAttribute = ((XamlUserType)/*Error near IL_00c5: Stack underflow*/).BoxType<double>(((XamlUserType)/*Error near IL_00c0: Stack underflow*/).BoxType<DateTime>((object)val3));
+				obj2 = 0;
+				if (Mass_WinUI_Controls_PaymentDialogWinRTTypeDetails.ReflectDividedAttribute != null)
 				{
 					obj2 = 0;
 				}
 				break;
+			}
 			}
 		}
 	}
@@ -609,106 +671,73 @@ public class InstanceViewModel : ObservableObject
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private void _FF00_FF00_2400()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0052: Expected I4, but got Obj
-		//IL_00fc: Unknown result type (might be due to invalid IL or missing references)
-		//IL_010e: Expected I4, but got Unknown
-		//IL_00c3->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00a8->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0088->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0097->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_011a->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00ce->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b3->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_018b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0143->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0125->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_016f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_014e->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 1;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			case 9:
-			case 12:
-				obj = this;
-				obj2 = 11;
-				continue;
-			case 4:
-				return;
-			case 2:
-			case 6:
-			case 10:
-			case 11:
-				obj = obj;
-				obj2 = 3;
-				continue;
-			case 3:
-				if (4 != 0)
-				{
-					_ = 2;
-				}
-				continue;
-			case 1:
-				obj = this;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				continue;
-			default:
-				switch (obj - 1)
-				{
-				case 0:
-					goto IL_0125;
-				case 1:
-					goto IL_014e;
-				case 2:
-					goto end_IL_0019;
-				}
-				if (12 == 0)
-				{
-					obj2 = 5;
-				}
-				continue;
-			case 8:
-				goto IL_0125;
-			case 7:
-				goto IL_014e;
-			case 5:
-				break;
-				IL_014e:
-				obj = ((object)this) ?? ((object)/*Error near IL_0160: Stack underflow*/);
-				obj2 = 10;
-				continue;
-				IL_0125:
-				obj = ((object)this) ?? ((object)/*Error near IL_0132: Stack underflow*/);
-				if (2 == 0)
-				{
-					obj2 = 2;
-				}
-				continue;
-				end_IL_0019:
-				break;
-			}
-			obj = ((object)this) ?? ((object)/*Error near IL_017c: Stack underflow*/);
-			obj2 = 6;
-		}
+		// ILSpy could not decompile this. Please report the exception below,
+		// along with the assembly it came from, at https://github.com/icsharpcode/ILSpy/issues/new
+		// System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+		//    at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+		//    at System.Linq.Enumerable.Skip[TSource](IEnumerable`1 source, Int32 count)
+		//    at ICSharpCode.Decompiler.CSharp.ArgumentList.GetArgumentResolveResultsDirect(Int32 skipCount) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 124
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Probe() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 493
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Run() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 438
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.ForMethodReference(ExpressionBuilder expressionBuilder, IMethod method, IType targetType, TranslatedExpression target, Boolean requireTarget, ExpectedTargetDetails expectedTargetDetails, Boolean isExtensionMethodReference, Boolean castTargetUpFront) in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 131
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.DisambiguateDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1718
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1648
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildMethodReference(IMethod method, Boolean isVirtual) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1639
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitLdFtn(LdFtn inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 5058
+		//    at ICSharpCode.Decompiler.IL.LdFtn.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 3175
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitConv(Conv inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 2307
+		//    at ICSharpCode.Decompiler.IL.Conv.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2298
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildArgumentList(ExpectedTargetDetails expectedTargetDetails, ResolveResult target, IMethod method, Int32 firstParamIndex, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, Boolean writtenAsAssignment) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1070
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(OpCode callOpCode, IMethod method, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, IType constrainedTo) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 461
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(CallInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 255
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitNewObj(NewObj inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 538
+		//    at ICSharpCode.Decompiler.IL.NewObj.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 4578
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitStObj(StObj inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 3219
+		//    at ICSharpCode.Decompiler.IL.StObj.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 4386
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitStLoc(StLoc inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 855
+		//    at ICSharpCode.Decompiler.IL.StLoc.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2590
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitStLoc(StLoc inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 129
+		//    at ICSharpCode.Decompiler.IL.StLoc.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2586
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlock(Block block) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1311
+		//    at ICSharpCode.Decompiler.IL.Block.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 882
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitIfInstruction(IfInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 162
+		//    at ICSharpCode.Decompiler.IL.IfInstruction.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 1440
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.TranslateSwitch(BlockContainer switchContainer, SwitchInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 307
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1334
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1338
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertAsBlock(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 87
+		//    at ICSharpCode.Decompiler.CSharp.CSharpDecompiler.DecompileBody(IMethod method, EntityDeclaration entityDecl, DecompileRun decompileRun, ITypeResolveContext decompilationContext, ExtensionInfo extensionInfo) in /_/ICSharpCode.Decompiler/CSharp/CSharpDecompiler.cs:line 2435
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_2500()
+	internal unsafe static byte _FF00_FF00_2500()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -720,22 +749,26 @@ public class InstanceViewModel : ObservableObject
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_2700()
+	internal unsafe static object _FF00_FF00_2700()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal uint _FF00_FF00_2800()
+	internal unsafe uint _FF00_FF00_2800()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -747,16 +780,24 @@ public class InstanceViewModel : ObservableObject
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_2A00(ObservableCollection<GameInstanceModel> P_0)
+	internal unsafe void _FF00_FF00_2A00(ObservableCollection<GameInstanceModel> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0048->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0096->IL003b: Incompatible stack heights: 1 vs 0
-		//IL_0055->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_008c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00ad->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0053: Expected I, but got Obj
+		//IL_009e: Expected I, but got Obj
+		//IL_0064: Expected I, but got Obj
+		//IL_00e2: Expected Obj, but got I
+		//IL_005d->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00d3->IL0048: Incompatible stack heights: 2 vs 0
+		//IL_00b2->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_006e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e7->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00bd->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00f2->IL0026: Incompatible stack heights: 3 vs 1
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 3;
@@ -766,29 +807,34 @@ public class InstanceViewModel : ObservableObject
 			switch ((int)obj2)
 			{
 			default:
+				IEnumeratorMethods<object>.Abi_GetMany_3((IntPtr)this, ref *(object[]*)IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized);
 				_ = 5;
 				break;
 			case 5:
-				_ = 4;
+				IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized = (nint)P_0;
+				obj2 = 4;
 				break;
 			case 1:
 				return;
 			case 2:
 				return;
 			case 4:
-				obj2 = this;
-				if (1 == 0)
+				IEnumeratorMethods<object>.Abi_get_Current_0((IntPtr)IList_object.PatchAttribute);
+				_ = 1;
+				if (IReadOnlyList_System_IDisposable._initialized == 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 3:
-				obj2 = this;
-				if (P_0 != null)
+				IReadOnlyListMethods<INotifyPropertyChanged, nint>.InitCcw((delegate* unmanaged[Stdcall]<IntPtr, uint, nint*, int>)/*Error near IL_00c2: Stack underflow*/, (delegate* unmanaged[Stdcall]<IntPtr, uint*, int>)/*Error near IL_00c2: Stack underflow*/, (delegate* unmanaged[Stdcall]<IntPtr, nint, uint*, byte*, int>)/*Error near IL_00c2: Stack underflow*/, (delegate* unmanaged[Stdcall]<IntPtr, uint, int, IntPtr, uint*, int>)/*Error near IL_00c2: Stack underflow*/);
+				_ = IReadOnlyList_object._initialized;
+				if (MarshalInterface<INotifyPropertyChanged>.FromManaged((INotifyPropertyChanged)P_0) != (IntPtr)0)
 				{
-					if (true)
+					_ = 1;
+					if (IEnumerator_System_IDisposable.ReflectTransferableAttribute != null)
 					{
-						obj2 = 2;
+						_ = 2;
 					}
 					break;
 				}
@@ -798,13 +844,19 @@ public class InstanceViewModel : ObservableObject
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_2B00(object P_0)
+	internal unsafe void _FF00_FF00_2B00(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0065->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0048->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0068: Expected I, but got Obj
+		//IL_006e: Expected I, but got Obj
+		//IL_0083->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0056->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_008e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0061->IL0026: Incompatible stack heights: 3 vs 1
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -814,17 +866,19 @@ public class InstanceViewModel : ObservableObject
 			switch ((int)obj2)
 			{
 			case 1:
-				obj2 = P_0;
-				if (0 == 0)
+				_003CModule_003E.CheckAccessibleAttribute();
+				_ = 0;
+				if (IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized == 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 2:
 				return;
 			default:
-				obj2 = this;
-				if (0 == 0)
+				((ValueTuple<int, nint>*)/*Error near IL_006e: Stack underflow*/)->_002Ector((int)IEnumerator_object.Do_Abi_MoveNext_2((nint)/*Error near IL_0068: Stack underflow*/, (byte*)(nint)this), (nint)P_0);
+				obj2 = 0;
+				if (IEnumerator_System_ComponentModel_INotifyPropertyChanged._initialized == 0)
 				{
 					obj2 = 2;
 				}
@@ -865,12 +919,15 @@ public class InstanceViewModel : ObservableObject
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal ObservableCollection<GameInstanceModel> _FF00_FF00_2F00()
+	internal unsafe ObservableCollection<GameInstanceModel> _FF00_FF00_2F00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001b: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (ObservableCollection<GameInstanceModel>)(object)this;
+		return (ObservableCollection<GameInstanceModel>)IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

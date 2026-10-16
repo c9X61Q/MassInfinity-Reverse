@@ -60,17 +60,19 @@ public class ExpanderValue : ConfigValue
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public ExpanderValue()
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001f: Expected Obj, but got VT
+		//IL_0039: Expected Obj, but got I4
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		ExpanderValue expanderValue = this;
-		if (0 == 0)
+		base.Id__BackingField = new KeyValuePair<string, object>();
+		BoolValue.DecorateOperationalTracker();
+		int num = 0;
+		if (((ConfigValue)ConfigValue.Icon__BackingField).DisplayName__BackingField == null)
 		{
-			expanderValue = (ExpanderValue)0;
+			num = 0;
 		}
-		switch ((int)expanderValue)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -100,10 +102,10 @@ public class ExpanderValue : ConfigValue
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00眀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -125,11 +127,10 @@ public class ExpanderValue : ConfigValue
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00稀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (BoolValueAttribute.DecorateIdentifiableAggregator == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -143,11 +144,11 @@ public class ExpanderValue : ConfigValue
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte _FF00_FF00_FF00簀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -169,10 +170,10 @@ public class ExpanderValue : ConfigValue
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal List<ConfigValue> _FF00_FF00_FF00缀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (List<ConfigValue>)(object)this;
+		return (List<ConfigValue>)BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -186,35 +187,39 @@ public class ExpanderValue : ConfigValue
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00脀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00舀(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected Obj, but got I4
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -232,24 +237,27 @@ public class ExpanderValue : ConfigValue
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00萀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -261,24 +269,27 @@ public class ExpanderValue : ConfigValue
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00蔀(List<ConfigValue> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:

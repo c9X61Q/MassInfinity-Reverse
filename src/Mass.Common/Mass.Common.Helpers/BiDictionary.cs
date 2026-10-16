@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Mass.Common.Models;
 
 namespace Mass.Common.Helpers;
 
@@ -18,11 +19,13 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		get
 		{
-			//IL_000b: Expected I4, but got Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001b: Expected VT, but got Obj
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (int)this;
+			((ApiResponse<TKey>)/*Error near IL_001b: Stack underflow*/).Data = (TKey?)this;
+			return (int)/*Error near IL_001c: Stack underflow*/;
 		}
 	}
 
@@ -31,10 +34,13 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		get
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001b: Expected VT, but got Obj
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (IEnumerable<TKey>)this;
+			((ApiResponse<TKey>)/*Error near IL_001b: Stack underflow*/).Data = (TKey?)this;
+			return (IEnumerable<TKey>)/*Error near IL_001c: Stack underflow*/;
 		}
 	}
 
@@ -43,10 +49,13 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		get
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001b: Expected VT, but got Obj
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (IEnumerable<TValue>)this;
+			((ApiResponse<TKey>)/*Error near IL_001b: Stack underflow*/).Data = (TKey?)this;
+			return (IEnumerable<TValue>)/*Error near IL_001c: Stack underflow*/;
 		}
 	}
 
@@ -55,17 +64,21 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		get
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (TValue)key;
+			((ApiResponse<TKey>)(object)this).Data = key;
+			return (TValue)/*Error near IL_001d: Stack underflow*/;
 		}
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		set
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
+			/*Error near IL_0017: Member reference must be method, but was: Field*/;
 		}
 	}
 
@@ -74,17 +87,21 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		get
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (TKey)valueParam;
+			((ApiResponse<TKey>)(object)this).Data = (TKey?)valueParam;
+			return (TKey)/*Error near IL_001d: Stack underflow*/;
 		}
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		set
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
+			/*Error near IL_0017: Member reference must be method, but was: Field*/;
 		}
 	}
 
@@ -93,98 +110,116 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		get
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (BiDictionary<TValue, TKey>)(object)this;
+			return (BiDictionary<TValue, TKey>)(object)new ApiResponseBase<ApiResponse<TKey>>();
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public void Add(TKey key, TValue value)
+	public unsafe void Add(TKey key, TValue value)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_002b: Expected Obj, but got I4
+		//IL_0032: Expected Obj, but got Ref
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = default;
-		if ((int)key != 0)
+		((ApiResponse<TKey>)(object)this).Data = key;
+		if ((int)/*Error near IL_0021: Stack underflow*/ != 0)
 		{
+			object obj = default;
 			_ = ref obj;
 			_ = 20;
-			_ = 1;
-			_ = ref obj;
-			_ = ref obj;
-			throw ref obj;
+			((ApiResponseBase<ApiResponse<TKey>>)1)._002Ector();
+			((NonDVMAttribute)(&obj))._002Ector();
+			/*Error near IL_0032: Member reference must be method, but was: Field*/;
 		}
-		if ((int)value != 0)
-		{
-			_ = ref obj;
-			_ = 22;
-			_ = 1;
-			_ = ref obj;
-			_ = ref obj;
-			throw ref obj;
-		}
+		/*Error near IL_004f: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public bool TryAdd(TKey key, TValue value)
 	{
-		//IL_0019->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		if ((int)key != 0 || (int)value != 0)
+		((ApiResponse<TKey>)(object)this).Data = key;
+		if ((int)/*Error near IL_0021: Stack underflow*/ == 0)
 		{
-			return false;
+			/*Error near IL_0024: Member reference must be method, but was: Field*/;
 		}
-		return true;
+		return false;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe void Set(TKey key, TValue value)
 	{
-		//IL_0017->IL0017: Incompatible stack heights: 3 vs 2
-		//IL_0027->IL0027: Incompatible stack heights: 5 vs 4
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001e: Expected VT, but got Ref
+		//IL_001e: Expected Obj, but got VT
+		//IL_0036: Expected Obj, but got VT
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = default;
-		if (&obj != null)
+		((ApiResponse<TKey>)key).Data = (TKey?)(&obj);
+		if (this != null)
 		{
+			/*Error near IL_0026: Member reference must be method, but was: Field*/;
 		}
-		if (&obj == null)
+		((ApiResponseBase<TKey>)value).Code = (int)(&obj);
+		if (this != null)
 		{
+			/*Error near IL_003e: Member reference must be method, but was: Field*/;
 		}
+		/*Error near IL_0048: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe bool TryGetValue(TKey key, out TValue value)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got VT
+		//IL_001e: Expected I4, but got Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (byte)Unsafe.AsPointer(ref value) != 0;
+		((ApiResponse<TKey>)key).Data = (TKey?)Unsafe.AsPointer(ref value);
+		return (byte)(int)this != 0;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe bool TryGetKey(TValue value, out TKey key)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got VT
+		//IL_001e: Expected I4, but got Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (byte)Unsafe.AsPointer(ref key) != 0;
+		((ApiResponse<TKey>)value).Data = (TKey?)Unsafe.AsPointer(ref key);
+		return (byte)(int)this != 0;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe TValue? GetValueOrDefault(TKey key, TValue? defaultValue = default(TValue?))
 	{
-		//IL_0016: Expected VT, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001e: Expected VT, but got Ref
+		//IL_001e: Expected Obj, but got VT
+		//IL_0027: Expected VT, but got Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = default;
-		if (&obj == null)
+		((ApiResponse<TKey>)key).Data = (TKey?)(&obj);
+		if (this == null)
 		{
 			return defaultValue;
 		}
@@ -194,12 +229,16 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe TKey? GetKeyOrDefault(TValue value, TKey? defaultKey = default(TKey?))
 	{
-		//IL_0016: Expected VT, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001e: Expected VT, but got Ref
+		//IL_001e: Expected Obj, but got VT
+		//IL_0027: Expected VT, but got Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = default;
-		if (&obj == null)
+		((ApiResponse<TKey>)value).Data = (TKey?)(&obj);
+		if (this == null)
 		{
 			return defaultKey;
 		}
@@ -209,59 +248,74 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public bool ContainsKey(TKey key)
 	{
-		//IL_000c: Expected I4, but got VT
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (byte)(int)key != 0;
+		((ApiResponse<TKey>)(object)this).Data = key;
+		return (byte)/*Error near IL_001d: Stack underflow*/ != 0;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public bool ContainsValue(TValue value)
 	{
-		//IL_000c: Expected I4, but got VT
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (byte)(int)value != 0;
+		((ApiResponse<TKey>)(object)this).Data = (TKey?)value;
+		return (byte)/*Error near IL_001d: Stack underflow*/ != 0;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe bool RemoveByKey(TKey key)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001e: Expected VT, but got Ref
+		//IL_001e: Expected Obj, but got VT
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = default;
-		if (&obj == null)
+		((ApiResponse<TKey>)key).Data = (TKey?)(&obj);
+		if (this == null)
 		{
 			return false;
 		}
-		return true;
+		/*Error near IL_0028: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe bool RemoveByValue(TValue value)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001e: Expected VT, but got Ref
+		//IL_001e: Expected Obj, but got VT
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = default;
-		if (&obj == null)
+		((ApiResponse<TKey>)value).Data = (TKey?)(&obj);
+		if (this == null)
 		{
 			return false;
 		}
-		return true;
+		/*Error near IL_0028: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public void Clear()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0063->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0069: Expected I4, but got Obj
+		//IL_0043: Expected VT, but got Obj
+		//IL_007d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0057->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0088->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0062->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 2;
@@ -273,15 +327,17 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 			default:
 				return;
 			case 2:
-				obj2 = this;
-				if (1 == 0)
+				((ApiResponse<TKey>)/*Error near IL_0043: Stack underflow*/).Data = (TKey?)this;
+				obj2 = 1;
+				if (((ApiResponseBase<>._003CThen_003Ed__10)ApiResponseBase<>._003CThen_003Ed__10._003C_003Et__builder).task == null)
 				{
 					obj2 = 0;
 				}
 				break;
 			case 1:
-				obj2 = this;
-				if (0 == 0)
+				((ApiResponseBase<TKey>)/*Error near IL_0069: Stack underflow*/).Code = (int)this;
+				obj2 = 0;
+				if (((ErrorResponse)ErrorResponse.Type__BackingField).Title__BackingField == null)
 				{
 					obj2 = 0;
 				}
@@ -295,78 +351,43 @@ public class BiDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (IEnumerator<KeyValuePair<TKey, TValue>>)this;
+		((ApiResponse<TKey>)/*Error near IL_001b: Stack underflow*/).Data = (TKey?)this;
+		return (IEnumerator<KeyValuePair<TKey, TValue>>)(object)(TKey)/*Error near IL_0020: Stack underflow*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	IEnumerator IEnumerable.GetEnumerator()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (IEnumerator)this;
+		/*Error near IL_0015: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private BiDictionary(Dictionary<TKey, TValue> fwd, Dictionary<TValue, TKey> rev)
 	{
-		//IL_004a: Expected I4, but got Obj
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		//IL_0078->IL0039: Incompatible stack heights: 4 vs 3
-		//IL_005e->IL0039: Incompatible stack heights: 4 vs 3
-		//IL_0083->IL0039: Incompatible stack heights: 4 vs 3
-		//IL_0069->IL0039: Incompatible stack heights: 4 vs 3
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		BiDictionary<TKey, TValue> biDictionary = this;
-		if (false)
-		{
-			biDictionary = (BiDictionary<TKey, TValue>)0;
-		}
-		while (true)
-		{
-			switch ((int)biDictionary)
-			{
-			case 1:
-				if (2 != 0)
-				{
-					_ = 2;
-				}
-				break;
-			default:
-				if (1 == 0)
-				{
-					_ = 1;
-				}
-				break;
-			case 2:
-				return;
-			}
-		}
+		/*Error near IL_0015: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public BiDictionary()
 	{
-		//IL_0042: Expected I4, but got Obj
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		BiDictionary<TKey, TValue> biDictionary = this;
-		if (0 == 0)
-		{
-			biDictionary = (BiDictionary<TKey, TValue>)0;
-		}
-		switch ((int)biDictionary)
-		{
-		case 0:
-			break;
-		}
+		/*Error near IL_0015: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

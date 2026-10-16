@@ -1,7 +1,16 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading;
 using DotNetty.Buffers;
+using Mass.Application.Mobile;
+using Mass.Application.Models;
+using Mass.Bedrock.Proxy.Network.RakNet;
+using Mass.Bedrock.Proxy.Packets.RakNet.Online;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Bedrock.Proxy.Network;
 
@@ -42,12 +51,13 @@ public static class ByteArray
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00䀀()
+	internal unsafe static object _FF00_FF00_FF00_FF00䀀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityLaunchBedrockProxy.Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -67,13 +77,13 @@ public static class ByteArray
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00䌀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00䌀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityLaunchBedrockProxy.Name__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -93,103 +103,125 @@ public static class ByteArray
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00䘀(object P_0)
+	internal unsafe static object _FF00_FF00_FF00_FF00䘀(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001b: Expected I4, but got Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return P_0;
+		return ((EntityLaunchBedrockProxy)(object)((StringBuilder)P_0).Append((char)(int)P_0)).Session;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe static object _FF00_FF00_FF00_FF00䤀(object P_0, uint P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_004a: Expected I4, but got Obj
-		//IL_0066: Expected Obj, but got I4
-		//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-		//IL_0110->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00ff->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_00bb->IL0019: Incompatible stack types: Obj vs Ref
-		//IL_005d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00ef->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00d6->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_011b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00c6->IL0019: Incompatible stack types: I4 vs Ref
-		//IL_008e->IL0019: Incompatible stack types: I4 vs Ref
-		//IL_012f->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00e1->IL0019: Incompatible stack types: I4 vs Ref
-		//IL_0070->IL0019: Incompatible stack types: I4 vs Ref
-		//IL_013a->IL0019: Incompatible stack types: I4 vs Ref
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0057: Expected I4, but got Obj
+		//IL_0161: Expected I4, but got Obj
+		//IL_0161: Expected Obj, but got Ref
+		//IL_0170: Expected Obj, but got I8
+		//IL_014e: Expected Obj, but got I4
+		//IL_014e: Expected Obj, but got I4
+		//IL_014e: Expected Obj, but got Ref
+		//IL_0063: Expected Obj, but got Ref
+		//IL_013a: Expected Obj, but got I4
+		//IL_013a: Expected Obj, but got Ref
+		//IL_009b: Expected Obj, but got Ref
+		//IL_00a0: Expected Obj, but got I4
+		//IL_00af: Expected Obj, but got I4
+		//IL_0111: Expected I4, but got Obj
+		//IL_0113: Expected Obj, but got I4
+		//IL_0122: Expected Obj, but got I
+		//IL_0079: Expected Obj, but got Ref
+		//IL_0197: Expected Obj, but got I8
+		//IL_0175->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0158->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0100->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0072->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0144->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00b4->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0127->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0180->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_010b->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00bf->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_019c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0132->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0091->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01a7->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 7;
-		ref object reference = ref *(object*)obj;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((uint)Unsafe.AsPointer(ref reference))
+			switch ((int)obj2)
 			{
-			case 3u:
-				_ = ref obj;
-				_ = 4;
+			case 3:
+				((StringBuilder)(object)((EntityLaunchBedrockProxy)(&obj)).EqualityContract)._002Ector();
+				obj2 = 4;
 				break;
-			case 8u:
-				throw ref obj;
-			case 9u:
-				obj = P_1;
-				reference = ref *(object*)2;
+			case 8:
+				throw new StringBuilder((object?)((object)(&obj)).ToString());
+			case 9:
+				obj = new MobileSession[P_1];
+				obj2 = 2;
 				break;
-			case 10u:
+			case 10:
 				return obj;
-			case 5u:
-				reference = ref obj;
-				if (false)
+			case 5:
+				((EqualityComparer<Type>)/*Error near IL_00a0: Stack underflow*/).GetHashCode((Type)((EntityLaunchBedrockProxy)(&obj)).GameType);
+				_ = 0;
+				if (((BedrockProxy)BedrockProxy.GameType).ServerAddress != null)
 				{
-					reference = ref *(object*)null;
+					_ = 0;
 				}
 				break;
-			case 2u:
-				reference = ref *(object*)P_0;
-				if (9 != 0)
+			case 2:
+				_ = EqualityComparer<EnumGameType>.Default;
+				_ = 9;
+				if (((BedrockProxy)BedrockProxy.Listener__BackingField).EndPoints__BackingField != null)
 				{
-					reference = ref *(object*)10;
+					_ = 10;
 				}
 				break;
-			case 7u:
-				obj = P_0;
-				if (6 != 0)
+			case 7:
+				obj = ((EqualityComparer<int>)/*Error near IL_0111: Stack underflow*/).GetHashCode((int)P_0);
+				obj2 = 6;
+				if (BedrockProxy.CloneProxy != null)
 				{
-					reference = ref *(object*)3;
+					obj2 = 3;
 				}
 				break;
-			case 4u:
-				_ = ref obj;
+			case 4:
+				Interlocked.CompareExchange(ref *(Action<RakNetSession>*)/*Error near IL_013a: Stack underflow*/, (Action<RakNetSession>)(&obj), (Action<RakNetSession>)P_1);
 				_ = 5;
 				break;
-			case 1u:
-				_ = ref obj;
-				_ = 47;
-				_ = 2;
+			case 1:
+				((EqualityComparer<MobileSession>)(&obj)).Equals((MobileSession?)47, (MobileSession?)2);
 				_ = 3;
 				break;
 			default:
-				_ = ref obj;
-				if (8 == 0)
+				((IEnumerable<RakNetSession>)(&obj)).ElementAt((int)obj);
+				_ = 8;
+				if (ConnectedPong.CheckCustomizableNode == null)
 				{
 					_ = 6;
 				}
 				break;
-			case 6u:
+			case 6:
 				if ((int)P_1 <= (nint)obj)
 				{
-					if (9 != 0)
+					obj2 = 9;
+					if (((ConnectionRequest)ConnectionRequest.Guid__BackingField).Time__BackingField != 0L)
 					{
-						reference = ref *(object*)6;
+						obj2 = 6;
 					}
 					break;
 				}
-				goto case 1u;
+				goto case 1;
 			}
 		}
 	}

@@ -1,8 +1,17 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+using ABI.System.Collections.Generic;
+using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using WinRT;
+using WinRT.Mass_WinUIGenericHelpers;
 
 internal sealed class ZYXDNGuarder
 {
@@ -23,28 +32,39 @@ internal sealed class ZYXDNGuarder
 	[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.Synchronized)]
 	internal unsafe static string CheckString(int P_0, int P_1)
 	{
-		//IL_000f: Expected Obj, but got I4
-		//IL_001d: Expected Obj, but got I4
-		//IL_0029: Expected I, but got Obj
-		//IL_002c: Expected Obj, but got I4
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_002b: Expected I, but got Obj
+		//IL_002b: Expected Obj, but got I
+		//IL_005e: Expected I, but got Obj
+		//IL_0061: Expected Obj, but got I4
+		//IL_0063: Unknown result type (might be due to invalid IL or missing references)
+		//IL_006d: Expected I, but got Unknown
+		//IL_0038: Unknown result type (might be due to invalid IL or missing references)
+		//IL_003e: Expected Obj, but got Unknown
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		if (P_1 == 0)
 		{
-			return (string)/*Error near IL_000c: Stack underflow*/;
+			return (string)/*Error near IL_0019: Stack underflow*/;
 		}
-		object obj = P_0;
-		if (obj != null)
+		object obj = (object)(Application)P_0;
+		/*Error near IL_002b: Stack underflow*/((object[])IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized, (nint)obj);
+		if ((int)/*Error near IL_002d: Stack underflow*/ != 0)
 		{
-			return (string)obj;
+			_ = IList_object._initialized;
+			return (string)(ObservableObject)MarshalInspectable<object>.FromAbiArray(obj);
 		}
-		object obj2 = P_1;
-		int num = ((delegate* unmanaged[Stdcall]<char*, nint, int, int, int>)P_1)((char*)P_1, (nint)obj2, 0, P_0);
+		object obj2 = new Enum[P_1];
+		int num = ((delegate* unmanaged[Stdcall]<char*, nint, int, int, int>)IReadOnlyList_object._initialized)((char*)Unsafe.AsPointer(ref ((Page[])obj2)[0]), (nint)IReadOnlyList_System_IDisposable.ReflectConnectedAttribute, P_0, P_1);
 		obj2 = null;
-		object result = num;
+		object obj3 = num;
 		_ = 0;
-		return (string)result;
+		object obj4 = MarshalInterface<INotifyPropertyChanged>.FromAbi(new MarshalInterface<INotifyPropertyChanged>((INotifyPropertyChanged)obj3));
+		_ = IEnumerator_System_IDisposable.ReflectTransferableAttribute;
+		MarshalInterface<INotifyPropertyChanged>.FromAbiArray(obj4);
+		return (string)obj4;
 	}
 
 	internal static string CheckString(int P_0, int P_1)
@@ -112,74 +132,46 @@ internal sealed class ZYXDNGuarder
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void RunHVM(nint P_0, nint P_1, nint P_2, int P_3)
+	internal unsafe static void RunHVM(nint P_0, nint P_1, nint P_2, int P_3)
 	{
-		//IL_000f: Expected Obj, but got I4
-		//IL_0140: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0143: Expected Obj, but got Unknown
-		//IL_015f: Expected Obj, but got I
-		//IL_0173: Expected Obj, but got I8
-		//IL_0153: Expected Obj, but got I4
-		//IL_0032->IL013d: Incompatible stack heights: 1 vs 0
-		//IL_015b->IL015b: Incompatible stack heights: 4 vs 0
-		//IL_003c->IL013d: Incompatible stack heights: 2 vs 0
-		//IL_0046->IL013d: Incompatible stack heights: 3 vs 0
-		//IL_0050->IL013d: Incompatible stack heights: 4 vs 0
-		//IL_005a->IL013d: Incompatible stack heights: 5 vs 0
-		//IL_0064->IL013d: Incompatible stack heights: 6 vs 0
-		//IL_006e->IL013d: Incompatible stack heights: 7 vs 0
-		//IL_0078->IL013d: Incompatible stack heights: 8 vs 0
-		//IL_0082->IL013d: Incompatible stack heights: 9 vs 0
-		//IL_008d->IL013d: Incompatible stack heights: 10 vs 0
-		//IL_0098->IL013d: Incompatible stack heights: 11 vs 0
-		//IL_00a3->IL013d: Incompatible stack heights: 12 vs 0
-		//IL_00ae->IL013d: Incompatible stack heights: 13 vs 0
-		//IL_00b9->IL013d: Incompatible stack heights: 14 vs 0
-		//IL_00c4->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00ce->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00d7->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00e4->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00ee->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00f8->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0105->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0112->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_011f->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_012c->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0136->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_013d->IL014d: Incompatible stack heights: 15 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0021: Expected Obj, but got I4
+		//IL_0024: Expected Obj, but got I4
+		//IL_01cf: Expected Obj, but got I
+		//IL_01d0: Expected Obj, but got I
+		//IL_01d6: Expected I, but got Obj
+		//IL_01dc: Expected I, but got Obj
+		//IL_01e3: Expected Obj, but got I4
+		//IL_01f7: Expected Obj, but got I8
+		//IL_01fd: Expected I, but got Obj
+		//IL_01c7: Expected I, but got Obj
+		//IL_01c8->IL01c8: Incompatible stack heights: 3 vs 0
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = null;
-		object obj2 = (object)/*Error near IL_000c: Stack underflow*/;
+		object obj2 = IEnumeratorMethods<object>.Abi_GetMany_3((IntPtr)/*Error near IL_0020: Stack underflow*/, ref *(object[]*)ExceptionHelpers.GetHRForException((Exception)/*Error near IL_001b: Stack underflow*/));
 		object obj3 = 0;
-		object obj4;
-		while ((nint)obj3 < ((Array)obj2).Length)
+		if ((nint)obj3 < ((Array)obj2).Length)
 		{
-			obj3 = ((object[])obj2)[obj3];
-			obj4 = obj3;
-			if ((nint)obj4 == 15 && 0 == 68 && 1 == 78 && 2 == 71 && 3 == 117 && 4 == 97 && 5 == 114 && 6 == 100 && 7 == 46 && 8 == 82 && 9 == 117 && 10 == 110 && 11 == 116 && 12 == 105 && 13 == 109 && 14 == 101)
-			{
-				obj3 = obj3;
-				if (obj3 != null && ((Array)obj3).Length == 8 && ((byte[])obj3)[0] == 208 && ((byte[])obj3)[1] == 90 && ((byte[])obj3)[2] == 39 && ((byte[])obj3)[3] == 211 && ((byte[])obj3)[4] == 237 && ((byte[])obj3)[5] == 158 && ((byte[])obj3)[6] == 178 && ((byte[])obj3)[7] == 90)
-				{
-					obj = ((object[])obj2)[obj3];
-					break;
-				}
-			}
-			obj3++;
+			_ = ((object[])obj2)[obj3];
+			/*Error near IL_002d: Member reference must be method, but was: Field*/;
 		}
 		if (obj == null)
 		{
-			obj3 = P_3;
-			_ = 0;
-			obj = obj3;
+			obj3 = new IEnumeratorMethods<>[P_3];
+			IListMethods<object>.Abi_GetAt_0((IntPtr)0, (uint)P_3);
+			obj = IListMethods<object>.Abi_GetView_2((IntPtr)obj3);
 		}
-		obj4 = P_1;
-		_ = 42;
-		_ = null;
-		((object[])2)[0] = obj4;
-		((object[])2)[1] = P_1;
+		object obj4 = obj;
+		object obj5 = (nint)MarshalInterface<IReadOnlyList<object>>.FromManaged((IReadOnlyList<object>)P_1);
+		IListMethods<object>.Abi_SetAt_4((IntPtr)/*Error near IL_01e3: Stack underflow*/, IListMethods<object>.Abi_IndexOf_3((IntPtr)obj4, MarshalInspectable<object>.FromAbi((IntPtr)obj5), ref *(uint*)P_2) ? 1u : 0u, (object)42);
+		IListMethods<object>.Abi_Append_7((IntPtr)null, (object)new IReadOnlyListMethods<, >[2]
+		{
+			(IReadOnlyListMethods<, >)obj5,
+			(IReadOnlyListMethods<, >)(object)P_1
+		});
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

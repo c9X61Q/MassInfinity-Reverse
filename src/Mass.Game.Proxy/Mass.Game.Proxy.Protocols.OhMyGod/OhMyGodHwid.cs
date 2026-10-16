@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 
 namespace Mass.Game.Proxy.Protocols.OhMyGod;
 
@@ -71,24 +74,20 @@ public class OhMyGodHwid
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public OhMyGodHwid()
+	public unsafe OhMyGodHwid()
 	{
-		//IL_0046: Expected I4, but got Obj
-		//IL_0034->IL003d: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected Obj, but got Ref
+		//IL_002c: Expected Obj, but got I4
+		//IL_0031: Expected Obj, but got I4
+		//IL_003b: Expected VT, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		_ = 32;
-		OhMyGodHwid ohMyGodHwid = this;
-		if (false)
-		{
-			ohMyGodHwid = (OhMyGodHwid)0;
-		}
-		switch ((int)ohMyGodHwid)
-		{
-		case 0:
-			break;
-		}
+		((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)this);
+		((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_001f: Stack underflow*/)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)/*Error near IL_001f: Stack underflow*/;
+		((_003C_003Ef__AnonymousType2<, , , >)(object)string.Format((IFormatProvider?)/*Error near IL_0031: Stack underflow*/, (string)(object)this, (object?[])((_003C_003Ef__AnonymousType0<>)32).GetHashCode()))._003Ccontext_003Ei__Field = (_003Ccontext_003Ej__TPar)_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+		/*Error near IL_0041: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -114,20 +113,23 @@ public class OhMyGodHwid
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00_FFFD()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FFFD()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -141,10 +143,12 @@ public class OhMyGodHwid
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FFFD()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -204,10 +208,12 @@ public class OhMyGodHwid
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_E900()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -219,13 +225,16 @@ public class OhMyGodHwid
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_EC00()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_EC00()
 	{
-		//IL_000b: Expected Obj, but got I4
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got I4
+		//IL_001a: Expected Obj, but got Ref
+		//IL_0020: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return 4;
+		((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)4);
+		return ((EqualityComparer<_00210>)/*Error near IL_001f: Stack underflow*/).GetHashCode((_00210)/*Error near IL_001f: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -308,115 +317,126 @@ public class OhMyGodHwid
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private unsafe static object _FF00_FF00_FF00_FF00_FF00_F800(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_005a: Expected I4, but got Obj
-		//IL_0100: Expected Obj, but got I4
-		//IL_0195: Expected Obj, but got I4
-		//IL_019e: Expected Obj, but got I4
-		//IL_0129: Unknown result type (might be due to invalid IL or missing references)
-		//IL_012c: Expected Obj, but got Unknown
-		//IL_0171: Invalid comparison between Obj and Ref
-		//IL_00c5: Expected Obj, but got I4
-		//IL_00c2->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_010c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_015a->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0077->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0136->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00d1->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0117->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_016c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00fd->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0092->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0182->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00dc->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_018d->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0067: Expected I4, but got Obj
+		//IL_0145: Expected Obj, but got I4
+		//IL_0154: Expected Obj, but got VT
+		//IL_0122: Expected VT, but got I4
+		//IL_0122: Expected VT, but got Obj
+		//IL_0122: Expected Obj, but got Ref
+		//IL_008d: Expected VT, but got Ref
+		//IL_00a3: Expected Obj, but got VT
+		//IL_0074: Expected VT, but got I4
+		//IL_0074: Expected VT, but got Ref
+		//IL_0074: Expected Obj, but got Ref
+		//IL_0176: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0179: Expected Obj, but got Unknown
+		//IL_01d2: Expected VT, but got Ref
+		//IL_01d2: Expected VT, but got Obj
+		//IL_01d2: Expected Obj, but got Ref
+		//IL_01d2: Invalid comparison between Unknown and I4
+		//IL_00f2: Expected Obj, but got I4
+		//IL_0101: Expected Obj, but got VT
+		//IL_0159->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0137->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00a8->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0088->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0183->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01d7->IL0111: Incompatible stack heights: 0 vs 1
+		//IL_0106->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0164->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01c9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0142->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00b3->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_01eb->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0111->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01f6->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			object obj2 = obj;
-			while (true)
+			switch ((int)obj2)
 			{
-				switch ((int)obj2)
-				{
-				case 9:
-					_ = ref obj;
-					*(byte*)null = (byte)(*(byte*)null & 0xFE);
-					_ = 8;
-					continue;
-				case 7:
-					obj2 = obj;
-					if (9 != 0)
-					{
-						obj2 = 6;
-					}
-					continue;
-				default:
-					_ = stackalloc byte[(int)(nuint)obj];
-					obj = obj;
-					_ = 7;
-					continue;
-				case 14:
-					obj = 0;
-					if (12 != 0)
-					{
-						obj2 = 9;
-					}
-					continue;
-				case 6:
-					return obj;
-				case 5:
-					obj2 = obj;
-					_ = 58;
-					if (true)
-					{
-						obj2 = 4;
-					}
-					continue;
-				case 1:
-					obj = P_0;
-					if (0 == 0)
-					{
-						obj2 = 0;
-					}
-					continue;
-				case 10:
-					obj++;
-					obj2 = 13;
-					continue;
-				case 4:
-				case 11:
-					_ = ref obj;
-					_ = 10;
-					continue;
-				case 2:
-				case 3:
-					if ((nint)obj <= 0)
-					{
-						obj2 = 11;
-						continue;
-					}
-					goto case 5;
-				case 12:
-				case 13:
-					if (Unsafe.IsAddressLessThan(ref *(byte*)obj, ref *(byte*)(&obj)))
-					{
-						if (2 != 0)
-						{
-							obj2 = 0;
-						}
-						continue;
-					}
-					goto case 6;
-				case 8:
-					break;
-				}
+			case 9:
+			{
+				bool flag = ((EqualityComparer<_00210>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals((_00210?)(&obj), (_00210?)0);
+				*(byte*)(flag ? 1 : 0) = (byte)(*(byte*)(flag ? 1 : 0) & 0xFE);
+				_ = 8;
 				break;
 			}
-			obj = P_0 * 3 - 1;
-			obj = 14;
+			case 7:
+				((EqualityComparer<_00210>)/*Error near IL_008d: Stack underflow*/).GetHashCode((_00210)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+				obj.ToString();
+				_ = 9;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field != 0)
+				{
+					_ = 6;
+				}
+				break;
+			default:
+				_ = stackalloc byte[(int)(nuint)obj];
+				/*Error near IL_00de: Member reference must be method, but was: Field*/;
+			case 14:
+				obj = 0;
+				obj2 = 12;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field != 0)
+				{
+					obj2 = 9;
+				}
+				break;
+			case 6:
+				return EqualityComparer<_00211>.Default;
+			case 5:
+				((EqualityComparer<_00211>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals((_00211?)obj, (_00211?)58);
+				_ = 1;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.StoreConverter != null)
+				{
+					_ = 4;
+				}
+				break;
+			case 1:
+				obj = P_0;
+				obj2 = 0;
+				if (!_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout)
+				{
+					obj2 = 0;
+				}
+				break;
+			case 10:
+				obj++;
+				obj2 = 13;
+				break;
+			case 4:
+			case 11:
+				_ = ref obj;
+				/*Error near IL_0198: Member reference must be method, but was: Field*/;
+			case 2:
+			case 3:
+				if ((nint)obj <= 0)
+				{
+					obj2 = 11;
+					break;
+				}
+				goto case 5;
+			case 12:
+			case 13:
+				if ((int)/*Error near IL_01d7: Stack underflow*/ < (((EqualityComparer<_00213>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals((_00213?)obj, (_00213?)(&obj)) ? 1 : 0))
+				{
+					_ = 2;
+					if (((EntitySocks5)EntitySocks5.Address__BackingField).Port__BackingField != 0)
+					{
+						_ = 0;
+					}
+					break;
+				}
+				goto case 6;
+			case 8:
+				_ = P_0 * 3 - 1;
+				/*Error near IL_01fb: Member reference must be method, but was: Field*/;
+			}
 		}
 	}
 

@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Mass.Common.Extensions;
+using Mass.Common.Models;
 using Serilog;
 
 namespace Mass.Common.Helpers;
@@ -96,13 +97,14 @@ public static class ConfigHelper
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00輀(object P_0, object P_1)
+	internal unsafe static void _FF00輀(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_005f->IL0026: Incompatible stack heights: 2 vs 1
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -115,7 +117,9 @@ public static class ConfigHelper
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((SecureCallbackMethodAttribute)P_1)._002Ector();
+				_ = 0;
+				if ((int)((ApiResponseBase<>._003CThen_003Ed__10*)ApiResponseBase<>._003CThen_003Ed__10._003C_003E1__state)->_003C_003Et__builder == 0)
 				{
 					_ = 0;
 				}
@@ -158,29 +162,31 @@ public static class ConfigHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00鐀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00销()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (ApiResponseBase<>.ManageProvider == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00需()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

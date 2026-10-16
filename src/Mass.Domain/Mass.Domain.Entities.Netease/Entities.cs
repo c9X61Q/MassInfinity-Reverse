@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
+using Mass.Domain.Value;
 
 namespace Mass.Domain.Entities.Netease;
 
@@ -15,7 +18,7 @@ public class Entities<T> : EntityResponse
 		[CompilerGenerated]
 		get
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 			{
 			}
 			return (T[])(object)this;
@@ -24,11 +27,11 @@ public class Entities<T> : EntityResponse
 		[CompilerGenerated]
 		set
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_004f->IL0026: Incompatible stack heights: 3 vs 1
+			//IL_005a->IL0026: Incompatible stack heights: 3 vs 1
+			if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 			{
 			}
 			object obj = 1;
@@ -39,7 +42,8 @@ public class Entities<T> : EntityResponse
 				default:
 					return;
 				case 1:
-					if (false)
+					_ = 0;
+					if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField != null)
 					{
 						_ = 0;
 					}
@@ -58,8 +62,8 @@ public class Entities<T> : EntityResponse
 		[CompilerGenerated]
 		get
 		{
-			//IL_000a: Expected I4, but got Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0017: Expected I4, but got Obj
+			if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 			{
 			}
 			return (int)this;
@@ -68,11 +72,11 @@ public class Entities<T> : EntityResponse
 		[CompilerGenerated]
 		set
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_0050->IL0026: Incompatible stack heights: 3 vs 1
+			//IL_005b->IL0026: Incompatible stack heights: 3 vs 1
+			if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 			{
 			}
 			object obj = 1;
@@ -85,7 +89,8 @@ public class Entities<T> : EntityResponse
 				case 0:
 					return;
 				case 1:
-					if (false)
+					_ = 0;
+					if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField != null)
 					{
 						_ = 0;
 					}
@@ -98,17 +103,18 @@ public class Entities<T> : EntityResponse
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public Entities()
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0035: Expected Obj, but got I4
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		Entities<T> entities = this;
-		if (false)
+		((MemberInfo)(object)this).GetCustomAttribute<IntegerValueAttribute>();
+		BoolValue.DecorateOperationalTracker();
+		int num = 0;
+		if (((ConfigValue)ConfigValue.Icon__BackingField).DisplayName__BackingField != null)
 		{
-			entities = (Entities<T>)0;
+			num = 0;
 		}
-		switch ((int)entities)
+		switch (num)
 		{
 		case 0:
 			break;

@@ -2,6 +2,7 @@ using System;
 using System.Net.Http;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using Mass.Common.Models;
 
 namespace Mass.Common.Helpers;
 
@@ -38,11 +39,11 @@ public static class HttpClientHandlerHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _E700()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (ApiResponseBase<>.ManageProvider == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -64,10 +65,11 @@ public static class HttpClientHandlerHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _EA00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
@@ -32,17 +33,19 @@ public class ListValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public ListValueAttribute(string defaultValue, params string[] values)
 	{
-		//IL_0042: Expected I4, but got Obj
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0041: Expected Obj, but got I4
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		ListValueAttribute listValueAttribute = this;
-		if (0 == 0)
+		BoolValueAttribute.DecorateIdentifiableAggregator = defaultValue;
+		((ConfigValue)(object)this).Id__BackingField = values;
+		((IDisposable)this).Dispose();
+		int num = 0;
+		if (((ConfigValue)ConfigValue.Icon__BackingField).DisplayName__BackingField == null)
 		{
-			listValueAttribute = (ListValueAttribute)0;
+			num = 0;
 		}
-		switch ((int)listValueAttribute)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -72,10 +75,10 @@ public class ListValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00ࠀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -89,11 +92,10 @@ public class ListValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_0A00()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (BoolValueAttribute.DecorateIdentifiableAggregator == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -107,10 +109,10 @@ public class ListValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_0C00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -124,10 +126,10 @@ public class ListValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_0E00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

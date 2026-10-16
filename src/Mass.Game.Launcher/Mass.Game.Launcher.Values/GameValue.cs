@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Mass.Domain.Desktop.ValueObjects;
 using Mass.Domain.Value;
+using Serilog;
 
 namespace Mass.Game.Launcher.Values;
 
@@ -42,11 +45,14 @@ public class GameValue
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public GameValue()
+	public unsafe GameValue()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_001a: Expected VT, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		((ILogger)/*Error near IL_001a: Stack underflow*/).Debug<_0021_00210>((string)/*Error near IL_001a: Stack underflow*/, (_0021_00210)this);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -70,22 +76,28 @@ public class GameValue
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static List<ConfigValue> _FF00䘀(object P_0, EnumGameVersion P_1)
+	internal unsafe static List<ConfigValue> _FF00䘀(object P_0, EnumGameVersion P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003e: Expected I4, but got Obj
-		//IL_0055: Expected Obj, but got I4
-		//IL_00c8: Expected Obj, but got I4
-		//IL_0061->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00d2->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0092->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00ba->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00e5->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_009d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c5->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00f0->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004b: Expected I4, but got Obj
+		//IL_0062: Expected Obj, but got I4
+		//IL_00fd: Expected Obj, but got I4
+		//IL_00a5: Expected native int or pointer, but got Obj
+		//IL_00e5: Expected native int or pointer, but got Obj
+		//IL_0118: Expected native int or pointer, but got Obj
+		//IL_00cf: Expected Obj, but got VT
+		//IL_00d0: Expected Obj, but got VT
+		//IL_0076->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0107->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00af->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ef->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0081->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0122->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ba->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00fa->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_012d->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -96,7 +108,8 @@ public class GameValue
 			{
 			case 2:
 				obj = 1;
-				if (1 == 0)
+				obj2 = 1;
+				if ((int)((Authenticator._003CListenAsync_003Ed__7*)Authenticator._003CListenAsync_003Ed__7._003C_003E1__state)->_003C_003Et__builder == 0)
 				{
 					obj2 = 3;
 				}
@@ -104,7 +117,8 @@ public class GameValue
 			default:
 				if (P_1 == EnumGameVersion.V_RTX)
 				{
-					if (2 != 0)
+					obj2 = 2;
+					if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 != 0)
 					{
 						obj2 = 1;
 					}
@@ -112,13 +126,15 @@ public class GameValue
 				}
 				goto case 5;
 			case 4:
-				throw /*Error near IL_009f: Stack underflow*/;
+				throw new AsyncTaskMethodBuilder(ref *(TStateMachine*)/*Error near IL_00bf: Stack underflow*/);
 			case 7:
-				return (List<ConfigValue>)/*Error near IL_00a3: Stack underflow*/;
+				GC.SuppressFinalize(AsyncTaskMethodBuilder.Create());
+				return (List<ConfigValue>)typeof(FeverInstaller._003CGetFeverAppVersionAsync_003Ed__14).TypeHandle;
 			case 1:
 				if (P_1 != EnumGameVersion.V_CPP)
 				{
-					if (0 == 0)
+					obj2 = 0;
+					if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E4__this)->_003C_003Eu__1 == 0)
 					{
 						obj2 = 0;
 					}
@@ -133,7 +149,8 @@ public class GameValue
 			case 6:
 				if (obj == null)
 				{
-					if (7 == 0)
+					obj2 = 7;
+					if (((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler)->_003C_003E1__state == 0)
 					{
 						obj2 = 6;
 					}
@@ -145,13 +162,13 @@ public class GameValue
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00䜀()
+	internal unsafe static byte _FF00䜀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -171,12 +188,14 @@ public class GameValue
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00䨀()
+	internal unsafe static object _FF00䨀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -203,13 +222,14 @@ public class GameValue
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal uint _FF00䴀()
+	internal unsafe uint _FF00䴀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0015: Expected native int or pointer, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -229,28 +249,33 @@ public class GameValue
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00倀(uint P_0)
+	internal unsafe void _FF00倀(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003b: Expected native int or pointer, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state = (int)P_0;
+				obj2 = 0;
+				if (((Authenticator._003CListenAsync_003Ed__7)Authenticator._003CListenAsync_003Ed__7._003C_003Et__builder)._003C_003E4__this == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}

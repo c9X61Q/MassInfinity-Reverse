@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using Mass.Common.Models;
+using Serilog;
 
 namespace Mass.Common.Localization;
 
@@ -82,10 +86,11 @@ public static class LocalizationManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00樀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -107,24 +112,26 @@ public static class LocalizationManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00洀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (ApiResponseBase<>.ManageProvider == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00渀(object P_0)
+	internal unsafe static void _FF00渀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0060->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_007a->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0091->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0054->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00ab->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0093: Expected Obj, but got VT
+		//IL_0098->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00a3->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00be->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d9->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00e4->IL0026: Incompatible stack heights: 3 vs 1
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -134,34 +141,30 @@ public static class LocalizationManager
 			switch ((int)obj2)
 			{
 			case 3:
-				obj2 = P_0;
-				if (2 == 0)
-				{
-					obj2 = 2;
-				}
-				break;
+				/*Error near IL_0049: Member reference must be method, but was: Field*/;
 			default:
-				_ = 3;
-				break;
+				/*Error near IL_006e: Member reference must be method, but was: Field*/;
 			case 4:
 				return;
 			case 1:
-				obj2 = P_0;
-				if (false)
+				ApiResponse.Create();
+				_ = 0;
+				if (((ErrorResponse)ApiResponseBase<>._003CThen_003Ed__10._003C_003Eu__1).Type__BackingField != null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 2:
-				if ((int)/*Error near IL_007b: Stack underflow*/ == 0)
+				if (ErrorResponse.Title__BackingField == null)
 				{
 					obj2 = 5;
 					break;
 				}
-				obj2 = P_0;
-				if (1 == 0)
+				_ = ((AsyncTaskMethodBuilder<_00210>*)P_0)->Task;
+				_ = 1;
+				if (((ErrorResponse)(object)ErrorResponse.Errors__BackingField).TraceId__BackingField == null)
 				{
-					obj2 = 4;
+					_ = 4;
 				}
 				break;
 			case 5:
@@ -173,30 +176,19 @@ public static class LocalizationManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static void _FF00漀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0045->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
-		object obj2 = obj;
-		while (true)
+		switch ((int)obj)
 		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 1:
-				obj2 = P_0;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-			case 0:
-				return;
-			}
+		case 1:
+			/*Error near IL_0039: Member reference must be method, but was: Field*/;
+		case 0:
+			break;
 		}
 	}
 
@@ -219,24 +211,32 @@ public static class LocalizationManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static void _FF00爀(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		ApiResponseBase<>.ManageProvider = P_0;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00猀(Action<CultureInfo> P_0)
+	internal unsafe static void _FF00猀(Action<CultureInfo> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_006a->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00b6->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00a7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_005a->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0088->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0075->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c1->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_00bd: Expected Obj, but got VT
+		//IL_00cc: Expected Obj, but got I
+		//IL_0085: Expected native int or pointer, but got Obj
+		//IL_00d1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006c->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_008f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00dc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0077->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00ad->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0102->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 5;
@@ -246,16 +246,18 @@ public static class LocalizationManager
 			switch ((int)obj2)
 			{
 			case 1:
-				obj2 = obj;
-				obj = obj;
-				if (2 != 0)
+				_ = ref ApiResponseBase<>.ManageProvider;
+				obj = ((IEnumerable<KeyValuePair<string, List<string>>>)obj).Select((Func<KeyValuePair<string, List<string>>, string>)obj);
+				_ = 2;
+				if (((ApiResponseBase<>._003CThen_003Ed__10)ApiResponseBase<>._003CThen_003Ed__10._003C_003Et__builder).task != null)
 				{
-					obj2 = 1;
+					_ = 1;
 				}
 				break;
 			case 4:
 				obj = obj;
-				if (0 == 0)
+				obj2 = 0;
+				if ((int)((ApiResponseBase<>._003CThen_003Ed__10*)(nint)ApiResponseBase<>._003CThen_003Ed__10._003C_003E4__this)->_003C_003Eu__1 == 0)
 				{
 					obj2 = 0;
 				}
@@ -270,16 +272,18 @@ public static class LocalizationManager
 			case 3:
 				return;
 			default:
-				obj2 = obj;
-				obj = P_0;
-				if (0 == 0)
+				((ApiResponseBase<_00210>)obj).Msg = (string)(object)P_0;
+				obj = (object)(Span<string>)/*Error near IL_00b7: Stack underflow*/;
+				obj2 = 0;
+				if (((ErrorResponse)ErrorResponse.Status__BackingField).Errors__BackingField == null)
 				{
 					obj2 = 1;
 				}
 				break;
 			case 5:
-				obj = (object)/*Error near IL_00aa: Stack underflow*/;
-				if (0 == 0)
+				obj = ErrorResponse.TraceId__BackingField;
+				obj2 = 0;
+				if (ErrorResponse._003C_003Ec._003C_003E9 == null)
 				{
 					obj2 = 4;
 				}
@@ -307,10 +311,11 @@ public static class LocalizationManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00瘀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -330,18 +335,20 @@ public static class LocalizationManager
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00礀(Action<CultureInfo> P_0)
+	internal unsafe static void _FF00礀(Action<CultureInfo> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0066->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004a->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00c1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0090->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0071->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0055->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00ae->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_007d: Expected native int or pointer, but got Obj
+		//IL_00b6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0087->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0063->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0102->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0092->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006e->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 3;
@@ -351,8 +358,9 @@ public static class LocalizationManager
 			switch ((int)obj2)
 			{
 			case 3:
-				obj = (object)/*Error near IL_003e: Stack underflow*/;
-				if (2 != 0)
+				obj = ApiResponseBase<>.ManageProvider;
+				obj2 = 2;
+				if ((int)((ApiResponseBase<>._003CThen_003Ed__10*)ApiResponseBase<>._003CThen_003Ed__10._003C_003E1__state)->_003C_003Et__builder != 0)
 				{
 					obj2 = 1;
 				}
@@ -361,27 +369,23 @@ public static class LocalizationManager
 				return;
 			case 2:
 				obj = obj;
-				if (3 == 0)
+				obj2 = 3;
+				if (((ApiResponseBase<>._003CThen_003Ed__10*)(nint)ApiResponseBase<>._003CThen_003Ed__10.task)->_003C_003E4__this == null)
 				{
 					obj2 = 5;
 				}
 				break;
 			case 1:
-				obj2 = obj;
-				obj = obj;
-				if (false)
+				Unsafe.As<TaskAwaiter, ILogger>(ref ApiResponseBase<>._003CThen_003Ed__10._003C_003Eu__1).Warning<string>((string)obj, (string)obj);
+				obj = (object)/*Error near IL_00a2: Stack underflow*/;
+				obj2 = 0;
+				if (((ErrorResponse)ErrorResponse.Title__BackingField).Status__BackingField != 0)
 				{
 					obj2 = 0;
 				}
 				break;
 			case 5:
-				obj2 = obj;
-				obj = P_0;
-				if (1 == 0)
-				{
-					obj2 = 1;
-				}
-				break;
+				/*Error near IL_00c4: Member reference must be method, but was: Field*/;
 			default:
 				if (obj == obj)
 				{

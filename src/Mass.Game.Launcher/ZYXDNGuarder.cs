@@ -1,8 +1,15 @@
 using System;
 using System.Collections;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using Mass.Game.Launcher;
+using RestSharp;
+using Serilog;
 
 internal sealed class ZYXDNGuarder
 {
@@ -93,74 +100,157 @@ internal sealed class ZYXDNGuarder
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void RunHVM(nint P_0, nint P_1, nint P_2, int P_3)
+	internal unsafe static void RunHVM(nint P_0, nint P_1, nint P_2, int P_3)
 	{
-		//IL_000f: Expected Obj, but got I4
-		//IL_0140: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0143: Expected Obj, but got Unknown
-		//IL_015f: Expected Obj, but got I
-		//IL_0173: Expected Obj, but got I8
-		//IL_0153: Expected Obj, but got I4
-		//IL_0032->IL013d: Incompatible stack heights: 1 vs 0
-		//IL_015b->IL015b: Incompatible stack heights: 4 vs 0
-		//IL_003c->IL013d: Incompatible stack heights: 2 vs 0
-		//IL_0046->IL013d: Incompatible stack heights: 3 vs 0
-		//IL_0050->IL013d: Incompatible stack heights: 4 vs 0
-		//IL_005a->IL013d: Incompatible stack heights: 5 vs 0
-		//IL_0064->IL013d: Incompatible stack heights: 6 vs 0
-		//IL_006e->IL013d: Incompatible stack heights: 7 vs 0
-		//IL_0078->IL013d: Incompatible stack heights: 8 vs 0
-		//IL_0082->IL013d: Incompatible stack heights: 9 vs 0
-		//IL_008d->IL013d: Incompatible stack heights: 10 vs 0
-		//IL_0098->IL013d: Incompatible stack heights: 11 vs 0
-		//IL_00a3->IL013d: Incompatible stack heights: 12 vs 0
-		//IL_00ae->IL013d: Incompatible stack heights: 13 vs 0
-		//IL_00b9->IL013d: Incompatible stack heights: 14 vs 0
-		//IL_00c4->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00ce->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00d7->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00e4->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00ee->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00f8->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0105->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0112->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_011f->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_012c->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0136->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_013d->IL014d: Incompatible stack heights: 15 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0024: Expected Obj, but got I4
+		//IL_0044: Invalid comparison between Unknown and I4
+		//IL_01a1: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01a4: Expected Obj, but got Unknown
+		//IL_01cf: Expected Obj, but got I
+		//IL_01d6: Expected I4, but got Obj
+		//IL_01dc: Expected Obj, but got I
+		//IL_01e3: Expected Obj, but got I4
+		//IL_01f7: Expected I4, but got I8
+		//IL_01fd: Expected I4, but got Obj
+		//IL_01fd: Expected I4, but got Obj
+		//IL_01fd: Expected Obj, but got VT
+		//IL_0060: Invalid comparison between VT and I4
+		//IL_006c: Expected Obj, but got I4
+		//IL_007a: Expected Obj, but got I4
+		//IL_0088: Expected Obj, but got I4
+		//IL_00a4: Expected Obj, but got I4
+		//IL_00a6: Invalid comparison between VT and I4
+		//IL_00cf: Expected Obj, but got I4
+		//IL_00de: Expected Obj, but got I4
+		//IL_00fc: Expected Obj, but got I4
+		//IL_00fe: Invalid comparison between Unknown and I4
+		//IL_010b: Expected Obj, but got I4
+		//IL_010d: Invalid comparison between Unknown and I4
+		//IL_0057->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_01c8->IL01c8: Incompatible stack heights: 5 vs 0
+		//IL_0065->IL019e: Incompatible stack heights: 3 vs 0
+		//IL_0073->IL019e: Incompatible stack heights: 3 vs 0
+		//IL_0081->IL019e: Incompatible stack heights: 3 vs 0
+		//IL_008f->IL019e: Incompatible stack heights: 3 vs 0
+		//IL_009d->IL019e: Incompatible stack heights: 4 vs 0
+		//IL_00ab->IL019e: Incompatible stack heights: 5 vs 0
+		//IL_00b9->IL019e: Incompatible stack heights: 3 vs 0
+		//IL_00c7->IL019e: Incompatible stack heights: 3 vs 0
+		//IL_00d6->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_0121->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_012f->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_0138->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_0145->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_014f->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_0159->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_0166->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_0173->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_0180->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_018d->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_0197->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_019e->IL01ae: Incompatible stack heights: 1 vs 0
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = null;
-		object obj2 = (object)/*Error near IL_000c: Stack underflow*/;
+		((ILogger)/*Error near IL_001b: Stack underflow*/).Debug<_0021_00210>((string)/*Error near IL_001b: Stack underflow*/, (_0021_00210)/*Error near IL_001b: Stack underflow*/);
+		((Func<Task>)/*Error near IL_0020: Stack underflow*/)._002Ector((object)/*Error near IL_0020: Stack underflow*/, (nint)/*Error near IL_0020: Stack underflow*/);
+		object obj2 = (object)/*Error near IL_0021: Stack underflow*/;
 		object obj3 = 0;
 		object obj4;
 		while ((nint)obj3 < ((Array)obj2).Length)
 		{
-			obj3 = ((object[])obj2)[obj3];
-			obj4 = obj3;
-			if ((nint)obj4 == 15 && 0 == 68 && 1 == 78 && 2 == 71 && 3 == 117 && 4 == 97 && 5 == 114 && 6 == 100 && 7 == 46 && 8 == 82 && 9 == 117 && 10 == 110 && 11 == 116 && 12 == 105 && 13 == 109 && 14 == 101)
+			obj3 = Task.Run((Func<Task?>)((object[])obj2)[obj3]);
+			((TcpListener)obj3).Start();
+			obj4 = (object)/*Error near IL_003c: Stack underflow*/;
+			((AsyncTaskMethodBuilder*)/*Error near IL_0042: Stack underflow*/)->Start<TStateMachine>(ref *(TStateMachine*)obj4);
+			if ((int)/*Error near IL_0049: Stack underflow*/ == 15)
 			{
-				obj3 = obj3;
-				if (obj3 != null && ((Array)obj3).Length == 8 && ((byte[])obj3)[0] == 208 && ((byte[])obj3)[1] == 90 && ((byte[])obj3)[2] == 39 && ((byte[])obj3)[3] == 211 && ((byte[])obj3)[4] == 237 && ((byte[])obj3)[5] == 158 && ((byte[])obj3)[6] == 178 && ((byte[])obj3)[7] == 90)
+				object obj5 = obj4;
+				if ((nint)((AsyncTaskMethodBuilder*)null)->Task == 68)
 				{
-					obj = ((object[])obj2)[obj3];
-					break;
+					object obj6 = obj4;
+					if (AsyncTaskMethodBuilder.Create() == (AsyncTaskMethodBuilder)(object)78)
+					{
+						object obj7 = obj4;
+						GC.SuppressFinalize(2);
+						if ((nint)obj7 == 71)
+						{
+							object obj8 = obj4;
+							((TcpListener)3).Dispose();
+							if ((nint)obj8 == 117)
+							{
+								object obj9 = obj4;
+								((IAsyncStateMachine)4).MoveNext();
+								if ((nint)obj9 == 97)
+								{
+									object obj10 = obj4;
+									if ((((TaskAwaiter*)5)->IsCompleted ? 1 : 0) == 114)
+									{
+										object obj11 = obj4;
+										if (((Task)6).GetAwaiter() == (TaskAwaiter)(object)100)
+										{
+											((AsyncTaskMethodBuilder*)obj11)->AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref *(TAwaiter*)obj4, ref *(TStateMachine*)7);
+											if ((nint)obj10 == 46)
+											{
+												object obj12 = obj4;
+												((TaskAwaiter*)8)->GetResult();
+												if ((nint)obj12 == 82)
+												{
+													((ILogger)1).Error((Exception)obj4, (string)9);
+													if ((nint)obj6 == 117)
+													{
+														((AsyncTaskMethodBuilder*)obj4)->SetException((Exception)10);
+														if ((nint)obj5 == 110)
+														{
+															object obj13 = obj4;
+															((AsyncTaskMethodBuilder*)11)->SetResult();
+															if ((nint)obj13 == 116)
+															{
+																((IAsyncStateMachine)obj4).SetStateMachine((IAsyncStateMachine)12);
+																if ((int)/*Error near IL_0103: Stack underflow*/ == 105)
+																{
+																	((AsyncTaskMethodBuilder*)obj4)->SetStateMachine((IAsyncStateMachine)13);
+																	if ((int)/*Error near IL_0112: Stack underflow*/ == 109 && (((TaskAwaiter<TcpClient>*)14)->IsCompleted ? 1 : 0) == 101)
+																	{
+																		obj3 = ((TcpListener)obj3).AcceptTcpClientAsync();
+																		if (obj3 != null && ((Array)obj3).Length == 8 && ((byte[])obj3)[0] == 208 && ((byte[])obj3)[1] == 90 && ((byte[])obj3)[2] == 39 && ((byte[])obj3)[3] == 211 && ((byte[])obj3)[4] == 237 && ((byte[])obj3)[5] == 158 && ((byte[])obj3)[6] == 178 && ((byte[])obj3)[7] == 90)
+																		{
+																			obj = ((object[])obj2)[obj3];
+																			break;
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 			obj3++;
 		}
 		if (obj == null)
 		{
-			obj3 = P_3;
+			obj3 = new SocketException[P_3];
 			_ = 0;
-			obj = obj3;
+			((TaskAwaiter<TcpClient>*)P_3)->GetResult();
+			obj = Encoding.UTF8;
 		}
-		obj4 = P_1;
-		_ = 42;
-		_ = null;
-		((object[])2)[0] = obj4;
-		((object[])2)[1] = P_1;
+		obj4 = ((Encoding)obj).GetBytes((string)P_1);
+		((Encoding)/*Error near IL_01d6: Stack underflow*/).GetString((byte[])/*Error near IL_01d6: Stack underflow*/, (int)/*Error near IL_01d6: Stack underflow*/, (int)obj4);
+		((TcpClient)P_2).GetStream().Read((byte[])((Task<string>)42).GetAwaiter(), (int)null, (int)new RestClientOptions[2]
+		{
+			(RestClientOptions)obj4,
+			(RestClientOptions)(object)(DecompressionMethods)P_1
+		});
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

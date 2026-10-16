@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace Mass.Game.Proxy.Network;
 
@@ -17,53 +19,57 @@ public class Optional<T>
 		[CompilerGenerated]
 		get
 		{
-			//IL_000a: Expected I4, but got Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0017: Expected I4, but got Obj
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<T>)(object)Regex).Default == null)
 			{
 			}
 			return (byte)(int)this != 0;
 		}
 	}
 
-	public T Value
+	public unsafe T Value
 	{
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		get
 		{
-			//IL_0016: Expected VT, but got Obj
-			//IL_0013: Expected VT, but got Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Expected VT, but got Obj
+			//IL_001a: Expected VT, but got Ref
+			//IL_002c: Expected VT, but got Obj
+			//IL_0029: Expected VT, but got Obj
+			if (((EqualityComparer<T>)(object)Regex).Default == null)
 			{
 			}
-			if (this == null)
+			if (((EqualityComparer<T>)/*Error near IL_001a: Stack underflow*/).Equals((T?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (T?)this))
 			{
-				object obj = default;
-				_ = ref obj;
-				return (T)obj;
+				return (T)this;
 			}
-			return (T)this;
+			return (T)null;
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private Optional()
+	private unsafe Optional()
 	{
-		//IL_002d: Expected I4, but got Obj
-		//IL_0013->IL001c: Incompatible stack types: I4 vs Obj
-		//IL_0041->IL001c: Incompatible stack heights: 3 vs 2
-		//IL_0067->IL001c: Incompatible stack types: I4 vs Obj
-		//IL_004c->IL001c: Incompatible stack heights: 3 vs 2
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_0068: Expected native int or pointer, but got Obj
+		//IL_007d: Expected Obj, but got VT
+		//IL_005a->IL002d: Incompatible stack heights: 4 vs 2
+		//IL_0065->IL002d: Incompatible stack heights: 4 vs 2
+		if (((EqualityComparer<T>)(object)Regex).Default == null)
 		{
 		}
-		Optional<T> optional = (Optional<T>)2;
+		((EqualityComparer<T>)/*Error near IL_001a: Stack underflow*/).Equals((T?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (T?)this);
+		int num = 2;
 		while (true)
 		{
-			switch ((int)optional)
+			switch (num)
 			{
 			case 2:
 				_ = 0;
-				if (0 == 0)
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
 					_ = 0;
 				}
@@ -71,10 +77,11 @@ public class Optional<T>
 			case 1:
 				return;
 			default:
-				optional = this;
-				if (1 == 0)
+				Unsafe.Write((void*)(nint)this, null);
+				num = 1;
+				if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic == null)
 				{
-					optional = (Optional<T>)1;
+					num = 1;
 				}
 				break;
 			}
@@ -82,11 +89,14 @@ public class Optional<T>
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private Optional(T value)
+	private unsafe Optional(T value)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		if (((EqualityComparer<T>)(object)Regex).Default == null)
 		{
 		}
+		((EqualityComparer<T>)/*Error near IL_001a: Stack underflow*/).Equals((T?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (T?)this);
 		_ = 1;
 	}
 

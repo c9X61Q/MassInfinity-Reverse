@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 internal sealed class ZYXDNGuarder
 {
@@ -93,74 +95,31 @@ internal sealed class ZYXDNGuarder
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void RunHVM(nint P_0, nint P_1, nint P_2, int P_3)
+	internal unsafe static void RunHVM(nint P_0, nint P_1, nint P_2, int P_3)
 	{
-		//IL_000f: Expected Obj, but got I4
-		//IL_0140: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0143: Expected Obj, but got Unknown
-		//IL_015f: Expected Obj, but got I
-		//IL_0173: Expected Obj, but got I8
-		//IL_0153: Expected Obj, but got I4
-		//IL_0032->IL013d: Incompatible stack heights: 1 vs 0
-		//IL_015b->IL015b: Incompatible stack heights: 4 vs 0
-		//IL_003c->IL013d: Incompatible stack heights: 2 vs 0
-		//IL_0046->IL013d: Incompatible stack heights: 3 vs 0
-		//IL_0050->IL013d: Incompatible stack heights: 4 vs 0
-		//IL_005a->IL013d: Incompatible stack heights: 5 vs 0
-		//IL_0064->IL013d: Incompatible stack heights: 6 vs 0
-		//IL_006e->IL013d: Incompatible stack heights: 7 vs 0
-		//IL_0078->IL013d: Incompatible stack heights: 8 vs 0
-		//IL_0082->IL013d: Incompatible stack heights: 9 vs 0
-		//IL_008d->IL013d: Incompatible stack heights: 10 vs 0
-		//IL_0098->IL013d: Incompatible stack heights: 11 vs 0
-		//IL_00a3->IL013d: Incompatible stack heights: 12 vs 0
-		//IL_00ae->IL013d: Incompatible stack heights: 13 vs 0
-		//IL_00b9->IL013d: Incompatible stack heights: 14 vs 0
-		//IL_00c4->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00ce->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00d7->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00e4->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00ee->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00f8->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0105->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0112->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_011f->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_012c->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0136->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_013d->IL014d: Incompatible stack heights: 15 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Ref
+		//IL_0020: Expected VT, but got I4
+		//IL_0021: Expected Obj, but got I4
+		//IL_0024: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = null;
-		object obj2 = (object)/*Error near IL_000c: Stack underflow*/;
+		object obj2 = ((EqualityComparer<_00210>)/*Error near IL_0020: Stack underflow*/).GetHashCode((_00210)((EqualityComparer<_00210>)/*Error near IL_001b: Stack underflow*/).Equals((_00210?)/*Error near IL_001b: Stack underflow*/, (_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)));
 		object obj3 = 0;
-		object obj4;
-		while ((nint)obj3 < ((Array)obj2).Length)
+		if ((nint)obj3 < ((Array)obj2).Length)
 		{
-			obj3 = ((object[])obj2)[obj3];
-			obj4 = obj3;
-			if ((nint)obj4 == 15 && 0 == 68 && 1 == 78 && 2 == 71 && 3 == 117 && 4 == 97 && 5 == 114 && 6 == 100 && 7 == 46 && 8 == 82 && 9 == 117 && 10 == 110 && 11 == 116 && 12 == 105 && 13 == 109 && 14 == 101)
-			{
-				obj3 = obj3;
-				if (obj3 != null && ((Array)obj3).Length == 8 && ((byte[])obj3)[0] == 208 && ((byte[])obj3)[1] == 90 && ((byte[])obj3)[2] == 39 && ((byte[])obj3)[3] == 211 && ((byte[])obj3)[4] == 237 && ((byte[])obj3)[5] == 158 && ((byte[])obj3)[6] == 178 && ((byte[])obj3)[7] == 90)
-				{
-					obj = ((object[])obj2)[obj3];
-					break;
-				}
-			}
-			obj3++;
+			obj3 = ((object[])obj2)[obj3].ToString();
+			object obj4 = string.Format((IFormatProvider?)/*Error near IL_003b: Stack underflow*/, (string)/*Error near IL_003b: Stack underflow*/, (object?[])obj3);
+			/*Error near IL_003d: Member reference must be method, but was: Field*/;
 		}
 		if (obj == null)
 		{
-			obj3 = P_3;
+			obj3 = new IFormatProvider[P_3];
 			_ = 0;
-			obj = obj3;
+			/*Error near IL_01bc: Member reference must be method, but was: Field*/;
 		}
-		obj4 = P_1;
-		_ = 42;
-		_ = null;
-		((object[])2)[0] = obj4;
-		((object[])2)[1] = P_1;
+		/*Error near IL_01ca: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

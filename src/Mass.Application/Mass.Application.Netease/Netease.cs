@@ -244,10 +244,8 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_F500(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return P_0;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -269,10 +267,8 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00_FF00_F800()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -294,32 +290,8 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static void _FF00_FF00_FF00ﬀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 1;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 0:
-				return;
-			case 1:
-				obj2 = P_0;
-				_ = ref obj;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -333,11 +305,8 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00ﴀ(object P_0)
 	{
-		//IL_000b: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (byte)(int)P_0;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -389,11 +358,8 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_0300()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -407,10 +373,8 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00_FF00_FF00Ԁ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -439,10 +403,8 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00_FF00_FF00_0D00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -464,187 +426,22 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00_FF00_FF00က()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00ሀ()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_008a: Expected I4, but got Obj
-		//IL_01f4: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0226: Expected I4, but got Unknown
-		//IL_0190: Expected Obj, but got I4
-		//IL_01d5->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c4->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_019c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_02c8->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_014f->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00d5->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_017f->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_02f2->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0273->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_01b9->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0260->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0240->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0251->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0230->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01a7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_02d3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_015a->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_018a->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_027e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01c4->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 4;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			default:
-				return obj;
-			case 2:
-				obj = (object)/*Error near IL_00ba: Stack underflow*/;
-				obj2 = 11;
-				break;
-			case 12:
-				goto IL_00c4;
-			case 9:
-				goto IL_013e;
-			case 15:
-				goto IL_016d;
-			case 4:
-				obj = 12;
-				if (3 == 0)
-				{
-					obj2 = 1;
-				}
-				break;
-			case 22:
-				goto IL_01a7;
-			case 1:
-				goto IL_01c4;
-			case 3:
-				switch (obj - 1)
-				{
-				case 10:
-					break;
-				case 2:
-					goto IL_00c4;
-				case 6:
-					goto IL_013e;
-				case 7:
-					goto IL_016d;
-				case 8:
-					goto IL_01a7;
-				case 1:
-					goto IL_01c4;
-				default:
-					goto IL_0226;
-				case 0:
-					goto IL_0230;
-				case 3:
-					goto IL_0240;
-				case 5:
-					goto IL_0251;
-				case 4:
-					goto IL_0260;
-				case 9:
-					goto IL_02b6;
-				}
-				goto case 2;
-			case 25:
-				goto IL_0230;
-			case 26:
-				goto IL_0240;
-			case 23:
-				goto IL_0251;
-			case 20:
-				goto IL_0260;
-			case 6:
-				goto IL_02b6;
-			case 7:
-			case 19:
-				{
-					obj = (object)/*Error near IL_02e8: Stack underflow*/;
-					obj2 = 16;
-					break;
-				}
-				IL_02b6:
-				obj = (object)/*Error near IL_02bc: Stack underflow*/;
-				if (3 == 0)
-				{
-					obj2 = 5;
-				}
-				break;
-				IL_0260:
-				obj = (object)/*Error near IL_0267: Stack underflow*/;
-				if (7 == 0)
-				{
-					obj2 = 13;
-				}
-				break;
-				IL_013e:
-				obj = (object)/*Error near IL_0143: Stack underflow*/;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-				IL_0251:
-				obj = (object)/*Error near IL_0256: Stack underflow*/;
-				obj2 = 24;
-				break;
-				IL_0240:
-				obj = (object)/*Error near IL_0247: Stack underflow*/;
-				obj2 = 10;
-				break;
-				IL_0230:
-				obj = (object)/*Error near IL_0236: Stack underflow*/;
-				obj2 = 18;
-				break;
-				IL_0226:
-				obj2 = 7;
-				break;
-				IL_01c4:
-				obj = (object)/*Error near IL_01cb: Stack underflow*/;
-				obj2 = 8;
-				break;
-				IL_01a7:
-				obj = (object)/*Error near IL_01ad: Stack underflow*/;
-				if (17 == 0)
-				{
-					obj2 = 8;
-				}
-				break;
-				IL_00c4:
-				obj = (object)/*Error near IL_00cb: Stack underflow*/;
-				obj2 = 14;
-				break;
-				IL_016d:
-				obj = (object)/*Error near IL_0173: Stack underflow*/;
-				if (21 != 0)
-				{
-					obj2 = 5;
-				}
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00ጀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -681,10 +478,8 @@ public static class Netease
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static object _FF00_FF00_FF00_FF00ᜀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

@@ -1,6 +1,9 @@
 using System;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Mass.Domain.Desktop.Entities.Mods;
 using Mass.Game.Launcher.Java;
 
@@ -21,54 +24,78 @@ public class ServerModPath : GamePath
 	internal static ServerModPath DecorateExternalAggregator;
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ServerModPath(EntityLaunchJavaGame args, string gameBase, EntityItemDownload download, EntitySubItemDownload subItem)
+	public unsafe ServerModPath(EntityLaunchJavaGame args, string gameBase, EntityItemDownload download, EntitySubItemDownload subItem)
 	{
-		//IL_0046: Expected I4, but got Obj
-		//IL_0020->IL0029: Incompatible stack types: I4 vs Obj
-		//IL_00ac->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_007b->IL0029: Incompatible stack heights: 4 vs 1
-		//IL_008c->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_00c8->IL0029: Incompatible stack heights: 4 vs 1
-		//IL_005d->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_00b7->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_0097->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0068->IL0029: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_00ea: Expected native int or pointer, but got Obj
+		//IL_0097: Expected native int or pointer, but got Obj
+		//IL_00b1: Expected Obj, but got I4
+		//IL_00b6: Expected Obj, but got VT
+		//IL_00b1: Expected native int or pointer, but got Obj
+		//IL_00c4: Expected native int or pointer, but got Obj
+		//IL_013f: Expected Obj, but got VT
+		//IL_013f: Expected Obj, but got I4
+		//IL_0076: Expected I4, but got Obj
+		//IL_011d->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_00c0->IL0042: Incompatible stack heights: 3 vs 2
+		//IL_0149->IL0042: Incompatible stack heights: 4 vs 2
+		//IL_008a->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0128->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0095->IL0042: Incompatible stack heights: 1 vs 2
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		ServerModPath serverModPath = this;
-		if (false)
+		TcpListener? listener = ((Authenticator)(object)this).Listener;
+		int num = 0;
+		if (((Authenticator._003CListenAsync_003Ed__7)Authenticator._003CListenAsync_003Ed__7._003C_003Et__builder)._003C_003E4__this != null)
 		{
-			serverModPath = (ServerModPath)5;
+			num = 5;
 		}
 		while (true)
 		{
-			switch ((int)serverModPath)
+			switch (num)
 			{
 			case 5:
-				if (0 == 0)
+				((TcpListener)(object)download).Start();
+				((AsyncTaskMethodBuilder*)this)->Start<TStateMachine>(ref *(TStateMachine*)gameBase);
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)/*Error near IL_0076: Stack underflow*/)->_003C_003E1__state = (int)listener;
+				_ = 0;
+				if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003Et__builder).listener == null)
 				{
 					_ = 0;
 				}
 				break;
 			case 2:
+			{
+				Authenticator authenticator = ((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->_003C_003E4__this;
+				bool isCompleted = (Authenticator.ReflectMonoObject() ? ((TaskAwaiter*)1) : ((TaskAwaiter*)null))->IsCompleted;
+				((Authenticator._003CListenAsync_003Ed__7*)args)->MoveNext();
+				Unsafe.Write(&((Authenticator._003CReceiveAsync_003Ed__9*)(nint)authenticator)->_003C_003E4__this, (Authenticator)new Authenticator._003CListenAsync_003Ed__7((IAsyncStateMachine)isCompleted));
 				_ = 3;
 				break;
+			}
 			case 1:
 				return;
 			case 3:
-				if (0 == 0)
+				Unsafe.Write(&((Authenticator._003CReceiveAsync_003Ed__9*)(nint)this)->client, subItem);
+				num = 0;
+				if (Authenticator._003CReceiveAsync_003Ed__9.CheckCustomChain == null)
 				{
-					_ = 1;
+					num = 1;
 				}
 				break;
 			default:
-				if (4 == 0)
+				((AsyncTaskMethodBuilder*)((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)this)->_003C_003E1__state)->SetStateMachine((IAsyncStateMachine)download);
+				((Authenticator._003CReceiveAsync_003Ed__9*)this)->MoveNext();
+				Unsafe.Write(&((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)/*Error near IL_0109: Stack underflow*/)->_003C_003Eu__1, (TaskAwaiter<string>)listener.AcceptTcpClientAsync().GetAwaiter());
+				_ = 4;
+				if (((FeverInstaller)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10.ReflectMixedGateway)._003CfeverVersion_003EP == null)
 				{
 					_ = 3;
 				}
 				break;
 			case 4:
+				((FeverInstaller)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10.DecorateFlexibleProfiler()).Client__BackingField = ((Task<string>)(object)((TcpClient)(object)download).GetStream()).GetAwaiter();
 				_ = 2;
 				break;
 			}
@@ -96,12 +123,14 @@ public class ServerModPath : GamePath
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00ꠀ()
+	internal unsafe static object _FF00_FF00ꠀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -113,12 +142,12 @@ public class ServerModPath : GamePath
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00ꨀ()
+	internal unsafe static byte _FF00_FF00ꨀ()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 }

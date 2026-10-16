@@ -1,21 +1,52 @@
 using System;
+using System.Buffers;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
+using System.Threading;
 using System.Threading.Tasks;
 using DotNetty.Buffers;
+using DotNetty.Transport.Bootstrapping;
+using DotNetty.Transport.Channels;
+using Mass.Application.Desktop;
 using Mass.Application.Event;
+using Mass.Application.Models;
+using Mass.Application.Services;
 using Mass.Common.Extensions;
+using Mass.Domain.Desktop.ValueObjects;
 using Mass.Domain.Value;
 using Mass.Game.Proxy.Minecraft;
 using Mass.Game.Proxy.Minecraft.Events;
 using Mass.Game.Proxy.Minecraft.Events.Play;
+using Mass.Game.Proxy.Minecraft.Server;
+using Mass.Game.Proxy.Network;
+using Mass.Game.Proxy.Network.Component.Chat;
+using Mass.Game.Proxy.Network.Metadata.Values;
+using Mass.Game.Proxy.Network.Nbt;
 using Mass.Game.Proxy.Packets.Configuration;
 using Mass.Game.Proxy.Packets.Handshake;
 using Mass.Game.Proxy.Packets.Play;
 using Mass.Game.Proxy.Protocols.FakeForge;
+using Mass.Game.Proxy.Protocols.FakeForge.FmlHandshake.Messages;
+using Mass.Game.Proxy.Protocols.Germ;
 using Mass.Game.Proxy.Protocols.Heypixel.AntiCheat;
+using Mass.Game.Proxy.Protocols.Heypixel.Events;
+using Mass.Game.Proxy.Protocols.Heypixel.Floodgate;
+using Mass.Game.Proxy.Protocols.Heypixel.Serverbound;
+using Mass.Game.Proxy.Protocols.Hyt;
+using Mass.Game.Proxy.Protocols.Hyt.VexView;
+using Mass.Game.Proxy.Protocols.OhMyGod;
+using Mass.Game.Proxy.Protocols.Orange;
 using RestSharp;
 using Serilog;
 
@@ -23,6 +54,63 @@ namespace Mass.Game.Proxy.Protocols.Heypixel;
 
 public class HeypixelProtocol : FakeForgeProtocol
 {
+	[Serializable]
+	[CompilerGenerated]
+	private sealed class _003C_003Ec
+	{
+		public static readonly _003C_003Ec _003C_003E9 = new _003C_003Ec();
+
+		public static Predicate<MetadataEntry> _003C_003E9__31_0;
+
+		internal static _003C_003Ec DecorateCustomAuthorizer;
+
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		public unsafe _003C_003Ec()
+		{
+			//IL_001a: Expected VT, but got Obj
+			//IL_001a: Expected VT, but got Ref
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
+			{
+			}
+			((EqualityComparer<_00210>)/*Error near IL_001a: Stack underflow*/).Equals((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		}
+
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		internal unsafe bool _003COnSetEntityMetaData_003Eb__31_0(MetadataEntry m)
+		{
+			//IL_001a: Expected VT, but got Obj
+			//IL_001a: Expected Obj, but got Ref
+			//IL_001c: Invalid comparison between Unknown and I4
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
+			{
+			}
+			((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)m);
+			return (int)/*Error near IL_001e: Stack underflow*/ == 21;
+		}
+
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		internal static bool EncodeContainer()
+		{
+			//IL_001a: Invalid comparison between VT and Obj
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
+			{
+			}
+			return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null;
+		}
+
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		internal static _003C_003Ec ReflectConvertibleReg()
+		{
+			//IL_001a: Expected Obj, but got VT
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
+			{
+			}
+			return (_003C_003Ec)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
+		}
+	}
+
 	[StructLayout(LayoutKind.Auto)]
 	[CompilerGenerated]
 	private struct _003CInitialize_003Ed__17 : IAsyncStateMachine
@@ -85,10 +173,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static object _FF00_FF00_FF00_FF00_FF00ⴀ()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Expected Obj, but got VT
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -110,11 +200,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static byte _FF00_FF00_FF00_FF00_FF00_3000()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Invalid comparison between VT and Obj
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -128,76 +219,103 @@ public class HeypixelProtocol : FakeForgeProtocol
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00㠀()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_03c7: Expected Obj, but got Ref
-			//IL_03f1: Expected Obj, but got Ref
-			//IL_0107: Expected Obj, but got Ref
-			//IL_0199: Expected Obj, but got I4
-			//IL_0129: Expected Obj, but got I4
-			//IL_020b: Expected Obj, but got I4
-			//IL_0175: Expected Obj, but got I4
-			//IL_01b3: Expected Obj, but got Ref
-			//IL_03e2->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_03d1->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_03fd->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_004b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_03ed->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0408->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_0056->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0071->IL0075: Incompatible stack heights: 1 vs 0
-			//IL_0111->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_00b1->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_009f->IL0075: Incompatible stack heights: 1 vs 0
-			//IL_0136->IL00b5: Incompatible stack heights: 2 vs 1
-			//IL_0255->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_0158->IL00b5: Incompatible stack heights: 3 vs 1
-			//IL_01ae->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_0226->IL00b5: Incompatible stack heights: 4 vs 1
-			//IL_0216->IL00b5: Incompatible stack heights: 3 vs 1
-			//IL_0181->IL00b5: Incompatible stack heights: 0 vs 1
-			//IL_01d9->IL00b5: Incompatible stack heights: 3 vs 1
-			//IL_01ec->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_01fb->IL00b5: Incompatible stack heights: 0 vs 1
-			//IL_01bf->IL00b5: Incompatible stack heights: 0 vs 1
-			//IL_00b5->IL00b5: Incompatible stack heights: 3 vs 1
-			//IL_0141->IL00b5: Incompatible stack heights: 2 vs 1
-			//IL_0172->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_023a->IL00b5: Incompatible stack heights: 0 vs 1
-			//IL_018c->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_0206->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_01ca->IL00b5: Incompatible stack types: I4 vs Ref
-			//IL_0245->IL00b5: Incompatible stack types: I4 vs Ref
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0043: Expected I4, but got Obj
+			//IL_054a: Expected Obj, but got Ref
+			//IL_0551: Expected Obj, but got Ref
+			//IL_0538: Expected Obj, but got Ref
+			//IL_0576: Expected Obj, but got Ref
+			//IL_0050: Expected VT, but got I4
+			//IL_0050: Expected Obj, but got Ref
+			//IL_005f: Expected Obj, but got VT
+			//IL_0082: Expected Obj, but got VT
+			//IL_00b8: Expected Obj, but got VT
+			//IL_0132: Expected Obj, but got Ref
+			//IL_01fb: Expected I, but got Obj
+			//IL_01fb: Expected Obj, but got Ref
+			//IL_0204: Expected Obj, but got I4
+			//IL_0156: Expected Obj, but got I4
+			//IL_015b: Expected VT, but got I4
+			//IL_015b: Expected Obj, but got Ref
+			//IL_016a: Expected Obj, but got VT
+			//IL_0316: Expected Obj, but got I4
+			//IL_017f: Expected VT, but got Ref
+			//IL_018e: Expected VT, but got Ref
+			//IL_0215: Expected Obj, but got I4
+			//IL_01ac: Expected Obj, but got Ref
+			//IL_02e4: Expected Obj, but got Ref
+			//IL_02cb: Expected Obj, but got Ref
+			//IL_02d3: Expected Obj, but got Ref
+			//IL_02d3: Expected Obj, but got Ref
+			//IL_02d3: Expected Obj, but got Ref
+			//IL_02b6: Expected Obj, but got I4
+			//IL_02bb: Expected Obj, but got I4
+			//IL_02bb: Expected Obj, but got Ref
+			//IL_01d4: Expected Obj, but got I4
+			//IL_0252: Expected I4, but got Obj
+			//IL_0268: Expected Obj, but got I4
+			//IL_0127: Expected I4, but got Obj
+			//IL_0565->IL0026: Incompatible stack heights: 3 vs 2
+			//IL_0544->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_058c->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0570->IL0026: Incompatible stack heights: 3 vs 2
+			//IL_0597->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_006f->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_013e->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_00da->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_0325->IL0048: Incompatible stack heights: 0 vs 1
+			//IL_016f->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_0320->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_0221->IL00de: Incompatible stack heights: 3 vs 2
+			//IL_01c6->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_0143->IL0597: Incompatible stack heights: 0 vs 1
+			//IL_02dd->IL00de: Incompatible stack heights: 3 vs 2
+			//IL_02c5->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_01e8->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_025c->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_0283->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_02a6->IL00de: Incompatible stack heights: 3 vs 2
+			//IL_017a->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_01d1->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_02fd->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_01f3->IL00de: Incompatible stack types: I4 vs Obj
+			//IL_02b1->IL00de: Incompatible stack heights: 3 vs 2
+			//IL_0308->IL00de: Incompatible stack types: I4 vs Obj
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
 			object obj = 2;
 			object obj2 = obj;
 			while (true)
 			{
-				ref _003CInitialize_003Ed__17 reference;
+				object obj3;
 				switch ((int)obj2)
 				{
 				case 3:
-					_ = -2;
-					if (0 == 0)
+					((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)(-2);
+					obj2 = 0;
+					if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 					{
-						_ = 0;
+						obj2 = 0;
 					}
 					break;
 				case 5:
-					if (true)
+				{
+					int num = 1;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field != 0)
 					{
-						_ = 1;
+						num = 1;
 					}
 					while (true)
 					{
-						switch ((int)/*Error near IL_0082: Stack underflow*/)
+						switch (num)
 						{
 						case 1:
-							if (0 == 0)
+							num = 0;
+							if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 							{
-								_ = 0;
+								num = 0;
 							}
 							continue;
 						}
@@ -205,123 +323,143 @@ public class HeypixelProtocol : FakeForgeProtocol
 					}
 					if (obj != null)
 					{
-						reference = ref *(_003CInitialize_003Ed__17*)15;
-						goto IL_00b5;
+						obj3 = 15;
+						goto IL_00de;
 					}
-					goto IL_0103;
+					goto IL_012c;
+				}
 				case 1:
-					obj = (object)Unsafe.AsPointer(ref this);
+					obj = ((OhMyGodProtocol)Unsafe.AsPointer(ref this))._data;
 					obj2 = 5;
 					break;
 				default:
-					if (3 == 0)
+					Delegate.Combine((Delegate?)Unsafe.AsPointer(ref OhMyGodProtocol.CheckGeneralAggregator), (Delegate?)obj);
+					_ = 3;
+					if (((HytMainMenu.Menu)(object)HytMainMenu.CheckCentralTransmitter).Name == null)
 					{
 						_ = 4;
 					}
 					break;
 				case 2:
-					obj = (object)Unsafe.AsPointer(ref this);
-					if (1 == 0)
+					obj = ((HytMainMenu.Menu)Unsafe.AsPointer(ref this)).Description;
+					obj2 = 1;
+					if (((HytMainMenu._003C_003Ec__DisplayClass2_0)HytMainMenu.Menu.CustomizeTemplate).minecraft == null)
 					{
 						obj2 = 1;
 					}
 					break;
 				case 4:
 					return;
-					IL_00b5:
+					IL_00de:
 					while (true)
 					{
-						switch ((uint)Unsafe.AsPointer(ref reference))
+						switch ((int)obj3)
 						{
-						case 1u:
+						case 1:
 							break;
-						case 5u:
-							goto IL_0103;
-						case 9u:
+						case 5:
+							goto IL_012c;
+						case 9:
 							return;
-						case 2u:
+						case 2:
 							obj = 0;
-							if (0 == 0)
+							((_003C_003Ef__AnonymousType3<, >)Unsafe.AsPointer(ref this))._003Centry_003Ei__Field = (_003Centry_003Ej__TPar)0;
+							obj3 = 0;
+							if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument == null)
+							{
+								obj3 = 0;
+							}
+							continue;
+						case 4:
+							((EqualityComparer<_00211>)/*Error near IL_017f: Stack underflow*/).Equals((_00211?)/*Error near IL_017f: Stack underflow*/, (_00211?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+							((EqualityComparer<_00212>)(*(Color*)obj)/*cast due to constrained. prefix*/).GetHashCode((_00212)(&obj));
+							_003C_003Ef__AnonymousType1<, , >.ReflectModularWriter();
+							/*Error near IL_0195: Member reference must be method, but was: Field*/;
+						case 7:
+							_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_ascii_68FF03FEFFFF87FEFFFF07 = null;
+							obj3 = 11;
+							if (((EntitySocks5Account)EntitySocks5Account.Username__BackingField).Password__BackingField == null)
+							{
+								obj3 = 10;
+							}
+							continue;
+						case 12:
+							obj = 1;
+							obj3 = 0;
+							if (((EntitySocks5)EntitySocks5Account.AttachElement).Address__BackingField == null)
+							{
+								obj3 = 1;
+							}
+							continue;
+						default:
+							((EntitySocks5)Unsafe.AsPointer(ref this)).Port__BackingField = (nint)obj;
+							obj = 10;
+							obj3 = obj;
+							continue;
+						case 6:
+							obj = EntitySocks5.DecorateDynamicModule;
+							_ = 3;
+							continue;
+						case 16:
+							_ = ref obj;
+							/*Error near IL_0223: Member reference must be method, but was: Field*/;
+						case 13:
+							((EntityLaunchGameProxy)obj).GameVersion__BackingField = (EnumGameVersion)(int)obj;
+							obj3 = 12;
+							continue;
+						case 14:
+						{
+							object obj5 = ((EntityLaunchGameProxy)((EntityLaunchGameProxy)((_003C_003Ef__AnonymousType3<, >)obj).GetHashCode()).Name__BackingField).ServerAddress__BackingField;
+							((RegexRunnerFactory)_003C_003Ef__AnonymousType3<, >.DecorateIntegratedProgram())._002Ector();
+							obj = obj5;
+							obj3 = 4;
+							continue;
+						}
+						case 15:
+							_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0._002Ecctor();
+							_ = (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectSymbolicAuditor() ? ((ReadOnlySpan<char>*)1) : ((ReadOnlySpan<char>*)null))->Length;
+							_ = 6;
+							if (GameProxy.Logger__BackingField == null)
 							{
 								_ = 0;
 							}
 							continue;
-						case 4u:
-							_ = ref obj;
-							obj = obj;
-							_ = 8;
-							continue;
-						case 7u:
-							reference = ref this;
-							if (11 == 0)
-							{
-								reference = ref *(_003CInitialize_003Ed__17*)10;
-							}
-							continue;
-						case 12u:
-							obj = 1;
-							if (0 == 0)
-							{
-								reference = ref *(_003CInitialize_003Ed__17*)1;
-							}
-							continue;
-						default:
-							obj = 10;
-							continue;
-						case 6u:
-							obj = obj;
-							reference = ref *(_003CInitialize_003Ed__17*)3;
-							continue;
-						case 16u:
-							obj = (object)(&obj);
-							if (5 == 0)
-							{
-								reference = ref *(_003CInitialize_003Ed__17*)13;
-							}
-							continue;
-						case 13u:
-							_ = 12;
-							continue;
-						case 14u:
-							obj = obj;
-							reference = ref *(_003CInitialize_003Ed__17*)4;
-							continue;
-						case 15u:
-							if (6 == 0)
-							{
-								reference = ref *(_003CInitialize_003Ed__17*)null;
-							}
-							continue;
-						case 11u:
+						case 11:
 							obj = -1;
-							_ = 16;
+							((GameProxy)Unsafe.AsPointer(ref this))._pinger = -1;
+							obj3 = 16;
 							continue;
-						case 10u:
-							_ = ref obj;
+						case 10:
+							((MassService)Unsafe.AsPointer(ref ((GameProxy)Unsafe.AsPointer(ref this)).ConnectionChanged)).ApiRequestAsync<HeypixelReflectCheckResult>((string)(&obj), (object?)Unsafe.AsPointer(ref this));
 							_ = 9;
 							continue;
-						case 8u:
-							if (&obj == null)
+						case 8:
+							if ((int)(ReadOnlySpan<char>)(string?)(&obj) == 0)
 							{
-								if (2 == 0)
+								obj3 = 2;
+								if (((GameProxy)GameProxy.Session__BackingField).GameType__BackingField == 0)
 								{
-									reference = ref *(_003CInitialize_003Ed__17*)2;
+									obj3 = 2;
 								}
 								continue;
 							}
-							goto case 16u;
-						case 3u:
-							obj = obj;
-							reference = ref *(_003CInitialize_003Ed__17*)14;
+							goto case 16;
+						case 3:
+						{
+							object obj4 = obj;
+							_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities._002Ecctor();
+							obj = ((GameProxy)obj4).GameVersion__BackingField;
+							obj3 = 14;
 							continue;
+						}
 						}
 						break;
 					}
 					goto case 3;
-					IL_0103:
-					obj = (object)Unsafe.AsPointer(ref this);
-					reference = ref *(_003CInitialize_003Ed__17*)7;
-					goto IL_00b5;
+					IL_012c:
+					obj = _003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic;
+					obj3 = 7;
+					goto IL_00de;
 				}
 			}
 		}
@@ -335,13 +473,17 @@ public class HeypixelProtocol : FakeForgeProtocol
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private sealed void _FF00_FF00_FF00_FF00_FF00㨀(object P_0)
+		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00㨀(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_003e: Expected Obj, but got Ref
+			//IL_0044: Expected VT, but got Obj
+			//IL_0044: Expected Obj, but got Ref
+			//IL_0058->IL0026: Incompatible stack heights: 3 vs 2
+			//IL_0063->IL0026: Incompatible stack heights: 3 vs 2
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
 			object obj = 1;
@@ -352,7 +494,9 @@ public class HeypixelProtocol : FakeForgeProtocol
 				default:
 					return;
 				case 1:
-					if (false)
+					((EqualityComparer<_00210>)Unsafe.AsPointer(ref ((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuuid_003Ei__Field)).GetHashCode((_00210)P_0);
+					_ = 0;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 					{
 						_ = 0;
 					}
@@ -448,10 +592,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static object _FF00_FF00_FF00_FF00_FF00_2000()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Expected Obj, but got VT
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -465,11 +611,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static byte _FF00_FF00_FF00_FF00_FF00_2200()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Invalid comparison between VT and Obj
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -483,756 +630,882 @@ public class HeypixelProtocol : FakeForgeProtocol
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00_2900()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_003f: Expected Obj, but got Ref
-			//IL_0c31: Expected Obj, but got Ref
-			//IL_010b: Expected Obj, but got Ref
-			//IL_00b1: Expected I4, but got Obj
-			//IL_027d: Expected Obj, but got Ref
-			//IL_0379: Expected Obj, but got I4
-			//IL_044d: Expected I4, but got Obj
-			//IL_0301: Expected Obj, but got I4
-			//IL_03b2: Expected Obj, but got Ref
-			//IL_0402: Expected Obj, but got I4
-			//IL_0397: Expected Obj, but got Ref
-			//IL_0615: Expected Obj, but got Ref
-			//IL_05b0: Expected Obj, but got Ref
-			//IL_0704: Expected Obj, but got Ref
-			//IL_0573: Expected Obj, but got Ref
-			//IL_055b: Expected Obj, but got I4
-			//IL_0711: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0714: Expected Obj, but got Unknown
-			//IL_092a: Expected Obj, but got Ref
-			//IL_066a: Expected Obj, but got I4
-			//IL_0959: Expected Obj, but got Ref
-			//IL_069f: Expected Obj, but got I4
-			//IL_06e5: Expected Obj, but got I4
-			//IL_05a1: Expected Obj, but got I4
-			//IL_08e4: Expected Obj, but got I4
-			//IL_0975: Expected Obj, but got Ref
-			//IL_0984: Expected Obj, but got I4
-			//IL_0633: Expected Obj, but got Ref
-			//IL_087a: Expected Obj, but got I4
-			//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0c3d->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0c55->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0066->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_0c48->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_0104->IL0088: Incompatible stack types: I4 vs Obj
-			//IL_0084->IL0088: Incompatible stack heights: 1 vs 2
-			//IL_0071->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_00b1->IL00f5: Incompatible stack heights: 1 vs 0
-			//IL_0115->IL0088: Incompatible stack types: I4 vs Obj
-			//IL_00c2->IL0168: Incompatible stack heights: 2 vs 1
-			//IL_013e->IL0088: Incompatible stack heights: 1 vs 2
-			//IL_015d->IL0088: Incompatible stack heights: 6 vs 2
-			//IL_00b6->IL00f5: Incompatible stack heights: 1 vs 0
-			//IL_035a->IL01a8: Incompatible stack types: I4 vs Ref
-			//IL_0199->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_0149->IL0088: Incompatible stack heights: 1 vs 2
-			//IL_0168->IL0088: Incompatible stack heights: 6 vs 2
-			//IL_00d9->IL0088: Incompatible stack types: I4 vs Obj
-			//IL_01a4->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_0287->IL01a8: Incompatible stack types: I4 vs Ref
-			//IL_0b28->IL01a8: Incompatible stack heights: 4 vs 2
-			//IL_0384->IL01a8: Incompatible stack heights: 4 vs 2
-			//IL_0340->IL01a8: Incompatible stack heights: 4 vs 2
-			//IL_0b0b->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_042e->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_0246->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_030d->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_03bc->IL01a8: Incompatible stack types: I4 vs Ref
-			//IL_0328->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_040f->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_026d->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_03f2->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_0237->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_03a3->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_02b0->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_0b33->IL01a8: Incompatible stack heights: 4 vs 2
-			//IL_0af1->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_0b16->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_0439->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_070e->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_0318->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_0333->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_041a->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_0278->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_03fd->IL01a8: Incompatible stack heights: 3 vs 2
-			//IL_0374->IL01a8: Incompatible stack types: I4 vs Ref
-			//IL_02ca->IL01a8: Incompatible stack types: I4 vs Ref
-			//IL_0258->IL01a8: Incompatible stack types: I4 vs Ref
-			//IL_03d0->IL01a8: Incompatible stack types: I4 vs Ref
-			//IL_02de->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_03ae->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_03e2->IL01a8: Incompatible stack types: I4 vs Ref
-			//IL_0afc->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_0551->IL05ac: Incompatible stack heights: 0 vs 1
-			//IL_0551->IL0611: Incompatible stack heights: 0 vs 1
-			//IL_0551->IL0700: Incompatible stack heights: 0 vs 1
-			//IL_062c->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_05c7->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_0464->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_02e9->IL01a8: Incompatible stack heights: 1 vs 2
-			//IL_057f->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0566->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0606->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_07eb->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_0720->IL0468: Incompatible stack heights: 0 vs 1
-			//IL_0934->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_0675->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0965->IL0468: Incompatible stack heights: 0 vs 1
-			//IL_08df->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0a09->IL0468: Incompatible stack heights: 4 vs 1
-			//IL_06b9->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_07a3->IL0b33: Incompatible stack heights: 0 vs 1
-			//IL_0859->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0700->IL0468: Incompatible stack heights: 4 vs 1
-			//IL_06c9->IL0b33: Incompatible stack heights: 0 vs 1
-			//IL_06a9->IL0468: Incompatible stack heights: 4 vs 1
-			//IL_0877->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_06f0->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0793->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_05ac->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_08ef->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0a49->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_097f->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_065a->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_08a6->IL0b33: Incompatible stack heights: 0 vs 1
-			//IL_0a59->IL0393: Incompatible stack heights: 0 vs 1
-			//IL_0991->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_0739->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_09ad->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_063f->IL0468: Incompatible stack heights: 0 vs 1
-			//IL_0884->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_067a->IL03bc: Incompatible stack heights: 0 vs 1
-			//IL_09dc->IL0468: Incompatible stack heights: 4 vs 1
-			//IL_0866->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_0896->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_09cc->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_07de->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_058a->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0611->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_072b->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_08c4->IL0468: Incompatible stack heights: 0 vs 1
-			//IL_0970->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_0a14->IL0468: Incompatible stack heights: 4 vs 1
-			//IL_06c4->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_09f6->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_0811->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_0949->IL0468: Incompatible stack heights: 0 vs 1
-			//IL_0909->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_079e->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_0841->IL0468: Incompatible stack heights: 0 vs 1
-			//IL_0778->IL0468: Incompatible stack heights: 0 vs 1
-			//IL_0a54->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_0665->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_059c->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_05d9->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_099c->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_09b8->IL0468: Incompatible stack heights: 2 vs 1
-			//IL_064a->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_08a1->IL0468: Incompatible stack heights: 3 vs 1
-			//IL_08cf->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_0954->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_084c->IL0468: Incompatible stack types: I4 vs Ref
-			//IL_0783->IL0468: Incompatible stack types: I4 vs Ref
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0043: Expected I4, but got Obj
+			//IL_004e: Expected Obj, but got Ref
+			//IL_0050: Expected Obj, but got VT
+			//IL_005f: Expected Obj, but got VT
+			//IL_105d: Expected Obj, but got Ref
+			//IL_1084: Expected Obj, but got Ref
+			//IL_0077: Expected VT, but got I4
+			//IL_0077: Expected Obj, but got Ref
+			//IL_0086: Expected Obj, but got VT
+			//IL_0146: Expected Obj, but got Ref
+			//IL_014b: Expected I4, but got Obj
+			//IL_014b: Expected Obj, but got VT
+			//IL_015a: Expected Obj, but got Ref
+			//IL_016a: Expected VT, but got I4
+			//IL_016a: Expected Obj, but got VT
+			//IL_016c: Expected Obj, but got I4
+			//IL_00e4: Expected Obj, but got Ref
+			//IL_00ee: Expected VT, but got Obj
+			//IL_00ee: Expected VT, but got Obj
+			//IL_01ca: Expected I4, but got Obj
+			//IL_01ca: Expected Obj, but got I4
+			//IL_01d9: Expected Obj, but got I4
+			//IL_0225: Expected Obj, but got I
+			//IL_0348: Expected Obj, but got Ref
+			//IL_0ef6: Expected Obj, but got Ref
+			//IL_0497: Expected Obj, but got I4
+			//IL_049c: Expected Obj, but got I4
+			//IL_0448: Expected VT, but got I4
+			//IL_0ed1: Expected Obj, but got Ref
+			//IL_057f: Expected I4, but got Obj
+			//IL_057f: Expected Obj, but got Ref
+			//IL_0590: Expected Obj, but got VT
+			//IL_05c3: Expected I4, but got Obj
+			//IL_02e2: Expected VT, but got Obj
+			//IL_03f4: Expected Obj, but got Ref
+			//IL_03f9: Expected Obj, but got I4
+			//IL_04e2: Expected Obj, but got Ref
+			//IL_04e4: Expected Obj, but got F8
+			//IL_0422: Expected Obj, but got Ref
+			//IL_042c: Expected native int or pointer, but got Obj
+			//IL_0554: Expected Obj, but got I4
+			//IL_0559: Expected Obj, but got I4
+			//IL_0559: Expected Obj, but got Ref
+			//IL_030a: Expected VT, but got Obj
+			//IL_030a: Expected Obj, but got Ref
+			//IL_030f: Expected Obj, but got I4
+			//IL_052b: Expected Obj, but got Ref
+			//IL_0530: Expected Obj, but got Ref
+			//IL_0473: Expected Obj, but got Ref
+			//IL_0473: Expected Obj, but got Ref
+			//IL_0395: Expected Obj, but got Ref
+			//IL_04f5: Expected Obj, but got Ref
+			//IL_04fa: Expected Obj, but got I4
+			//IL_02c1: Expected Obj, but got Ref
+			//IL_04bb: Expected Obj, but got Ref
+			//IL_0384: Expected Obj, but got Ref
+			//IL_0384: Expected Obj, but got Ref
+			//IL_07f5: Expected Obj, but got Ref
+			//IL_0806: Expected Obj, but got VT
+			//IL_0760: Expected Obj, but got Ref
+			//IL_0960: Expected Obj, but got Ref
+			//IL_0d11: Expected Obj, but got I4
+			//IL_06ed: Expected Obj, but got Ref
+			//IL_06f3: Expected Obj, but got Ref
+			//IL_06f9: Expected Obj, but got Ref
+			//IL_06ff: Expected Obj, but got Ref
+			//IL_0705: Expected Obj, but got Ref
+			//IL_06d9: Expected Obj, but got I4
+			//IL_06de: Expected Obj, but got I4
+			//IL_06de: Expected Obj, but got Ref
+			//IL_07cb: Expected Obj, but got I4
+			//IL_096f: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0972: Expected Obj, but got Unknown
+			//IL_0878: Expected Obj, but got I4
+			//IL_087d: Expected Obj, but got I4
+			//IL_087d: Expected Obj, but got Ref
+			//IL_0b8b: Expected Obj, but got Ref
+			//IL_0bb6: Expected Obj, but got Ref
+			//IL_0bc5: Expected VT, but got Obj
+			//IL_0d6d: Expected Obj, but got I4
+			//IL_0d72: Expected F8, but got VT
+			//IL_0d81: Expected Obj, but got F8
+			//IL_08eb: Expected I, but got Obj
+			//IL_08eb: Expected Obj, but got Ref
+			//IL_08fa: Expected Obj, but got I
+			//IL_0d44: Expected Obj, but got Ref
+			//IL_0d44: Expected Obj, but got Ref
+			//IL_0d53: Expected Obj, but got I4
+			//IL_0948: Expected Obj, but got Ref
+			//IL_0950: Expected Obj, but got Ref
+			//IL_0950: Expected Obj, but got Ref
+			//IL_08b1: Expected Obj, but got Ref
+			//IL_08bb: Expected Obj, but got Ref
+			//IL_08c7: Expected Obj, but got Ref
+			//IL_08d7: Expected Obj, but got I4
+			//IL_0bf9: Expected native int or pointer, but got Obj
+			//IL_0933: Expected Obj, but got I4
+			//IL_0938: Expected Obj, but got I4
+			//IL_0938: Expected Obj, but got Ref
+			//IL_0a09: Expected VT, but got Obj
+			//IL_0a13: Expected native int or pointer, but got Obj
+			//IL_074b: Expected Obj, but got I4
+			//IL_0750: Expected Obj, but got I4
+			//IL_0750: Expected Obj, but got Ref
+			//IL_09dd: Expected Obj, but got Ref
+			//IL_09dd: Expected Obj, but got Ref
+			//IL_0bd4: Expected Obj, but got I4
+			//IL_0bd9: Expected Obj, but got I4
+			//IL_0dbb: Expected Obj, but got Ref
+			//IL_0dd3: Expected Obj, but got I4
+			//IL_0ca8: Expected Obj, but got Ref
+			//IL_0854: Expected Obj, but got Ref
+			//IL_0737: Expected Obj, but got Ref
+			//IL_0787: Expected Obj, but got Ref
+			//IL_0cb9: Expected Obj, but got I4
+			//IL_0cbe: Expected Obj, but got Ref
+			//IL_0999: Expected I4, but got Obj
+			//IL_0cf5: Expected Obj, but got I8
+			//IL_081c: Expected Obj, but got Ref
+			//IL_0821: Expected Obj, but got I
+			//IL_0821: Expected Obj, but got Ref
+			//IL_0b3e: Expected Obj, but got I4
+			//IL_0d2b: Expected Obj, but got Ref
+			//IL_0d33: Expected Obj, but got Ref
+			//IL_0d33: Expected Obj, but got Ref
+			//IL_0b1a: Expected Obj, but got Ref
+			//IL_0b4e: Expected Obj, but got Ref
+			//IL_0b56: Expected Obj, but got Ref
+			//IL_0b56: Expected Obj, but got Ref
+			//IL_0b56: Expected Obj, but got Ref
+			//IL_0c64: Expected native int or pointer, but got Obj
+			//IL_09ec: Expected native int or pointer, but got Obj
+			//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_1073->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_1093->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_008b->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_006f->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_107e->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0096->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0176->IL00ad: Incompatible stack heights: 1 vs 2
+			//IL_01ee->IL006f: Incompatible stack heights: 0 vs 1
+			//IL_01de->IL00ad: Incompatible stack heights: 6 vs 2
+			//IL_01e9->IL00ad: Incompatible stack heights: 6 vs 2
+			//IL_0f22->IL006f: Incompatible stack heights: 0 vs 1
+			//IL_05a4->IL0239: Incompatible stack heights: 1 vs 2
+			//IL_02ec->IL0239: Incompatible stack heights: 3 vs 2
+			//IL_040f->IL0239: Incompatible stack heights: 1 vs 2
+			//IL_0487->IL0239: Incompatible stack types: I4 vs Ref
+			//IL_03a9->IL0239: Incompatible stack heights: 1 vs 2
+			//IL_0504->IL0441: Incompatible stack heights: 0 vs 1
+			//IL_038e->IL0239: Incompatible stack heights: 1 vs 2
+			//IL_04ab->IL1093: Incompatible stack heights: 0 vs 1
+			//IL_051a->IL046c: Incompatible stack heights: 2 vs 1
+			//IL_05af->IL0239: Incompatible stack heights: 1 vs 2
+			//IL_041a->IL0239: Incompatible stack heights: 1 vs 2
+			//IL_0492->IL0239: Incompatible stack types: I4 vs Ref
+			//IL_03b4->IL0239: Incompatible stack heights: 1 vs 2
+			//IL_050e->IL0239: Incompatible stack heights: 1 vs 2
+			//IL_0524->IL0239: Incompatible stack heights: 3 vs 2
+			//IL_0c49->IL05e6: Incompatible stack heights: 3 vs 2
+			//IL_0b90->IL0ca1: Incompatible stack heights: 0 vs 1
+			//IL_0c96->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0d86->IL05e6: Incompatible stack heights: 4 vs 2
+			//IL_0a2d->IL0f1d: Incompatible stack heights: 0 vs 1
+			//IL_0d58->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_095a->IL05e6: Incompatible stack heights: 4 vs 2
+			//IL_090f->IL0f1d: Incompatible stack heights: 0 vs 1
+			//IL_0ab5->IL1093: Incompatible stack heights: 0 vs 1
+			//IL_08e3->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0ae4->IL0a28: Incompatible stack heights: 2 vs 1
+			//IL_09e2->IL0d3d: Incompatible stack heights: 0 vs 1
+			//IL_0de7->IL05e6: Incompatible stack heights: 4 vs 2
+			//IL_0cb4->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0a8b->IL1093: Incompatible stack heights: 0 vs 1
+			//IL_0b7a->IL0f1d: Incompatible stack heights: 0 vs 1
+			//IL_073c->IL0c79: Incompatible stack heights: 0 vs 1
+			//IL_09cc->IL1093: Incompatible stack heights: 0 vs 1
+			//IL_0df7->IL04b5: Incompatible stack heights: 0 vs 1
+			//IL_0cfa->IL05e6: Incompatible stack heights: 5 vs 2
+			//IL_088c->IL04ee: Incompatible stack heights: 0 vs 1
+			//IL_0d3d->IL05e6: Incompatible stack heights: 4 vs 2
+			//IL_0b6a->IL05e6: Incompatible stack heights: 3 vs 2
+			//IL_0ba4->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0ca1->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0d91->IL05e6: Incompatible stack heights: 4 vs 2
+			//IL_0d63->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0af8->IL05e6: Incompatible stack heights: 3 vs 2
+			//IL_09f6->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0df2->IL05e6: Incompatible stack heights: 4 vs 2
+			//IL_0746->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0d05->IL05e6: Incompatible stack heights: 5 vs 2
+			//IL_0b75->IL05e6: Incompatible stack heights: 3 vs 2
+			//IL_0baf->IL05e6: Incompatible stack heights: 1 vs 2
+			//IL_0b03->IL05e6: Incompatible stack heights: 3 vs 2
+			//IL_0a01->IL05e6: Incompatible stack heights: 1 vs 2
+			ref readonly byte reference = ref Unsafe.As<_003Caction_003Ej__TPar, byte>(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field);
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
-			object obj = 1;
-			object obj2 = obj;
+			object awaiter = 1;
+			object obj = awaiter;
 			while (true)
 			{
-				scoped ref byte reference;
-				object obj3;
-				switch ((int)obj2)
+				int num2;
+				int num;
+				switch ((int)obj)
 				{
 				default:
-					obj = (object)Unsafe.AsPointer(ref this);
-					if (false)
+					awaiter = ((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuuid_003Ei__Field;
+					obj = 0;
+					if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 					{
-						obj2 = 3;
+						obj = 3;
 					}
 					break;
 				case 5:
-					_ = -2;
-					if (2 != 0)
+					((_003C_003Ef__AnonymousType2<, , , >)Unsafe.AsPointer(ref this))._003Curl_003Ei__Field = (_003Curl_003Ej__TPar)(-2);
+					obj = 2;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field != 0)
 					{
-						_ = 2;
+						obj = 2;
 					}
 					break;
 				case 3:
-					if ((nuint)(nint)obj <= (nuint)3u)
+					if ((nuint)(nint)awaiter <= (nuint)3u)
 					{
-						_ = 6;
-						goto IL_0088;
+						num2 = 6;
+						goto IL_00ad;
 					}
-					goto IL_00f5;
+					goto IL_0136;
 				case 1:
-					obj = (object)Unsafe.AsPointer(ref this);
-					if (false)
+					awaiter = ((HeypixelRequest)Unsafe.AsPointer(ref this)).Url__BackingField;
+					obj = 0;
+					if (HeypixelRequest.ReflectExpandableParameter != null)
 					{
-						obj2 = 0;
+						obj = 0;
 					}
 					break;
 				case 2:
-					_ = 4;
+					reference = ref Unsafe.As<string, byte>(ref Unsafe.As<byte, Span<string>>(ref reference)[(int)Unsafe.AsPointer(ref ((HeypixelRequestDto)Unsafe.AsPointer(ref this)).Request__BackingField)]);
+					obj = 4;
 					break;
 				case 4:
 					return;
-					IL_00f5:
-					reference = ref Unsafe.As<_003CStartAntiCheatAsync_003Ed__34, byte>(ref this);
-					obj3 = 2;
-					goto IL_0088;
-					IL_0088:
+					IL_0461:
+					num = 10;
+					goto IL_0239;
+					IL_0239:
 					while (true)
 					{
-						ref byte reference2;
-						switch ((int)obj3)
+						switch (num)
+						{
+						case 7:
+						case 17:
+							break;
+						case 24:
+							((EntityLaunchGameProxy)Unsafe.AsPointer(ref this)).Value__BackingField = null;
+							num = 15;
+							continue;
+						case 11:
+							MemoryExtensions.IndexOfAny<T>((ReadOnlySpan<T>)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.DecorateConfigurableDecider(), (SearchValues<T>)(object)((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory)awaiter).CreateInstance());
+							_ = 22;
+							continue;
+						case 22:
+							if (awaiter is EnumGameType)
+							{
+								num = 12;
+								continue;
+							}
+							goto case 9;
+						case 16:
+							_ = ((GameProxy)(object)GameProxy.OnlineClients).Name__BackingField;
+							_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.VerifyVerifier();
+							/*Error near IL_0319: Member reference must be method, but was: Field*/;
+						default:
+							awaiter = (Delegate)((GameProxy)Unsafe.AsPointer(ref this)).ServerAddress__BackingField;
+							num = 11;
+							continue;
+						case 27:
+							((GameProxy)Unsafe.AsPointer(ref reference)).Socks5 = (EntitySocks5?)Unsafe.AsPointer(ref this);
+							_ = 18;
+							continue;
+						case 21:
+							((GameProxy)Unsafe.AsPointer(ref reference)).BlockIrcMessages = (byte)Unsafe.AsPointer(ref this) != 0;
+							_ = 20;
+							if (((GameProxy)GameProxy.WorkerGroup__BackingField).AcceptorGroup__BackingField != null)
+							{
+								_ = 27;
+							}
+							continue;
+						case 25:
+							if ((nint)awaiter == 1)
+							{
+								num = 0;
+								if (((GameProxy)GameProxy._channel).DisplayAddress__BackingField == null)
+								{
+									num = 0;
+								}
+								continue;
+							}
+							goto case 8;
+						case 12:
+							awaiter = (string?)/*Error near IL_03f9: Stack underflow*/ + (string?)int.TryParse((string?)Unsafe.AsPointer(ref reference), out *(int*)2000);
+							_ = 4;
+							if (GameProxy._003C_003EO._003C0_003E__PluginChanged == null)
+							{
+								_ = 29;
+							}
+							continue;
+						case 14:
+							GameProxy._003C_003EO._003C1_003E__OnConnectServer = (Action<EventConnectServer>)awaiter;
+							num = 1;
+							if (((GameProxy._003CListenAsync_003Ed__69*)(nint)GameProxy._003C_003EO._003C2_003E__OnConnectServer)->_003C_003E1__state == 0)
+							{
+								num = 1;
+							}
+							continue;
+						case 6:
+							goto IL_0441;
+						case 20:
+							goto IL_0461;
+						case 19:
+						{
+							bool flag = ((EqualityComparer<EntitySocks5Account>)/*Error near IL_0473: Stack underflow*/).Equals((EntitySocks5Account?)Unsafe.AsPointer(ref reference), (EntitySocks5Account?)(&awaiter));
+							num = 4;
+							reference = ref *(flag ? ((byte*)1) : ((byte*)null));
+							if ((int)((GameProxy._003CListenAsync_003Ed__69*)GameProxy._003CListenAsync_003Ed__69.port)->_003C_003Eu__1 != 0)
+							{
+								num = 5;
+								reference = ref *(flag ? ((byte*)1) : ((byte*)null));
+							}
+							continue;
+						}
+						case 4:
+							awaiter = 3;
+							GameProxy._003CListenAsync_003Ed__69.CheckCentralResponder = 3;
+							num = 14;
+							continue;
+						case 28:
+							return;
+						case 26:
+							goto IL_04b5;
+						case 13:
+							awaiter = ((CpsDetector)Unsafe.AsPointer(ref this))._lastLeftCps;
+							num = 24;
+							continue;
+						case 3:
+						case 5:
+						case 23:
+							goto IL_04ee;
+						case 29:
+							_ = ref awaiter;
+							if (EqualityComparer<bool>.Default == null)
+							{
+								_ = 4;
+								continue;
+							}
+							goto case 19;
+						case 18:
+							((OhMyGodHwid)Unsafe.AsPointer(ref this)).Hwid__BackingField = OhMyGodEncryption.DecorateEfficientEmitter;
+							num = 3;
+							if (OhMyGodHwid.ControlProcessor == null)
+							{
+								num = 3;
+							}
+							continue;
+						case 15:
+							awaiter = -1;
+							OhMyGodHwid._003C_003EO._003C0_003E__GenerateRandomMac = (Func<string>)(-1);
+							num = 11;
+							if (OhMyGodHwid._003C_003EO._003C2_003E__GenerateRandomDiskStoreInfo == null)
+							{
+								num = 19;
+							}
+							continue;
+						case 9:
+							((EntityLaunchGameProxy)/*Error near IL_057f: Stack underflow*/)._002Ector((DesktopSession)/*Error near IL_057f: Stack underflow*/, (string)/*Error near IL_057f: Stack underflow*/, (EnumGameType)/*Error near IL_057f: Stack underflow*/, (EnumGameVersion)/*Error near IL_057f: Stack underflow*/, (string)/*Error near IL_057f: Stack underflow*/, (string)/*Error near IL_057f: Stack underflow*/, (string)Unsafe.AsPointer(ref reference), (int)awaiter);
+							((GameInstance)awaiter)._002Ector();
+							((EntityLaunchGameProxy)/*Error near IL_0590: Stack underflow*/).Session = (DesktopSession)Interlocked.CompareExchange<T>(ref *(T*)/*Error near IL_058b: Stack underflow*/, (T)/*Error near IL_058b: Stack underflow*/, (T)/*Error near IL_058b: Stack underflow*/);
+							_ = 3;
+							if (((HytMainMenu.Menu)(object)HytMainMenu.CheckCentralTransmitter).Name != null)
+							{
+								_ = 17;
+							}
+							continue;
+						case 10:
+							goto IL_05af;
+						case 2:
+							if ((nint)awaiter != 3)
+							{
+								num = 11;
+								if (Form.DecorateAttachedClient != null)
+								{
+									num = 16;
+								}
+								continue;
+							}
+							goto case 13;
+						case 8:
+							((Modal)Unsafe.AsPointer(ref this)).Title__BackingField = null;
+							num = 23;
+							if (((Modal)Modal.Content__BackingField).Button1__BackingField != null)
+							{
+								num = 19;
+							}
+							continue;
+						case 1:
+							Unsafe.As<object, AsyncTaskMethodBuilder>(ref ((Modal)Unsafe.AsPointer(ref this)).Button2__BackingField).AwaitUnsafeOnCompleted(ref *(TaskAwaiter<int>*)(&awaiter), ref Unsafe.As<_003CStartAntiCheatAsync_003Ed__34, LanServerPinger._003C_003CStartAsync_003Eg__SendMessageAsync_007C6_0_003Ed>(ref this));
+							num = 21;
+							if (((EventHeypixelAntiCheat)(object)Modal.RestartPool).Protocol__BackingField == null)
+							{
+								num = 28;
+							}
+							continue;
+						}
+						break;
+						IL_05af:
+						switch ((int)awaiter)
+						{
+						case 1:
+							goto IL_075a;
+						case 0:
+							goto IL_07ef;
+						case 2:
+							goto IL_095a;
+						}
+						int num3 = 2;
+						if (HytMainMenu.Menu.CustomizeTemplate == null)
+						{
+							num3 = 2;
+						}
+						goto IL_05e6;
+						IL_0441:
+						((GameProxy._003CListenAsync_003Ed__69)this)._003C_003Et__builder = (AsyncTaskMethodBuilder)0;
+						num = 20;
+						continue;
+						IL_04ee:
+						if ((EntitySocks5?)/*Error near IL_04ff: Stack underflow*/ == (EntitySocks5?)(object)((CpsDetector)((EntitySocks5)Unsafe.AsPointer(ref reference)).PrintMembers((StringBuilder)awaiter)).OnCpsChange)
+						{
+							_ = 7;
+							continue;
+						}
+						goto IL_0441;
+						IL_05e6:
+						while (true)
+						{
+							switch (num3)
+							{
+							case 17:
+							case 23:
+							case 42:
+								break;
+							case 46:
+								goto IL_04b5;
+							case 53:
+								goto IL_04ee;
+							case 3:
+								awaiter = -1;
+								((HytMainMenu._003C_003Ec__DisplayClass2_0)Unsafe.AsPointer(ref this)).minecraft = (Mass.Game.Proxy.Minecraft.Minecraft)(-1);
+								num3 = 39;
+								continue;
+							case 2:
+								/*Error near IL_06ed: Stack underflow*/((GameProxy)Unsafe.AsPointer(ref reference));
+								_ = ((HytMainMenu._003C_003Ec__DisplayClass2_1)Unsafe.AsPointer(ref this)).menu;
+								_ = ((HytMainMenu._003C_003Ec__DisplayClass2_1)Unsafe.AsPointer(ref this)).index;
+								_ = ((HytMainMenu._003C_003Ec__DisplayClass2_1)Unsafe.AsPointer(ref this)).CS_0024_003C_003E8__locals1;
+								_ = ((EntityLaunchGameProxy)HytMainMenu._003C_003Ec__DisplayClass2_1.RunMapper).ServerAddress;
+								/*Error near IL_070a: Member reference must be method, but was: Field*/;
+							case 43:
+								((Action<EventMinecraft>)/*Error near IL_0737: Stack underflow*/)._002Ector((object)Unsafe.AsPointer(ref reference), (nint)(&awaiter));
+								if ((int)/*Error near IL_073c: Stack underflow*/ == 0)
+								{
+									_ = 33;
+									continue;
+								}
+								goto case 12;
+							case 33:
+								awaiter = 0;
+								HytProtocol.CheckFilteredDistributor = (HytProtocol)0;
+								num3 = 48;
+								continue;
+							case 5:
+								goto IL_075a;
+							case 45:
+								if (((EntityLaunchGameProxy)((VexViewPacket)Unsafe.AsPointer(ref this)).PacketType__BackingField).ToString() != null)
+								{
+									num3 = 28;
+									continue;
+								}
+								goto IL_04ee;
+							case 4:
+								EnumReflectCheck.BlackClasses = (EnumReflectCheck)((EntityLaunchGameProxy)((EnumReflectCheck)this).value__).GetHashCode();
+								num3 = 19;
+								if (EnumReflectCheck.ReflectCheck == EnumReflectCheck.ClientInfo)
+								{
+									num3 = 11;
+								}
+								continue;
+							case 13:
+								goto IL_07ef;
+							case 50:
+								((GameProxy)Unsafe.AsPointer(ref reference))._002Ector((EntityLaunchGameProxy)((HeypixelHwid)Unsafe.AsPointer(ref this)).DllCount__BackingField);
+								/*Error near IL_0821: Member reference must be method, but was: Field*/;
+							case 40:
+								((HeypixelHwid)Unsafe.AsPointer(ref this)).UserListInfo__BackingField = awaiter;
+								num3 = 23;
+								if (((HeypixelHwid)HeypixelHwid.Mods__BackingField).UserInfo__BackingField == null)
+								{
+									num3 = 54;
+								}
+								continue;
+							case 9:
+								awaiter = -1;
+								((HeypixelHwid)Unsafe.AsPointer(ref this)).EncryptMods__BackingField = -1;
+								num3 = 12;
+								continue;
+							case 26:
+							case 28:
+								((GameProxy)Unsafe.AsPointer(ref reference)).TransferServerAddress = ((GameProxy)(object)HeypixelHwid.CheckMixedEncryptor).TransferServerAddress;
+								awaiter = (string?)/*Error near IL_08d7: Stack underflow*/ + (string?)(object)new AbstractBootstrap<ServerBootstrap, IServerChannel>(1) + (string?)(object)((GameProxy)(object)((GameProxy)(object)HeypixelMod.DecorateCommonAllocator).Section).WorkerGroup + (string?)0;
+								_ = 38;
+								continue;
+							case 16:
+								((HeypixelProtocol)Unsafe.AsPointer(ref this)).HwidSpoof__BackingField = (nint)awaiter;
+								num3 = 1;
+								if (Logger__BackingField == null)
+								{
+									num3 = 8;
+								}
+								continue;
+							case 31:
+								awaiter = 2;
+								((HeypixelProtocol)Unsafe.AsPointer(ref this)).CpsDetector = (CpsDetector)2;
+								num3 = 32;
+								continue;
+							case 20:
+								_ = ref ((HeypixelProtocol)Unsafe.AsPointer(ref this))._timestampPacket;
+								((IEnumerable<JsonElement>)(&awaiter)).All((Func<JsonElement, bool>)Unsafe.AsPointer(ref this));
+								_ = 24;
+								continue;
+							case 22:
+								goto IL_095a;
+							case 7:
+								awaiter++;
+								num3 = 1;
+								if (_003C_003Ec.DecorateCustomAuthorizer == null)
+								{
+									num3 = 1;
+								}
+								continue;
+							case 48:
+								((_003CInitialize_003Ed__17)this)._003C_003E1__state = (int)awaiter;
+								num3 = 20;
+								continue;
+							case 44:
+								return;
+							case 35:
+								((List<string>)Unsafe.AsPointer(ref reference)).Add((string)(&awaiter));
+								if ((int)/*Error near IL_09e2: Stack underflow*/ == 0)
+								{
+									_ = 25;
+									if (((_003CStartAntiCheatAsync_003Ed__34*)(nint)_003CInitialize_003Ed__17.CheckMixedExecutor)->_003C_003E1__state != 0)
+									{
+										_ = 47;
+									}
+									continue;
+								}
+								goto case 18;
+							case 32:
+								_003C_003Et__builder = (AsyncTaskMethodBuilder)awaiter;
+								num3 = 40;
+								if (((_003CStartAntiCheatAsync_003Ed__34*)(nint)_003CStartAntiCheatAsync_003Ed__34.key)->_003C_003E4__this != null)
+								{
+									num3 = 56;
+								}
+								continue;
+							case 1:
+							case 52:
+								if ((nint)awaiter < ((Array)awaiter).Length)
+								{
+									num3 = 37;
+									continue;
+								}
+								goto case 34;
+							case 6:
+								_003Ccontext_003E5__4 = null;
+								num3 = 9;
+								continue;
+							case 41:
+								return;
+							case 21:
+								if ((nint)SHA1.HashData((byte[])awaiter) != 200)
+								{
+									num3 = 42;
+									continue;
+								}
+								goto case 14;
+							case 24:
+								return;
+							case 34:
+								_ = _003Cdto_003E5__9;
+								if (OrangeProtocol.ArrangeRequester() != null)
+								{
+									break;
+								}
+								_ = 17;
+								if ((int)((_003CStartAntiCheatAsync_003Ed__34)_003CStartAntiCheatAsync_003Ed__34._003C_003Eu__2)._003C_003Eu__3 == 0)
+								{
+									_ = 27;
+								}
+								continue;
+							case 19:
+								CheckCommonNode = null;
+								num3 = 46;
+								continue;
+							case 55:
+								Unsafe.As<nint, @null>(ref ((HeypixelRedirectProtocol)Unsafe.AsPointer(ref this)).Joined__BackingField) = null;
+								num3 = 36;
+								continue;
+							case 29:
+							case 37:
+								awaiter = ((object[])awaiter)[awaiter];
+								num3 = 49;
+								continue;
+							case 51:
+								awaiter = 0;
+								num3 = 52;
+								continue;
+							case 56:
+								((IByteBuffer)(object)Unsafe.AsPointer(ref HeypixelRedirectProtocol.MonitorCompressor)).WritePrefixedArray((List<NbtTag>)(&awaiter), (Action<NbtTag>)Unsafe.AsPointer(ref this));
+								_ = 11;
+								if (HeypixelReflectCheckResult.CollectEncryptor == null)
+								{
+									_ = 44;
+								}
+								continue;
+							case 11:
+								if (((byte[])Unsafe.AsPointer(ref reference)).ToHex((byte)(&awaiter) != 0) == null)
+								{
+									_ = 31;
+									if (HeypixelReflectCheckResult._003C_003Ec.ArrangeStrategy == null)
+									{
+										_ = 24;
+									}
+									continue;
+								}
+								goto case 39;
+							case 14:
+								((MassServiceExtensions._003CGetHeypixelAntiCheat_003Ed__2)this)._003C_003Et__builder = (AsyncTaskMethodBuilder<HeypixelRequestDto>)OhMyGodHwid.EncryptOrFallback((Func<string>)JavaUuidCompat.ReflectIterableProgram, OhMyGodHwid.GenerateHwid());
+								num3 = 4;
+								continue;
+							case 36:
+								awaiter = -1;
+								((MassServiceExtensions._003CGetHeypixelAntiCheat_003Ed__2)this).massService = (MassService)(-1);
+								num3 = 18;
+								continue;
+							case 30:
+								((MassServiceExtensions._003CGetHeypixelAntiCheat_003Ed__2)this).url = null;
+								num3 = 3;
+								if (((MassServiceExtensions._003CGetHeypixelAntiCheat_003Ed__2*)(nint)MassServiceExtensions._003CGetHeypixelAntiCheat_003Ed__2.context)->userId == null)
+								{
+									num3 = 3;
+								}
+								continue;
+							case 8:
+								_ = ((MassServiceExtensions._003CGetHeypixelSession_003Ed__1)this)._003C_003E1__state;
+								awaiter = OhMyGodProtocol.CheckVisibleDefinition();
+								_ = 51;
+								continue;
+							case 25:
+							case 27:
+							{
+								MassService massService = ((MassServiceExtensions._003CGetHeypixelSession_003Ed__1)this).massService;
+								HytMainMenu._002Ecctor();
+								if ((nint)massService <= 0)
+								{
+									num3 = 10;
+									if (((MassServiceExtensions._003CGetHeypixelSession_003Ed__1*)(nint)MassServiceExtensions._003CGetHeypixelSession_003Ed__1.uuid)->userId == null)
+									{
+										num3 = 1;
+									}
+									continue;
+								}
+								goto case 50;
+							}
+							case 12:
+								Unsafe.As<byte, bool?>(ref reference) = (byte)(&awaiter) != 0;
+								awaiter = (object)/*Error near IL_0c82: Stack underflow*/;
+								_ = 9;
+								if (MsgPackExtensions.ReflectMonoContext == null)
+								{
+									_ = 16;
+								}
+								continue;
+							case 39:
+								awaiter = ((List<HytMainMenu.Menu>)Unsafe.AsPointer(ref reference))[(int)(&awaiter)];
+								_ = 15;
+								continue;
+							case 47:
+								awaiter = 1;
+								((ServerboundCpsPacket)Unsafe.AsPointer(ref this)).RightCps__BackingField = 1;
+								num3 = 40;
+								if (((ServerboundReflectCheckPacket)ServerboundCpsPacket.DecorateScopeRequester).CheckType__BackingField == EnumReflectCheck.ClientInfo)
+								{
+									num3 = 4;
+								}
+								continue;
+							case 49:
+								HytMainMenu._003C_003Ec__DisplayClass2_1.CheckHiddenSubscriber();
+								_ = 6;
+								if (((ServerboundReflectCheckPacket)ServerboundReflectCheckPacket.Timestamp__BackingField).ReflectCheckAction__BackingField == null)
+								{
+									_ = 7;
+								}
+								continue;
+							default:
+							{
+								object obj2 = awaiter;
+								((HytProtocol)(object)ServerboundTimestampPacket.FillReg)._002Ector();
+								if (obj2 != null)
+								{
+									num3 = 23;
+									continue;
+								}
+								goto case 45;
+							}
+							case 54:
+								_ = ref ((Mass.Game.Proxy.Protocols.Heypixel.Serverbound.ServerboundUseItemPacket)Unsafe.AsPointer(ref this)).Y;
+								((IEnumerable<TextComponent>)(&awaiter)).Select((Func<TextComponent, string>)Unsafe.AsPointer(ref this));
+								_ = 41;
+								continue;
+							case 18:
+								((Action<GermPacket>)Unsafe.AsPointer(ref reference))((GermPacket)(&awaiter));
+								_ = 0;
+								if ((int)((Mass.Game.Proxy.Protocols.Heypixel.Serverbound.ServerboundUseItemPacket)Mass.Game.Proxy.Protocols.Heypixel.Serverbound.ServerboundUseItemPacket.Sequence).LocationX != 0)
+								{
+									_ = 0;
+								}
+								continue;
+							case 15:
+								((Mass.Game.Proxy.Protocols.Heypixel.Serverbound.ServerboundUseItemPacket)null).LocationZ = (double)CollectionsMarshal.AsSpan<T>((List<T>?)1);
+								_ = 1;
+								if ((int)((Mass.Game.Proxy.Protocols.Heypixel.Serverbound.ServerboundUseItemPacket)Mass.Game.Proxy.Protocols.Heypixel.Serverbound.ServerboundUseItemPacket.BlockX).BlockY == 0)
+								{
+									_ = 21;
+								}
+								continue;
+							case 38:
+								_ = ((Mass.Game.Proxy.Protocols.Heypixel.Serverbound.ServerboundUseItemPacket)Unsafe.AsPointer(ref this)).PlayerYaw;
+								*(JsonProperty*)(&awaiter) = default;
+								awaiter = ((IByteBuffer)((byte[])awaiter).ZipCompress()).ReadableBytes;
+								_ = 7;
+								if (Button.DecorateSortedConsumer == null)
+								{
+									_ = 11;
+								}
+								continue;
+							}
+							break;
+						}
+						break;
+						IL_095a:
+						awaiter = _003C_003Ec._003C_003E9;
+						num3 = 30;
+						goto IL_05e6;
+						IL_07ef:
+						awaiter = HeypixelEncryption.PlanDistributor;
+						num3 = 6;
+						if (((HeypixelHwid)HeypixelHwid.ClientGuid__BackingField).ClassesCount__BackingField != 0)
+						{
+							num3 = 6;
+						}
+						goto IL_05e6;
+						IL_04b5:
+						awaiter = ((CpsDetector)Unsafe.AsPointer(ref this))._lock;
+						num = 20;
+						if (((CpsDetector)(object)Mass.Game.Proxy.Protocols.CpsDetector._leftClicks)._rightClicks != null)
+						{
+							num = 25;
+						}
+						continue;
+						IL_075a:
+						awaiter = VexViewCodec.OpenEmitter;
+						num3 = 23;
+						if (VexViewGuiPacket.InsertListener == null)
+						{
+							num3 = 55;
+						}
+						goto IL_05e6;
+					}
+					goto case 5;
+					IL_0136:
+					CollectionsMarshal.SetCount((List<FmlMod>)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.ReflectModularWriter()).url, (int)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_ascii_68FF03FEFFFF87FEFFFF07);
+					num2 = 2;
+					goto IL_00ad;
+					IL_00ad:
+					while (true)
+					{
+						switch (num2)
 						{
 						case 7:
 							break;
 						case 2:
-							obj3 = obj;
-							if (Unsafe.AsPointer(ref this) == null)
+							if (!((EqualityComparer<_00212>)awaiter).Equals((_00212?)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic, (_00212?)new { }))
 							{
-								if (2 == 0)
+								num2 = 2;
+								if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance == null)
 								{
-									obj3 = 5;
+									num2 = 5;
 								}
 								continue;
 							}
 							break;
 						default:
-							goto IL_00f5;
+							goto IL_0136;
 						case 1:
 						case 5:
-							obj = (object)Unsafe.AsPointer(ref reference);
-							obj3 = 8;
+						{
+							_003Cuser_id_003Ej__TPar user_id = ((_003C_003Ef__AnonymousType2<, , , >)Unsafe.AsPointer(ref reference)).user_id;
+							EqualityComparer<_00213> equalityComparer = new EqualityComparer<_00213>();
+							awaiter = ((EqualityComparer<_00213>)user_id).GetHashCode((_00213)((_003C_003Ef__AnonymousType2<, , , >)(object)equalityComparer).Equals((object)equalityComparer));
+							_ = 8;
 							continue;
+						}
 						case 4:
 						case 6:
-							if (false)
+							num2 = 0;
+							if (((EntityLaunchGameProxy)EntitySocks5.DecorateDynamicModule).Session__BackingField != null)
 							{
-								_ = 3;
+								num2 = 3;
 							}
 							continue;
 						case 8:
 							_ = null;
 							_ = null;
-							_ = 0;
-							if (4 == 0)
+							((EntityLaunchGameProxy)0).GameType__BackingField = (EnumGameType)new Regex();
+							_ = 4;
+							if (((EntityLaunchGameProxy)EntityLaunchGameProxy.GameVersion__BackingField).ModHashList__BackingField == null)
 							{
 								_ = 4;
 							}
 							continue;
 						case 3:
-							{
-								if ((nuint)(nint)obj > (nuint)2u)
-								{
-									if (1 == 0)
-									{
-										_ = 2;
-									}
-									goto IL_01a8;
-								}
-								goto IL_034f;
-							}
-							IL_034f:
-							reference2 = ref *(byte*)10;
-							goto IL_01a8;
-							IL_01a8:
-							while (true)
-							{
-								switch ((uint)Unsafe.AsPointer(ref reference2))
-								{
-								case 7u:
-								case 17u:
-									break;
-								case 24u:
-									_ = 15;
-									continue;
-								case 11u:
-									_ = 22;
-									continue;
-								case 22u:
-									if (obj != null)
-									{
-										reference2 = ref *(byte*)12;
-										continue;
-									}
-									goto case 9u;
-								case 16u:
-									if (21 == 0)
-									{
-										_ = 5;
-									}
-									continue;
-								default:
-									obj = (object)Unsafe.AsPointer(ref this);
-									reference2 = ref *(byte*)11;
-									continue;
-								case 27u:
-									_ = 18;
-									continue;
-								case 21u:
-									reference2 = ref Unsafe.As<_003CStartAntiCheatAsync_003Ed__34, byte>(ref this);
-									if (20 != 0)
-									{
-										reference2 = ref *(byte*)27;
-									}
-									continue;
-								case 25u:
-									if ((nint)obj == 1)
-									{
-										if (0 == 0)
-										{
-											_ = 0;
-										}
-										continue;
-									}
-									goto case 8u;
-								case 12u:
-									obj = 2000;
-									if (4 == 0)
-									{
-										_ = 29;
-									}
-									continue;
-								case 14u:
-									if (1 == 0)
-									{
-										_ = 1;
-									}
-									continue;
-								case 6u:
-									_ = 0;
-									_ = 20;
-									continue;
-								case 20u:
-									goto IL_034f;
-								case 19u:
-									reference2 = ref *(byte*)(&obj);
-									if (4 != 0)
-									{
-										reference2 = ref *(byte*)5;
-									}
-									continue;
-								case 4u:
-									obj = 3;
-									_ = 14;
-									continue;
-								case 28u:
-									return;
-								case 26u:
-									goto IL_0393;
-								case 13u:
-									obj = (object)Unsafe.AsPointer(ref this);
-									reference2 = ref *(byte*)24;
-									continue;
-								case 3u:
-								case 5u:
-								case 23u:
-									goto IL_03bc;
-								case 29u:
-									if (&obj == null)
-									{
-										reference2 = ref *(byte*)4;
-										continue;
-									}
-									goto case 19u;
-								case 18u:
-									if (3 == 0)
-									{
-										_ = 3;
-									}
-									continue;
-								case 15u:
-									obj = -1;
-									if (11 == 0)
-									{
-										_ = 19;
-									}
-									continue;
-								case 9u:
-									if (3 != 0)
-									{
-										_ = 17;
-									}
-									continue;
-								case 10u:
-									switch ((int)obj)
-									{
-									default:
-										if (2 == 0)
-										{
-											reference = ref *(byte*)2;
-										}
-										goto IL_0468;
-									case 1:
-										goto IL_05ac;
-									case 0:
-										goto IL_0611;
-									case 2:
-										goto IL_0700;
-										IL_05ac:
-										obj = (object)Unsafe.AsPointer(ref this);
-										if (23 == 0)
-										{
-											reference = ref *(byte*)55;
-										}
-										goto IL_0468;
-										IL_0468:
-										while (true)
-										{
-											switch ((uint)Unsafe.AsPointer(ref reference))
-											{
-											case 17u:
-											case 23u:
-											case 42u:
-												break;
-											case 46u:
-												goto IL_0393;
-											case 53u:
-												goto IL_03bc;
-											case 3u:
-												obj = -1;
-												_ = 39;
-												continue;
-											case 2u:
-												obj = (object)Unsafe.AsPointer(ref this);
-												if (37 == 0)
-												{
-													_ = 43;
-												}
-												continue;
-											case 43u:
-												if (&obj == null)
-												{
-													reference = ref *(byte*)33;
-													continue;
-												}
-												goto case 12u;
-											case 33u:
-												obj = 0;
-												_ = 48;
-												continue;
-											case 5u:
-												goto IL_05ac;
-											case 45u:
-												if (Unsafe.AsPointer(ref this) != null)
-												{
-													reference = ref *(byte*)28;
-													continue;
-												}
-												goto IL_03bc;
-											case 4u:
-												if (19 == 0)
-												{
-													_ = 11;
-												}
-												continue;
-											case 13u:
-												goto IL_0611;
-											case 50u:
-												obj = (object)Unsafe.AsPointer(ref this);
-												if (35 != 0)
-												{
-													reference = ref *(byte*)1;
-												}
-												continue;
-											case 40u:
-												if (23 == 0)
-												{
-													_ = 54;
-												}
-												continue;
-											case 9u:
-												obj = -1;
-												_ = 12;
-												continue;
-											case 26u:
-											case 28u:
-												_ = 1;
-												obj = 0;
-												_ = 38;
-												continue;
-											case 16u:
-												if (1 == 0)
-												{
-													_ = 8;
-												}
-												continue;
-											case 31u:
-												obj = 2;
-												_ = 32;
-												continue;
-											case 20u:
-												_ = ref obj;
-												_ = 24;
-												continue;
-											case 22u:
-												goto IL_0700;
-											case 7u:
-												obj++;
-												if (1 == 0)
-												{
-													reference = ref *(byte*)1;
-												}
-												continue;
-											case 48u:
-												_ = 20;
-												continue;
-											case 44u:
-												return;
-											case 35u:
-												if (&obj == null)
-												{
-													if (25 != 0)
-													{
-														reference = ref *(byte*)47;
-													}
-													continue;
-												}
-												goto case 18u;
-											case 32u:
-												if (40 != 0)
-												{
-													_ = 56;
-												}
-												continue;
-											case 1u:
-											case 52u:
-												if ((nint)obj < ((Array)obj).Length)
-												{
-													reference = ref *(byte*)37;
-													continue;
-												}
-												goto case 34u;
-											case 6u:
-												_ = 9;
-												continue;
-											case 41u:
-												return;
-											case 21u:
-												if ((nint)obj != 200)
-												{
-													reference = ref *(byte*)42;
-													continue;
-												}
-												goto case 14u;
-											case 24u:
-												return;
-											case 34u:
-												if (Unsafe.AsPointer(ref this) != null)
-												{
-													break;
-												}
-												if (17 == 0)
-												{
-													reference = ref *(byte*)27;
-												}
-												continue;
-											case 19u:
-												_ = null;
-												_ = 46;
-												continue;
-											case 55u:
-												_ = 36;
-												continue;
-											case 29u:
-											case 37u:
-												obj = ((object[])obj)[obj];
-												reference = ref *(byte*)49;
-												continue;
-											case 51u:
-												obj = 0;
-												reference = ref *(byte*)52;
-												continue;
-											case 56u:
-												_ = ref obj;
-												if (11 == 0)
-												{
-													_ = 44;
-												}
-												continue;
-											case 11u:
-												if (&obj == null)
-												{
-													if (31 == 0)
-													{
-														reference = ref *(byte*)24;
-													}
-													continue;
-												}
-												goto case 39u;
-											case 14u:
-												_ = 4;
-												continue;
-											case 36u:
-												obj = -1;
-												_ = 18;
-												continue;
-											case 30u:
-												reference = ref Unsafe.As<_003CStartAntiCheatAsync_003Ed__34, byte>(ref this);
-												if (3 == 0)
-												{
-													reference = ref *(byte*)3;
-												}
-												continue;
-											case 8u:
-												obj = (object)Unsafe.AsPointer(ref this);
-												reference = ref *(byte*)51;
-												continue;
-											case 25u:
-											case 27u:
-												if ((nint)Unsafe.AsPointer(ref this) <= unchecked((nint)null))
-												{
-													if (10 == 0)
-													{
-														reference = ref *(byte*)1;
-													}
-													continue;
-												}
-												goto case 50u;
-											case 12u:
-												obj = (object)(&obj);
-												if (9 == 0)
-												{
-													reference = ref *(byte*)16;
-												}
-												continue;
-											case 39u:
-												obj = (object)(&obj);
-												reference = ref *(byte*)15;
-												continue;
-											case 47u:
-												obj = 1;
-												if (40 == 0)
-												{
-													_ = 4;
-												}
-												continue;
-											case 49u:
-												if (6 == 0)
-												{
-													_ = 7;
-												}
-												continue;
-											default:
-												if (obj != null)
-												{
-													reference = ref *(byte*)23;
-													continue;
-												}
-												goto case 45u;
-											case 54u:
-												_ = ref obj;
-												_ = 41;
-												continue;
-											case 18u:
-												reference = ref *(byte*)(&obj);
-												if (false)
-												{
-													reference = ref *(byte*)null;
-												}
-												continue;
-											case 15u:
-												_ = null;
-												_ = 1;
-												if (1 == 0)
-												{
-													_ = 21;
-												}
-												continue;
-											case 38u:
-												_ = ref obj;
-												obj = obj;
-												if (7 == 0)
-												{
-													_ = 11;
-												}
-												continue;
-											}
-											break;
-										}
-										break;
-										IL_0700:
-										obj = (object)Unsafe.AsPointer(ref this);
-										_ = 30;
-										goto IL_0468;
-										IL_0611:
-										obj = (object)Unsafe.AsPointer(ref this);
-										if (6 != 0)
-										{
-											reference = ref *(byte*)6;
-										}
-										goto IL_0468;
-									}
-									break;
-								case 2u:
-									if ((nint)obj != 3)
-									{
-										if (11 != 0)
-										{
-											_ = 16;
-										}
-										continue;
-									}
-									goto case 13u;
-								case 8u:
-									_ = null;
-									if (23 != 0)
-									{
-										_ = 19;
-									}
-									continue;
-								case 1u:
-									{
-										_ = ref obj;
-										if (21 == 0)
-										{
-											_ = 28;
-										}
-										continue;
-									}
-									IL_03bc:
-									if (obj != null)
-									{
-										reference2 = ref *(byte*)7;
-										continue;
-									}
-									goto case 6u;
-									IL_0393:
-									obj = (object)Unsafe.AsPointer(ref this);
-									if (20 != 0)
-									{
-										_ = 25;
-									}
-									continue;
-								}
-								break;
-							}
-							break;
+							goto IL_020d;
 						}
 						break;
 					}
 					goto case 5;
+					IL_020d:
+					if ((nuint)(nint)awaiter > (nuint)2u)
+					{
+						num = 1;
+						if (((EntityLaunchGameProxy)EntityLaunchGameProxy.ServerPort__BackingField).Socks5__BackingField == null)
+						{
+							num = 2;
+						}
+						goto IL_0239;
+					}
+					goto IL_0461;
 				}
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private sealed void _FF00_FF00_FF00_FF00_FF00_2A00(object P_0)
+		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00_2A00(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_003f: Expected Obj, but got Ref
+			//IL_0045: Expected VT, but got Obj
+			//IL_0045: Expected Obj, but got Ref
+			//IL_0059->IL0026: Incompatible stack heights: 3 vs 2
+			//IL_0064->IL0026: Incompatible stack heights: 3 vs 2
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
 			object obj = 1;
@@ -1245,7 +1518,9 @@ public class HeypixelProtocol : FakeForgeProtocol
 				case 0:
 					return;
 				case 1:
-					if (false)
+					((EqualityComparer<_00210>)Unsafe.AsPointer(ref ((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuuid_003Ei__Field)).GetHashCode((_00210)P_0);
+					_ = 0;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 					{
 						_ = 0;
 					}
@@ -1262,6 +1537,9 @@ public class HeypixelProtocol : FakeForgeProtocol
 			_ = null;
 		}
 	}
+
+	[CompilerGenerated]
+	private nint HwidSpoof__BackingField;
 
 	[CompilerGenerated]
 	private static readonly object Logger__BackingField;
@@ -1323,100 +1601,23 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public HeypixelProtocol()
+	public unsafe HeypixelProtocol()
 	{
-		//IL_001c: Expected Obj, but got I4
-		//IL_002a: Expected Obj, but got I4
-		//IL_0034: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0037: Expected Obj, but got Unknown
-		//IL_0041: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0044: Expected Obj, but got Unknown
-		//IL_004e: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0051: Expected Obj, but got Unknown
-		//IL_005b: Unknown result type (might be due to invalid IL or missing references)
-		//IL_005e: Expected Obj, but got Unknown
-		//IL_0068: Unknown result type (might be due to invalid IL or missing references)
-		//IL_006b: Expected Obj, but got Unknown
-		//IL_0075: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0078: Expected Obj, but got Unknown
-		//IL_0082: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0085: Expected Obj, but got Unknown
-		//IL_008f: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0092: Expected Obj, but got Unknown
-		//IL_009c: Unknown result type (might be due to invalid IL or missing references)
-		//IL_009f: Expected Obj, but got Unknown
-		//IL_00a9: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00ac: Expected Obj, but got Unknown
-		//IL_00b6: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00b9: Expected Obj, but got Unknown
-		//IL_00c3: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00c6: Expected Obj, but got Unknown
-		//IL_00d0: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00d3: Expected Obj, but got Unknown
-		//IL_00dd: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00e0: Expected Obj, but got Unknown
-		//IL_00ea: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00ed: Expected Obj, but got Unknown
-		//IL_00f7: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00fa: Expected Obj, but got Unknown
-		//IL_0104: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0107: Expected Obj, but got Unknown
-		//IL_0111: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0114: Expected Obj, but got Unknown
-		//IL_0145: Expected I4, but got Obj
-		//IL_0133->IL013c: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001f: Expected VT, but got Obj
+		//IL_001f: Expected Obj, but got Ref
+		//IL_002f: Expected VT, but got Obj
+		//IL_0039: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
+		((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)new
+		{
+			action = (_003Caction_003Ej__TPar)this
+		};
+		((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Curl_003Ei__Field = (_003Curl_003Ej__TPar)new { };
 		object obj = 19;
-		object obj2 = (obj = obj);
-		obj = 0;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		obj++;
-		obj = obj;
-		if (0 == 0)
-		{
-			obj2 = 0;
-		}
-		switch ((int)obj2)
-		{
-		case 0:
-			break;
-		}
+		/*Error near IL_003b: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1475,7 +1676,7 @@ public class HeypixelProtocol : FakeForgeProtocol
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	[SubscribeEvent]
-	public void OnItemUse(EventPacket<ServerboundUseItemPacket> @event)
+	public void OnItemUse(EventPacket<Mass.Game.Proxy.Packets.Play.ServerboundUseItemPacket> @event)
 	{
 		䌀(@event);
 	}
@@ -1595,12 +1796,21 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 㐀(EventPacket<ServerboundKnownPacksPacket> P_0)
+	internal unsafe void 㐀(EventPacket<ServerboundKnownPacksPacket> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0047->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_003f: Expected VT, but got Ref
+		//IL_0044: Expected Obj, but got I4
+		//IL_0049: Expected Obj, but got I4
+		//IL_0058: Expected Obj, but got VT
+		//IL_005d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005d->IL0026: Incompatible stack types: Obj vs Ref
+		//IL_0068->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0068->IL0026: Incompatible stack types: Obj vs Ref
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -1614,12 +1824,17 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 0:
 				return;
 			case 1:
-				obj2 = P_0;
-				if (false)
+			{
+				string? text = ((object)((_003C_003Ef__AnonymousType0<>)/*Error near IL_0044: Stack underflow*/).Equals((object)((EqualityComparer<_00210>)/*Error near IL_003f: Stack underflow*/).Equals((_00210?)Unsafe.AsPointer(ref reference), (_00210?)P_0))).ToString();
+				obj2 = 0;
+				reference = ref *(_003Caction_003Ej__TPar*)text;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field != 0)
 				{
 					obj2 = 0;
+					reference = ref *(_003Caction_003Ej__TPar*)text;
 				}
 				break;
+			}
 			}
 		}
 	}
@@ -1633,60 +1848,68 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 㸀(object P_0)
+	internal unsafe void 㸀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0195: Expected Obj, but got I4
-		//IL_0160: Expected Obj, but got I4
-		//IL_011a: Expected Obj, but got I4
-		//IL_003d->IL0041: Incompatible stack heights: 1 vs 0
-		//IL_009f->IL0041: Incompatible stack heights: 1 vs 0
-		//IL_01bf->IL0041: Incompatible stack heights: 2 vs 0
-		//IL_019f->IL0041: Incompatible stack heights: 3 vs 0
-		//IL_010b->IL0041: Incompatible stack heights: 4 vs 0
-		//IL_0146->IL0041: Incompatible stack heights: 2 vs 0
-		//IL_016c->IL0041: Incompatible stack heights: 3 vs 0
-		//IL_0126->IL0041: Incompatible stack heights: 3 vs 0
-		//IL_00e8->IL0041: Incompatible stack heights: 1 vs 0
-		//IL_0151->IL0041: Incompatible stack heights: 2 vs 0
-		//IL_00b9->IL0041: Incompatible stack heights: 1 vs 0
-		//IL_0177->IL0041: Incompatible stack heights: 3 vs 0
-		//IL_018a->IL0041: Incompatible stack heights: 1 vs 0
-		//IL_0131->IL0041: Incompatible stack heights: 3 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_003f: Expected Obj, but got Ref
+		//IL_009f: Expected Obj, but got I4
+		//IL_00a1: Expected Obj, but got I4
+		//IL_00b0: Expected Obj, but got VT
+		//IL_0251: Expected Obj, but got I4
+		//IL_0258: Expected VT, but got I4
+		//IL_0112: Expected VT, but got I4
+		//IL_00d2: Expected Obj, but got VT
+		//IL_01e8: Expected Obj, but got I4
+		//IL_01f9: Expected I4, but got VT
+		//IL_01fe: Expected Obj, but got VT
+		//IL_01fe: Expected VT, but got Obj
+		//IL_0203: Expected Obj, but got I4
+		//IL_0203: Expected VT, but got Obj
+		//IL_0205: Expected Obj, but got I4
+		//IL_0164: Expected Obj, but got VT
+		//IL_00e7->IL0318: Incompatible stack heights: 0 vs 1
+		//IL_0264->IL0052: Incompatible stack heights: 4 vs 1
+		//IL_0158->IL0052: Incompatible stack heights: 6 vs 1
+		//IL_028d->IL0318: Incompatible stack heights: 0 vs 1
+		//IL_0126->IL0318: Incompatible stack heights: 0 vs 1
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		int num;
 		switch ((int)obj)
 		{
 		case 1:
-			if (P_0 == null)
+			((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)P_0);
+			if ((int)/*Error near IL_0044: Stack underflow*/ == 0)
 			{
-				_ = 2;
-				goto IL_0041;
+				num = 2;
+				goto IL_0052;
 			}
-			goto IL_0083;
+			goto IL_0094;
 		case 0:
 			break;
-			IL_0041:
+			IL_0052:
 			while (true)
 			{
-				switch ((int)/*Error near IL_007e: Stack underflow*/)
+				switch (num)
 				{
 				case 10:
-					obj = (object)/*Error near IL_00a2: Stack underflow*/;
-					if (1 == 0)
+					obj = (object)/*Error near IL_00c3: Stack underflow*/;
+					num = 1;
+					if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic == null)
 					{
-						_ = 5;
+						num = 5;
 					}
 					continue;
 				case 2:
 					return;
 				case 6:
-					if (obj == null)
+					if (!((EqualityComparer<_00211>)/*Error near IL_0112: Stack underflow*/).Equals((_00211?)/*Error near IL_0112: Stack underflow*/, (_00211?)((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_010d: Stack underflow*/).Equals(obj)))
 					{
-						_ = 9;
+						num = 9;
 						continue;
 					}
 					goto case 3;
@@ -1694,75 +1917,105 @@ public class HeypixelProtocol : FakeForgeProtocol
 					return;
 				case 4:
 				case 5:
+					((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_0135: Stack underflow*/).ToString();
+					_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
+					_ = _003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout;
+					JsonSerializer.Serialize((_003C_003Ef__AnonymousType3<int, string>)obj, (JsonSerializerOptions?)obj);
 					_ = 8;
 					continue;
 				case 13:
+					_ = ((_003C_003Ef__AnonymousType2<, , , >)((_003C_003Ef__AnonymousType2<, , , >)obj).context).user_id;
 					_ = 4;
-					obj = 3;
-					if (11 != 0)
-					{
-						_ = 3;
-					}
-					continue;
+					_ = EqualityComparer<_00213>.Default;
+					_ = new EqualityComparer<>[3];
+					__ldtoken(EntitySocks5.Address__BackingField);
+					/*Error near IL_0176: Member reference must be method, but was: Field*/;
 				case 8:
-					if (7 != 0)
+					_ = new
 					{
-						_ = 6;
-					}
-					continue;
+						value = obj
+					};
+					/*Error near IL_01b1: Member reference must be method, but was: Field*/;
 				case 11:
-					_ = 4;
-					obj = 3;
-					if (0 == 0)
+				{
+					object obj3 = obj;
+					((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0)_003C_003Ef__AnonymousType3<, >.DecorateIntegratedProgram())._002Ector();
+					((RegexRunner)4).CheckTimeout();
+					IEquatable<>[] array = new IEquatable<>[3];
+					obj = MemoryExtensions.IndexOfAnyExcept<T>((ReadOnlySpan<T>)obj3, (SearchValues<T>)MemoryExtensions.IndexOfAny<T>((ReadOnlySpan<T>)array, (SearchValues<T>)((ReadOnlySpan<char>*)array)->Slice((int)__ldtoken(EntityLaunchGameProxy.ReflectAlphabeticProcessor))));
+					num = 0;
+					if (GameProxy.OnlineClients == null)
 					{
-						_ = 1;
+						num = 1;
 					}
 					continue;
+				}
 				case 12:
-					if (obj == null)
+					((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner)obj)._002Ector();
+					if (SearchValues.Create((ReadOnlySpan<char>)/*Error near IL_0230: Stack underflow*/) == null)
 					{
-						_ = 13;
+						num = 13;
 						continue;
 					}
 					goto case 10;
 				case 3:
-					_ = 4;
-					obj = 32;
+					_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.DecorateCustomNode();
+					_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities._002Ecctor();
+					AppContext.GetData((string)4);
+					obj = Type.GetTypeFromHandle((RuntimeTypeHandle)32);
 					_ = 12;
 					continue;
 				case 1:
-					obj = obj;
-					_ = 4;
+				{
+					object obj2 = obj;
+					((StringBuilder)obj)._002Ector();
+					obj = obj2;
+					num = 4;
 					continue;
+				}
 				case 7:
 					return;
 				}
 				break;
 			}
-			goto IL_0083;
-			IL_0083:
-			obj = P_0;
-			if (6 != 0)
+			goto IL_0094;
+			IL_0094:
+			obj = ((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType0<>)/*Error near IL_009a: Stack underflow*/).Equals(P_0)).GetHashCode();
+			num = 6;
+			if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field != 0)
 			{
-				_ = 6;
+				num = 6;
 			}
-			goto IL_0041;
+			goto IL_0052;
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 䀀(EventPacket<ServerboundHandshakePacket> P_0)
+	internal unsafe void 䀀(EventPacket<ServerboundHandshakePacket> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_00ad->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_005d->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_004f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b8->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0079->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0092->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_009d->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0050: Expected VT, but got Obj
+		//IL_0050: Expected Obj, but got Ref
+		//IL_0051: Invalid comparison between Unknown and I4
+		//IL_00e0: Expected VT, but got Obj
+		//IL_00e0: Expected Obj, but got Ref
+		//IL_00e2: Expected Obj, but got I4
+		//IL_0067: Expected VT, but got I4
+		//IL_00b1: Expected VT, but got Obj
+		//IL_00b1: Expected VT, but got Ref
+		//IL_00b6: Invalid comparison between Unknown and I4
+		//IL_0056->IL0048: Incompatible stack heights: 0 vs 1
+		//IL_00f6->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0076->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_009f->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_00bb->IL0048: Incompatible stack heights: 0 vs 1
+		//IL_0060->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0101->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00aa->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_00cf->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00da->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -1774,38 +2027,45 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 5:
 				return;
 			default:
-				if ((nint)obj != 2)
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)obj);
+				if ((int)/*Error near IL_0056: Stack underflow*/ != 2)
 				{
 					return;
 				}
-				obj2 = 4;
+				_ = 4;
 				break;
 			case 2:
-				_ = 1;
+				new EqualityComparer<_00210>((_00210)1).ToString();
 				_ = 5;
 				break;
 			case 3:
-				obj2 = this;
-				if (2 == 0)
+				((_003C_003Ef__AnonymousType0<>)(object)this).ToString();
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+				_ = ((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType0<>.ReflectJoinedTree()).name;
+				_ = 2;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field == 0)
 				{
-					obj2 = 2;
+					_ = 2;
 				}
 				break;
 			case 4:
-				if ((nint)obj == 766)
+				((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_00b1: Stack underflow*/)._002Ector((_003Cname_003Ej__TPar)/*Error near IL_00b1: Stack underflow*/, (_003Cuuid_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_003Cuser_id_003Ej__TPar)obj);
+				if ((int)/*Error near IL_00bb: Stack underflow*/ == 766)
 				{
 					return;
 				}
-				if (3 == 0)
+				_ = 3;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance == null)
 				{
-					obj2 = 2;
+					_ = 2;
 				}
 				break;
 			case 1:
-				obj = P_0;
-				if (false)
+				obj = ((EqualityComparer<_00211>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).GetHashCode((_00211)P_0);
+				_ = 0;
+				if ((int)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_defaultTimeout != 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			}
@@ -1813,7 +2073,7 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal unsafe void 䈀(EventPacket<ServerboundUseItemPacket> P_0)
+	internal unsafe void 䈀(EventPacket<Mass.Game.Proxy.Packets.Play.ServerboundUseItemPacket> P_0)
 	{
 		//IL_0008: Expected I8, but got I4
 		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778394, new IntPtr(2737367948364L), 15))(null, 0, new IntPtr(0L));
@@ -1821,12 +2081,18 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 䌀(EventPacket<ServerboundUseItemPacket> P_0)
+	internal unsafe void 䌀(EventPacket<Mass.Game.Proxy.Packets.Play.ServerboundUseItemPacket> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0045->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0043: Expected Obj, but got VT
+		//IL_0043: Expected Obj, but got Ref
+		//IL_0057->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0057->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0062->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0062->IL0026: Incompatible stack types: I4 vs Ref
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -1838,12 +2104,17 @@ public class HeypixelProtocol : FakeForgeProtocol
 			default:
 				return;
 			case 1:
-				obj2 = this;
-				if (0 == 0)
+			{
+				bool flag = ((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref reference)).Equals(((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field);
+				obj2 = 0;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
 					obj2 = 0;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 				}
 				break;
+			}
 			case 0:
 				return;
 			}
@@ -1851,7 +2122,7 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal unsafe void 䐀(EventPacket<ServerboundUseItemPacket> P_0)
+	internal unsafe void 䐀(EventPacket<Mass.Game.Proxy.Packets.Play.ServerboundUseItemPacket> P_0)
 	{
 		//IL_0008: Expected I8, but got I4
 		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778389, new IntPtr(2737367942124L), 15))(null, 0, new IntPtr(0L));
@@ -1861,11 +2132,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte 䔀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1887,10 +2159,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object 䠀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1904,24 +2178,30 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void 䨀(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got I4
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -1933,22 +2213,20 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe void 一(EventPacket<ClientboundSetEntityMetadataPacket> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_004a: Expected I4, but got Obj
-		//IL_00b6: Expected Obj, but got I4
-		//IL_008b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_010c->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0096->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0061->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00f3->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0158->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_007b->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00fe->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00d2->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_012c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00dd->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0137->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0057: Expected I4, but got Obj
+		//IL_00dd: Expected Obj, but got VT
+		//IL_01ba: Expected Obj, but got Ref
+		//IL_01bf: Expected Obj, but got I4
+		//IL_00eb: Expected Obj, but got I4
+		//IL_0075: Expected VT, but got Obj
+		//IL_0075: Expected Obj, but got Ref
+		//IL_007f: Expected Obj, but got VT
+		//IL_01e4: Expected I4, but got Obj
+		//IL_01d3->IL01d8: Incompatible stack heights: 2 vs 3
+		//IL_006e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01ee->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -1971,70 +2249,51 @@ public class HeypixelProtocol : FakeForgeProtocol
 				case 4:
 					return;
 				case 7:
-				{
-					object obj3 = obj;
-					if (&obj == null)
-					{
-						_ = 6;
-						break;
-					}
-					if ((nint)obj != 65)
-					{
-						if (false)
-						{
-							_ = 0;
-						}
-						break;
-					}
-					obj = obj ?? obj3;
-					if (8 != 0)
-					{
-						_ = 6;
-					}
-					break;
-				}
+					((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)P_0);
+					((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_007a: Stack underflow*/)._003Cuser_id_003Ei__Field).GetHashCode();
+					((_003C_003Ef__AnonymousType0<>)obj).ToString();
+					_ = ref obj;
+					/*Error near IL_0088: Member reference must be method, but was: Field*/;
 				case 2:
-					obj = P_0;
-					if (false)
-					{
-						obj2 = 1;
-					}
-					break;
+					/*Error near IL_009d: Member reference must be method, but was: Field*/;
 				case 1:
-					if (P_0 == null)
+					if ((int)((_003C_003Ef__AnonymousType3<, >)((_003C_003Ef__AnonymousType1<, , >)(object)P_0).user_id)._003Csid_003Ei__Field == 0)
 					{
 						return;
 					}
-					goto end_IL_0019;
+					goto end_IL_0026;
 				case 6:
 					return;
 				case 3:
 					return;
 				case 10:
-					if (obj != null)
-					{
-						return;
-					}
-					if (false)
-					{
-						obj2 = 9;
-					}
-					break;
+					_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
+					/*Error near IL_0126: Member reference must be method, but was: Field*/;
 				case 9:
 					_ = 1;
-					_ = 3;
-					break;
+					/*Error near IL_0151: Member reference must be method, but was: Field*/;
 				case 0:
 					return;
 				case 5:
+				{
+					int hashCode = ((_003C_003Ef__AnonymousType3<, >)((_003C_003Ef__AnonymousType3<, >)/*Error near IL_01ba: Stack underflow*/).Equals((object)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))).GetHashCode();
+					object obj3 = obj;
+					bool flag;
 					if ((nint)obj != 1)
 					{
+						((_003C_003Ef__AnonymousType3<, >)obj3).ToString();
 					}
+					else
+					{
+						flag = _003C_003Ef__AnonymousType3<, >.LoadCache();
+					}
+					((ILogger)hashCode).Debug<int, string, int>((string)obj3, flag ? 1 : 0, (string)obj, (int)_003C_003Ef__AnonymousType3<, >.DecorateIntegratedProgram());
 					_ = 10;
 					break;
 				}
+				}
 				continue;
-				end_IL_0019:
+				end_IL_0026:
 				break;
 			}
 			obj = 7;
@@ -2050,16 +2309,27 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 倀(object P_0)
+	internal unsafe void 倀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_0048->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0053->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_009e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0085->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0090->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003f: Expected I4, but got Obj
+		//IL_004c: Expected VT, but got I4
+		//IL_004c: Expected VT, but got Obj
+		//IL_0051: Expected VT, but got Obj
+		//IL_0051: Expected Obj, but got Ref
+		//IL_009f: Expected Obj, but got VT
+		//IL_00a4: Expected Obj, but got VT
+		//IL_00a9: Expected VT, but got Ref
+		//IL_0065->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0065->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00ae->IL0045: Incompatible stack heights: 0 vs 1
+		//IL_0070->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0070->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00df->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_00c2->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00cd->IL0026: Incompatible stack heights: 1 vs 2
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 3;
@@ -2071,18 +2341,24 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 4:
 				return;
 			default:
-				_ = 1;
-				if (1 == 0)
+			{
+				int hashCode = ((EqualityComparer<_00210>)Unsafe.AsPointer(ref reference)).GetHashCode((_00210)new EqualityComparer<_00210>((_00210?)P_0, (_00210?)1));
+				obj2 = 1;
+				reference = ref *(_003Caction_003Ej__TPar*)hashCode;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
-					_ = 0;
+					obj2 = 0;
+					reference = ref *(_003Caction_003Ej__TPar*)hashCode;
 				}
 				break;
+			}
 			case 3:
-				if (P_0 == null)
+				if (!((EqualityComparer<_00212>)/*Error near IL_00a9: Stack underflow*/).Equals((_00212?)Unsafe.AsPointer(ref reference), (_00212?)((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType1<, , >)P_0).name).uuid).user_id))
 				{
-					if (false)
+					_ = 0;
+					if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance != null)
 					{
-						obj2 = 2;
+						_ = 2;
 					}
 					break;
 				}
@@ -2090,6 +2366,7 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 1:
 				return;
 			case 2:
+				((_003C_003Ef__AnonymousType1<, , >)P_0).ToString();
 				_ = 4;
 				break;
 			}
@@ -2099,11 +2376,17 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private void 儀(double P_0, double P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0043->IL0019: Incompatible stack heights: 5 vs 1
-		//IL_004e->IL0019: Incompatible stack heights: 5 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_0047: Expected Obj, but got I4
+		//IL_004f: Expected Obj, but got I4
+		//IL_0054: Expected Obj, but got I4
+		//IL_0063: Expected Obj, but got VT
+		//IL_0068->IL0026: Incompatible stack heights: 6 vs 2
+		//IL_0073->IL0026: Incompatible stack heights: 6 vs 2
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -2116,9 +2399,13 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 0:
 				return;
 			case 1:
-				_ = (int)P_0;
-				_ = (int)P_1;
-				if (0 == 0)
+				new
+				{
+					action = (_003Caction_003Ej__TPar)this
+				}.Equals((int)P_0);
+				((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType0<>)(int)P_1).GetHashCode()).ToString();
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 				{
 					_ = 0;
 				}
@@ -2146,24 +2433,30 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void 吀(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got I4
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -2181,18 +2474,21 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 夀(object P_0)
+	internal unsafe void 夀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0048->IL004c: Incompatible stack heights: 1 vs 0
-		//IL_0092->IL004c: Incompatible stack heights: 1 vs 0
-		//IL_00e9->IL004c: Incompatible stack heights: 1 vs 0
-		//IL_009d->IL004c: Incompatible stack heights: 1 vs 0
-		//IL_00fb->IL004c: Incompatible stack heights: 1 vs 0
-		//IL_0162->IL004c: Incompatible stack heights: 1 vs 0
-		//IL_00be->IL004c: Incompatible stack heights: 1 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got Obj
+		//IL_0040: Expected Obj, but got Ref
+		//IL_0051: Expected Obj, but got VT
+		//IL_0126: Expected Obj, but got VT
+		//IL_00ba: Expected Obj, but got VT
+		//IL_00bf->IL0065: Incompatible stack heights: 4 vs 1
+		//IL_0184->IL0038: Incompatible stack heights: 0 vs 1
+		//IL_0151->IL0038: Incompatible stack heights: 0 vs 1
+		//IL_01c8->IL0038: Incompatible stack heights: 0 vs 1
+		//IL_00ca->IL0065: Incompatible stack heights: 4 vs 1
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -2201,14 +2497,17 @@ public class HeypixelProtocol : FakeForgeProtocol
 		case 0:
 			break;
 		case 1:
-			obj = P_0;
-			if (0 == 0)
+		{
+			((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)P_0);
+			obj = (object)/*Error near IL_0042: Stack underflow*/;
+			int num = 0;
+			if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 			{
-				_ = 0;
+				num = 0;
 			}
 			while (true)
 			{
-				switch ((int)/*Error near IL_007d: Stack underflow*/)
+				switch (num)
 				{
 				case 3:
 					return;
@@ -2220,48 +2519,57 @@ public class HeypixelProtocol : FakeForgeProtocol
 					return;
 				case 2:
 				case 7:
-					if (10 == 0)
+					((_003C_003Ef__AnonymousType0<>)(object)this).ToString();
+					_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+					_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
+					_ = 10;
+					if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic == null)
 					{
 						_ = 10;
 					}
 					break;
 				case 4:
 				case 8:
-					if (obj == null)
+					((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_00d6: Stack underflow*/)._002Ector((_003Cname_003Ej__TPar)/*Error near IL_00d6: Stack underflow*/, (_003Cuuid_003Ej__TPar)/*Error near IL_00d6: Stack underflow*/, ((_003C_003Ef__AnonymousType1<, , >)obj).user_id);
+					if (EqualityComparer<_00211>.Default == null)
 					{
 						return;
 					}
-					if (7 == 0)
+					num = 7;
+					if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate == null)
 					{
-						_ = 3;
+						num = 3;
 					}
 					break;
 				default:
-					obj = obj;
-					if (true)
+					obj = obj as OrangeProtocol;
+					num = 1;
+					if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout)
 					{
-						_ = 1;
+						num = 1;
 					}
 					break;
 				case 5:
-					if (obj != null)
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)obj).payload != 0)
 					{
 						return;
 					}
-					_ = 8;
+					num = 8;
 					break;
 				case 1:
 					if (obj == null)
 					{
-						if (6 == 0)
+						num = 6;
+						if (EntitySocks5Account.AttachElement == null)
 						{
-							_ = 6;
+							num = 6;
 						}
 						break;
 					}
 					goto case 5;
 				}
 			}
+		}
 		}
 	}
 
@@ -2274,20 +2582,58 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 嬀(EventPacket<ServerboundUseItemOnPacket> P_0)
+	internal unsafe void 嬀(EventPacket<ServerboundUseItemOnPacket> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_00b7: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00c3: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00cf: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0105->IL0019: Incompatible stack heights: 27 vs 1
-		//IL_0065->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0084->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0110->IL0019: Incompatible stack heights: 27 vs 1
-		//IL_0070->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008f->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003f: Expected I4, but got Obj
+		//IL_00c6: Expected VT, but got Obj
+		//IL_00c6: Expected VT, but got Ref
+		//IL_00d2: Expected Obj, but got I4
+		//IL_00de: Expected Obj, but got F8
+		//IL_00ef: Expected Obj, but got I4
+		//IL_00f6: Expected Obj, but got F8
+		//IL_00f6: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0102: Expected Obj, but got VT
+		//IL_0107: Expected Obj, but got Unknown
+		//IL_010e: Expected Obj, but got F8
+		//IL_010e: Expected Obj, but got Unknown
+		//IL_0130: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0137: Expected I4, but got F8
+		//IL_0137: Unknown result type (might be due to invalid IL or missing references)
+		//IL_013f: Expected Obj, but got Unknown
+		//IL_0144: Expected Obj, but got I4
+		//IL_014c: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0153: Expected Obj, but got F8
+		//IL_0153: Expected Obj, but got Unknown
+		//IL_0168: Unknown result type (might be due to invalid IL or missing references)
+		//IL_016f: Expected I, but got F8
+		//IL_016f: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0182: Expected Obj, but got F8
+		//IL_0182: Unknown result type (might be due to invalid IL or missing references)
+		//IL_018a: Expected VT, but got Obj
+		//IL_018a: Expected Obj, but got Unknown
+		//IL_018f: Expected Obj, but got Unknown
+		//IL_0195: Expected Obj, but got F8
+		//IL_0195: Expected Obj, but got Unknown
+		//IL_01a2: Expected Obj, but got Unknown
+		//IL_01a8: Expected I4, but got F8
+		//IL_01b5: Expected I4, but got Obj
+		//IL_01b5: Expected Obj, but got Unknown
+		//IL_01cb: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01d2: Expected Obj, but got Unknown
+		//IL_01d7: Expected Obj, but got Unknown
+		//IL_0081: Expected Obj, but got VT
+		//IL_00a1->IL0069: Incompatible stack heights: 2 vs 1
+		//IL_01fa->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01fa->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0086->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b5->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0205->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0205->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0091->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c0->IL0026: Incompatible stack heights: 3 vs 2
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -2301,37 +2647,71 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 3:
 				return;
 			default:
-				obj = P_0;
-				if (4 == 0)
+				obj = P_0.ToString();
+				obj2 = 4;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field == 0)
 				{
 					obj2 = 1;
 				}
 				break;
 			case 1:
-				if (this == null)
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType0<>.ReflectJoinedTree())._003Cuser_id_003Ei__Field == 0)
 				{
 					return;
 				}
-				if (0 == 0)
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field == 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 4:
-				_ = (double)(float)this;
-				_ = (double)(float)this;
-				_ = (double)(float)this;
-				_ = (double)((float)obj + obj);
-				_ = (double)((float)obj + obj);
-				_ = (double)((float)obj + obj);
-				_ = (double)obj;
-				_ = (double)obj;
-				_ = (double)obj;
-				if (2 == 0)
+			{
+				var anon = new
 				{
-					_ = 2;
+					name = (_003Cname_003Ej__TPar)/*Error near IL_00c6: Stack underflow*/,
+					uuid = (_003Cuuid_003Ej__TPar)Unsafe.AsPointer(ref reference),
+					user_id = (_003Cuser_id_003Ej__TPar)this
+				};
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.StoreConverter = (double)(float)((_003C_003Ef__AnonymousType1<, , >)(object)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance).ToString();
+				_003F val = /*Error near IL_00de: Stack underflow*/;
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.GuideMap = (double)(float)((_003C_003Ef__AnonymousType2<, , , >)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout).payload;
+				((EntitySocks5)val).Address__BackingField = (double)(float)(((_003C_003Ef__AnonymousType2<, , , >)val).Equals(((EntitySocks5Account)((_003C_003Ef__AnonymousType2<, , , >)(object)this).user_id).Password__BackingField) ? 1 : 0);
+				((EntitySocks5)/*Error near IL_010e: Stack underflow*/).Account__BackingField = ((_003C_003Ef__AnonymousType2<, , , >)obj).ToString();
+				_003F val2 = /*Error near IL_011b: Stack underflow*/;
+				((EntityLaunchGameProxy)obj).GameType__BackingField = (EnumGameType)(double)((float)((EntityLaunchGameProxy)_003C_003Ef__AnonymousType2<, , , >.DisableDecryptor()).Session__BackingField + ((_003C_003Ef__AnonymousType3<, >)obj).sid);
+				((EntityLaunchGameProxy)val2).ServerAddress__BackingField = (double)((float)((EntityLaunchGameProxy)((_003C_003Ef__AnonymousType3<, >)val2).Equals(obj)).ModHashList__BackingField + ((_003C_003Ef__AnonymousType3<, >)obj).ToString());
+				_003F val3 = /*Error near IL_0153: Stack underflow*/;
+				object obj3 = obj;
+				float num = (float)((EntityLaunchGameProxy)_003C_003Ef__AnonymousType3<, >.DecorateIntegratedProgram()).Socks5__BackingField;
+				object obj4 = obj;
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0._002Ecctor();
+				((EntityLaunchGameProxy)obj3).IsGame__BackingField = (nint)(double)(num + obj4);
+				GameProxy.Logger__BackingField = (double)((GameProxy)(object)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.DecorateConfigurableDecider())._003Cargs_003EP;
+				((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner)val3).Scan((ReadOnlySpan<char>)obj);
+				GameProxy.OnlineClients = (ConcurrentDictionary<int, Mass.Game.Proxy.Minecraft.Minecraft>)(double)((GameProxy)val3).ConnectionChanged;
+				_003F val4 = /*Error near IL_0195: Stack underflow*/;
+				((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner)obj)._002Ector();
+				((GameProxy)/*Error near IL_01a8: Stack underflow*/).GameType__BackingField = (EnumGameType)(double)((GameProxy)val4).Session__BackingField;
+				_003F val5 = /*Error near IL_01a8: Stack underflow*/;
+				object obj5 = obj;
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities._002Ecctor();
+				((GameProxy)val5).GameVersion__BackingField = (EnumGameVersion)(int)obj5;
+				_003F val6 = /*Error near IL_01b5: Stack underflow*/;
+				((GameProxy)(object)this).TransferServerAddress__BackingField = ((EntitySocks5Account)((GameProxy)(object)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.PatchWatcher()).ServerAddress__BackingField).EqualityContract;
+				((EntitySocks5Account)val6).Username = (string)(object)this;
+				((EntitySocks5Account)/*Error near IL_01dc: Stack underflow*/).Password = (string)((GameProxy)val6).Section__BackingField;
+				((GameProxy)/*Error near IL_01e1: Stack underflow*/).IsGame = (byte)/*Error near IL_01e1: Stack underflow*/ != 0;
+				bool flag = ((EntitySocks5Account)/*Error near IL_01e6: Stack underflow*/).PrintMembers((StringBuilder)/*Error near IL_01e6: Stack underflow*/);
+				obj2 = 2;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+				if (((GameProxy)GameProxy.WorkerGroup__BackingField).AcceptorGroup__BackingField == null)
+				{
+					obj2 = 2;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 				}
 				break;
+			}
 			}
 		}
 	}
@@ -2355,10 +2735,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object 帀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -2370,30 +2752,37 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 怀(object P_0)
+	internal unsafe void 怀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0063->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0089->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006e->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0069: Expected Obj, but got Ref
+		//IL_006f: Expected Obj, but got I4
+		//IL_009f: Expected Obj, but got VT
+		//IL_00ae: Expected Obj, but got VT
+		//IL_0083: Expected Obj, but got VT
+		//IL_0074->IL0093: Incompatible stack heights: 0 vs 1
+		//IL_00b3->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0088->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00be->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0093->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
-		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj2)
+			switch ((int)obj)
 			{
 			default:
 				return;
 			case 2:
-				if (3 == 0)
+				if (string.Format((IFormatProvider?)/*Error near IL_006f: Stack underflow*/, ((object)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).ToString(), (object?[])3) == null)
 				{
-					if (0 == 0)
+					_ = 0;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 					{
-						obj2 = 1;
+						_ = 1;
 					}
 					break;
 				}
@@ -2401,10 +2790,11 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 3:
 				return;
 			case 1:
-				obj2 = this;
-				if (false)
+				_ = ((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Cuser_id_003Ei__Field).uuid;
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field != 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 0:
@@ -2414,28 +2804,41 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 愀(object P_0, object P_1)
+	internal unsafe void 愀(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003c->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0047->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003e: Expected VT, but got Obj
+		//IL_003e: Expected Obj, but got Ref
+		//IL_0059->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0059->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Ref
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+			{
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref reference))._002Ector((_003Caction_003Ej__TPar)this);
+				bool flag = ((_003C_003Ef__AnonymousType0<>)P_0).Equals(P_1);
+				obj2 = 0;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 				{
-					_ = 0;
+					obj2 = 0;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 				}
 				break;
+			}
 			case 0:
 				return;
 			}
@@ -2459,15 +2862,23 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 搀(object P_0)
+	internal unsafe void 搀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_004d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0058->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a2->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_00d9: Expected VT, but got Obj
+		//IL_00d9: Expected VT, but got Ref
+		//IL_0050: Expected VT, but got Obj
+		//IL_0050: Expected Obj, but got Ref
+		//IL_00de->IL00bd: Incompatible stack heights: 0 vs 1
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00e8->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0075->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0075->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00d3->IL0026: Incompatible stack types: I4 vs Obj
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 5;
@@ -2483,54 +2894,66 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 0:
 				return;
 			case 2:
-				if (1 == 0)
+			{
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref reference))._002Ector((_003Caction_003Ej__TPar)this);
+				bool flag = ((_003C_003Ef__AnonymousType0<>)/*Error near IL_0056: Stack underflow*/).Equals(P_0);
+				obj2 = 1;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
-					_ = 1;
+					obj2 = 1;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 				}
 				break;
+			}
 			case 3:
 				return;
 			case 4:
-				if (this == null)
+				if ((int)((_003C_003Ef__AnonymousType1<, , >)(object)this).user_id == 0)
 				{
 					return;
 				}
 				obj2 = 2;
 				break;
 			case 5:
-				if (P_0 != null)
+				if (((EqualityComparer<_00212>)/*Error near IL_00d9: Stack underflow*/).Equals((_00212?)Unsafe.AsPointer(ref reference), (_00212?)P_0))
 				{
 					return;
 				}
-				obj2 = 4;
+				_ = 4;
 				break;
 			}
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 栀(EventPacket<ClientboundJoinGamePacket> P_0)
+	internal unsafe void 栀(EventPacket<ClientboundJoinGamePacket> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_004a: Expected I4, but got Obj
-		//IL_007e: Expected Obj, but got I4
-		//IL_008c: Expected Obj, but got I4
-		//IL_0121->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_006e->IL0019: Incompatible stack heights: 6 vs 1
-		//IL_0133->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_014f->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00f9->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0111->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00a0->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_0079->IL0019: Incompatible stack heights: 6 vs 1
-		//IL_0104->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00df->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0142->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00bf->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00ab->IL0019: Incompatible stack heights: 4 vs 1
-		//IL_00ea->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00ca->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0057: Expected I4, but got Obj
+		//IL_0062: Expected VT, but got Obj
+		//IL_006e: Expected Obj, but got VT
+		//IL_0073: Expected Obj, but got I4
+		//IL_01d1: Expected Obj, but got Ref
+		//IL_01dc: Expected VT, but got Obj
+		//IL_01dc: Expected Obj, but got I4
+		//IL_01e1: Expected Obj, but got I4
+		//IL_00bb: Expected Obj, but got I4
+		//IL_00c2: Expected VT, but got Obj
+		//IL_00ca: Expected I4, but got Obj
+		//IL_00d5: Expected Obj, but got I4
+		//IL_01c6->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_01f0->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01f0->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_021c->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_0182->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01a6->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_018d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0207->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_0128->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0133->IL0026: Incompatible stack types: I4 vs Obj
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 10;
@@ -2542,69 +2965,75 @@ public class HeypixelProtocol : FakeForgeProtocol
 			default:
 				return;
 			case 2:
-				obj = this;
-				_ = ref obj;
-				_ = 0;
-				if (false)
+				_ = new
 				{
-					_ = 3;
-				}
-				break;
+					action = (_003Caction_003Ej__TPar)this
+				};
+				((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuser_id_003Ei__Field).GetHashCode()).ToString();
+				/*Error near IL_0074: Member reference must be method, but was: Field*/;
 			case 10:
+				((_003C_003Ef__AnonymousType1<, , >)(object)this).GetHashCode();
 				obj = 1;
-				obj = obj;
+				obj = ((IEnumerable<byte>)new EqualityComparer<_00211>((_00211)obj)).Take((int)obj).ToArray();
 				obj = 0;
-				obj = obj;
-				if (6 == 0)
-				{
-					_ = 9;
-				}
-				break;
+				_ = ref obj;
+				/*Error near IL_00d9: Member reference must be method, but was: Field*/;
 			case 0:
 				return;
 			case 9:
-				if (this != null)
+				if (EntitySocks5Account.AttachElement != null)
 				{
-					if (8 != 0)
+					obj2 = 8;
+					if (((EntitySocks5)EntitySocks5.Address__BackingField).Port__BackingField != 0)
 					{
 						obj2 = 8;
 					}
 				}
 				else
 				{
+					_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.DecorateCustomNode();
 					_ = null;
+					_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities._002Ecctor();
 					_ = 6;
 				}
 				break;
 			case 7:
-				if (this == null)
-				{
-					if (0 == 0)
-					{
-						obj2 = 1;
-					}
-					break;
-				}
-				goto case 5;
+				_ = ((EntitySocks5)(object)this).Account__BackingField;
+				_003C_003Ef__AnonymousType2<, , , >.DisableDecryptor();
+				/*Error near IL_013e: Member reference must be method, but was: Field*/;
 			case 5:
-				_ = 1;
-				if (0 == 0)
+				((EntityLaunchGameProxy)(object)this).GameVersion__BackingField = (EnumGameVersion)1u;
+				obj2 = 0;
+				if (((EntityLaunchGameProxy)EntityLaunchGameProxy.ModHashList__BackingField).Name__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 6:
-				obj2 = 2;
+				_003C_003Ef__AnonymousType3<, >.LoadCache();
+				((RegexRunnerFactory)_003C_003Ef__AnonymousType3<, >.DecorateIntegratedProgram())._002Ector();
+				_ = 2;
 				break;
 			case 1:
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0._002Ecctor();
+				_ = ((EntityLaunchGameProxy)(object)this).IsGame__BackingField;
+				((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory)(object)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.DecorateConfigurableDecider()).CreateInstance();
 				_ = 5;
 				break;
 			case 3:
-				_ = 4;
+			{
+				((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory)(object)this)._002Ector();
+				((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner)((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner)MemoryExtensions.IndexOfAnyExcept<T>((ReadOnlySpan<T>)/*Error near IL_01d1: Stack underflow*/, (SearchValues<T>)Unsafe.AsPointer(ref reference))).TryMatchAtCurrentPosition((ReadOnlySpan<char>)((GameProxy)(object)this).ConnectionChanged))._002Ector();
+				bool flag = _003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.VerifyVerifier();
+				obj2 = 4;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 				break;
+			}
 			case 8:
 				return;
 			case 4:
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.InstantiateVisitor();
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.PatchWatcher();
 				_ = 7;
 				break;
 			}
@@ -2630,11 +3059,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte 欀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -2692,22 +3122,25 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 爀(object P_0)
+	internal unsafe void 爀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0061->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0043->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_004e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008a->IL008e: Incompatible stack heights: 1 vs 0
-		//IL_0160->IL008e: Incompatible stack heights: 3 vs 0
-		//IL_00cb->IL008e: Incompatible stack heights: 5 vs 0
-		//IL_016b->IL008e: Incompatible stack heights: 3 vs 0
-		//IL_014d->IL008e: Incompatible stack heights: 1 vs 0
-		//IL_010b->IL008e: Incompatible stack heights: 1 vs 0
-		//IL_00eb->IL008e: Incompatible stack heights: 1 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0046: Expected VT, but got Obj
+		//IL_0046: Expected Obj, but got Ref
+		//IL_0057: Expected Obj, but got VT
+		//IL_00a0: Expected Obj, but got VT
+		//IL_00af: Expected Obj, but got VT
+		//IL_00f3: Expected Obj, but got Ref
+		//IL_0100: Expected VT, but got I
+		//IL_005c->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0067->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0152->IL01a4: Incompatible stack heights: 2 vs 1
+		//IL_01f6->IL0067: Incompatible stack heights: 0 vs 1
+		//IL_0111->IL00c3: Incompatible stack heights: 6 vs 2
+		//IL_0166->IL00c3: Incompatible stack heights: 3 vs 2
+		//IL_0171->IL00c3: Incompatible stack heights: 3 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -2717,30 +3150,30 @@ public class HeypixelProtocol : FakeForgeProtocol
 			switch ((int)obj2)
 			{
 			case 1:
-				obj = P_0;
-				if (false)
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)P_0);
+				obj = (object)/*Error near IL_0048: Stack underflow*/;
+				_ = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 3:
 				return;
 			default:
-				obj = obj;
-				if (2 == 0)
-				{
-					obj2 = 2;
-				}
-				break;
+				((_003C_003Ef__AnonymousType0<>)obj).ToString();
+				/*Error near IL_006f: Member reference must be method, but was: Field*/;
 			case 2:
-				obj = obj;
-				if (true)
+			{
+				obj = ((_003C_003Ef__AnonymousType1<, , >)obj).uuid;
+				int num = 1;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field != 0)
 				{
-					_ = 1;
+					num = 1;
 				}
 				while (true)
 				{
-					switch ((int)/*Error near IL_00b3: Stack underflow*/)
+					switch (num)
 					{
 					case 4:
 						return;
@@ -2749,22 +3182,20 @@ public class HeypixelProtocol : FakeForgeProtocol
 					case 6:
 						return;
 					case 7:
+						((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals(this);
+						new EqualityComparer<_00211>((_00211)__ldvirtftn(_003C_003Ef__AnonymousType1<, , >.GetHashCode));
+						_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
 						_ = 6;
 						break;
 					case 1:
-						if (obj == null)
-						{
-							if (0 == 0)
-							{
-								_ = 0;
-							}
-							break;
-						}
-						goto case 7;
+						_003C_003Ef__AnonymousType1<, , >.ReflectModularWriter();
+						/*Error near IL_0118: Member reference must be method, but was: Field*/;
 					default:
-						if (obj == null)
+						_ = ((_003C_003Ef__AnonymousType2<, , , >)obj).user_id;
+						if (EqualityComparer<_00213>.Default == null)
 						{
-							if (3 == 0)
+							_ = 3;
+							if (((EntitySocks5)EntitySocks5Account.AttachElement).Address__BackingField == null)
 							{
 								_ = 4;
 							}
@@ -2772,20 +3203,14 @@ public class HeypixelProtocol : FakeForgeProtocol
 						}
 						goto case 3;
 					case 3:
-						if ((nint)obj != 250)
-						{
-							return;
-						}
-						_ = 2;
-						break;
+						/*Error near IL_01a6: Member reference must be method, but was: Field*/;
 					case 2:
-						if (5 != 0)
-						{
-							_ = 5;
-						}
-						break;
+						_ = ((_003C_003Ef__AnonymousType3<, >)obj).entry;
+						new Regex();
+						/*Error near IL_01cd: Member reference must be method, but was: Field*/;
 					}
 				}
+			}
 			}
 		}
 	}
@@ -2801,19 +3226,28 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe void 琀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0042: Expected I4, but got Obj
-		//IL_00df: Expected Obj, but got Ref
-		//IL_00e9->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006f->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00bf->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0061->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00cf->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00fd->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00a5->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00da->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0108->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004f: Expected I4, but got Obj
+		//IL_005a: Expected VT, but got Obj
+		//IL_005f: Expected Obj, but got Ref
+		//IL_00ce: Expected Obj, but got VT
+		//IL_0086: Expected VT, but got Obj
+		//IL_0102: Expected VT, but got Ref
+		//IL_0104: Expected Obj, but got I4
+		//IL_0073->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0073->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00d3->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0090->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00fc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_007e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_007e->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0118->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0156->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00de->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0123->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0161->IL0026: Incompatible stack types: I4 vs Obj
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 5;
@@ -2823,24 +3257,34 @@ public class HeypixelProtocol : FakeForgeProtocol
 			switch ((int)obj2)
 			{
 			case 3:
-				obj2 = this;
-				if (6 == 0)
+			{
+				bool flag = ((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref reference)).Equals(new
+				{
+					action = (_003Caction_003Ej__TPar)this
+				});
+				obj2 = 6;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
 					obj2 = 6;
+					reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 				}
 				break;
+			}
 			case 7:
-				_ = 3;
+				((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Cpayload_003Ei__Field = (_003Cpayload_003Ej__TPar)obj;
+				obj2 = 3;
 				break;
 			case 6:
-				obj2 = this;
-				if (1 == 0)
+				_ = ((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic).user_id;
+				_ = 1;
+				if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument == null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 2:
-				if ((long)(obj - (object)this) > 5000L)
+				if ((long)(obj - (object)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance) > 5000L)
 				{
 					obj2 = 7;
 					break;
@@ -2849,24 +3293,25 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 8:
 				return;
 			case 4:
-				obj = (object)/*Error near IL_00c3: Stack underflow*/;
-				if (false)
+				obj = ((EqualityComparer<_00211>)/*Error near IL_0102: Stack underflow*/).GetHashCode((_00211)Unsafe.AsPointer(ref reference));
+				_ = 0;
+				if ((int)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_defaultTimeout != 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			default:
-				obj = (object)(&obj);
-				obj2 = 2;
-				break;
+				_ = ref obj;
+				/*Error near IL_0125: Member reference must be method, but was: Field*/;
 			case 1:
 				return;
 			case 5:
-				if (this == null)
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_ascii_68FF03FEFFFF87FEFFFF07 == null)
 				{
 					return;
 				}
-				if (4 == 0)
+				obj2 = 4;
+				if (((EntitySocks5Account)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.GuideMap).Username__BackingField == null)
 				{
 					obj2 = 3;
 				}
@@ -2876,15 +3321,17 @@ public class HeypixelProtocol : FakeForgeProtocol
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void 甀(object P_0)
+	internal unsafe void 甀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0041->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_005c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_004c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0067->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0062: Expected Obj, but got VT
+		//IL_0067->IL0026: Incompatible stack heights: 6 vs 2
+		//IL_008e->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_0072->IL0026: Incompatible stack heights: 6 vs 2
+		//IL_0099->IL0026: Incompatible stack heights: 4 vs 2
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -2895,7 +3342,11 @@ public class HeypixelProtocol : FakeForgeProtocol
 			default:
 				return;
 			case 1:
-				if (false)
+				_ = ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
+				__ldftn(_003C_003Ef__AnonymousType0<>.Equals);
+				((_003C_003Ef__AnonymousType0<>)(object)new object()).ToString();
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field != 0)
 				{
 					_ = 0;
 				}
@@ -2903,7 +3354,9 @@ public class HeypixelProtocol : FakeForgeProtocol
 			case 0:
 				return;
 			case 2:
-				if (true)
+				_ = ((_003C_003Ef__AnonymousType1<, , >)P_0).name;
+				_ = 1;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field != 0)
 				{
 					_ = 1;
 				}
@@ -2915,11 +3368,12 @@ public class HeypixelProtocol : FakeForgeProtocol
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte 瘀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

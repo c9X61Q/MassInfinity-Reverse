@@ -15,21 +15,8 @@ public class SerilogStyleConsoleFormatter : ConsoleFormatter
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public SerilogStyleConsoleFormatter()
 	{
-		//IL_0033: Expected I4, but got Obj
-		//IL_0021->IL002a: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		SerilogStyleConsoleFormatter serilogStyleConsoleFormatter = this;
-		if (0 == 0)
-		{
-			serilogStyleConsoleFormatter = (SerilogStyleConsoleFormatter)0;
-		}
-		switch ((int)serilogStyleConsoleFormatter)
-		{
-		case 0:
-			break;
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -61,11 +48,8 @@ public class SerilogStyleConsoleFormatter : ConsoleFormatter
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00䴀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -79,9 +63,7 @@ public class SerilogStyleConsoleFormatter : ConsoleFormatter
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00伀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 }

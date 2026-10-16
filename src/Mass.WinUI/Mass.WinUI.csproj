@@ -26,41 +26,57 @@
     <Reference Include="Serilog" />
     <Reference Include="Microsoft.InteractiveExperiences.Projection" />
     <Reference Include="Mass.Application.Desktop">
-      <HintPath>mass-ildump/backfilled/Mass.Application.Desktop.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Application.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Application.Mobile">
-      <HintPath>mass-ildump/backfilled/Mass.Application.Mobile.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Application.Mobile.dll</HintPath>
     </Reference>
     <Reference Include="CommunityToolkit.Mvvm" />
     <Reference Include="Mass.Common">
-      <HintPath>mass-ildump/backfilled/Mass.Common.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Windows.SDK.NET" />
     <Reference Include="Mass.Domain">
-      <HintPath>mass-ildump/backfilled/Mass.Domain.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Domain.Desktop">
-      <HintPath>mass-ildump/backfilled/Mass.Domain.Desktop.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Domain.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Application">
-      <HintPath>mass-ildump/backfilled/Mass.Application.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Application.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Domain.Mobile">
-      <HintPath>mass-ildump/backfilled/Mass.Domain.Mobile.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Domain.Mobile.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.WebView2.Core.Projection" />
     <Reference Include="Mass.Game.Proxy">
-      <HintPath>mass-ildump/backfilled/Mass.Game.Proxy.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Game.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Matrix.Core" />
     <Reference Include="Mass.Game.Launcher">
-      <HintPath>mass-ildump/backfilled/Mass.Game.Launcher.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Game.Launcher.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Bedrock.Proxy">
-      <HintPath>mass-ildump/backfilled/Mass.Bedrock.Proxy.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Bedrock.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="CommunityToolkit.WinUI.Controls.SettingsControls" />
     <Reference Include="FluentIcons.WinUI" />
     <Reference Include="FluentIcons.Common" />
+    <Reference Include="WinUI.TableView" />
+    <Reference Include="DevWinUI.Controls" />
+    <Reference Include="CommunityToolkit.WinUI.Converters" />
+    <Reference Include="CommunityToolkit.WinUI.Controls.LayoutTransformControl" />
+    <Reference Include="CommunityToolkit.WinUI.Animations" />
+    <Reference Include="CommunityToolkit.WinUI.Controls.Primitives" />
+    <Reference Include="CommunityToolkit.WinUI.Controls.Segmented" />
+    <Reference Include="Microsoft.Xaml.Interactivity" />
+    <Reference Include="CommunityToolkit.WinUI.Media" />
+    <Reference Include="CommunityToolkit.WinUI.Extensions" />
+    <Reference Include="CommunityToolkit.WinUI.Controls.TokenView" />
+    <Reference Include="CommunityToolkit.WinUI.Behaviors" />
+    <Reference Include="CommunityToolkit.WinUI.Triggers" />
+    <Reference Include="DevWinUI" />
+    <Reference Include="System.Security.Cryptography.ProtectedData" />
+    <Reference Include="QRCoder" />
   </ItemGroup>
 </Project>

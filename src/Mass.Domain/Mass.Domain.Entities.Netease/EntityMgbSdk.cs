@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
+using Mass.Domain.Value;
 
 namespace Mass.Domain.Entities.Netease;
 
@@ -132,17 +134,18 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public EntityMgbSdk()
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0035: Expected Obj, but got I4
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		EntityMgbSdk entityMgbSdk = this;
-		if (false)
+		((ConfigValue)/*Error near IL_001b: Stack underflow*/).Id__BackingField = this;
+		((IDisposable)this).Dispose();
+		int num = 0;
+		if (((ConfigValue)ConfigValue.Icon__BackingField).DisplayName__BackingField != null)
 		{
-			entityMgbSdk = (EntityMgbSdk)0;
+			num = 0;
 		}
-		switch ((int)entityMgbSdk)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -172,24 +175,27 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_A700(object? P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -199,32 +205,38 @@ public class EntityMgbSdk
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object? _FF00_FF00넀()
+	internal unsafe object? _FF00_FF00넀()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0086: Expected I4, but got Obj
-		//IL_0174: Expected Obj, but got I4
-		//IL_01e2: Expected Obj, but got I4
-		//IL_01f6->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_024c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_01a7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0267->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00de->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00d0->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0139->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0201->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0257->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_018e->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0272->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0216->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_02a1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0285->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_01d6->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_012b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0199->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0221->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0290->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0093: Expected I4, but got Obj
+		//IL_01c1: Expected I4, but got Obj
+		//IL_0307: Expected Obj, but got I
+		//IL_0282: Expected VT, but got I4
+		//IL_01ac: Expected Obj, but got I4
+		//IL_01b5: Expected Obj, but got I4
+		//IL_024b: Expected Obj, but got I4
+		//IL_0296: Expected Obj, but got F4
+		//IL_032d: Expected Obj, but got I
+		//IL_026b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02e5->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01fc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_030c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ff->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_016e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0276->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02f0->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01df->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0317->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_029b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_034e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0332->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_023b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_015c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01ea->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02a6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_033d->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 23;
@@ -237,7 +249,8 @@ public class EntityMgbSdk
 				{
 				case 16:
 				case 18:
-					obj = (object)/*Error near IL_00c6: Stack underflow*/;
+					((BoolValueAttribute)/*Error near IL_00e5: Stack underflow*/)._002Ector((byte)/*Error near IL_00e5: Stack underflow*/ != 0);
+					obj = (object)/*Error near IL_00e7: Stack underflow*/;
 					obj2 = 2;
 					continue;
 				case 2:
@@ -250,24 +263,29 @@ public class EntityMgbSdk
 					obj2 = 20;
 					continue;
 				case 25:
-					if (obj != null)
+					((List<ConfigValue>)obj).Add((ConfigValue)(object)BoolValueAttribute.DecorateCustomizableDefinition());
+					if ((int)/*Error near IL_0152: Stack underflow*/ != 0)
 					{
 						obj2 = 6;
 						continue;
 					}
 					goto case 21;
 				case 23:
-					obj = this;
+					((ConfigValue)/*Error near IL_0162: Stack underflow*/).Id = (string)(object)this;
+					obj = (object)/*Error near IL_0164: Stack underflow*/;
 					obj2 = 22;
 					continue;
 				case 14:
-					obj = (object)/*Error near IL_016b: Stack underflow*/;
+					obj = ((ConfigValue)/*Error near IL_01aa: Stack underflow*/).Icon;
 					obj = 5;
 					break;
 				case 7:
-					if (obj != null)
+					((ConfigValue)/*Error near IL_01c1: Stack underflow*/).Icon = (ValueIcon)obj;
+					((List<ConfigValue>)/*Error near IL_01c6: Stack underflow*/).AddRange((IEnumerable<ConfigValue>)/*Error near IL_01c6: Stack underflow*/);
+					if ((int)/*Error near IL_01cb: Stack underflow*/ != 0)
 					{
-						if (5 == 0)
+						obj2 = 5;
+						if (((ConfigValueAttribute)(object)ConfigValue._003C_003Ec__DisplayClass22_0.DetachRole).Icon__BackingField == ValueIcon.AccessTime)
 						{
 							obj2 = 9;
 						}
@@ -276,11 +294,13 @@ public class EntityMgbSdk
 					goto case 25;
 				case 3:
 				case 4:
-					obj = this;
+					((ConfigValue)/*Error near IL_01f0: Stack underflow*/).Description = (string?)(object)this;
+					obj = (object)/*Error near IL_01f2: Stack underflow*/;
 					obj2 = 11;
 					continue;
 				case 24:
-					if (obj != null)
+					((PropertyInfo)/*Error near IL_022c: Stack underflow*/).SetValue((object?)/*Error near IL_022c: Stack underflow*/, (object?)((ConfigValue)/*Error near IL_0227: Stack underflow*/).GetValue((string)obj));
+					if ((int)/*Error near IL_0231: Stack underflow*/ != 0)
 					{
 						obj2 = 13;
 						continue;
@@ -288,20 +308,24 @@ public class EntityMgbSdk
 					goto case 12;
 				case 6:
 				case 17:
-					obj = (object)/*Error near IL_01d9: Stack underflow*/;
+					obj = ConfigValue.Get((Type)/*Error near IL_0240: Stack underflow*/);
 					obj = 8;
 					break;
 				default:
-					obj = (object)/*Error near IL_01ea: Stack underflow*/;
-					if (17 != 0)
+					ConfigValue.InitValue((object?)/*Error near IL_0255: Stack underflow*/);
+					obj = (object)/*Error near IL_0257: Stack underflow*/;
+					obj2 = 17;
+					if (((FloatValue)(object)ExpanderValue.PlanTracker).Unit__BackingField != null)
 					{
 						obj2 = 19;
 					}
 					continue;
 				case 12:
-					if (obj == null)
+					((DefaultInterpolatedStringHandler*)obj)->AppendFormatted<T>((T)ConfigValue.ReflectExpandableRecommender());
+					if ((int)/*Error near IL_0287: Stack underflow*/ == 0)
 					{
-						if (6 != 0)
+						obj2 = 6;
+						if (FloatValue.CheckMixedHandler != null)
 						{
 							obj2 = 7;
 						}
@@ -310,15 +334,18 @@ public class EntityMgbSdk
 					goto case 14;
 				case 1:
 				case 9:
-					obj = (object)/*Error near IL_0240: Stack underflow*/;
-					if (11 != 0)
+					obj = ((ConfigValue._003C_003Ec)/*Error near IL_02cf: Stack underflow*/)._003CGetValues_003Eb__23_2((ConfigValue)/*Error near IL_02cf: Stack underflow*/);
+					obj2 = 11;
+					if (FloatValueAttribute.DecorateCommonChain != null)
 					{
 						obj2 = 15;
 					}
 					continue;
 				case 10:
-					obj = this;
-					if (24 != 0)
+					((ConfigValue._003C_003Ec__DisplayClass21_0)/*Error near IL_02f6: Stack underflow*/)._003CSetId_003Eb__0((ConfigValue)(object)this);
+					obj = (object)/*Error near IL_02f8: Stack underflow*/;
+					obj2 = 24;
+					if (((IntegerValue)IntegerValue.Value__BackingField).Min__BackingField != 0)
 					{
 						obj2 = 18;
 					}
@@ -326,7 +353,8 @@ public class EntityMgbSdk
 				case 22:
 					if (obj == null)
 					{
-						if (6 == 0)
+						obj2 = 6;
+						if (IntegerValue.DecorateBasicGateway == null)
 						{
 							obj2 = 10;
 						}
@@ -359,35 +387,38 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object? _FF00_FF00대()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00됀(object? P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -405,10 +436,10 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object? _FF00_FF00똀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -422,24 +453,28 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00렀(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected Obj, but got I4
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -459,20 +494,20 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object? _FF00_FF00먀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return this;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal uint _FF00_FF00묀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -486,26 +521,30 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00봀(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected Obj, but got I4
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -523,11 +562,10 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00뼀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (BoolValueAttribute.DecorateIdentifiableAggregator == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -549,10 +587,10 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object? _FF00_FF00숀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (object?)/*Error near IL_0009: Stack underflow*/;
+		return BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -566,11 +604,11 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal uint _FF00_FF00쐀()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -584,24 +622,28 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00였(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected Obj, but got I4
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -613,24 +655,27 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00윀(object? P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				BoolValueAttribute.DecorateIdentifiableAggregator = P_0;
+				obj2 = 0;
+				if (((ConfigValue)ConfigValue.Id__BackingField).Key__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -650,11 +695,11 @@ public class EntityMgbSdk
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal uint _FF00_FF00준()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)BoolValueAttribute.DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

@@ -13,7 +13,7 @@
   <ItemGroup />
   <ItemGroup>
     <Reference Include="Mass.Common">
-      <HintPath>mass-ildump/backfilled/Mass.Common.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

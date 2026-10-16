@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using DotNetty.Buffers;
 
 namespace Mass.Game.Proxy.Network;
@@ -62,15 +65,20 @@ public static class VarInt
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_2500(object P_0, uint P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003a: Expected I4, but got Obj
-		//IL_0050->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_005b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c4->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0076->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_009c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00cf->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0047: Expected I4, but got Obj
+		//IL_0060: Expected Obj, but got VT
+		//IL_0077: Expected Obj, but got I4
+		//IL_0087: Expected Obj, but got VT
+		//IL_00f4: Expected Obj, but got VT
+		//IL_0065->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008c->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0070->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0097->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0104->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 6;
@@ -81,33 +89,31 @@ public static class VarInt
 			{
 			case 1:
 				P_1 >>= 7;
-				if (3 != 0)
+				obj2 = 3;
+				if ((int)((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field)._003Cuser_id_003Ei__Field != 0)
 				{
 					obj2 = 1;
 				}
 				break;
 			case 4:
-				obj2 = P_0;
-				if (2 != 0)
+				((object)P_1).ToString();
+				_ = 2;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field != 0)
 				{
-					obj2 = 1;
+					_ = 1;
 				}
 				break;
 			case 2:
 				return P_0;
 			default:
-				obj2 = P_0;
 				_ = (P_1 & 0x7F) | 0x80;
-				if (1 == 0)
-				{
-					obj2 = 1;
-				}
-				break;
+				/*Error near IL_00a4: Member reference must be method, but was: Field*/;
 			case 3:
 			case 6:
 				if ((P_1 & 0xFFFFFF80u) != 0)
 				{
-					if (0 == 0)
+					obj2 = 0;
+					if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field == 0)
 					{
 						obj2 = 0;
 					}
@@ -129,10 +135,12 @@ public static class VarInt
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_2700()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -160,22 +168,25 @@ public static class VarInt
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static uint _FF00_FF00_FF00_FF00_2B00(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0054: Expected Obj, but got I4
-		//IL_006e: Expected I4, but got Obj
-		//IL_00a1: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00a4: Unknown result type (might be due to invalid IL or missing references)
-		//IL_004c: Expected Obj, but got I4
-		//IL_0071: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0074: Expected Obj, but got Unknown
-		//IL_0060->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0080->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00b8->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_008b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c3->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0061: Expected Obj, but got I4
+		//IL_0070: Expected Obj, but got VT
+		//IL_0083: Expected I4, but got Obj
+		//IL_00be: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00c1: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0059: Expected Obj, but got I4
+		//IL_0086: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0089: Expected Obj, but got Unknown
+		//IL_00d8: Expected Obj, but got VT
+		//IL_0075->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0080->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00dd->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e8->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -191,10 +202,11 @@ public static class VarInt
 					{
 						break;
 					}
-					goto end_IL_0019;
+					goto end_IL_0026;
 				case 2:
 					obj = 1;
-					if (1 == 0)
+					obj2 = 1;
+					if ((int)((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 					{
 						obj2 = 1;
 					}
@@ -209,17 +221,22 @@ public static class VarInt
 				if ((P_0 & (uint)(-1 << obj * 7)) != 0)
 				{
 					obj++;
-					if (false)
+					obj2 = 0;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 					{
 						obj2 = 0;
 					}
 				}
-				else if (1 == 0)
+				else
 				{
-					obj2 = 4;
+					obj2 = 1;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
+					{
+						obj2 = 4;
+					}
 				}
 				continue;
-				end_IL_0019:
+				end_IL_0026:
 				break;
 			}
 			obj = 3;
@@ -243,32 +260,36 @@ public static class VarInt
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static uint _FF00_FF00_FF00_FF00_2F00(object P_0)
+	internal unsafe static uint _FF00_FF00_FF00_FF00_2F00(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003e: Expected I4, but got Obj
-		//IL_009d: Expected I4, but got Obj
-		//IL_0049: Unknown result type (might be due to invalid IL or missing references)
-		//IL_004e: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0051: Expected Obj, but got Unknown
-		//IL_0052: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0055: Unknown result type (might be due to invalid IL or missing references)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004b: Expected I4, but got Obj
+		//IL_00f6: Expected VT, but got Obj
+		//IL_00f6: Expected VT, but got Ref
+		//IL_00f8: Expected Obj, but got I4
+		//IL_00ba: Expected I4, but got Obj
 		//IL_0056: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0057: Unknown result type (might be due to invalid IL or missing references)
-		//IL_005a: Expected Obj, but got Unknown
-		//IL_00dd: Expected Obj, but got I4
-		//IL_0083: Expected Obj, but got I4
-		//IL_00cf->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0066->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00e7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008f->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00f9->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00da->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0071->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_009a->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00b4->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00bf->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_005b: Unknown result type (might be due to invalid IL or missing references)
+		//IL_005e: Expected Obj, but got Unknown
+		//IL_005f: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0062: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0063: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0064: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0067: Expected Obj, but got Unknown
+		//IL_0076: Expected Obj, but got VT
+		//IL_011a: Expected Obj, but got I4
+		//IL_0098: Expected Obj, but got I4
+		//IL_010c->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_007b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0124->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ac->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0136->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0117->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0086->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e5->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f0->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 7;
@@ -284,7 +305,8 @@ public static class VarInt
 				object obj4 = obj;
 				obj = obj4 + 1;
 				obj = obj3 | (val << ((obj4 * 7) & 0x1F));
-				if (1 == 0)
+				obj2 = 1;
+				if ((int)((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 				{
 					obj2 = 0;
 				}
@@ -292,7 +314,8 @@ public static class VarInt
 			}
 			case 7:
 				obj = 0;
-				if (4 != 0)
+				obj2 = 4;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 				{
 					obj2 = 6;
 				}
@@ -300,12 +323,14 @@ public static class VarInt
 			case 3:
 				return (uint)(int)obj;
 			case 5:
-				throw /*Error near IL_00a0: Stack underflow*/;
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+				/*Error near IL_00bf: Member reference must be method, but was: Field*/;
 			default:
-				obj = P_0;
-				if (0 == 0)
+				obj = ((EqualityComparer<_00212>)/*Error near IL_00f6: Stack underflow*/).Equals((_00212?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00212?)P_0);
+				_ = 0;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance == null)
 				{
-					obj2 = 4;
+					_ = 4;
 				}
 				break;
 			case 6:
@@ -315,9 +340,10 @@ public static class VarInt
 			case 1:
 				if ((nint)obj <= 5)
 				{
-					if (obj != null)
+					if ((int)((_003C_003Ef__AnonymousType1<, , >)obj).name != 0)
 					{
-						if (0 == 0)
+						obj2 = 0;
+						if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field == 0)
 						{
 							obj2 = 0;
 						}
@@ -340,38 +366,41 @@ public static class VarInt
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static uint _FF00_FF00_FF00_FF00_3100(object P_0)
+	internal unsafe static uint _FF00_FF00_FF00_FF00_3100(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_004a: Expected I4, but got Obj
-		//IL_00b1: Expected Obj, but got I4
-		//IL_0123: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0128: Unknown result type (might be due to invalid IL or missing references)
-		//IL_012b: Expected Obj, but got Unknown
-		//IL_012c: Unknown result type (might be due to invalid IL or missing references)
-		//IL_012f: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0130: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0131: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0134: Expected Obj, but got Unknown
-		//IL_0071: Expected Obj, but got I4
-		//IL_0141: Expected Obj, but got I4
-		//IL_00e7: Expected I4, but got Obj
-		//IL_008f: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0092: Expected Obj, but got Unknown
-		//IL_0095: Expected Obj, but got I4
-		//IL_00bd->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_013e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_007d->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_014b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c8->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0063->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0088->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_009f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00fb->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0112->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_011d->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0057: Expected I4, but got Obj
+		//IL_00d2: Expected Obj, but got I4
+		//IL_00e1: Expected Obj, but got VT
+		//IL_0131: Expected VT, but got Ref
+		//IL_0168: Unknown result type (might be due to invalid IL or missing references)
+		//IL_016d: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0170: Expected Obj, but got Unknown
+		//IL_0171: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0174: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0175: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0176: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0179: Expected Obj, but got Unknown
+		//IL_0086: Expected Obj, but got I4
+		//IL_0186: Expected Obj, but got I4
+		//IL_0118: Expected I4, but got Obj
+		//IL_0073: Expected Obj, but got VT
+		//IL_00b0: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00b3: Expected Obj, but got Unknown
+		//IL_00b6: Expected Obj, but got I4
+		//IL_00e6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0183->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0190->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0078->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a5->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c0->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_012c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0083->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0157->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0162->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 6;
@@ -383,7 +412,8 @@ public static class VarInt
 			case 2:
 				if ((nint)obj <= 5)
 				{
-					if (8 != 0)
+					obj2 = 8;
+					if ((int)((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field)._003Cuser_id_003Ei__Field != 0)
 					{
 						obj2 = 4;
 					}
@@ -392,13 +422,14 @@ public static class VarInt
 				goto case 1;
 			case 5:
 				obj = 0;
-				if (0 == 0)
+				obj2 = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
 					obj2 = 0;
 				}
 				break;
 			case 3:
-				throw /*Error near IL_008a: Stack underflow*/;
+				/*Error near IL_00a5: Member reference must be method, but was: Field*/;
 			case 9:
 			{
 				object obj5 = obj;
@@ -409,7 +440,8 @@ public static class VarInt
 			}
 			default:
 				obj = 0;
-				if (4 == 0)
+				obj2 = 4;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 				{
 					obj2 = 10;
 				}
@@ -424,11 +456,13 @@ public static class VarInt
 				}
 				goto case 3;
 			case 1:
-				throw /*Error near IL_00fe: Stack underflow*/;
+				((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_0131: Stack underflow*/)._002Ector((_003Cname_003Ej__TPar)/*Error near IL_0131: Stack underflow*/, (_003Cuuid_003Ej__TPar)/*Error near IL_0131: Stack underflow*/, (_003Cuser_id_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+				throw new EqualityComparer<_00211>();
 			case 8:
-				if (obj == null)
+				if (((_003C_003Ef__AnonymousType1<, , >)obj).GetHashCode() == 0)
 				{
-					if (4 == 0)
+					obj2 = 4;
+					if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.StoreConverter == null)
 					{
 						obj2 = 7;
 					}
@@ -456,11 +490,12 @@ public static class VarInt
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_3200()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.CompilerServices;
+using Mass.Common.Models;
 
 namespace Mass.Common.Localization;
 
@@ -21,17 +22,19 @@ public class ResourceLocalizer
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public ResourceLocalizer(ResourceManager resourceManager)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0026: Expected VT, but got Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		ResourceLocalizer resourceLocalizer = this;
-		if (0 == 0)
+		ApiResponseBase<>.ManageProvider = resourceManager;
+		((ApiResponse<_00210>)/*Error near IL_0026: Stack underflow*/).Data = (_00210?)this;
+		int num = 0;
+		if (((ApiResponseBase<>._003CThen_003Ed__10)ApiResponseBase<>._003CThen_003Ed__10._003C_003Et__builder).task == null)
 		{
-			resourceLocalizer = (ResourceLocalizer)0;
+			num = 0;
 		}
-		switch ((int)resourceLocalizer)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -84,11 +87,11 @@ public class ResourceLocalizer
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00䌀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (ApiResponseBase<>.ManageProvider == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -102,10 +105,11 @@ public class ResourceLocalizer
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00䔀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

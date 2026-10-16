@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Org.BouncyCastle.Crypto.Engines;
@@ -23,13 +24,19 @@ public class ChaChaX : ChaCha7539Engine
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public ChaChaX(byte[] key, byte[] iv, int rounds, bool forEncryption)
 	{
-		//IL_0046->IL001c: Incompatible stack heights: 5 vs 2
-		//IL_0060->IL001c: Incompatible stack heights: 3 vs 2
-		//IL_0051->IL001c: Incompatible stack heights: 5 vs 2
-		//IL_006b->IL001c: Incompatible stack heights: 3 vs 2
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_004c: Expected VT, but got Obj
+		//IL_004c: Expected VT, but got I4
+		//IL_0057: Expected VT, but got Obj
+		//IL_0057: Expected VT, but got Obj
+		//IL_006b->IL002d: Incompatible stack heights: 5 vs 3
+		//IL_008d->IL002d: Incompatible stack heights: 5 vs 3
+		//IL_0076->IL002d: Incompatible stack heights: 5 vs 3
+		//IL_0098->IL002d: Incompatible stack heights: 5 vs 3
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		_ = EqualityComparer<_00211>.Default;
 		while (true)
 		{
 			switch (2)
@@ -37,13 +44,16 @@ public class ChaChaX : ChaCha7539Engine
 			default:
 				return;
 			case 1:
-				if (false)
+				((EqualityComparer<_00210>)new EqualityComparer<_00211>((_00211?)forEncryption, (_00211?)key)).Equals((_00210?)iv, (_00210?)new EqualityComparer<_00210>());
+				_ = 0;
+				if (DesktopAuthentication.Logger != null)
 				{
 					_ = 0;
 				}
 				break;
 			case 2:
-				if (1 == 0)
+				_ = 1;
+				if (((DesktopAuthentication)DesktopAuthentication._client)._connected == 0)
 				{
 					_ = 0;
 				}
@@ -145,20 +155,21 @@ public class ChaChaX : ChaCha7539Engine
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00먀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return DesktopAuthentication._003CuserId_003EP;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00묀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		Unsafe.As<_003Corderid_003Ej__TPar, ValueType>(ref _003C_003Ef__AnonymousType0<, >._003Corderid_003Ei__Field)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (DesktopAuthentication._003CuserId_003EP == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

@@ -1,8 +1,13 @@
 using System;
+using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using ABI.System.Collections.Generic;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
+using WinRT;
+using WinRT.Mass_WinUIGenericHelpers;
 
 namespace Mass.WinUI.Pages;
 
@@ -39,11 +44,14 @@ public abstract class CharacterPageBase : Page
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	protected CharacterPageBase()
+	protected unsafe CharacterPageBase()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		ExceptionHelpers.GetHRForException((Exception)(object)this);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -67,43 +75,26 @@ public abstract class CharacterPageBase : Page
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private void _FF00_FF00_FF00阀(object P_0, object P_1)
+	private unsafe void _FF00_FF00_FF00阀(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0067->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0072->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 2;
-		object obj2 = obj;
-		while (true)
+		switch ((int)obj)
 		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 0:
-				return;
-			case 2:
-				if ((int)/*Error near IL_0033: Stack underflow*/ == 0)
-				{
-					if (1 == 0)
-					{
-						obj2 = 1;
-					}
-				}
-				else if (false)
-				{
-					obj2 = 0;
-				}
-				break;
-			case 1:
-				return;
-			}
+		case 0:
+			break;
+		case 2:
+			ExceptionHelpers.GetHRForException((Exception)/*Error near IL_0042: Stack underflow*/);
+			_ = IEnumerator_object.Initialized;
+			/*Error near IL_0047: Member reference must be method, but was: Field*/;
+		case 1:
+			break;
 		}
 	}
 
@@ -116,13 +107,14 @@ public abstract class CharacterPageBase : Page
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00頀()
+	internal unsafe static byte _FF00_FF00_FF00頀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -134,12 +126,15 @@ public abstract class CharacterPageBase : Page
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00騀()
+	internal unsafe static object _FF00_FF00_FF00騀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -151,16 +146,24 @@ public abstract class CharacterPageBase : Page
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	protected void _FF00_FF00_FF00鴀(object P_0)
+	protected unsafe void _FF00_FF00_FF00鴀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0061->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0047->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_008b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0052->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0072: Expected I, but got Obj
+		//IL_0081: Expected Obj, but got I
+		//IL_00a7: Expected I, but got Obj
+		//IL_00a7: Expected I, but got Obj
+		//IL_00c0: Expected Obj, but got I
+		//IL_0086->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c5->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0060->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0091->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d0->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_006b->IL0026: Incompatible stack types: I4 vs Obj
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -169,31 +172,40 @@ public abstract class CharacterPageBase : Page
 		{
 			switch ((int)obj2)
 			{
-			case 1:
-				if (0 == 0)
+			default:
+				if (ExceptionHelpers.GetHRForException((Exception)P_0) != 1)
 				{
-					_ = 0;
+					return;
 				}
-				continue;
-			case 3:
-				return;
-			case 2:
-				obj2 = this;
-				if (1 == 0)
-				{
-					obj2 = 3;
-				}
-				continue;
-			}
-			if ((nint)P_0 == 1)
-			{
-				if (2 == 0)
+				obj2 = 2;
+				if (IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized == 0)
 				{
 					obj2 = 1;
 				}
-				continue;
+				break;
+			case 1:
+				/*Error near IL_0072: Stack underflow*/((object[])(object)this, (nint)P_0);
+				obj2 = 0;
+				if (IList_object.PatchAttribute == null)
+				{
+					obj2 = 0;
+				}
+				break;
+			case 3:
+				return;
+			case 2:
+			{
+				object obj3 = IEnumeratorMethods<object>.Abi_get_Current_0((IntPtr)/*Error near IL_0097: Stack underflow*/);
+				IEnumerator_object._002Ecctor();
+				MarshalInterface<INotifyPropertyChanged>.FromManaged(new IReadOnlyListMethods<INotifyPropertyChanged>((IntPtr)/*Error near IL_00ac: Stack underflow*/, IReadOnlyListMethods<INotifyPropertyChanged, nint>.InitCcw((delegate* unmanaged[Stdcall]<IntPtr, uint, nint*, int>)/*Error near IL_00a7: Stack underflow*/, (delegate* unmanaged[Stdcall]<IntPtr, uint*, int>)obj3, (delegate* unmanaged[Stdcall]<IntPtr, nint, uint*, byte*, int>)this, (delegate* unmanaged[Stdcall]<IntPtr, uint, int, IntPtr, uint*, int>)(IEnumerator_object.DecorateAutomatableAttribute() ? 1 : 0)) ? 1u : 0u));
+				_ = 1;
+				if (IEnumerator_System_IDisposable.ReflectTransferableAttribute == null)
+				{
+					_ = 3;
+				}
+				break;
 			}
-			return;
+			}
 		}
 	}
 
@@ -206,17 +218,23 @@ public abstract class CharacterPageBase : Page
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	protected void _FF00_FF00_FF00鼀(object P_0)
+	protected unsafe void _FF00_FF00_FF00鼀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0057->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0048->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0086->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0062->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0073->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0091->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0060: Expected Obj, but got I4
+		//IL_006f: Expected Obj, but got I
+		//IL_009b: Expected I, but got Obj
+		//IL_00ac: Expected I, but got Obj
+		//IL_0074->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0059->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_00c0->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_007f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0094->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00cb->IL0026: Incompatible stack heights: 3 vs 1
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 4;
@@ -226,17 +244,19 @@ public abstract class CharacterPageBase : Page
 			switch ((int)obj2)
 			{
 			case 4:
+				ExceptionHelpers.GetHRForException((Exception)P_0);
 				_ = 3;
 				continue;
 			default:
-				_ = 1;
-				if (0 == 0)
+				IReadOnlyList_System_ComponentModel_INotifyPropertyChanged.JoinAttribute = 1;
+				obj2 = 0;
+				if (IEnumerable_System_ComponentModel_INotifyPropertyChanged.ReflectConfigurableAttribute == null)
 				{
-					_ = 1;
+					obj2 = 1;
 				}
 				continue;
 			case 3:
-				if (this != null)
+				if (IList_object._initialized != 0)
 				{
 					obj2 = 2;
 					continue;
@@ -249,7 +269,10 @@ public abstract class CharacterPageBase : Page
 			case 5:
 				break;
 			}
-			if (0 == 0)
+			IEnumerator_object.Do_Abi_get_Current_0((nint)/*Error near IL_009b: Stack underflow*/, (nint*)(nint)this);
+			IEnumeratorMethods<object>.Abi_get_HasCurrent_1(new MarshalInspectable<object>((object)this, (byte)(delegate* unmanaged[Stdcall]<nint, byte*, uint>)(&IEnumerator_object.Do_Abi_get_HasCurrent_1) != 0));
+			_ = 0;
+			if (IReadOnlyList_object._initialized == 0)
 			{
 				_ = 0;
 			}
@@ -275,60 +298,46 @@ public abstract class CharacterPageBase : Page
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	protected void _FF00_FF00_FF00ꈀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0082->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_004d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0068->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a0->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_008d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0058->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0073->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00ab->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 1;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			case 2:
-				if (1 == 0)
-				{
-					_ = 3;
-				}
-				break;
-			case 4:
-				return;
-			case 5:
-				return;
-			case 3:
-				_ = 0;
-				if (5 == 0)
-				{
-					_ = 2;
-				}
-				break;
-			case 1:
-				if (0 == 0)
-				{
-					_ = 0;
-				}
-				break;
-			default:
-				if (this == null)
-				{
-					if (4 == 0)
-					{
-						obj2 = 0;
-					}
-					break;
-				}
-				goto case 2;
-			}
-		}
+		// ILSpy could not decompile this. Please report the exception below,
+		// along with the assembly it came from, at https://github.com/icsharpcode/ILSpy/issues/new
+		// System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+		//    at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+		//    at System.Linq.Enumerable.Skip[TSource](IEnumerable`1 source, Int32 count)
+		//    at ICSharpCode.Decompiler.CSharp.ArgumentList.GetArgumentResolveResultsDirect(Int32 skipCount) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 124
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Probe() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 493
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Run() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 438
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.ForMethodReference(ExpressionBuilder expressionBuilder, IMethod method, IType targetType, TranslatedExpression target, Boolean requireTarget, ExpectedTargetDetails expectedTargetDetails, Boolean isExtensionMethodReference, Boolean castTargetUpFront) in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 131
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.DisambiguateDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1718
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1648
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildMethodReference(IMethod method, Boolean isVirtual) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1639
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitLdFtn(LdFtn inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 5058
+		//    at ICSharpCode.Decompiler.IL.LdFtn.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 3175
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Default(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 93
+		//    at ICSharpCode.Decompiler.IL.ILVisitor`1.VisitLdFtn(LdFtn inst) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 7747
+		//    at ICSharpCode.Decompiler.IL.LdFtn.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 3171
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlock(Block block) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1311
+		//    at ICSharpCode.Decompiler.IL.Block.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 882
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertSwitchSectionBody(SwitchSection astSection, ILInstruction bodyInst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 334
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.TranslateSwitch(BlockContainer switchContainer, SwitchInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 280
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1334
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1338
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertAsBlock(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 87
+		//    at ICSharpCode.Decompiler.CSharp.CSharpDecompiler.DecompileBody(IMethod method, EntityDeclaration entityDecl, DecompileRun decompileRun, ITypeResolveContext decompilationContext, ExtensionInfo extensionInfo) in /_/ICSharpCode.Decompiler/CSharp/CSharpDecompiler.cs:line 2435
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

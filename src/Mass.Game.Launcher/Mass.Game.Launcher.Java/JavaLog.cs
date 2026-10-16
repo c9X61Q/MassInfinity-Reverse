@@ -1,4 +1,6 @@
 using System;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Mass.Domain.Desktop.ValueObjects;
@@ -12,40 +14,40 @@ public class JavaLog
 	internal static JavaLog DecorateActiveEncryptor;
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public JavaLog(EnumGameVersion version)
+	public unsafe JavaLog(EnumGameVersion version)
 	{
-		//IL_00db: Expected I4, but got Obj
-		//IL_00c9->IL00d2: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_00c8: Expected VT, but got Obj
+		//IL_00c3: Expected native int or pointer, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		object obj;
 		switch (version)
 		{
 		case EnumGameVersion.V_1_7_10:
 		case EnumGameVersion.V_1_8_9:
 		case EnumGameVersion.V_1_12_2:
-		{
-			object obj = (object)/*Error near IL_007e: Stack underflow*/;
+			obj = ((Authenticator)/*Error near IL_008d: Stack underflow*/).Listener;
 			break;
-		}
 		case EnumGameVersion.V_1_18:
 		case EnumGameVersion.V_1_20:
-		{
-			object obj = (object)/*Error near IL_0090: Stack underflow*/;
+			((Authenticator)/*Error near IL_00a3: Stack underflow*/).Listener = (TcpListener?)/*Error near IL_00a3: Stack underflow*/;
+			obj = (object)/*Error near IL_00a5: Stack underflow*/;
 			break;
-		}
 		default:
-		{
-			object obj = (object)/*Error near IL_00a2: Stack underflow*/;
+			((Authenticator)/*Error near IL_00b9: Stack underflow*/).StartListening((int)/*Error near IL_00b9: Stack underflow*/);
+			obj = (object)/*Error near IL_00bb: Stack underflow*/;
 			break;
 		}
-		}
-		JavaLog javaLog = this;
-		if (false)
+		Unsafe.Write(&((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003Eu__1, (TaskAwaiter)obj);
+		((AsyncTaskMethodBuilder*)/*Error near IL_00d3: Stack underflow*/)->Start<TStateMachine>(ref *(TStateMachine*)this);
+		int num = 0;
+		if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E1__state)->_003C_003Et__builder != 0)
 		{
-			javaLog = (JavaLog)0;
+			num = 0;
 		}
-		switch ((int)javaLog)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -73,22 +75,24 @@ public class JavaLog
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00縀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00縀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00舀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00舀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

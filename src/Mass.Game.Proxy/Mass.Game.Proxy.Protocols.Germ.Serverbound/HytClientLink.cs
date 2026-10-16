@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using DotNetty.Buffers;
 
 namespace Mass.Game.Proxy.Protocols.Germ.Serverbound;
@@ -42,19 +44,24 @@ public class HytClientLink : GermPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public HytClientLink()
+	public unsafe HytClientLink()
 	{
-		//IL_0042: Expected I4, but got Obj
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		//IL_001b: Expected Obj, but got Ref
+		//IL_0027: Expected VT, but got Obj
+		//IL_0041: Expected Obj, but got VT
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		HytClientLink hytClientLink = this;
-		if (false)
+		((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)this;
+		((_003C_003Ef__AnonymousType2<, , , >)/*Error near IL_0027: Stack underflow*/)._003Curl_003Ei__Field = (_003Curl_003Ej__TPar)this;
+		_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field != 0)
 		{
-			hytClientLink = (HytClientLink)0;
+			num = 0;
 		}
-		switch ((int)hytClientLink)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -62,36 +69,45 @@ public class HytClientLink : GermPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public HytClientLink(string version, string link)
+	public unsafe HytClientLink(string version, string link)
 	{
-		//IL_004a: Expected I4, but got Obj
-		//IL_0075: Expected Obj, but got I4
-		//IL_0030->IL0039: Incompatible stack types: I4 vs Obj
-		//IL_005e->IL0039: Incompatible stack heights: 4 vs 3
-		//IL_0039->IL0039: Incompatible stack heights: 5 vs 3
-		//IL_0069->IL0039: Incompatible stack heights: 4 vs 3
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		//IL_001b: Expected Obj, but got Ref
+		//IL_0027: Expected VT, but got Obj
+		//IL_0041: Expected Obj, but got VT
+		//IL_00a6: Expected Obj, but got I4
+		//IL_0086: Expected Obj, but got VT
+		//IL_008b->IL005a: Incompatible stack heights: 5 vs 3
+		//IL_005a->IL005a: Incompatible stack heights: 4 vs 3
+		//IL_0096->IL005a: Incompatible stack heights: 5 vs 3
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		HytClientLink hytClientLink = this;
-		if (true)
+		((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)this;
+		((_003C_003Ef__AnonymousType2<, , , >)/*Error near IL_0027: Stack underflow*/)._003Curl_003Ei__Field = (_003Curl_003Ej__TPar)this;
+		_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+		int num = 1;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field != 0)
 		{
-			hytClientLink = (HytClientLink)1;
+			num = 1;
 		}
 		while (true)
 		{
-			switch ((int)hytClientLink)
+			switch (num)
 			{
 			default:
 				return;
 			case 2:
-				if (0 == 0)
+				_ = ((_003C_003Ef__AnonymousType1<, , >)(object)link).uuid;
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field == 0)
 				{
 					_ = 0;
 				}
 				break;
 			case 1:
 			{
+				((_003C_003Ef__AnonymousType1<, , >)(object)this).Equals((object)version);
 				object obj = 2;
 				break;
 			}
@@ -136,11 +152,12 @@ public class HytClientLink : GermPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00ꘀ()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -162,10 +179,12 @@ public class HytClientLink : GermPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00꤀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -179,24 +198,30 @@ public class HytClientLink : GermPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_AB00(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -216,24 +241,30 @@ public class HytClientLink : GermPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00관(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -245,10 +276,12 @@ public class HytClientLink : GermPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00글()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -270,10 +303,12 @@ public class HytClientLink : GermPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00넀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -285,38 +320,50 @@ public class HytClientLink : GermPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00대(object P_0)
+	internal unsafe void _FF00대(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0045->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0065->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0050->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0070->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0049: Expected VT, but got I4
+		//IL_004e: Expected Obj, but got Ref
+		//IL_008d: Expected Obj, but got VT
+		//IL_0062->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0062->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_0092->IL0026: Incompatible stack heights: 7 vs 2
+		//IL_006d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006d->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_009d->IL0026: Incompatible stack heights: 7 vs 2
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			case 2:
 				return;
-			default:
-				_ = 32767;
-				if (2 == 0)
-				{
-					_ = 1;
-				}
-				break;
 			case 1:
 				_ = 32767;
-				if (0 == 0)
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+				_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
+				_ = 0;
+				if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic == null)
 				{
 					_ = 0;
 				}
-				break;
+				continue;
+			}
+			((_003C_003Ef__AnonymousType0<>)P_0)._002Ector((_003Caction_003Ej__TPar)32767);
+			bool flag = ((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref reference)).Equals(this);
+			obj2 = 2;
+			reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
+			if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
+			{
+				obj2 = 1;
+				reference = ref *(flag ? ((_003Caction_003Ej__TPar*)1) : ((_003Caction_003Ej__TPar*)null));
 			}
 		}
 	}
@@ -330,15 +377,19 @@ public class HytClientLink : GermPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00딀(object P_0)
+	internal unsafe void _FF00딀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0066->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0071->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0050->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_008e: Expected Obj, but got VT
+		//IL_0043: Expected VT, but got Obj
+		//IL_004d: Expected Obj, but got I4
+		//IL_004d: Expected Obj, but got Ref
+		//IL_0093->IL0026: Incompatible stack heights: 6 vs 2
+		//IL_0062->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_009e->IL0026: Incompatible stack heights: 6 vs 2
+		//IL_006d->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -349,15 +400,20 @@ public class HytClientLink : GermPacket
 			default:
 				return;
 			case 2:
-				_ = 32767;
-				if (true)
+				((_003C_003Ef__AnonymousType0<>)P_0)._002Ector((_003Caction_003Ej__TPar)this);
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals(32767);
+				_ = 1;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 				{
 					_ = 1;
 				}
 				break;
 			case 1:
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
 				_ = 32767;
-				if (0 == 0)
+				_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
+				_ = 0;
+				if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic == null)
 				{
 					_ = 0;
 				}

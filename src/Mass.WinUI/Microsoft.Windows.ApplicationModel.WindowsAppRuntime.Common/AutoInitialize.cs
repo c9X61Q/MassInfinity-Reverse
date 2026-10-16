@@ -1,6 +1,8 @@
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using WinRT;
 
 namespace Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Common;
 
@@ -14,11 +16,14 @@ internal class AutoInitialize
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public AutoInitialize()
+	public unsafe AutoInitialize()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		ExceptionHelpers.GetHRForException((Exception)(object)this);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -30,10 +35,13 @@ internal class AutoInitialize
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00_FF00_FF00鐀()
+	internal unsafe static void _FF00_FF00_FF00_FF00_FF00鐀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		_003CModule_003E.CheckAccessibleAttribute();
 	}
 }

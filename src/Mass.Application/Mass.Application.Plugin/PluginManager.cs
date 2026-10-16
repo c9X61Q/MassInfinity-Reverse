@@ -40,21 +40,8 @@ public class PluginManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public PluginManager()
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		PluginManager pluginManager = this;
-		if (false)
-		{
-			pluginManager = (PluginManager)0;
-		}
-		switch ((int)pluginManager)
-		{
-		case 0:
-			break;
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -80,139 +67,22 @@ public class PluginManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_E200(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0044->IL0092: Incompatible stack heights: 1 vs 0
-		//IL_0092->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0067->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_004e->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00ad->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 5;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 5:
-				if (P_0 != null)
-				{
-					_ = 4;
-					break;
-				}
-				return;
-			case 3:
-				obj2 = P_0;
-				if (true)
-				{
-					obj2 = 0;
-				}
-				break;
-			case 1:
-				obj2 = this;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-			case 2:
-				return;
-			case 4:
-				obj2 = P_0;
-				if (0 == 0)
-				{
-					obj2 = 3;
-				}
-				break;
-			case 0:
-				return;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_E300(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0052->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0074->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0065->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_008d->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 3;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 1:
-				if (0 == 0)
-				{
-					_ = 0;
-				}
-				break;
-			case 3:
-				if (P_0 != null)
-				{
-					_ = 2;
-				}
-				else
-				{
-					_ = 4;
-				}
-				break;
-			case 0:
-				return;
-			case 2:
-				return;
-			case 4:
-				obj2 = P_0;
-				if (1 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_E400(List<IPlugin> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 1;
-		while (true)
-		{
-			switch ((int)obj)
-			{
-			default:
-				return;
-			case 1:
-				if (0 == 0)
-				{
-					_ = 0;
-				}
-				break;
-			case 0:
-				return;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -226,30 +96,8 @@ public class PluginManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_E600(List<IPlugin> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0048->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 1;
-		while (true)
-		{
-			switch ((int)obj)
-			{
-			default:
-				return;
-			case 0:
-				return;
-			case 1:
-				if (0 == 0)
-				{
-					_ = 0;
-				}
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -263,11 +111,8 @@ public class PluginManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_E800()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -289,10 +134,8 @@ public class PluginManager
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_EB00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

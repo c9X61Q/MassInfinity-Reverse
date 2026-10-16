@@ -1,8 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using DotNetty.Buffers;
 using Mass.Game.Proxy.Enums;
+using Mass.Game.Proxy.Protocols.Hyt;
+using Mass.Game.Proxy.Protocols.OhMyGod;
 
 namespace Mass.Game.Proxy.Protocols.FakeForge.FmlHandshake;
 
@@ -45,10 +49,12 @@ public static class FmlHandshakeMessageCodec
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_2600()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -62,11 +68,12 @@ public static class FmlHandshakeMessageCodec
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_2800()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -86,33 +93,47 @@ public static class FmlHandshakeMessageCodec
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00ⴀ(object P_0, EnumProtocolVersion P_1)
+	internal unsafe static object _FF00_FF00_FF00_FF00ⴀ(object P_0, EnumProtocolVersion P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0066: Expected I4, but got Obj
-		//IL_011a: Expected I4, but got Obj
-		//IL_01a1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00e0->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0194->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_016b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01af->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01fe->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00f8->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_01ef->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c4->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0126->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0209->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0103->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0131->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0073: Expected I4, but got Obj
+		//IL_017a: Expected Obj, but got Ref
+		//IL_0181: Expected I4, but got Obj
+		//IL_018b: Expected VT, but got I4
+		//IL_018b: Expected Obj, but got I4
+		//IL_01bc: Expected VT, but got Ref
+		//IL_0147: Expected I4, but got Obj
+		//IL_027e: Expected Obj, but got I4
+		//IL_01b7: Expected Obj, but got VT
+		//IL_0120: Expected Obj, but got VT
+		//IL_026d: Expected VT, but got Ref
+		//IL_0156: Expected Obj, but got VT
+		//IL_020e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0105->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01fd->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01c8->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0283->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0125->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0268->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_026d->IL026d: Incompatible stack heights: 1 vs 2
+		//IL_00e5->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_015b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_028e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0130->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0166->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 16;
 		object obj2 = obj;
 		while (true)
 		{
+			_003C_003Ef__AnonymousType0<> anon;
 			switch ((int)obj2)
 			{
+			default:
+				anon = (_003C_003Ef__AnonymousType0<>)new { };
+				break;
 			case 9:
 				if ((nint)obj != 254)
 				{
@@ -121,13 +142,14 @@ public static class FmlHandshakeMessageCodec
 				}
 				goto case 14;
 			case 10:
-				obj = (object)/*Error near IL_00d6: Stack underflow*/;
+				obj = new { };
 				obj2 = 8;
 				continue;
 			case 3:
 				if ((nint)obj != 255)
 				{
-					if (17 == 0)
+					obj2 = 17;
+					if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic == null)
 					{
 						obj2 = 16;
 					}
@@ -140,67 +162,83 @@ public static class FmlHandshakeMessageCodec
 				case 2:
 					break;
 				default:
-					goto IL_011a;
+					goto IL_0147;
 				case 1:
-					goto IL_0140;
+					goto IL_0175;
 				case 0:
-					goto IL_0194;
+					goto IL_01fd;
 				case 3:
-					goto IL_01de;
+					goto IL_0257;
 				}
 				goto case 10;
 			case 1:
 			case 17:
-				goto IL_0140;
+				goto IL_0175;
 			case 2:
 			case 6:
 			case 8:
 			case 11:
 			case 12:
-				return P_0;
+				return ((_003C_003Ef__AnonymousType2<, , , >)P_0).user_id;
 			case 14:
-				obj = (object)/*Error near IL_0161: Stack underflow*/;
-				obj2 = 11;
+				obj = new
+				{
+					url = (_003Curl_003Ej__TPar)/*Error near IL_01bc: Stack underflow*/,
+					payload = (_003Cpayload_003Ej__TPar)/*Error near IL_01bc: Stack underflow*/,
+					context = (_003Ccontext_003Ej__TPar)/*Error near IL_01bc: Stack underflow*/,
+					user_id = (_003Cuser_id_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)
+				};
+				_ = 11;
 				continue;
 			case 13:
-				obj = (object)/*Error near IL_018a: Stack underflow*/;
+				obj = new { };
 				obj2 = 12;
 				continue;
 			case 7:
-				goto IL_0194;
+				goto IL_01fd;
 			case 16:
-				obj = P_0;
-				obj2 = 15;
-				continue;
+				/*Error near IL_020f: Member reference must be method, but was: Field*/;
 			case 4:
-				goto IL_01de;
-				IL_01de:
-				if (P_1 <= EnumProtocolVersion.V1710)
+				goto IL_0257;
+			case 5:
 				{
+					_ = new
+					{
+						entry = (_003Centry_003Ej__TPar)/*Error near IL_026d: Stack underflow*/,
+						sid = (_003Csid_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)
+					};
 					break;
 				}
-				obj2 = 5;
-				continue;
-				IL_0194:
-				obj = (object)/*Error near IL_0197: Stack underflow*/;
+				IL_0257:
+				if (P_1 > EnumProtocolVersion.V1710)
+				{
+					obj2 = 5;
+					continue;
+				}
+				goto default;
+				IL_01fd:
+				obj = new { };
 				obj2 = 6;
 				continue;
-				IL_0140:
+				IL_0175:
+				((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_017a: Stack underflow*/).Equals((object)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+				_ = (object)((byte)(int)obj != 0);
 				_ = ref obj;
-				_ = 28;
-				_ = 1;
+				((EqualityComparer<_00211>)28).GetHashCode((_00211)1);
 				_ = ref obj;
-				_ = ref obj;
-				throw ref obj;
-				IL_011a:
-				if (9 != 0)
+				_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
+				/*Error near IL_0192: Member reference must be method, but was: Field*/;
+				IL_0147:
+				obj2 = 9;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field != 0)
 				{
 					obj2 = 5;
 				}
 				continue;
 			}
-			obj = (object)/*Error near IL_01f2: Stack underflow*/;
-			if (2 != 0)
+			obj = anon;
+			obj2 = 2;
+			if (((EntityLaunchGameProxy)EntityLaunchGameProxy.GameVersion__BackingField).ModHashList__BackingField != null)
 			{
 				obj2 = 2;
 			}
@@ -216,35 +254,40 @@ public static class FmlHandshakeMessageCodec
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_3000(object P_0, object P_1, EnumProtocolVersion P_2)
+	internal unsafe static object _FF00_FF00_FF00_FF00_3000(object P_0, object P_1, EnumProtocolVersion P_2)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_007a: Expected I4, but got Obj
-		//IL_0208: Expected Obj, but got I4
-		//IL_0258: Expected Obj, but got I4
-		//IL_0116: Expected Obj, but got I4
-		//IL_024b: Expected Obj, but got I4
-		//IL_01ce: Expected Obj, but got I4
-		//IL_0214->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0262->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_022e->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0122->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0255->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008e->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_01da->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0184->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_021f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00e8->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_016b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_013e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01a0->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0239->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a1->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_012d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01e5->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_018f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00ac->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0087: Expected I4, but got Obj
+		//IL_028d: Expected Obj, but got I4
+		//IL_02f1: Expected Obj, but got I4
+		//IL_01b9: Expected Obj, but got Ref
+		//IL_0147: Expected Obj, but got I4
+		//IL_0156: Expected Obj, but got VT
+		//IL_02e4: Expected Obj, but got I4
+		//IL_0094: Expected VT, but got Obj
+		//IL_0094: Expected VT, but got Obj
+		//IL_0094: Expected Obj, but got Ref
+		//IL_0243: Expected Obj, but got I4
+		//IL_02a1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02fb->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02c7->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_015b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02ee->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009f->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0257->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01ed->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02ac->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0111->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01b4->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_017b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_020d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02d2->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_00be->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0166->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0262->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01f8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c9->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 12;
@@ -254,12 +297,14 @@ public static class FmlHandshakeMessageCodec
 			switch ((int)obj2)
 			{
 			case 20:
+				((EqualityComparer<_00210>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals((_00210?)P_0, (_00210?)obj);
 				_ = 13;
 				break;
 			case 14:
-				if (P_1 != null)
+				if (P_1 is _003C_003Ef__AnonymousType3<, >)
 				{
-					if (true)
+					obj2 = 1;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 					{
 						obj2 = 4;
 					}
@@ -267,7 +312,7 @@ public static class FmlHandshakeMessageCodec
 				}
 				goto case 8;
 			case 2:
-				if (P_1 != null)
+				if (P_1 is EntitySocks5Account)
 				{
 					obj2 = 6;
 					break;
@@ -276,20 +321,21 @@ public static class FmlHandshakeMessageCodec
 			case 15:
 			case 22:
 				obj = 3;
-				if (5 != 0)
+				obj2 = 5;
+				if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument != null)
 				{
 					obj2 = 5;
 				}
 				break;
 			case 11:
-				if (P_1 == null)
+				if (!(P_1 is GameProxy._003CListenAsync_003Ed__69))
 				{
 					obj2 = 10;
 					break;
 				}
 				goto case 19;
 			case 10:
-				if (P_1 != null)
+				if (P_1 is OhMyGodEncryption)
 				{
 					obj2 = 22;
 					break;
@@ -297,16 +343,19 @@ public static class FmlHandshakeMessageCodec
 				goto case 2;
 			case 8:
 			case 9:
-				throw P_1;
+				_ = ((_003C_003Ef__AnonymousType2<, , , >)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).url;
+				_ = ((_003C_003Ef__AnonymousType2<, , , >)P_1).payload;
+				/*Error near IL_01c0: Member reference must be method, but was: Field*/;
 			default:
 				obj = obj;
-				if (20 != 0)
+				obj2 = 20;
+				if (((EntitySocks5)EntitySocks5.Address__BackingField).Port__BackingField != 0)
 				{
 					obj2 = 19;
 				}
 				break;
 			case 12:
-				if (P_1 == null)
+				if (!(P_1 is HytProtocol))
 				{
 					obj2 = 11;
 					break;
@@ -314,7 +363,8 @@ public static class FmlHandshakeMessageCodec
 				goto case 21;
 			case 21:
 				obj = 1;
-				if (6 != 0)
+				obj2 = 6;
+				if (((EntityLaunchGameProxy)EntityLaunchGameProxy.GameId__BackingField).GameType__BackingField != 0)
 				{
 					obj2 = 18;
 				}
@@ -322,13 +372,16 @@ public static class FmlHandshakeMessageCodec
 			case 1:
 			case 6:
 				obj = 255;
-				if (false)
+				obj2 = 0;
+				if (((EntityLaunchGameProxy)EntityLaunchGameProxy.Name__BackingField).ServerAddress__BackingField != null)
 				{
 					obj2 = 0;
 				}
 				break;
 			case 13:
-				if (10 == 0)
+				_003C_003Ef__AnonymousType3<, >.DecorateIntegratedProgram();
+				_ = 10;
+				if (((EntityLaunchGameProxy)EntityLaunchGameProxy.Socks5__BackingField).Value__BackingField == null)
 				{
 					_ = 16;
 				}

@@ -4,12 +4,15 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using Mass.Application.Desktop.Models;
 using Mass.Application.Models;
 using Mass.Common.Extensions;
 using Mass.Domain.Desktop.Entities;
+using Mass.Domain.Desktop.Entities.RentalGame;
 using Mass.Domain.Entities.Netease;
 using Mass.Domain.Mobile.Entities;
 using Mass.Domain.Mobile.Entities.Game;
+using Mass.Domain.Mobile.Entities.NetGame;
 using RestSharp;
 using Serilog;
 
@@ -83,12 +86,13 @@ public class NeteaseMobile : IDisposable
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static object ꘀ()
+		internal unsafe static object ꘀ()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return MobileSession._003C_003Ec._003C_003E9;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -100,13 +104,13 @@ public class NeteaseMobile : IDisposable
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static byte ꠀ()
+		internal unsafe static byte ꠀ()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			return (MobileSession._003C_003Ec._003C_003E9 == null) ? ((byte)1) : ((byte)0);
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -128,170 +132,167 @@ public class NeteaseMobile : IDisposable
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private unsafe sealed void 글()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_0246: Expected Obj, but got Ref
-			//IL_003f: Expected Obj, but got Ref
-			//IL_00ab: Expected Obj, but got Ref
-			//IL_0170: Expected Obj, but got I4
-			//IL_0161: Expected Obj, but got I4
-			//IL_00d4: Expected Obj, but got I4
-			//IL_00f1: Expected Obj, but got Ref
-			//IL_0289->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_026d->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0252->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_00b5->IL006d: Incompatible stack types: I4 vs Ref
-			//IL_005e->IL006d: Incompatible stack heights: 0 vs 1
-			//IL_0294->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0278->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_025d->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_0069->IL006d: Incompatible stack types: I4 vs Ref
-			//IL_017d->IL006d: Incompatible stack heights: 2 vs 1
-			//IL_0118->IL006d: Incompatible stack heights: 2 vs 1
-			//IL_0156->IL006d: Incompatible stack heights: 9 vs 1
-			//IL_019a->IL006d: Incompatible stack heights: 3 vs 1
-			//IL_016b->IL006d: Incompatible stack heights: 2 vs 1
-			//IL_00e1->IL006d: Incompatible stack heights: 2 vs 1
-			//IL_00fd->IL006d: Incompatible stack heights: 0 vs 1
-			//IL_0188->IL006d: Incompatible stack heights: 2 vs 1
-			//IL_0123->IL006d: Incompatible stack heights: 2 vs 1
-			//IL_01b9->IL006d: Incompatible stack heights: 0 vs 1
-			//IL_01a5->IL006d: Incompatible stack heights: 3 vs 1
-			//IL_00ec->IL006d: Incompatible stack heights: 2 vs 1
-			//IL_00cf->IL006d: Incompatible stack types: I4 vs Ref
-			//IL_0108->IL006d: Incompatible stack types: I4 vs Ref
-			//IL_01c4->IL006d: Incompatible stack types: I4 vs Ref
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0043: Expected I4, but got Obj
+			//IL_038a: Expected native int or pointer, but got Obj
+			//IL_004e: Expected Obj, but got Ref
+			//IL_00c6: Expected Obj, but got Ref
+			//IL_0207: Expected Obj, but got I4
+			//IL_020c: Expected Obj, but got I4
+			//IL_0216: Expected native int or pointer, but got Obj
+			//IL_018a: Expected native int or pointer, but got Obj
+			//IL_0102: Expected Obj, but got I4
+			//IL_0107: Expected Obj, but got I4
+			//IL_00e8: Expected native int or pointer, but got Obj
+			//IL_0394->IL0026: Incompatible stack heights: 2 vs 1
+			//IL_0368->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0341->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_005a->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_039f->IL0026: Incompatible stack heights: 2 vs 1
+			//IL_0373->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_034c->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_024d->IL0086: Incompatible stack heights: 2 vs 1
+			//IL_0258->IL0086: Incompatible stack heights: 2 vs 1
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			object obj = 5;
-			object obj2 = obj;
+			object stateMachine = 5;
+			object obj = stateMachine;
 			while (true)
 			{
-				ref _003CAuthenticationAsync_003Ed__16 reference;
-				switch ((int)obj2)
+				int num;
+				switch ((int)obj)
 				{
 				case 5:
-					obj = (object)Unsafe.AsPointer(ref this);
-					obj2 = 4;
+					stateMachine = MobileSession._003C_003Ec._003C_003E9;
+					obj = 4;
 					break;
 				case 1:
 					return;
 				default:
-					if (obj != null)
+					if (stateMachine != null)
 					{
-						if (10 != 0)
+						num = 10;
+						if (((MobileSession._003C_003Ec__DisplayClass19_0)(object)MobileSession._003C_003Ec._003C_003E9__15_0).gameId != null)
 						{
-							reference = ref *(_003CAuthenticationAsync_003Ed__16*)8;
+							num = 8;
 						}
-						goto IL_006d;
+						goto IL_0086;
 					}
-					goto IL_00a7;
+					goto IL_00c0;
 				case 4:
-					obj = (object)Unsafe.AsPointer(ref this);
-					if (0 == 0)
+					stateMachine = ((MobileSession._003CGetRentalGameAddressAsync_003Ed__18)this).password;
+					obj = 0;
+					if (MobileSession._003CGetRentalGameAddressAsync_003Ed__18.StoreComparator == null)
 					{
-						obj2 = 0;
+						obj = 0;
 					}
 					break;
 				case 3:
-					goto IL_025d;
+					goto IL_034c;
 				case 2:
 					{
-						if (1 == 0)
+						_ = ref ((MobileSession._003CGetRentalGamesAsync_003Ed__17)this).offset;
+						((IAsyncStateMachine)stateMachine).MoveNext();
+						_ = 1;
+						if (((MobileSession._003CRequestAsync_003Ed__10<>*)(nint)MobileSession._003CGetRentalGamesAsync_003Ed__17.EncodeConsumer)->_003C_003E1__state == 0)
 						{
 							_ = 1;
 						}
 						break;
 					}
-					IL_00a7:
-					obj = (object)Unsafe.AsPointer(ref this);
-					reference = ref *(_003CAuthenticationAsync_003Ed__16*)8;
-					goto IL_006d;
-					IL_006d:
+					IL_00c0:
+					stateMachine = MobileSession._003C_003Ec__DisplayClass19_0.CheckRemoteExplorer;
+					num = 8;
+					goto IL_0086;
+					IL_0086:
 					while (true)
 					{
-						switch ((uint)Unsafe.AsPointer(ref reference))
+						switch (num)
 						{
-						case 9u:
+						case 9:
 							return;
-						case 11u:
+						case 11:
 							break;
-						case 8u:
-							reference = ref this;
-							if (7 != 0)
+						case 8:
+							Unsafe.As<int, AsyncTaskMethodBuilder<EntityRentalGameAddress>>(ref ((MobileSession._003CEntitiesRequestAsync_003Ed__9<>)this)._003C_003E1__state) = default;
+							num = 7;
+							if (((MobileSession._003CEntitiesRequestAsync_003Ed__9<>*)(nint)MobileSession._003CEntitiesRequestAsync_003Ed__9<>._003C_003E4__this)->url != null)
 							{
-								reference = ref *(_003CAuthenticationAsync_003Ed__16*)1;
+								num = 1;
 							}
 							continue;
-						case 7u:
-							obj = -1;
-							if (6 != 0)
+						case 7:
+							stateMachine = -1;
+							((MobileSession._003CEntitiesRequestAsync_003Ed__9<>)this).body = -1;
+							num = 6;
+							if ((int)((MobileSession._003CEntitiesRequestAsync_003Ed__9<>*)(MobileSession._003CEntitiesRequestAsync_003Ed__9<>.checkCode ? 1 : 0))->_003C_003Eu__1 != 0)
 							{
-								_ = 5;
+								num = 5;
 							}
 							continue;
-						case 10u:
-							obj = (object)Unsafe.AsPointer(ref this);
-							if (2 != 0)
+						case 10:
+							_ = ((MobileSession._003CEntityRequestAsync_003Ed__7)this)._003C_003E1__state;
+							/*Error near IL_012c: Member reference must be method, but was: Field*/;
+						case 1:
+							((MobileSession._003CEntityRequestAsync_003Ed__7)this).body = stateMachine;
+							num = 5;
+							if ((int)((MobileSession._003CEntityRequestAsync_003Ed__7*)(MobileSession._003CEntityRequestAsync_003Ed__7.checkCode ? 1 : 0))->_003C_003Eu__1 != 0)
 							{
-								reference = ref *(_003CAuthenticationAsync_003Ed__16*)4;
+								num = 0;
 							}
 							continue;
-						case 1u:
-							if (5 != 0)
-							{
-								_ = 0;
-							}
-							continue;
-						case 4u:
+						case 4:
+							_ = MobileSession._003CEntityRequestAsync_003Ed__7.CheckGroupedEmitter;
+							MobileSession.DecorateEfficientStream();
 							_ = 1;
-							_ = 1;
-							_ = ref obj;
-							obj = obj;
-							_ = 3;
-							continue;
-						case 6u:
-							_ = ref obj;
-							obj = 1;
-							_ = 2;
-							continue;
+							/*Error near IL_0195: Member reference must be method, but was: Field*/;
+						case 6:
+							_ = ref stateMachine;
+							/*Error near IL_01d7: Member reference must be method, but was: Field*/;
 						default:
-							obj = 0;
-							if (1 == 0)
+							stateMachine = 0;
+							((MobileSession._003CGetNetGameAddressAsync_003Ed__21)this)._003C_003E4__this = (MobileSession)0;
+							num = 1;
+							if ((int)((MobileSession._003CGetNetGameAddressAsync_003Ed__21*)(nint)MobileSession._003CGetNetGameAddressAsync_003Ed__21.gameId)->_003C_003Eu__1 == 0)
 							{
-								_ = 1;
+								num = 1;
 							}
 							continue;
-						case 5u:
-							_ = ref obj;
-							if (4 == 0)
+						case 5:
+							_ = ref MobileSession._003CGetNetGameAddressAsync_003Ed__21.GuideRequester;
+							((AsyncTaskMethodBuilder*)(&stateMachine))->Start(ref Unsafe.As<_003CAuthenticationAsync_003Ed__16, _003CInitAsync_003Ed__12>(ref this));
+							_ = 4;
+							if (((MobileSession._003CGetNetGameDetailsAsync_003Ed__20)MobileSession._003CGetNetGameDetailsAsync_003Ed__20._003C_003Et__builder)._003C_003E4__this == null)
 							{
 								_ = 9;
 							}
 							continue;
-						case 3u:
-							if (&obj == null)
+						case 3:
+							((AsyncTaskMethodBuilder<EntityRentalGameAddress>*)/*Error near IL_025f: Stack underflow*/)->Start<TStateMachine>(ref *(TStateMachine*)(&stateMachine));
+							if ((int)/*Error near IL_0264: Stack underflow*/ == 0)
 							{
-								if (0 == 0)
+								num = 0;
+								if (MobileSession._003CGetNetGameDetailsAsync_003Ed__20.AttachWrapper == null)
 								{
-									reference = ref *(_003CAuthenticationAsync_003Ed__16*)null;
+									num = 0;
 								}
 								continue;
 							}
-							goto case 6u;
-						case 2u:
-							goto IL_025d;
+							goto case 6;
+						case 2:
+							goto IL_034c;
 						}
 						break;
 					}
-					goto IL_00a7;
-					IL_025d:
-					_ = -2;
-					if (2 == 0)
+					goto IL_00c0;
+					IL_034c:
+					((MobileSession._003CGetRentalGamesAsync_003Ed__17)this)._003C_003E1__state = -2;
+					obj = 2;
+					if (((MobileSession._003CGetRentalGamesAsync_003Ed__17)MobileSession._003CGetRentalGamesAsync_003Ed__17._003C_003Et__builder)._003C_003E4__this == null)
 					{
-						_ = 1;
+						obj = 1;
 					}
 					break;
 				}
@@ -315,13 +316,15 @@ public class NeteaseMobile : IDisposable
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private sealed void 넀(object P_0)
+		private unsafe sealed void 넀(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_003e: Expected Obj, but got Ref
+			//IL_0058->IL0026: Incompatible stack heights: 3 vs 1
+			//IL_0063->IL0026: Incompatible stack heights: 3 vs 1
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 1;
@@ -332,7 +335,10 @@ public class NeteaseMobile : IDisposable
 				default:
 					return;
 				case 1:
-					if (false)
+					_ = ref MobileSession._003C_003Ec._003C_003E9;
+					_ = ((AsyncTaskMethodBuilder*)P_0)->Task;
+					_ = 0;
+					if (MobileSession._003C_003Ec__DisplayClass19_0.CheckRemoteExplorer != null)
 					{
 						_ = 0;
 					}
@@ -410,12 +416,13 @@ public class NeteaseMobile : IDisposable
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static object 대()
+		internal unsafe static object 대()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return MobileSession._003C_003Ec._003C_003E9;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -435,13 +442,13 @@ public class NeteaseMobile : IDisposable
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static byte 똀()
+		internal unsafe static byte 똀()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			return (MobileSession._003C_003Ec._003C_003E9 == null) ? ((byte)1) : ((byte)0);
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -455,143 +462,148 @@ public class NeteaseMobile : IDisposable
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private unsafe sealed void 뤀()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_0040: Expected Obj, but got Ref
-			//IL_02a3: Expected Obj, but got Ref
-			//IL_00e5: Expected Obj, but got Ref
-			//IL_0101: Expected Obj, but got I4
-			//IL_0124: Expected Obj, but got I4
-			//IL_0150: Expected Obj, but got I4
-			//IL_01fc: Expected Obj, but got I4
-			//IL_01be: Expected Obj, but got Ref
-			//IL_0067->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_02be->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_004c->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_02ad->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_0072->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_02c9->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0084->IL0088: Incompatible stack heights: 1 vs 0
-			//IL_0057->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_00fc->IL0088: Incompatible stack heights: 1 vs 0
-			//IL_010e->IL0088: Incompatible stack heights: 2 vs 0
-			//IL_0130->IL0088: Incompatible stack heights: 1 vs 0
-			//IL_015c->IL0088: Incompatible stack heights: 6 vs 0
-			//IL_01d8->IL0088: Incompatible stack heights: 4 vs 0
-			//IL_00d5->IL0088: Incompatible stack heights: 1 vs 0
-			//IL_0209->IL0088: Incompatible stack heights: 2 vs 0
-			//IL_01c8->IL0088: Incompatible stack heights: 1 vs 0
-			//IL_0193->IL0088: Incompatible stack heights: 2 vs 0
-			//IL_0119->IL0088: Incompatible stack heights: 2 vs 0
-			//IL_013b->IL0088: Incompatible stack heights: 1 vs 0
-			//IL_0167->IL0088: Incompatible stack heights: 6 vs 0
-			//IL_00e0->IL0088: Incompatible stack heights: 1 vs 0
-			//IL_0214->IL0088: Incompatible stack heights: 2 vs 0
-			//IL_019e->IL0088: Incompatible stack heights: 2 vs 0
-			//IL_01f7->IL0088: Incompatible stack heights: 1 vs 0
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0043: Expected I4, but got Obj
+			//IL_0078: Expected Obj, but got I4
+			//IL_0078: Expected Obj, but got Ref
+			//IL_03d2: Expected native int or pointer, but got Obj
+			//IL_004f: Expected Obj, but got Ref
+			//IL_03b1: Expected Obj, but got VT
+			//IL_0123: Expected Obj, but got VT
+			//IL_02a5: Expected Obj, but got Ref
+			//IL_02a5: Expected Obj, but got VT
+			//IL_0147: Expected Obj, but got I4
+			//IL_014c: Expected Obj, but got I4
+			//IL_0156: Expected native int or pointer, but got Obj
+			//IL_01af: Expected native int or pointer, but got Obj
+			//IL_0101: Expected native int or pointer, but got Obj
+			//IL_02ce: Expected Obj, but got I4
+			//IL_0231: Expected I4, but got Obj
+			//IL_008c->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_03dc->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0065->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_03bb->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0097->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_03e7->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_00a9->IL00ad: Incompatible stack heights: 1 vs 2
+			//IL_0070->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_00e6->IL0116: Incompatible stack heights: 1 vs 0
+			//IL_02aa->IL016b: Incompatible stack heights: 0 vs 1
+			//IL_029e->IL00ad: Incompatible stack heights: 6 vs 2
+			//IL_02be->IL00ad: Incompatible stack heights: 1 vs 2
+			//IL_02c9->IL00ad: Incompatible stack heights: 1 vs 2
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 5;
 			object obj2 = obj;
 			while (true)
 			{
+				int num;
+				TaskAwaiter<Entities<T>> taskAwaiter;
 				switch ((int)obj2)
 				{
 				case 2:
 					return;
 				case 4:
-					obj = (object)Unsafe.AsPointer(ref this);
-					if (2 != 0)
+					obj = MobileSession._003C_003Ec._003C_003E9;
+					obj2 = 2;
+					if (((MobileSession._003C_003Ec__DisplayClass19_0)(object)MobileSession._003C_003Ec._003C_003E9__15_0).gameId != null)
 					{
 						obj2 = 3;
 					}
 					break;
 				default:
-					_ = -2;
-					if (1 == 0)
+					MobileSession._003C_003Ec__DisplayClass19_0.CheckRemoteExplorer = (MobileSession._003C_003Ec__DisplayClass19_0)(-2);
+					obj2 = 1;
+					if ((int)((MobileSession._003CEntitiesRequestAsync_003Ed__9<>*)MobileSession._003CEntitiesRequestAsync_003Ed__9<>._003C_003E1__state)->_003C_003Et__builder == 0)
 					{
-						_ = 0;
+						obj2 = 0;
 					}
 					break;
 				case 3:
 					if (obj == null)
 					{
 						_ = 4;
-						goto IL_0088;
+						goto IL_00ad;
 					}
-					goto IL_00e0;
+					goto IL_0116;
 				case 5:
-					obj = (object)Unsafe.AsPointer(ref this);
+					obj = ((MobileSession._003CRequestAsync_003Ed__10<>)this)._003C_003Et__builder;
 					obj2 = 4;
 					break;
 				case 1:
 					{
-						if (2 == 0)
+						((AsyncTaskMethodBuilder<_00210[]>*)/*Error near IL_03c8: Stack underflow*/)->AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref Unsafe.As<MobileSession, TAwaiter>(ref ((MobileSession._003CRequestAsync_003Ed__10<>)this)._003C_003E4__this), ref *(TStateMachine*)obj);
+						obj2 = 2;
+						if (!((MobileSession._003CRequestAsync_003Ed__10<>*)(nint)MobileSession._003CRequestAsync_003Ed__10<>.body)->checkCode)
 						{
-							_ = 2;
+							obj2 = 2;
 						}
 						break;
 					}
-					IL_0088:
+					IL_00ad:
 					while (true)
 					{
-						switch ((int)/*Error near IL_00c1: Stack underflow*/)
+						switch (num)
 						{
 						case 5:
 							return;
 						case 7:
 							break;
 						case 8:
-							if (0 == 0)
+							((MobileSession._003CEntitiesRequestAsync_003Ed__9<>)this)._003C_003E4__this = null;
+							num = 0;
+							if (!((MobileSession._003CEntitiesRequestAsync_003Ed__9<>*)(nint)MobileSession._003CEntitiesRequestAsync_003Ed__9<>.body)->checkCode)
 							{
-								_ = 1;
+								num = 1;
 							}
 							continue;
 						case 12:
-							goto IL_00e0;
+							goto IL_0116;
 						case 1:
 							obj = -1;
-							if (2 != 0)
+							((MobileSession._003CEntityRequestAsync_003Ed__7)this).url = (string)(-1);
+							num = 2;
+							if (((MobileSession._003CEntityRequestAsync_003Ed__7*)(nint)MobileSession._003CEntityRequestAsync_003Ed__7.body)->checkCode)
 							{
-								_ = 2;
+								num = 2;
 							}
 							continue;
 						case 2:
 							_ = ref obj;
-							obj = 1;
-							if (7 == 0)
-							{
-								_ = 7;
-							}
-							continue;
+							/*Error near IL_016d: Member reference must be method, but was: Field*/;
 						case 3:
+							_ = ((MobileSession._003CEntityRequestAsync_003Ed__8<>*)(nint)obj)->_003C_003Eu__1;
+							MobileSession._003C_003Ec__DisplayClass19_0.DecorateActiveAuthenticator();
 							_ = 1;
-							obj = 1;
-							if (0 == 0)
-							{
-								_ = 0;
-							}
-							continue;
+							/*Error near IL_01ba: Member reference must be method, but was: Field*/;
 						case 11:
-							if (6 != 0)
+							((MobileSession._003CGetNetGameDetailsAsync_003Ed__20)this)._003C_003E1__state = (int)obj;
+							num = 6;
+							if (((MobileSession._003CGetNetGameDetailsAsync_003Ed__20)MobileSession._003CGetNetGameDetailsAsync_003Ed__20._003C_003Et__builder)._003C_003E4__this != null)
 							{
-								_ = 4;
+								num = 4;
 							}
 							continue;
 						case 4:
 						case 10:
-							obj = (object)Unsafe.AsPointer(ref this);
-							_ = 8;
+							obj = MobileSession._003CGetNetGameDetailsAsync_003Ed__20.AttachWrapper;
+							num = 8;
 							continue;
 						case 6:
+							_ = ref ((MobileSession._003CGetNetGamesAsync_003Ed__15)this)._003C_003E1__state;
 							_ = ref obj;
+							Array.Empty<EntityLinkServer>();
 							_ = 5;
 							continue;
 						default:
-							if (&obj == null)
+							((SessionContext<MobileSession, EntityNetGameItem>)/*Error near IL_02a5: Stack underflow*/)._002Ector((MobileSession)taskAwaiter, (EntityNetGameItem)(&obj));
+							if ((int)/*Error near IL_02aa: Stack underflow*/ == 0)
 							{
-								if (9 == 0)
+								_ = 9;
+								if (MobileSession._003CGetNetGamesAsync_003Ed__15.DecorateDynamicSingleton == null)
 								{
 									_ = 8;
 								}
@@ -600,22 +612,26 @@ public class NeteaseMobile : IDisposable
 							goto case 2;
 						case 9:
 							obj = 0;
-							if (11 != 0)
+							((MobileSession._003CGetRentalGameAddressAsync_003Ed__18)this)._003C_003E1__state = 0;
+							num = 11;
+							if (((MobileSession._003CGetRentalGameAddressAsync_003Ed__18)MobileSession._003CGetRentalGameAddressAsync_003Ed__18._003C_003Et__builder)._003C_003E4__this != null)
 							{
-								_ = 0;
+								num = 0;
 							}
 							continue;
 						}
 						break;
 					}
 					goto default;
-					IL_00e0:
-					obj = (object)Unsafe.AsPointer(ref this);
-					if (3 == 0)
+					IL_0116:
+					taskAwaiter = ((MobileSession._003CEntitiesRequestAsync_003Ed__9<>)this)._003C_003Eu__1;
+					obj = AsyncTaskMethodBuilder<_0021_00210[]>.Create();
+					num = 3;
+					if (((MobileSession._003CEntityRequestAsync_003Ed__7)MobileSession._003CEntityRequestAsync_003Ed__7._003C_003Et__builder)._003C_003E4__this == null)
 					{
-						_ = 2;
+						num = 2;
 					}
-					goto IL_0088;
+					goto IL_00ad;
 				}
 			}
 		}
@@ -629,13 +645,15 @@ public class NeteaseMobile : IDisposable
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private sealed void 묀(object P_0)
+		private unsafe sealed void 묀(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_003f: Expected Obj, but got Ref
+			//IL_0059->IL0026: Incompatible stack heights: 3 vs 1
+			//IL_0064->IL0026: Incompatible stack heights: 3 vs 1
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 1;
@@ -648,7 +666,10 @@ public class NeteaseMobile : IDisposable
 				case 0:
 					return;
 				case 1:
-					if (0 == 0)
+					_ = ref MobileSession._003C_003Ec._003C_003E9;
+					_ = ((AsyncTaskMethodBuilder*)P_0)->Task;
+					_ = 0;
+					if (MobileSession._003C_003Ec__DisplayClass19_0.CheckRemoteExplorer == null)
 					{
 						_ = 0;
 					}
@@ -724,12 +745,13 @@ public class NeteaseMobile : IDisposable
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static object 봀()
+		internal unsafe static object 봀()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return MobileSession._003C_003Ec._003C_003E9;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1445,26 +1467,19 @@ public class NeteaseMobile : IDisposable
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public NeteaseMobile()
+	public unsafe NeteaseMobile()
 	{
-		//IL_0052: Expected I4, but got Obj
-		//IL_0040->IL0049: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_003a: Expected I4, but got Obj
+		((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		_ = null;
-		_ = null;
-		_ = 0;
-		NeteaseMobile neteaseMobile = this;
-		if (false)
-		{
-			neteaseMobile = (NeteaseMobile)0;
-		}
-		switch ((int)neteaseMobile)
-		{
-		case 0:
-			break;
-		}
+		((AsyncTaskMethodBuilder<_0021_00210>*)/*Error near IL_001a: Stack underflow*/)->Start(ref *(MobileSession._003CRequestAsync_003Ed__10<_0021_00210>*)this);
+		MobileSession._003C_003Ec._003C_003E9__15_0 = (Func<EntityNetGameItem, long>)/*Error near IL_001f: Stack underflow*/;
+		((MobileSession)this).Dispose();
+		MobileSession._003C_003Ec__DisplayClass19_0.CheckRemoteExplorer = (MobileSession._003C_003Ec__DisplayClass19_0)/*Error near IL_002f: Stack underflow*/;
+		((MobileSession)/*Error near IL_003a: Stack underflow*/).EntityRequestAsync<T>((string)/*Error near IL_003a: Stack underflow*/, (object)/*Error near IL_003a: Stack underflow*/, (byte)(int)this != 0);
+		/*Error near IL_003a: Member reference must be method, but was: Field*/;
 	}
 
 	static NeteaseMobile()
@@ -1577,13 +1592,14 @@ public class NeteaseMobile : IDisposable
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte 踀(object P_0)
+	internal unsafe byte 踀(object P_0)
 	{
-		//IL_000b: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001c: Expected I4, but got Obj
+		((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (byte)(int)P_0;
+		return (byte)(int)((AsyncTaskMethodBuilder*)P_0)->Task;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1595,48 +1611,44 @@ public class NeteaseMobile : IDisposable
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void 退()
+	internal unsafe sealed void 退()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0048->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0063->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0056->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0061->IL0026: Incompatible stack heights: 3 vs 1
+		((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
-		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj2)
+			switch ((int)obj)
 			{
-			default:
-				obj2 = this;
-				if (2 == 0)
-				{
-					obj2 = 2;
-				}
-				break;
 			case 2:
 				return;
 			case 1:
-				obj2 = this;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
+				_ = MobileSession._003C_003Ec__DisplayClass19_0.CheckRemoteExplorer;
+				/*Error near IL_0068: Member reference must be method, but was: Field*/;
+			}
+			AsyncTaskMethodBuilder.Create();
+			_ = 2;
+			if (((MobileSession._003C_003Ec__DisplayClass19_0)(object)MobileSession._003C_003Ec._003C_003E9__15_0).gameId == null)
+			{
+				_ = 2;
 			}
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object 鄀()
+	internal unsafe static object 鄀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return MobileSession._003C_003Ec._003C_003E9;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1709,12 +1721,13 @@ public class NeteaseMobile : IDisposable
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object 頀()
+	internal unsafe static object 頀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return MobileSession._003C_003Ec._003C_003E9;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1734,13 +1747,13 @@ public class NeteaseMobile : IDisposable
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte 鰀()
+	internal unsafe static byte 鰀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (MobileSession._003C_003Ec._003C_003E9 == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1775,12 +1788,13 @@ public class NeteaseMobile : IDisposable
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static object ꀀ()
+	private unsafe static object ꀀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((AsyncTaskMethodBuilder)(*(object*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Start<TStateMachine>(ref Unsafe.As<object, TStateMachine>(ref MobileSession.PatchInfo__BackingField));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return MobileSession._003C_003Ec._003C_003E9;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

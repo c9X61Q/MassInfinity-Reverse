@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.CompilerServices;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Domain.Desktop.Models;
 
@@ -13,7 +14,8 @@ public class PageModel<T>
 		[CompilerGenerated]
 		get
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			return (T[])(object)this;
@@ -22,11 +24,12 @@ public class PageModel<T>
 		[CompilerGenerated]
 		set
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_004f->IL0026: Incompatible stack heights: 3 vs 1
+			//IL_005a->IL0026: Incompatible stack heights: 3 vs 1
+			Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 1;
@@ -37,7 +40,8 @@ public class PageModel<T>
 				default:
 					return;
 				case 1:
-					if (0 == 0)
+					_ = 0;
+					if (EnumGameType.None == (EnumGameType)0)
 					{
 						_ = 0;
 					}
@@ -55,8 +59,9 @@ public class PageModel<T>
 		[CompilerGenerated]
 		get
 		{
-			//IL_000a: Expected I4, but got Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0017: Expected I4, but got Obj
+			Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			return (int)this;
@@ -65,11 +70,12 @@ public class PageModel<T>
 		[CompilerGenerated]
 		set
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_0050->IL0026: Incompatible stack heights: 3 vs 1
+			//IL_005b->IL0026: Incompatible stack heights: 3 vs 1
+			Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 1;
@@ -82,7 +88,8 @@ public class PageModel<T>
 				case 0:
 					return;
 				case 1:
-					if (0 == 0)
+					_ = 0;
+					if (EnumGameType.None == (EnumGameType)0)
 					{
 						_ = 0;
 					}
@@ -95,9 +102,11 @@ public class PageModel<T>
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public PageModel()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		Unsafe.As<int, object>(ref EnumGameClientType.value__)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		/*Error near IL_0015: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

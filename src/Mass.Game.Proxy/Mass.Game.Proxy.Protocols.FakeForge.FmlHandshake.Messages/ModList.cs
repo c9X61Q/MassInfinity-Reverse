@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using DotNetty.Buffers;
 
 namespace Mass.Game.Proxy.Protocols.FakeForge.FmlHandshake.Messages;
@@ -27,19 +29,23 @@ public class ModList : FmlHandshakeMessage
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ModList()
+	public unsafe ModList()
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_001f: Expected VT, but got Obj
+		//IL_0039: Expected Obj, but got VT
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		ModList modList = this;
-		if (false)
+		((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_001f: Stack underflow*/)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)new EqualityComparer<_00210>((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		((_003C_003Ef__AnonymousType0<>)(object)this).GetHashCode();
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field != 0)
 		{
-			modList = (ModList)0;
+			num = 0;
 		}
-		switch ((int)modList)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -47,28 +53,35 @@ public class ModList : FmlHandshakeMessage
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ModList(List<FmlMod> mods)
+	public unsafe ModList(List<FmlMod> mods)
 	{
-		//IL_003e: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		//IL_0052->IL0031: Incompatible stack heights: 3 vs 2
-		//IL_005d->IL0031: Incompatible stack heights: 3 vs 2
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_001f: Expected VT, but got Obj
+		//IL_0039: Expected Obj, but got VT
+		//IL_007a: Expected Obj, but got VT
+		//IL_007f->IL0052: Incompatible stack heights: 5 vs 2
+		//IL_008a->IL0052: Incompatible stack heights: 5 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		ModList modList = this;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_001f: Stack underflow*/)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)new EqualityComparer<_00210>((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		((_003C_003Ef__AnonymousType0<>)(object)this).GetHashCode();
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field == 0)
 		{
-			modList = (ModList)0;
+			num = 0;
 		}
 		while (true)
 		{
-			switch ((int)modList)
+			switch (num)
 			{
 			case 1:
 				return;
 			}
-			if (0 == 0)
+			_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
+			_ = 0;
+			if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic == null)
 			{
 				_ = 1;
 			}
@@ -110,24 +123,30 @@ public class ModList : FmlHandshakeMessage
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00眀(List<FmlMod> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -147,11 +166,12 @@ public class ModList : FmlHandshakeMessage
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00礀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -171,21 +191,27 @@ public class ModList : FmlHandshakeMessage
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00簀(object P_0)
+	internal unsafe void _FF00_FF00簀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003a: Expected I4, but got Obj
-		//IL_0099: Expected Obj, but got I4
-		//IL_00b5: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00b8: Expected Obj, but got Unknown
-		//IL_00a3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00c2->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_005b->IL0019: Incompatible stack heights: 6 vs 1
-		//IL_0096->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0070->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_007b->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0047: Expected I4, but got Obj
+		//IL_00ce: Expected Obj, but got I4
+		//IL_00ac: Expected Obj, but got VT
+		//IL_00bb: Expected Obj, but got VT
+		//IL_00ea: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00ed: Expected Obj, but got Unknown
+		//IL_0052: Expected VT, but got Obj
+		//IL_0052: Expected Obj, but got Ref
+		//IL_005d: Expected Obj, but got I4
+		//IL_0068: Expected Obj, but got I4
+		//IL_0094: Expected Obj, but got VT
+		//IL_00d8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c0->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00cb->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0099->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a4->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -197,15 +223,17 @@ public class ModList : FmlHandshakeMessage
 			default:
 				return;
 			case 6:
-				_ = 32767;
-				_ = 32767;
-				_ = 5;
-				break;
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)this);
+				((_003C_003Ef__AnonymousType0<>)P_0).Equals((object)32767);
+				((_003C_003Ef__AnonymousType0<>)32767).GetHashCode();
+				_ = new { };
+				/*Error near IL_006d: Member reference must be method, but was: Field*/;
 			case 3:
 			case 4:
 				if (Unsafe.As<object, UIntPtr>(ref obj) >= Unsafe.As<object, UIntPtr>(ref obj))
 				{
-					if (false)
+					obj2 = 0;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field != 0)
 					{
 						obj2 = 0;
 					}
@@ -213,8 +241,9 @@ public class ModList : FmlHandshakeMessage
 				}
 				goto case 6;
 			case 2:
-				obj = P_0;
-				if (1 == 0)
+				obj = ((_003C_003Ef__AnonymousType1<, , >)P_0).uuid;
+				obj2 = 1;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field == 0)
 				{
 					obj2 = 0;
 				}
@@ -252,10 +281,12 @@ public class ModList : FmlHandshakeMessage
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00缀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -269,28 +300,35 @@ public class ModList : FmlHandshakeMessage
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal List<FmlMod> _FF00_FF00脀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (List<FmlMod>)(object)this;
+		return (List<FmlMod>)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe void _FF00_FF00舀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_00dc: Expected Obj, but got Ref
-		//IL_00bd: Expected Obj, but got I4
-		//IL_0044->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00f3->IL008e: Incompatible stack heights: 1 vs 0
-		//IL_008e->IL008e: Incompatible stack heights: 1 vs 0
-		//IL_010a->IL008e: Incompatible stack heights: 2 vs 0
-		//IL_00d7->IL008e: Incompatible stack heights: 3 vs 0
-		//IL_0115->IL008e: Incompatible stack heights: 2 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0046: Expected VT, but got Obj
+		//IL_0046: Expected Obj, but got Ref
+		//IL_004d: Expected Obj, but got I4
+		//IL_00ec: Expected VT, but got Ref
+		//IL_00ec: Expected VT, but got Ref
+		//IL_00fa: Expected Obj, but got I4
+		//IL_00e0: Expected I4, but got Obj
+		//IL_0156: Expected Obj, but got I4
+		//IL_0061->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_006c->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00e0->IL00e5: Incompatible stack heights: 0 vs 1
+		//IL_016b->IL00c7: Incompatible stack heights: 3 vs 1
+		//IL_011c->IL00c7: Incompatible stack heights: 4 vs 1
+		//IL_017b->IL006c: Incompatible stack heights: 0 vs 1
+		//IL_0176->IL00c7: Incompatible stack heights: 3 vs 1
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -300,52 +338,49 @@ public class ModList : FmlHandshakeMessage
 			switch ((int)obj2)
 			{
 			default:
-				obj = this;
-				if (2 == 0)
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)this);
+				obj = ((EqualityComparer<_00210>)/*Error near IL_004b: Stack underflow*/).GetHashCode((_00210)/*Error near IL_004b: Stack underflow*/);
+				_ = 2;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
-					obj2 = 2;
+					_ = 2;
 				}
 				continue;
 			case 3:
 				return;
 			case 1:
-				obj2 = P_0;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				continue;
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+				/*Error near IL_0074: Member reference must be method, but was: Field*/;
 			case 2:
 				break;
 			}
 			break;
 		}
-		while (true)
+		while (!((EqualityComparer<_00211>)/*Error near IL_00ec: Stack underflow*/).Equals((_00211?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00211?)(&obj)))
 		{
-			if (&obj == null)
-			{
-				obj = 3;
-				goto IL_008e;
-			}
-			goto IL_00d7;
-			IL_008e:
+			obj = 3;
+			object obj3 = obj;
 			while (true)
 			{
-				switch ((int)/*Error near IL_00a7: Stack underflow*/)
+				switch ((int)obj3)
 				{
 				case 3:
 					return;
 				case 4:
 					break;
 				case 2:
+					_ = _003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate;
 					_ = 32767;
+					_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
 					_ = 4;
 					continue;
 				case 1:
-					goto IL_00d7;
+					goto end_IL_00e5;
 				default:
-					_ = 32767;
-					if (2 == 0)
+					_ = _003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.GuideMap;
+					_ = ((_003C_003Ef__AnonymousType2<, , , >)32767).user_id;
+					_ = 2;
+					if (EntitySocks5Account.AttachElement == null)
 					{
 						_ = 1;
 					}
@@ -354,14 +389,11 @@ public class ModList : FmlHandshakeMessage
 				break;
 			}
 			continue;
-			IL_00d7:
-			obj = (object)(&obj);
-			if (0 == 0)
-			{
-				_ = 0;
-			}
-			goto IL_008e;
+			end_IL_00e5:
+			break;
 		}
+		_ = ref obj;
+		/*Error near IL_011e: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

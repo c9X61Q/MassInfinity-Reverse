@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using DotNetty.Buffers;
+using Mass.Application.Event;
 using Mass.Game.Proxy.Enums;
 using Mass.Game.Proxy.Minecraft;
+using Mass.Game.Proxy.Minecraft.Events;
 using Mass.Game.Proxy.Network.Interface;
 using Mass.Game.Proxy.Network.Packet;
 
@@ -33,19 +36,23 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ClientboundRemoveEntitiesPacket(EnumProtocolVersion version)
+	public unsafe ClientboundRemoveEntitiesPacket(EnumProtocolVersion version)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_001f: Expected VT, but got Obj
+		//IL_0039: Expected Obj, but got VT
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		ClientboundRemoveEntitiesPacket clientboundRemoveEntitiesPacket = this;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_001f: Stack underflow*/)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)new EqualityComparer<_00210>((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		base.ToString();
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field == 0)
 		{
-			clientboundRemoveEntitiesPacket = (ClientboundRemoveEntitiesPacket)0;
+			num = 0;
 		}
-		switch ((int)clientboundRemoveEntitiesPacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -92,10 +99,12 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal List<int> _FF00_FFFD()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (List<int>)(object)this;
+		return (List<int>)((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -107,16 +116,21 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void _FF00_FFFD(object P_0)
+	internal unsafe sealed void _FF00_FFFD(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0063->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0072->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_007d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0054->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_00a7: Expected Obj, but got VT
+		//IL_005a: Expected I4, but got Obj
+		//IL_005a: Expected Obj, but got I
+		//IL_006e: Expected Obj, but got VT
+		//IL_0091->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ac->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0073->IL0026: Incompatible stack heights: 5 vs 2
+		//IL_00b7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_007e->IL0026: Incompatible stack heights: 5 vs 2
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -128,7 +142,11 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 			default:
 				return;
 			case 3:
-				if (0 == 0)
+				_ = ((_003C_003Ef__AnonymousType1<, , >)obj)._003Cuuid_003Ei__Field;
+				((EventBus)obj).Register((Action<EventMinecraft>)__ldftn(_003C_003Ef__AnonymousType0<>.Equals), (int)new object());
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 				{
 					_ = 0;
 				}
@@ -136,11 +154,13 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 			case 0:
 				return;
 			case 1:
-				_ = 3;
+				_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic = P_0;
+				obj2 = 3;
 				break;
 			case 2:
-				obj = (object)/*Error near IL_0066: Stack underflow*/;
-				if (1 == 0)
+				obj = new { };
+				obj2 = 1;
+				if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument == null)
 				{
 					obj2 = 1;
 				}
@@ -168,11 +188,12 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FFFD()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -192,16 +213,24 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void _FF00_E000(object P_0)
+	internal unsafe sealed void _FF00_E000(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0048->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0058->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0072->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0063->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_007d->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_004d: Expected Obj, but got VT
+		//IL_005a: Expected Obj, but got I
+		//IL_005a: Expected Obj, but got I4
+		//IL_005f: Expected I4, but got Obj
+		//IL_005f: Expected Obj, but got Ref
+		//IL_0072: Expected VT, but got Obj
+		//IL_0081: Expected Obj, but got VT
+		//IL_00a7: Expected Obj, but got VT
+		//IL_006a->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0086->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ac->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0091->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b7->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -211,17 +240,21 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 			switch ((int)obj2)
 			{
 			default:
+				((EventBus)/*Error near IL_005f: Stack underflow*/).Register((Action<EventConnectServer>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (int)new string((IFormatProvider?)((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType1<, , >)obj)._003Cuuid_003Ei__Field).Equals(this), (string)obj, (object?[])__ldftn(_003C_003Ef__AnonymousType0<>.GetHashCode)));
 				_ = 3;
 				break;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType2<, , , >)obj)._003Ccontext_003Ei__Field = (_003Ccontext_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 2:
-				obj = (object)/*Error near IL_0066: Stack underflow*/;
-				if (true)
+				obj = new { };
+				obj2 = 1;
+				if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument != null)
 				{
 					obj2 = 1;
 				}
@@ -251,35 +284,43 @@ public class ClientboundRemoveEntitiesPacket : IPacket, IBufferCodec, IBufferSer
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_E300()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_E400(List<int> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got Obj
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}

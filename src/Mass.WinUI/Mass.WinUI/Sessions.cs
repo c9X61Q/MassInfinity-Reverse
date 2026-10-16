@@ -2,8 +2,12 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using Mass.Application.Desktop;
 using Mass.Application.Mobile;
+using Microsoft.UI.Xaml;
+using WinRT;
+using WinRT.Mass_WinUIGenericHelpers;
 
 namespace Mass.WinUI;
 
@@ -71,13 +75,14 @@ public static class Sessions
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00䰀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00䰀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -89,21 +94,27 @@ public static class Sessions
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object? _FF00_FF00_FF00_FF00_FF00一()
+	internal unsafe static object? _FF00_FF00_FF00_FF00_FF00一()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object?)/*Error near IL_0009: Stack underflow*/;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object? _FF00_FF00_FF00_FF00_FF00伀()
+	internal unsafe static object? _FF00_FF00_FF00_FF00_FF00伀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object?)/*Error near IL_000a: Stack underflow*/;
+		_003CModule_003E obj = _003CModule_003E.CheckAccessibleAttribute();
+		return (obj is Application) ? obj : null;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -115,14 +126,19 @@ public static class Sessions
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00儀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00儀()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0080->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0052->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0058: Expected I, but got Obj
+		//IL_0058: Expected I, but got Obj
+		//IL_0067: Expected Obj, but got I
+		//IL_006c->IL0026: Incompatible stack heights: 5 vs 1
+		//IL_00b1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0077->IL0026: Incompatible stack heights: 5 vs 1
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 3;
@@ -134,9 +150,12 @@ public static class Sessions
 			case 1:
 				return 1;
 			case 2:
-				_ = null;
-				_ = null;
-				if (0 == 0)
+				_ = IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
+				_ = IEnumerator_object.Initialized;
+				IEnumerator_object.Init();
+				IEnumerator_object.Do_Abi_MoveNext_2(unchecked((nint)null), (byte*)unchecked((nint)null));
+				_ = 0;
+				if (IList_object.PatchAttribute == null)
 				{
 					_ = 0;
 				}
@@ -144,7 +163,7 @@ public static class Sessions
 			default:
 				return 0;
 			case 3:
-				if ((int)/*Error near IL_0076: Stack underflow*/ == 0)
+				if (!IEnumerator_object.DecorateAutomatableAttribute())
 				{
 					obj2 = 2;
 					break;
@@ -171,15 +190,20 @@ public static class Sessions
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00吀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00吀()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0062->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0041->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_004c->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0073: Expected I, but got Obj
+		//IL_007f: Expected I, but got Obj
+		//IL_007f: Expected I, but got Obj
+		//IL_0093->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_005a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009e->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0065->IL0026: Incompatible stack types: I4 vs Obj
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 2;
@@ -189,17 +213,19 @@ public static class Sessions
 			switch ((int)obj2)
 			{
 			case 2:
-				if ((int)/*Error near IL_0035: Stack underflow*/ != 0)
+				if (_003CModule_003E.CheckAccessibleAttribute() != null)
 				{
-					if (true)
+					obj2 = 1;
+					if (IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized != 0)
 					{
 						obj2 = 1;
 					}
 					break;
 				}
-				_ = null;
-				_ = null;
-				if (0 == 0)
+				IEnumerator_object.Do_Abi_get_Current_0((nint)/*Error near IL_0078: Stack underflow*/, (nint*)(int)IEnumerator_object.Do_Abi_GetMany_3((nint)/*Error near IL_0073: Stack underflow*/, (uint)/*Error near IL_0073: Stack underflow*/, (nint)/*Error near IL_0073: Stack underflow*/, (uint*)(nint)IEnumerable_System_ComponentModel_INotifyPropertyChanged.ReflectConfigurableAttribute));
+				IEnumerator_object.Do_Abi_get_HasCurrent_1(unchecked((nint)null), (byte*)unchecked((nint)null));
+				_ = 0;
+				if (IReadOnlyList_System_IDisposable._initialized == 0)
 				{
 					_ = 0;
 				}
@@ -221,11 +247,15 @@ public static class Sessions
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00_FF00_FF00嘀(object? P_0)
+	internal unsafe static void _FF00_FF00_FF00_FF00_FF00嘀(object? P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected I, but got Obj
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized = (nint)P_0;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -245,11 +275,14 @@ public static class Sessions
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object? _FF00_FF00_FF00_FF00_FF00夀()
+	internal unsafe static object? _FF00_FF00_FF00_FF00_FF00夀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object?)/*Error near IL_0009: Stack underflow*/;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 }

@@ -1,6 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
+using Mass.Common.Models;
 
 namespace Mass.Common.Helpers;
 
@@ -43,34 +49,34 @@ public static class DateTimeHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00က()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (ApiResponseBase<>.ManageProvider == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static TimeSpan _FF00ᨀ(object P_0)
+	internal unsafe static TimeSpan _FF00ᨀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_0058: Expected Obj, but got I8
-		//IL_00c0: Expected Obj, but got I8
-		//IL_0066: Expected VT, but got Obj
-		//IL_0136: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0137: Unknown result type (might be due to invalid IL or missing references)
-		//IL_013a: Expected Obj, but got Unknown
-		//IL_0062->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00cc->IL0019: Incompatible stack heights: 15 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00d7->IL0019: Incompatible stack heights: 15 vs 1
-		//IL_0054->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_016e->IL00eb: Incompatible stack heights: 1 vs 0
-		//IL_0124->IL00eb: Incompatible stack heights: 1 vs 0
-		//IL_0146->IL00eb: Incompatible stack heights: 3 vs 0
-		//IL_0151->IL00eb: Incompatible stack heights: 3 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003f: Expected I4, but got Obj
+		//IL_0079: Expected Obj, but got I8
+		//IL_00aa: Expected VT, but got Obj
+		//IL_008a: Expected I4, but got Obj
+		//IL_008b: Expected VT, but got Obj
+		//IL_0060: Expected native int or pointer, but got Obj
+		//IL_01aa: Expected I4, but got Obj
+		//IL_01ba: Expected Obj, but got VT
+		//IL_01c9: Expected Obj, but got I4
+		//IL_01d3: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01d4: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01d7: Expected Obj, but got Unknown
+		//IL_0083->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0075->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 2;
@@ -80,8 +86,12 @@ public static class DateTimeHelper
 			switch ((int)obj2)
 			{
 			case 4:
-				obj = P_0;
-				if (false)
+				((SecureCallbackMethodAttribute)P_0)._002Ector();
+				((ApiResponse<_00210>)/*Error near IL_004f: Stack underflow*/).Data = (_00210?)/*Error near IL_004f: Stack underflow*/;
+				((ApiResponseBase<ApiResponse<_00210>>)/*Error near IL_0054: Stack underflow*/)._002Ector();
+				obj = (object)/*Error near IL_0056: Stack underflow*/;
+				obj2 = 0;
+				if (((ApiResponseBase<>._003CThen_003Ed__10*)(nint)ApiResponseBase<>._003CThen_003Ed__10.task)->_003C_003E4__this != null)
 				{
 					obj2 = 0;
 				}
@@ -91,59 +101,61 @@ public static class DateTimeHelper
 				obj2 = 4;
 				break;
 			case 3:
-				return (TimeSpan)obj;
+				return (TimeSpan)new ApiResponseBase<_00210>((int)obj);
 			case 2:
-				/*Error near IL_0067: Stack underflow*/;
+			{
+				_ = ((ApiResponse<>)new ApiResponseBase<_00210>((string)/*Error near IL_0090: Stack underflow*/)).Data;
+				Task<_00210> task = ((AsyncTaskMethodBuilder<_00210>*)864000000000L)->Task;
+				((ApiResponse<>)(object)task).SetData((T)task);
 				_ = 864000000000L;
-				_ = 864000000000L;
-				_ = 36000000000L;
-				_ = 36000000000L;
-				_ = 36000000000L;
-				_ = 600000000;
-				_ = 600000000;
-				obj = 10000000;
-				if (true)
-				{
-					_ = 0;
-				}
-				break;
+				/*Error near IL_00b3: Member reference must be method, but was: Field*/;
+			}
 			default:
 				while (true)
 				{
-					IL_0105:
-					if (obj == null)
+					IL_0176:
+					((IAsyncStateMachine)/*Error near IL_017d: Stack underflow*/).SetStateMachine((IAsyncStateMachine)obj);
+					int num;
+					if ((int)/*Error near IL_0182: Stack underflow*/ == 0)
 					{
-						if (false)
+						num = 0;
+						if (((BiDictionary<, >)(object)BiDictionary<, >._forward)._reverse != null)
 						{
-							_ = 0;
+							num = 0;
 						}
-						goto IL_00eb;
+						goto IL_015c;
 					}
-					goto IL_0151;
-					IL_0151:
-					obj = obj;
-					if (false)
+					goto IL_01f6;
+					IL_01f6:
+					obj = (IEnumerable)((KeyValuePair<string, List<string>>*)obj)->Value;
+					num = 0;
+					if (CryptoJsAes.CustomizeProfile != null)
 					{
-						_ = 1;
+						num = 1;
 					}
-					goto IL_00eb;
-					IL_00eb:
+					goto IL_015c;
+					IL_015c:
 					while (true)
 					{
-						switch ((int)/*Error near IL_0100: Stack underflow*/)
+						switch (num)
 						{
 						case 2:
-							goto IL_0105;
+							goto IL_0176;
 						case 1:
-							_ = 1;
-							obj += obj * 2;
-							if (2 == 0)
+							((List<string>)obj)._002Ector((int)obj);
+							CollectionsMarshal.SetCount<T>((List<T>)/*Error near IL_01b0: Stack underflow*/, 1);
+							((ErrorResponse)/*Error near IL_01ba: Stack underflow*/).Title = (string)CollectionsMarshal.AsSpan<T>((List<T>?)/*Error near IL_01b5: Stack underflow*/);
+							((Dictionary<string, List<string>>)/*Error near IL_01c3: Stack underflow*/).Add((string)obj, (List<string>)obj);
+							((Func<KeyValuePair<string, List<string>>, string>)/*Error near IL_01ce: Stack underflow*/)._002Ector((object)/*Error near IL_01ce: Stack underflow*/, (nint)((Dictionary<string, List<string>>)2).Count);
+							obj = /*Error near IL_01d5: Stack underflow*/+ /*Error near IL_01d4: Stack underflow*/* Enumerable.Select<TSource, TResult>((IEnumerable<TSource>)/*Error near IL_01d3: Stack underflow*/, (Func<TSource, TResult>)/*Error near IL_01d3: Stack underflow*/);
+							num = 2;
+							if (((ConsoleHelper.CONSOLE_FONT_INFO_EX*)ConsoleHelper.CONSOLE_FONT_INFO_EX.FontWeight)->FaceName == null)
 							{
-								_ = 2;
+								num = 2;
 							}
 							continue;
 						case 3:
-							goto IL_0151;
+							goto IL_01f6;
 						}
 						break;
 					}
@@ -173,108 +185,92 @@ public static class DateTimeHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00ᴀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return ApiResponseBase<>.ManageProvider;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal unsafe static byte _FF00Ḁ(DateTime P_0, DateTime P_1, TimeSpan? P_2)
+	internal static byte _FF00Ḁ(DateTime P_0, DateTime P_1, TimeSpan? P_2)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_004e: Expected Obj, but got VT
-		//IL_0030: Expected Obj, but got VT
-		//IL_0026: Expected I4, but got VT
-		//IL_006f: Expected Obj, but got F8
-		//IL_006f: Expected Obj, but got Ref
-		//IL_0019->IL0019: Incompatible stack types: Obj vs VT
-		//IL_006a->IL006d: Incompatible stack types: F8 vs Ref
-		//IL_0047->IL0019: Incompatible stack types: I4 vs VT
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
-		DateTime dateTime = (DateTime)obj;
-		while (true)
+		switch ((int)obj)
 		{
-			switch ((int)dateTime)
-			{
-			case 1:
-				dateTime = P_0;
-				obj = P_1;
-				if (0 == 0)
-				{
-					dateTime = (DateTime)0;
-				}
-				break;
-			default:
-				obj = P_2;
-				obj = (object)Unsafe.AsPointer(ref &obj != null ? ref *(byte*)(&obj) : ref *(byte*)1.0);
-				return (!Unsafe.IsAddressGreaterThan(ref obj, ref obj)) ? ((byte)1) : ((byte)0);
-			}
+		case 1:
+			/*Error near IL_003a: Member reference must be method, but was: Field*/;
+		default:
+			_ = ref obj;
+			/*Error near IL_0062: Member reference must be method, but was: Field*/;
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe static long _FF00_2000(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0092: Expected I4, but got Obj
-		//IL_01df: Expected Obj, but got I8
-		//IL_00fe: Expected I8, but got Obj
-		//IL_029a: Expected Obj, but got I8
-		//IL_01c9: Expected I8, but got Obj
-		//IL_01cd: Expected Obj, but got I8
-		//IL_01d6: Expected Obj, but got I4
-		//IL_02b5: Expected Obj, but got I8
-		//IL_02be: Expected Obj, but got I4
-		//IL_0142: Expected Obj, but got I4
-		//IL_00d2: Expected Obj, but got I8
-		//IL_017d: Expected Obj, but got I8
-		//IL_0272: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0275: Expected Obj, but got Unknown
-		//IL_0102: Expected Obj, but got I8
-		//IL_02dd: Unknown result type (might be due to invalid IL or missing references)
-		//IL_02de: Unknown result type (might be due to invalid IL or missing references)
-		//IL_02e1: Expected Obj, but got Unknown
-		//IL_032b: Unknown result type (might be due to invalid IL or missing references)
-		//IL_032c: Unknown result type (might be due to invalid IL or missing references)
-		//IL_032f: Expected Obj, but got Unknown
-		//IL_0305: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0306: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0309: Expected Obj, but got Unknown
-		//IL_0179->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_01e9->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0221->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_02a6->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0134->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_014c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00dc->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0189->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_027f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_010c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_01c3->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_02b1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0122->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0295->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_013f->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0325->IL0325: Incompatible stack types: I8 vs Obj
-		//IL_0255->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00ce->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00f0->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0194->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00af->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_02eb->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_02da->IL02da: Incompatible stack types: I8 vs Obj
-		//IL_0339->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0260->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00fb->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0313->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0302->IL0302: Incompatible stack types: I8 vs Obj
-		//IL_00ba->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_009f: Expected I4, but got Obj
+		//IL_0230: Expected Obj, but got I8
+		//IL_011f: Expected I8, but got Obj
+		//IL_0303: Expected Obj, but got I8
+		//IL_021a: Expected I8, but got Obj
+		//IL_021e: Expected Obj, but got I8
+		//IL_0227: Expected Obj, but got I4
+		//IL_0326: Expected Obj, but got I8
+		//IL_032f: Expected Obj, but got I4
+		//IL_00d8: Invalid comparison between Unknown and Obj
+		//IL_0173: Expected Obj, but got I4
+		//IL_00eb: Expected Obj, but got I8
+		//IL_01ba: Expected Obj, but got I8
+		//IL_02db: Unknown result type (might be due to invalid IL or missing references)
+		//IL_02de: Expected Obj, but got Unknown
+		//IL_0107: Expected native int or pointer, but got Obj
+		//IL_00ba: Expected native int or pointer, but got Obj
+		//IL_034e: Unknown result type (might be due to invalid IL or missing references)
+		//IL_034f: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0352: Expected Obj, but got Unknown
+		//IL_039c: Unknown result type (might be due to invalid IL or missing references)
+		//IL_039d: Unknown result type (might be due to invalid IL or missing references)
+		//IL_03a0: Expected Obj, but got Unknown
+		//IL_0376: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0377: Unknown result type (might be due to invalid IL or missing references)
+		//IL_037a: Expected Obj, but got Unknown
+		//IL_01b6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_023a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_027a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0317->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0165->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_017d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f5->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01ce->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02e8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0322->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0143->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02fe->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0170->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0396->IL0396: Incompatible stack types: I8 vs Obj
+		//IL_02be->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0111->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01d9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c4->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_035c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_034b->IL034b: Incompatible stack types: I8 vs Obj
+		//IL_03aa->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02c9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_011c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0384->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0373->IL0373: Incompatible stack types: I8 vs Obj
+		//IL_00cf->IL0026: Incompatible stack types: I4 vs Obj
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 4;
@@ -288,7 +284,8 @@ public static class DateTimeHelper
 				case 27:
 					if ((nint)obj == 30334)
 					{
-						if (20 == 0)
+						obj2 = 20;
+						if (((ApiResponseBase<>._003CThen_003Ed__10*)(nint)ApiResponseBase<>.ManageProvider)->_003C_003E1__state == 0)
 						{
 							obj2 = 25;
 						}
@@ -297,12 +294,16 @@ public static class DateTimeHelper
 					goto case 8;
 				case 13:
 				case 19:
-					if (Unsafe.As<object, UIntPtr>(ref obj) < Unsafe.As<object, UIntPtr>(ref obj))
+				{
+					object obj3 = obj;
+					((ApiResponseBase<ApiResponse<_00210>>)obj)._002Ector();
+					if (Unsafe.As<_003F, UIntPtr>(ref /*Error near IL_00dd: Stack underflow*/) < Unsafe.As<object, UIntPtr>(ref obj3))
 					{
 						obj2 = 22;
 						continue;
 					}
 					goto case 7;
+				}
 				case 21:
 					obj = 0;
 					obj2 = 26;
@@ -310,7 +311,8 @@ public static class DateTimeHelper
 				case 23:
 					if ((nint)obj >= 0)
 					{
-						if (5 == 0)
+						obj2 = 5;
+						if (((ApiResponseBase<>._003CThen_003Ed__10*)(nint)ApiResponseBase<>._003CThen_003Ed__10.task)->_003C_003E4__this == null)
 						{
 							obj2 = 6;
 						}
@@ -327,8 +329,10 @@ public static class DateTimeHelper
 					}
 					goto case 9;
 				case 14:
-					obj = obj;
-					if (18 != 0)
+					((ApiResponseBase<_00210>)(object)ApiResponse.Create<T>()).Msg = (string)obj;
+					obj = (object)/*Error near IL_0151: Stack underflow*/;
+					obj2 = 18;
+					if (((ErrorResponse)ErrorResponse.Title__BackingField).Status__BackingField != 0)
 					{
 						obj2 = 1;
 					}
@@ -338,27 +342,21 @@ public static class DateTimeHelper
 					obj2 = 13;
 					continue;
 				default:
-					obj = obj;
-					_ = 14;
+					((AsyncTaskMethodBuilder<_00210>*)obj)->Start<TStateMachine>(ref *(TStateMachine*)obj);
+					obj = (object)/*Error near IL_01ac: Stack underflow*/;
+					obj2 = 14;
 					continue;
 				case 24:
 					obj = 0;
-					if (4 != 0)
+					obj2 = 4;
+					if (ErrorResponse._003C_003Ec._003C_003E9__22_0 != null)
 					{
 						obj2 = 5;
 					}
 					continue;
 				case 4:
-					if (&obj == null)
-					{
-						obj = 0;
-						_ = 24;
-					}
-					else
-					{
-						_ = 3;
-					}
-					continue;
+					_ = ref obj;
+					/*Error near IL_0200: Member reference must be method, but was: Field*/;
 				case 7:
 					return (long)(obj + obj);
 				case 11:
@@ -376,7 +374,8 @@ public static class DateTimeHelper
 				case 18:
 					if ((nint)obj == 20004)
 					{
-						if (true)
+						obj2 = 1;
+						if (AssemblyHelper.Name__BackingField != null)
 						{
 							obj2 = 1;
 						}
@@ -400,7 +399,8 @@ public static class DateTimeHelper
 					goto case 27;
 				case 6:
 					obj = (long)obj;
-					if (23 == 0)
+					obj2 = 23;
+					if (AssemblyHelper.Directory__BackingField == null)
 					{
 						obj2 = 28;
 					}

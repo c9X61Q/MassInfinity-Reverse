@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
 using DotNetty.Buffers;
+using Mass.Application.Models;
 
 namespace Mass.Bedrock.Proxy.Network;
 
@@ -78,16 +81,20 @@ public static class VarInt
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00ꘀ(object P_0, uint P_1)
+	internal unsafe static void _FF00_FF00_FF00ꘀ(object P_0, uint P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0072->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0082->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0052->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_009e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_005d->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0080: Expected Obj, but got I4
+		//IL_00a3: Expected Obj, but got I4
+		//IL_008b->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_009b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0067->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c3->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0072->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
@@ -100,7 +107,8 @@ public static class VarInt
 			case 3:
 				if (P_1 < 128)
 				{
-					if (5 == 0)
+					obj2 = 5;
+					if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.Name__BackingField).ServerAddress__BackingField == null)
 					{
 						obj2 = 4;
 					}
@@ -108,7 +116,7 @@ public static class VarInt
 				}
 				goto default;
 			default:
-				_ = (byte)(P_1 | 0x80);
+				((object)(byte)(P_1 | 0x80)).ToString();
 				_ = 4;
 				break;
 			case 2:
@@ -118,9 +126,9 @@ public static class VarInt
 				obj2 = 3;
 				break;
 			case 5:
-				obj2 = P_0;
-				_ = (byte)P_1;
-				if (1 == 0)
+				((StringBuilder)P_0).Append((object?)(byte)P_1);
+				obj2 = 1;
+				if (((BedrockProxy)BedrockProxy.Logger__BackingField).Name == null)
 				{
 					obj2 = 2;
 				}
@@ -130,16 +138,19 @@ public static class VarInt
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00_A700(object P_0, ulong P_1)
+	internal unsafe static void _FF00_FF00_FF00_A700(object P_0, ulong P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_004c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00a0->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0089->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0057->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0073->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0074: Expected Obj, but got I4
+		//IL_0061->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c5->IL0026: Incompatible stack heights: 3 vs 1
+		//IL_0089->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_00aa->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0094->IL0026: Incompatible stack heights: 2 vs 1
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 4;
@@ -150,17 +161,18 @@ public static class VarInt
 			{
 			case 2:
 				P_1 >>= 7;
-				if (false)
+				obj2 = 0;
+				if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.Name__BackingField).ServerAddress__BackingField != null)
 				{
 					obj2 = 0;
 				}
 				continue;
 			case 5:
-				obj2 = P_0;
-				_ = (byte)P_1;
-				if (0 == 0)
+				((object)(byte)P_1).ToString();
+				_ = 0;
+				if (BedrockProxy.Logger__BackingField == null)
 				{
-					obj2 = 1;
+					_ = 1;
 				}
 				continue;
 			default:
@@ -176,6 +188,7 @@ public static class VarInt
 				break;
 			}
 			_ = (byte)(P_1 | 0x80);
+			_ = EqualityComparer<Type>.Default;
 			_ = 2;
 		}
 	}

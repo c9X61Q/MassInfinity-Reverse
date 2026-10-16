@@ -13,19 +13,19 @@
   <ItemGroup />
   <ItemGroup>
     <Reference Include="Mass.Domain.Desktop">
-      <HintPath>mass-ildump/backfilled/Mass.Domain.Desktop.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Domain.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Application">
-      <HintPath>mass-ildump/backfilled/Mass.Application.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Application.dll</HintPath>
     </Reference>
     <Reference Include="Serilog" />
     <Reference Include="Mass.Domain">
-      <HintPath>mass-ildump/backfilled/Mass.Domain.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Domain.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp" />
     <Reference Include="BouncyCastle.Cryptography" />
     <Reference Include="Mass.Common">
-      <HintPath>mass-ildump/backfilled/Mass.Common.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

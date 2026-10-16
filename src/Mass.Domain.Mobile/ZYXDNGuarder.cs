@@ -1,8 +1,14 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Mass.Domain.Mobile.Entities;
 
 internal sealed class ZYXDNGuarder
 {
@@ -93,74 +99,85 @@ internal sealed class ZYXDNGuarder
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void RunHVM(nint P_0, nint P_1, nint P_2, int P_3)
+	internal unsafe static void RunHVM(nint P_0, nint P_1, nint P_2, int P_3)
 	{
-		//IL_000f: Expected Obj, but got I4
-		//IL_0140: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0143: Expected Obj, but got Unknown
-		//IL_015f: Expected Obj, but got I
-		//IL_0173: Expected Obj, but got I8
-		//IL_0153: Expected Obj, but got I4
-		//IL_0032->IL013d: Incompatible stack heights: 1 vs 0
-		//IL_015b->IL015b: Incompatible stack heights: 4 vs 0
-		//IL_003c->IL013d: Incompatible stack heights: 2 vs 0
-		//IL_0046->IL013d: Incompatible stack heights: 3 vs 0
-		//IL_0050->IL013d: Incompatible stack heights: 4 vs 0
-		//IL_005a->IL013d: Incompatible stack heights: 5 vs 0
-		//IL_0064->IL013d: Incompatible stack heights: 6 vs 0
-		//IL_006e->IL013d: Incompatible stack heights: 7 vs 0
-		//IL_0078->IL013d: Incompatible stack heights: 8 vs 0
-		//IL_0082->IL013d: Incompatible stack heights: 9 vs 0
-		//IL_008d->IL013d: Incompatible stack heights: 10 vs 0
-		//IL_0098->IL013d: Incompatible stack heights: 11 vs 0
-		//IL_00a3->IL013d: Incompatible stack heights: 12 vs 0
-		//IL_00ae->IL013d: Incompatible stack heights: 13 vs 0
-		//IL_00b9->IL013d: Incompatible stack heights: 14 vs 0
-		//IL_00c4->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00ce->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00d7->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00e4->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00ee->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_00f8->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0105->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0112->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_011f->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_012c->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_0136->IL013d: Incompatible stack heights: 15 vs 0
-		//IL_013d->IL014d: Incompatible stack heights: 15 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_0020: Expected I4, but got Obj
+		//IL_0024: Expected Obj, but got I4
+		//IL_01a1: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01a4: Expected Obj, but got Unknown
+		//IL_01d0: Expected Obj, but got I4
+		//IL_01dc: Expected VT, but got I
+		//IL_01e3: Expected Obj, but got I4
+		//IL_01f7: Expected I4, but got I8
+		//IL_01c8: Expected Obj, but got I4
+		//IL_006c: Expected Obj, but got I4
+		//IL_00a4: Expected Obj, but got I4
+		//IL_00b2: Expected Obj, but got I4
+		//IL_00b2: Expected Obj, but got I4
+		//IL_00c0: Expected I4, but got Obj
+		//IL_00cf: Expected Obj, but got I4
+		//IL_0057->IL019e: Incompatible stack heights: 1 vs 0
+		//IL_01c8->IL01c8: Incompatible stack heights: 3 vs 0
+		//IL_0065->IL019e: Incompatible stack heights: 3 vs 0
+		//IL_0073->IL019e: Incompatible stack heights: 3 vs 0
+		//IL_0081->IL019e: Incompatible stack heights: 5 vs 0
+		//IL_008f->IL019e: Incompatible stack heights: 5 vs 0
+		//IL_009d->IL019e: Incompatible stack heights: 7 vs 0
+		//IL_00ab->IL019e: Incompatible stack heights: 7 vs 0
+		//IL_00b9->IL019e: Incompatible stack heights: 6 vs 0
+		//IL_00c7->IL019e: Incompatible stack heights: 5 vs 0
+		//IL_00d6->IL019e: Incompatible stack heights: 5 vs 0
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = null;
-		object obj2 = (object)/*Error near IL_000c: Stack underflow*/;
+		object obj2 = ((StringBuilder)/*Error near IL_0020: Stack underflow*/).Append((char)(int)((object)/*Error near IL_001b: Stack underflow*/).ToString());
 		object obj3 = 0;
 		object obj4;
 		while ((nint)obj3 < ((Array)obj2).Length)
 		{
-			obj3 = ((object[])obj2)[obj3];
-			obj4 = obj3;
-			if ((nint)obj4 == 15 && 0 == 68 && 1 == 78 && 2 == 71 && 3 == 117 && 4 == 97 && 5 == 114 && 6 == 100 && 7 == 46 && 8 == 82 && 9 == 117 && 10 == 110 && 11 == 116 && 12 == 105 && 13 == 109 && 14 == 101)
+			((StringBuilder)((object[])obj2)[obj3])._002Ector();
+			obj3 = (object)/*Error near IL_0034: Stack underflow*/;
+			obj4 = ((StringBuilder)/*Error near IL_003b: Stack underflow*/).Append((string?)obj3);
+			if ((nint)((StringBuilder)/*Error near IL_0042: Stack underflow*/).Append(obj4) == 15)
 			{
-				obj3 = obj3;
-				if (obj3 != null && ((Array)obj3).Length == 8 && ((byte[])obj3)[0] == 208 && ((byte[])obj3)[1] == 90 && ((byte[])obj3)[2] == 39 && ((byte[])obj3)[3] == 211 && ((byte[])obj3)[4] == 237 && ((byte[])obj3)[5] == 158 && ((byte[])obj3)[6] == 178 && ((byte[])obj3)[7] == 90)
+				RuntimeHelpers.EnsureSufficientExecutionStack();
+				if (0 == 68)
 				{
-					obj = ((object[])obj2)[obj3];
-					break;
+					_ = 1;
+					if ((nint)EqualityComparer<Type>.Default == 78 && ((EqualityComparer<Type>)obj4).GetHashCode((Type)2) == 71)
+					{
+						_ = 3;
+						if ((nint)EqualityComparer<int>.Default == 117 && ((EqualityComparer<int>)obj4).GetHashCode(4) == 97)
+						{
+							object obj5 = obj4;
+							if ((nint)EqualityComparer<string>.Default == 114 && ((EqualityComparer<string>)obj4).GetHashCode((string)6) == 100 && (((EqualityComparer<string>)5).Equals((string?)obj4, (string?)7) ? 1 : 0) == 46 && (((EqualityComparer<int>)obj5).Equals((int)obj4, 8) ? 1 : 0) == 82 && (((Type?)obj4 == (Type?)9) ? 1 : 0) == 117)
+							{
+								_ = 10;
+								/*Error near IL_00d9: Member reference must be method, but was: Field*/;
+							}
+						}
+					}
 				}
 			}
 			obj3++;
 		}
 		if (obj == null)
 		{
-			obj3 = P_3;
+			obj3 = new JsonSerializer[P_3];
 			_ = 0;
-			obj = obj3;
+			obj = ((JsonElement*)P_3)->GetString() == (string?)obj3;
 		}
-		obj4 = P_1;
-		_ = 42;
+		obj4 = ((Utf8JsonReader*)P_1)->TokenType;
+		JsonDocument.Parse(((Utf8JsonReader*)obj4)->GetString(), (JsonDocumentOptions)P_2);
+		_ = ((JsonDocument)42).RootElement;
 		_ = null;
-		((object[])2)[0] = obj4;
-		((object[])2)[1] = P_1;
+		new DebuggableAttribute[2]
+		{
+			(DebuggableAttribute)obj4,
+			(DebuggableAttribute)(object)(DebuggableAttribute.DebuggingModes)P_1
+		}.GetType();
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

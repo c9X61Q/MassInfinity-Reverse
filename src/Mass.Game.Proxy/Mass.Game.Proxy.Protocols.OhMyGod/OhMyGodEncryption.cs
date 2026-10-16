@@ -1,6 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Game.Proxy.Protocols.OhMyGod;
 
@@ -71,57 +75,57 @@ public static class OhMyGodEncryption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static object _FF00_FF00_FF00_FF00_FF00_FF00Ā(object P_0)
+	private unsafe static object _FF00_FF00_FF00_FF00_FF00_FF00Ā(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0092: Expected I4, but got Obj
-		//IL_0203: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0206: Expected Obj, but got Unknown
-		//IL_0266: Expected Obj, but got I4
-		//IL_02ca: Unknown result type (might be due to invalid IL or missing references)
-		//IL_02b9: Unknown result type (might be due to invalid IL or missing references)
-		//IL_02bc: Expected Obj, but got Unknown
-		//IL_0289: Unknown result type (might be due to invalid IL or missing references)
-		//IL_028d: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0290: Expected Obj, but got Unknown
-		//IL_01e4: Expected Obj, but got I4
-		//IL_0239: Expected Obj, but got I4
-		//IL_02ea: Unknown result type (might be due to invalid IL or missing references)
-		//IL_02ed: Expected Obj, but got Unknown
-		//IL_011d: Expected Obj, but got I4
-		//IL_00ab: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00ae: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00b2: Unknown result type (might be due to invalid IL or missing references)
-		//IL_00b5: Expected Obj, but got Unknown
-		//IL_00f0: Expected Obj, but got I4
-		//IL_01b5: Expected Obj, but got I4
-		//IL_0210->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0270->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_02c6->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_029c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0263->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0251->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01ee->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_02f7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0127->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00bf->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00fc->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_01c1->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0200->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_02dc->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_02a7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01e1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_022d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0146->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00ed->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_015e->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00d2->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0107->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01cc->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_02e7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0169->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00dd->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_009f: Expected I4, but got Obj
+		//IL_0254: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0257: Expected Obj, but got Unknown
+		//IL_02cf: Expected Obj, but got I4
+		//IL_032a: Unknown result type (might be due to invalid IL or missing references)
+		//IL_032d: Expected Obj, but got Unknown
+		//IL_02f2: Unknown result type (might be due to invalid IL or missing references)
+		//IL_02f6: Unknown result type (might be due to invalid IL or missing references)
+		//IL_02f9: Expected Obj, but got Unknown
+		//IL_0235: Expected Obj, but got I4
+		//IL_0296: Expected Obj, but got I4
+		//IL_0367: Unknown result type (might be due to invalid IL or missing references)
+		//IL_036a: Expected Obj, but got Unknown
+		//IL_01ee: Expected Obj, but got Ref
+		//IL_017e: Expected VT, but got Obj
+		//IL_017e: Expected VT, but got Ref
+		//IL_017f: Expected Obj, but got I4
+		//IL_013a: Expected Obj, but got I4
+		//IL_00b8: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00bb: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00bf: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00c2: Expected Obj, but got Unknown
+		//IL_0105: Expected Obj, but got I4
+		//IL_0354: Expected Obj, but got I4
+		//IL_00e2: Expected Obj, but got VT
+		//IL_0261->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02d9->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0345->IL0177: Incompatible stack heights: 0 vs 1
+		//IL_0337->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_030d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_02ae->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_023f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0374->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0144->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00cc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0119->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0251->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0359->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0318->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0232->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0102->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_019b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0124->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0364->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_01a6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f2->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 22;
@@ -139,7 +143,8 @@ public static class OhMyGodEncryption
 				case 27:
 					if (((Array)P_0).Length != 0)
 					{
-						if (1 == 0)
+						obj2 = 1;
+						if ((int)((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 						{
 							obj2 = 1;
 						}
@@ -155,7 +160,8 @@ public static class OhMyGodEncryption
 					goto case 27;
 				case 28:
 					obj = 0;
-					if (2 == 0)
+					obj2 = 2;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 					{
 						obj2 = 8;
 					}
@@ -166,19 +172,16 @@ public static class OhMyGodEncryption
 					obj2 = 13;
 					continue;
 				case 16:
-					obj2 = obj;
-					if (5 == 0)
-					{
-						obj2 = 7;
-					}
-					continue;
+					_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+					/*Error near IL_014d: Member reference must be method, but was: Field*/;
 				case 24:
-					return obj;
+					return ((EqualityComparer<_00212>)/*Error near IL_017e: Stack underflow*/).Equals((_00212?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00212?)obj);
 				case 2:
 				case 23:
 					if ((nint)obj < 5)
 					{
-						if (3 == 0)
+						obj2 = 3;
+						if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance == null)
 						{
 							obj2 = 3;
 						}
@@ -187,14 +190,10 @@ public static class OhMyGodEncryption
 					goto case 9;
 				case 20:
 				case 21:
-					return (object)/*Error near IL_01a9: Stack underflow*/;
+					return (object)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field);
 				case 1:
-					obj = (((Array)P_0).Length * 8 + 4) / 5;
-					if (17 != 0)
-					{
-						obj2 = 2;
-					}
-					continue;
+					_ = (((Array)P_0).Length * 8 + 4) / 5;
+					/*Error near IL_01f7: Member reference must be method, but was: Field*/;
 				case 8:
 				case 12:
 					if ((nint)obj < ((Array)obj).Length)
@@ -219,13 +218,8 @@ public static class OhMyGodEncryption
 					obj2 = 12;
 					continue;
 				default:
-					obj2 = obj;
 					_ = 61;
-					if (1 == 0)
-					{
-						obj2 = 6;
-					}
-					continue;
+					/*Error near IL_0265: Member reference must be method, but was: Field*/;
 				case 18:
 					break;
 				case 13:
@@ -233,15 +227,16 @@ public static class OhMyGodEncryption
 					obj2 = 19;
 					continue;
 				case 11:
-					_ = 23;
-					continue;
+					((_003C_003Ef__AnonymousType2<, , , >)obj).GetHashCode();
+					/*Error near IL_02b7: Member reference must be method, but was: Field*/;
 				case 4:
 					obj = 0;
 					obj2 = 18;
 					continue;
 				case 10:
 					obj = (obj >> (obj & 0x1F)) & 0x1F;
-					if (4 == 0)
+					obj2 = 4;
+					if (((EntityLaunchGameProxy)EntitySocks5.DecorateDynamicModule).Session__BackingField == null)
 					{
 						obj2 = 11;
 					}
@@ -252,11 +247,13 @@ public static class OhMyGodEncryption
 					continue;
 				case 6:
 				case 7:
-					if (obj % 8 != 0)
+					((Regex)obj)._002Ector();
+					if ((nint)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field) % (nint)8 != 0)
 					{
-						if (false)
+						_ = 0;
+						if (((EntityLaunchGameProxy)EntityLaunchGameProxy.GameType__BackingField).GameVersion__BackingField != EnumGameVersion.None)
 						{
-							obj2 = 0;
+							_ = 0;
 						}
 						continue;
 					}
@@ -336,22 +333,26 @@ public static class OhMyGodEncryption
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static object _FF00_FF00_FF00_FF00_FF00_FF00_0B00(object P_0, object P_1)
+	private unsafe static object _FF00_FF00_FF00_FF00_FF00_FF00_0B00(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0056: Expected Obj, but got I4
-		//IL_00ef: Expected Obj, but got I4
-		//IL_00a8: Expected Obj, but got I4
-		//IL_0042->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00bd->IL0081: Incompatible stack heights: 4 vs 3
-		//IL_00d9->IL0081: Incompatible stack heights: 2 vs 3
-		//IL_0081->IL0081: Incompatible stack heights: 5 vs 3
-		//IL_00c8->IL0081: Incompatible stack heights: 4 vs 3
-		//IL_00e4->IL0081: Incompatible stack heights: 2 vs 3
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0045: Expected VT, but got Ref
+		//IL_0047: Expected Obj, but got I4
+		//IL_0056: Expected Obj, but got VT
+		//IL_006b: Expected Obj, but got Ref
+		//IL_00dc: Expected VT, but got I4
+		//IL_00dc: Expected VT, but got Obj
+		//IL_00e5: Expected Obj, but got I4
+		//IL_00f2: Expected VT, but got I4
+		//IL_00cf: Expected I4, but got Obj
+		//IL_005b->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00b6->IL00ba: Incompatible stack types: I4 vs Obj
+		//IL_0066->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0106->IL00ba: Incompatible stack heights: 6 vs 5
+		//IL_00ba->IL00ba: Incompatible stack types: I4 vs Obj
+		//IL_0111->IL00ba: Incompatible stack heights: 6 vs 5
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -361,64 +362,53 @@ public static class OhMyGodEncryption
 			switch ((int)obj2)
 			{
 			default:
-				obj = (object)/*Error near IL_0036: Stack underflow*/;
-				if (3 != 0)
+				obj = ((EqualityComparer<_00210>)/*Error near IL_0045: Stack underflow*/).Equals((_00210?)/*Error near IL_0045: Stack underflow*/, (_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+				_ = 3;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					obj2 = 1;
+					_ = 1;
 				}
-				continue;
+				break;
 			case 1:
-				obj2 = P_0;
-				obj = 8;
-				if (false)
-				{
-					obj2 = 0;
-				}
-				continue;
+				string.Format((IFormatProvider?)/*Error near IL_006b: Stack underflow*/, (string)/*Error near IL_006b: Stack underflow*/, (object?[])Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+				/*Error near IL_006c: Member reference must be method, but was: Field*/;
 			case 3:
 			{
+				EqualityComparer<_00211> equalityComparer = EqualityComparer<_00211>.Default;
+				object obj3 = 2;
 				while (true)
 				{
-					switch (2)
+					switch ((int)obj3)
 					{
 					case 1:
-						_ = 2;
+					{
+						bool flag = equalityComparer.Equals((_00211?)obj, (_00211?)2);
 						obj = 3;
-						continue;
+						obj3 = obj;
+						equalityComparer = (EqualityComparer<_00211>)flag;
+						break;
+					}
 					case 2:
-						_ = 2;
-						if (1 == 0)
+						((EqualityComparer<_00211>)obj).GetHashCode((_00211)2);
+						_ = 1;
+						if ((int)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_defaultTimeout == 0)
 						{
 							_ = 1;
 						}
-						continue;
+						break;
 					case 3:
-						obj = obj;
-						if (0 == 0)
-						{
-							_ = 0;
-						}
-						continue;
+						/*Error near IL_0113: Member reference must be method, but was: Field*/;
+					default:
+						_ = 0;
+						_ = ((Array)P_1).Length;
+						/*Error near IL_0141: Member reference must be method, but was: Field*/;
 					}
-					break;
 				}
-				int num = 0;
-				obj = ((Array)P_1).Length;
-				if (0 == 0)
-				{
-					num = 0;
-				}
-				switch (num)
-				{
-				}
-				break;
 			}
 			case 2:
-				break;
+				return obj;
 			}
-			break;
 		}
-		return obj;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -440,11 +430,12 @@ public static class OhMyGodEncryption
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_0E00()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -466,9 +457,11 @@ public static class OhMyGodEncryption
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FF00ᄀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 }

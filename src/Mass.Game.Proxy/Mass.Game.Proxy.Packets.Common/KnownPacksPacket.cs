@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using DotNetty.Buffers;
+using Mass.Application.Event;
 using Mass.Game.Proxy.Minecraft;
+using Mass.Game.Proxy.Minecraft.Events;
 using Mass.Game.Proxy.Network.Interface;
 using Mass.Game.Proxy.Network.Item;
 using Mass.Game.Proxy.Network.Packet;
@@ -48,19 +51,23 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	protected KnownPacksPacket()
+	protected unsafe KnownPacksPacket()
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_001f: Expected VT, but got Obj
+		//IL_0039: Expected Obj, but got VT
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		KnownPacksPacket knownPacksPacket = this;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_001f: Stack underflow*/)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)new EqualityComparer<_00210>((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		base.ToString();
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field == 0)
 		{
-			knownPacksPacket = (KnownPacksPacket)0;
+			num = 0;
 		}
-		switch ((int)knownPacksPacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -88,16 +95,24 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void _FF00_FF00_FF00_FF00준(object P_0)
+	internal unsafe sealed void _FF00_FF00_FF00_FF00준(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_004a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0065->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_007d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0055->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0070->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_004d: Expected Obj, but got VT
+		//IL_005a: Expected Obj, but got I
+		//IL_005a: Expected Obj, but got I4
+		//IL_005f: Expected I4, but got Obj
+		//IL_005f: Expected Obj, but got Ref
+		//IL_006f: Expected Obj, but got VT
+		//IL_0096: Expected Obj, but got VT
+		//IL_00ab: Expected Obj, but got Ref
+		//IL_0074->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_009b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b7->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_007f->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00a6->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 3;
@@ -107,20 +122,27 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 			switch ((int)obj2)
 			{
 			default:
-				if (1 == 0)
+				((EventBus)/*Error near IL_005f: Stack underflow*/).Register((Action<EventConnectServer>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (int)new string((IFormatProvider?)((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType1<, , >)obj)._003Cuuid_003Ei__Field).Equals(this), (string)obj, (object?[])__ldftn(_003C_003Ef__AnonymousType0<>.GetHashCode)));
+				_ = 1;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 				{
 					_ = 0;
 				}
 				break;
 			case 2:
-				if (0 == 0)
+				_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic = P_0;
+				obj2 = 0;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType3<, >._003Centry_003Ei__Field)._003Csid_003Ei__Field == 0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 3:
-				obj = (object)/*Error near IL_0073: Stack underflow*/;
-				obj2 = 2;
+				obj = new
+				{
+					value = (object)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)
+				};
+				_ = 2;
 				break;
 			case 1:
 				return;
@@ -131,24 +153,30 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00쨀(List<KnownPack> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -168,10 +196,12 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00찀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -193,11 +223,12 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00케()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -211,10 +242,12 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal List<KnownPack> _FF00_FF00_FF00_FF00턀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (List<KnownPack>)(object)this;
+		return (List<KnownPack>)((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -226,17 +259,16 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed void _FF00_FF00_FF00_FF00팀(object P_0)
+	internal unsafe sealed void _FF00_FF00_FF00_FF00팀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_007c: Expected Obj, but got I4
-		//IL_0081->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_0042->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0063->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_004d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006e->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_00b6: Expected Obj, but got I4
+		//IL_0045: Expected VT, but got Ref
+		//IL_0056: Expected Obj, but got VT
+		//IL_005b->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0066->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -248,23 +280,26 @@ public abstract class KnownPacksPacket : IPacket, IBufferCodec, IBufferSerializa
 				switch ((int)obj2)
 				{
 				case 1:
-					obj = (object)/*Error near IL_0036: Stack underflow*/;
-					if (0 == 0)
+					obj = new
 					{
-						obj2 = 0;
+						action = (_003Caction_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)
+					};
+					_ = 0;
+					if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
+					{
+						_ = 0;
 					}
 					continue;
 				case 3:
-					if (2 == 0)
-					{
-						_ = 2;
-					}
-					continue;
+					_ = ((_003C_003Ef__AnonymousType2<, , , >)obj)._003Curl_003Ei__Field;
+					_ = (delegate*<bool>)(&_003C_003Ef__AnonymousType0<>.ReflectActiveCalc);
+					/*Error near IL_0076: Member reference must be method, but was: Field*/;
 				case 2:
 					return;
 				}
 				break;
 			}
+			_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument = P_0;
 			obj = 3;
 		}
 	}

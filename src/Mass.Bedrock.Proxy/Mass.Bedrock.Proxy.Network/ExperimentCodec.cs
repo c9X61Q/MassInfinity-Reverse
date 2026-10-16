@@ -1,7 +1,9 @@
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
 using DotNetty.Buffers;
+using Mass.Application.Models;
 
 namespace Mass.Bedrock.Proxy.Network;
 
@@ -42,12 +44,13 @@ public static class ExperimentCodec
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_2A00()
+	internal unsafe static object _FF00_FF00_FF00_FF00_2A00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityLaunchBedrockProxy.Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -67,13 +70,13 @@ public static class ExperimentCodec
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00ⴀ()
+	internal unsafe static byte _FF00_FF00_FF00_FF00ⴀ()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityLaunchBedrockProxy.Name__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -100,14 +103,17 @@ public static class ExperimentCodec
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00_FF00_3000(object P_0, object P_1)
+	internal unsafe static void _FF00_FF00_FF00_FF00_3000(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_005b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_004b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0066->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0058: Expected Obj, but got I
+		//IL_005d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0088->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0068->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0093->IL0026: Incompatible stack heights: 2 vs 1
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 2;
@@ -119,14 +125,18 @@ public static class ExperimentCodec
 			default:
 				return;
 			case 1:
-				obj2 = P_0;
-				if (false)
+				((StringBuilder)(object)((EntityLaunchBedrockProxy)P_1).EqualityContract)._002Ector();
+				obj2 = 0;
+				if ((object)EntityLaunchBedrockProxy.ReflectScheduledLogger != null)
 				{
 					obj2 = 0;
 				}
 				break;
 			case 2:
-				if (1 == 0)
+				((EntityLaunchBedrockProxy)P_0).GameId = (string)P_1;
+				_ = ((EntityLaunchBedrockProxy)/*Error near IL_0074: Stack underflow*/).GameType;
+				_ = 1;
+				if (((BedrockProxy)(object)BedrockProxy.GameId).GameType == 0)
 				{
 					_ = 1;
 				}

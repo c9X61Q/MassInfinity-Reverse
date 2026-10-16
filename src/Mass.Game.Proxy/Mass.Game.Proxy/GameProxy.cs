@@ -1,23 +1,54 @@
 using System;
+using System.Buffers;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text.Json;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
+using System.Threading;
 using System.Threading.Tasks;
+using DotNetty.Buffers;
+using DotNetty.Transport.Bootstrapping;
 using DotNetty.Transport.Channels;
 using Mass.Application.Desktop;
+using Mass.Application.Event;
 using Mass.Application.Models;
+using Mass.Application.Services;
 using Mass.Common.Extensions;
+using Mass.Common.Helpers;
 using Mass.Domain.Desktop.ValueObjects;
 using Mass.Domain.Value;
 using Mass.Game.Proxy.Minecraft;
+using Mass.Game.Proxy.Minecraft.Events;
+using Mass.Game.Proxy.Network;
+using Mass.Game.Proxy.Network.Item;
+using Mass.Game.Proxy.Protocols;
+using Mass.Game.Proxy.Protocols.Heypixel;
+using Mass.Game.Proxy.Protocols.Heypixel.AntiCheat;
+using Mass.Game.Proxy.Protocols.Heypixel.Floodgate;
+using Mass.Game.Proxy.Protocols.Hyt.VexView;
+using Mass.Game.Proxy.Protocols.OhMyGod;
+using MsgPack;
 using Serilog;
 
 namespace Mass.Game.Proxy;
 
 public class GameProxy : GameInstance
 {
+	[CompilerGenerated]
+	private static class _003C_003EO
+	{
+		public static Action<EventPluginChanged> _003C0_003E__PluginChanged;
+
+		public static Action<EventConnectServer> _003C1_003E__OnConnectServer;
+
+		public static Action<EventConnectServer> _003C2_003E__OnConnectServer;
+	}
+
 	[StructLayout(LayoutKind.Auto)]
 	[CompilerGenerated]
 	private struct _003CListenAsync_003Ed__69 : IAsyncStateMachine
@@ -82,10 +113,12 @@ public class GameProxy : GameInstance
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static object _FF00_FF00_FF00_FF00_FF00_FF00_2400()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Expected Obj, but got VT
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -99,11 +132,12 @@ public class GameProxy : GameInstance
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_2600()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Invalid comparison between VT and Obj
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -125,46 +159,89 @@ public class GameProxy : GameInstance
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00_FF00ⴀ()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_004c: Expected Obj, but got Ref
-			//IL_03f6: Expected Obj, but got Ref
-			//IL_03ff: Expected Obj, but got I4
-			//IL_01bf: Expected Obj, but got Ref
-			//IL_0277: Expected Obj, but got I4
-			//IL_014f: Expected Obj, but got I4
-			//IL_01e9: Expected Obj, but got Ref
-			//IL_0255: Expected Obj, but got Ref
-			//IL_011a: Expected Obj, but got I4
-			//IL_0362: Expected Obj, but got I4
-			//IL_0412->IL0019: Incompatible stack heights: 3 vs 1
-			//IL_0048->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0058->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0075->IL0079: Incompatible stack heights: 1 vs 0
-			//IL_0063->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_01d6->IL0079: Incompatible stack heights: 1 vs 0
-			//IL_0282->IL0079: Incompatible stack heights: 3 vs 0
-			//IL_015c->IL0079: Incompatible stack heights: 2 vs 0
-			//IL_01f3->IL0079: Incompatible stack heights: 1 vs 0
-			//IL_0178->IL0079: Incompatible stack heights: 2 vs 0
-			//IL_012e->IL0079: Incompatible stack heights: 3 vs 0
-			//IL_014a->IL0079: Incompatible stack heights: 2 vs 0
-			//IL_029a->IL0079: Incompatible stack heights: 5 vs 0
-			//IL_0315->IL0079: Incompatible stack heights: 3 vs 0
-			//IL_01e4->IL0079: Incompatible stack heights: 3 vs 0
-			//IL_013d->IL0079: Incompatible stack heights: 2 vs 0
-			//IL_025f->IL0079: Incompatible stack heights: 11 vs 0
-			//IL_0167->IL0079: Incompatible stack heights: 2 vs 0
-			//IL_033f->IL0079: Incompatible stack heights: 2 vs 0
-			//IL_0183->IL0079: Incompatible stack heights: 2 vs 0
-			//IL_0320->IL0079: Incompatible stack heights: 3 vs 0
-			//IL_0079->IL0079: Incompatible stack heights: 1 vs 0
-			//IL_0367->IL0075: Incompatible stack heights: 1 vs 0
-			//IL_02d8->IL0079: Incompatible stack heights: 1 vs 0
-			//IL_010c->IL0079: Incompatible stack heights: 1 vs 0
-			//IL_02b9->IL0079: Incompatible stack heights: 1 vs 0
-			//IL_0212->IL0079: Incompatible stack heights: 1 vs 0
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0043: Expected I4, but got Obj
+			//IL_05a7: Expected Obj, but got I4
+			//IL_05a7: Expected Obj, but got Ref
+			//IL_004e: Expected Obj, but got Ref
+			//IL_0053: Expected VT, but got Ref
+			//IL_0053: Expected Obj, but got Ref
+			//IL_0063: Expected Obj, but got Ref
+			//IL_0074: Expected Obj, but got VT
+			//IL_058f: Expected Obj, but got Ref
+			//IL_059a: Expected Obj, but got I4
+			//IL_0243: Expected Obj, but got Ref
+			//IL_0497: Expected Obj, but got Ref
+			//IL_0372: Expected Obj, but got I4
+			//IL_0377: Expected Obj, but got I4
+			//IL_01a9: Expected Obj, but got I4
+			//IL_01ae: Expected Obj, but got I4
+			//IL_01ae: Expected Obj, but got Ref
+			//IL_027d: Expected Obj, but got Ref
+			//IL_027f: Expected Obj, but got Ref
+			//IL_01d6: Expected I, but got Obj
+			//IL_0160: Expected Obj, but got Ref
+			//IL_0194: Expected Obj, but got Ref
+			//IL_0434: Expected Obj, but got Ref
+			//IL_043c: Expected Obj, but got Ref
+			//IL_043c: Expected Obj, but got Ref
+			//IL_043c: Expected Obj, but got Ref
+			//IL_026c: Expected I, but got Obj
+			//IL_026c: Expected Obj, but got Ref
+			//IL_017f: Expected Obj, but got Ref
+			//IL_0184: Expected Obj, but got I4
+			//IL_02c7: Expected VT, but got Obj
+			//IL_02c7: Expected Obj, but got VT
+			//IL_02df: Expected Obj, but got I4
+			//IL_02f1: Expected Obj, but got I4
+			//IL_02fc: Expected Obj, but got I4
+			//IL_0307: Expected Obj, but got I4
+			//IL_0316: Expected Obj, but got F8
+			//IL_031b: Expected Obj, but got I4
+			//IL_0328: Expected I4, but got Obj
+			//IL_0332: Expected Obj, but got I4
+			//IL_0339: Expected Obj, but got Ref
+			//IL_033e: Expected I4, but got Obj
+			//IL_0344: Expected Obj, but got Ref
+			//IL_0349: Expected Obj, but got I4
+			//IL_0350: Expected Obj, but got I4
+			//IL_0149: Expected Obj, but got VT
+			//IL_0149: Expected Obj, but got Ref
+			//IL_0153: Expected Obj, but got I4
+			//IL_0114: Expected Obj, but got VT
+			//IL_0119: Invalid comparison between VT and I4
+			//IL_03ac: Expected Obj, but got Ref
+			//IL_0486: Expected VT, but got Obj
+			//IL_0488: Expected Obj, but got VT
+			//IL_03eb: Expected Obj, but got F8
+			//IL_02a4: Expected Obj, but got I
+			//IL_04bd: Expected I4, but got Obj
+			//IL_04bd: Expected Obj, but got I4
+			//IL_04cd: Expected Obj, but got I4
+			//IL_05b1->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_005d->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_005d->IL0026: Incompatible stack types: I4 vs Ref
+			//IL_0079->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0084->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0400->IL059f: Incompatible stack heights: 0 vs 1
+			//IL_0289->IL009a: Incompatible stack heights: 1 vs 2
+			//IL_016f->IL009a: Incompatible stack heights: 4 vs 2
+			//IL_03a5->IL009a: Incompatible stack heights: 3 vs 2
+			//IL_04d7->IL059f: Incompatible stack heights: 0 vs 1
+			//IL_0450->IL009a: Incompatible stack heights: 3 vs 2
+			//IL_018e->IL009a: Incompatible stack heights: 4 vs 2
+			//IL_035a->IL009a: Incompatible stack heights: 1 vs 2
+			//IL_035f->IL05b1: Incompatible stack heights: 0 vs 1
+			//IL_03b1->IL0276: Incompatible stack heights: 0 vs 1
+			//IL_04a9->IL04b1: Incompatible stack heights: 1 vs 0
+			//IL_0492->IL009a: Incompatible stack heights: 1 vs 2
+			//IL_0475->IL0475: Incompatible stack heights: 3 vs 2
+			//IL_045b->IL009a: Incompatible stack heights: 3 vs 2
+			//IL_009a->IL009a: Incompatible stack heights: 1 vs 2
+			//IL_03c5->IL009a: Incompatible stack heights: 1 vs 2
+			//IL_03d0->IL009a: Incompatible stack heights: 1 vs 2
+			ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
 			object obj = 5;
@@ -173,14 +250,20 @@ public class GameProxy : GameInstance
 				object obj2 = obj;
 				while (true)
 				{
+					int num;
 					switch ((int)obj2)
 					{
 					case 3:
-						_ = 2;
+					{
+						int hashCode = ((EqualityComparer<_00210>)Unsafe.AsPointer(ref reference)).GetHashCode((_00210)Unsafe.AsPointer(ref ((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuuid_003Ei__Field));
+						obj2 = 2;
+						reference = ref *(_003Caction_003Ej__TPar*)hashCode;
 						continue;
+					}
 					case 4:
-						obj = (object)Unsafe.AsPointer(ref this);
-						if (1 == 0)
+						obj = _003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter;
+						obj2 = 1;
+						if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Curl_003Ei__Field)._003Cpayload_003Ei__Field == 0)
 						{
 							obj2 = 1;
 						}
@@ -188,107 +271,129 @@ public class GameProxy : GameInstance
 					case 1:
 						if (obj != null)
 						{
-							_ = 24;
-							goto IL_0079;
+							num = 24;
+							goto IL_009a;
 						}
-						goto IL_01bb;
+						goto IL_023d;
 					case 5:
-						goto end_IL_0019;
+						goto end_IL_0026;
 					case 2:
 						return;
-						IL_01bb:
-						obj = (object)Unsafe.AsPointer(ref this);
-						if (0 == 0)
+						IL_023d:
+						obj = ((EntityLaunchGameProxy)Unsafe.AsPointer(ref this)).ModHashList__BackingField;
+						num = 0;
+						if (((EntityLaunchGameProxy)EntityLaunchGameProxy.Name__BackingField).ServerAddress__BackingField == null)
 						{
-							_ = 10;
+							num = 10;
 						}
-						goto IL_0079;
-						IL_0079:
+						goto IL_009a;
+						IL_009a:
 						while (true)
 						{
-							switch ((int)/*Error near IL_00e2: Stack underflow*/)
+							switch (num)
 							{
 							case 19:
-								if ((nuint)(nint)obj <= (nuint)1008009u)
+								if (((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType2<, , , >)obj)._003Ccontext_003Ei__Field).name <= (object)1008009)
 								{
-									if (2 == 0)
+									num = 2;
+									if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field == 0)
 									{
-										_ = 5;
+										num = 5;
 									}
 									continue;
 								}
 								goto default;
 							case 18:
+								((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref reference)).Equals(((_003C_003Ef__AnonymousType3<, >)obj)._003Csid_003Ei__Field);
 								obj = 16;
 								continue;
 							case 9:
+								((_003C_003Ef__AnonymousType1<, , >)(object)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance).ToString();
 								_ = 19;
 								continue;
 							case 16:
 							case 23:
+								_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
+								JsonSerializer.Serialize((_003C_003Ef__AnonymousType3<int, string>)_003C_003Ef__AnonymousType1<, , >.ReflectModularWriter(), (JsonSerializerOptions?)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout);
 								_ = 12;
 								continue;
 							case 10:
-								_ = 3;
+								_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.GuideMap = null;
+								num = 3;
 								continue;
 							case 3:
 								obj = -1;
-								if (2 != 0)
+								((EntitySocks5Account)Unsafe.AsPointer(ref this)).Password__BackingField = -1;
+								num = 2;
+								if (((EntitySocks5)EntitySocks5Account.AttachElement).Address__BackingField != null)
 								{
-									_ = 6;
+									num = 6;
 								}
 								continue;
 							case 8:
-								if (9 != 0)
+								((EntitySocks5)obj).Port__BackingField = (nint)obj;
+								num = 9;
+								if (EntitySocks5.DecorateDynamicModule != null)
 								{
-									_ = 5;
+									num = 5;
 								}
 								continue;
 							case 7:
 								break;
 							case 15:
-								_ = 14;
+								((EntityLaunchGameProxy)Unsafe.AsPointer(ref this)).ServerPort__BackingField = (nint)obj;
+								num = 14;
 								continue;
 							case 6:
-								obj = (object)(&obj);
+								((RegexRunnerFactory)(&obj))._002Ector();
+								obj = (object)Unsafe.AsPointer(ref reference);
 								_ = 8;
 								continue;
 							case 24:
-								if (obj == null)
+								if (((EntityLaunchGameProxy)obj).Value__BackingField == null)
 								{
-									if (2 != 0)
+									num = 2;
+									if ((object)EntityLaunchGameProxy.ReflectAlphabeticProcessor != null)
 									{
-										_ = 0;
+										num = 0;
 									}
 									continue;
 								}
-								goto end_IL_0019_2;
+								goto end_IL_0026_2;
 							case 2:
 							case 17:
-								_ = 1;
-								_ = 1;
-								_ = 1048576;
-								_ = 1048576;
-								_ = 1048576;
-								_ = 10.0;
-								obj = (object)Unsafe.AsPointer(ref this);
+							{
+								ReadOnlySpan<char> readOnlySpan = new ReadOnlySpan<char>((int)Unsafe.AsPointer(ref reference));
+								((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory)obj)._002Ector();
+								((_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner)readOnlySpan).Scan((ReadOnlySpan<char>)obj);
+								((RegexRunner)/*Error near IL_02cc: Stack underflow*/).Capture((int)/*Error near IL_02cc: Stack underflow*/, (int)/*Error near IL_02cc: Stack underflow*/, (int)/*Error near IL_02cc: Stack underflow*/);
+								((AsyncTaskMethodBuilder<HeypixelRequestDto>*)((MassService)/*Error near IL_02d1: Stack underflow*/).ApiRequestAsync<HeypixelReflectCheckResult>((string)/*Error near IL_02d1: Stack underflow*/, (object?)/*Error near IL_02d1: Stack underflow*/))->Start(ref *(MassServiceExtensions._003CGetHeypixelAntiCheat_003Ed__2*)1);
+								Task<HeypixelRequestDto> task = ((MassService)/*Error near IL_02df: Stack underflow*/).ApiRequestAsync<HeypixelRequestDto>((string)/*Error near IL_02df: Stack underflow*/, (object?)1);
+								PackerUnpackerExtensions.Pack<_0021_00210[]>(PackerUnpackerExtensions.Pack<string>((Packer)/*Error near IL_02e6: Stack underflow*/, (string)(object)task), (_0021_00210[])1048576).WriteDictionary((Dictionary<string, long>)1048576);
+								((Packer)/*Error near IL_0307: Stack underflow*/).WriteArray((string[][])1048576);
+								string text = (string?)/*Error near IL_0332: Stack underflow*/ + (string?)new int((string?)(object)JsonHelper.Deserialize<Modal>((string)((EqualityComparer<string>)/*Error near IL_0316: Stack underflow*/).GetHashCode((string)10.0)), out *(int*)new string((char)(int)obj, (StringSplitOptions)(int)__ldftn(EntitySocks5Account.GetHashCode)));
+								obj = ((EqualityComparer<int>)/*Error near IL_034e: Stack underflow*/).Equals((int)/*Error near IL_034e: Stack underflow*/, ((EqualityComparer<EntitySocks5Account>)((EqualityComparer<int>)(object)text).GetHashCode((int)_003C_003EO._003C0_003E__PluginChanged)).GetHashCode((EntitySocks5Account)(object)_003C_003EO._003C2_003E__OnConnectServer));
 								_ = 22;
 								continue;
+							}
 							case 21:
 								return;
 							case 1:
 								obj = 0;
-								_ = 15;
+								_003C_003E4__this = (GameProxy)0;
+								num = 15;
 								continue;
 							case 11:
 							case 20:
-								_ = 2000;
+								((EntitySocks5)obj).Address = (string)obj;
+								Unsafe.Write(&CheckCentralResponder, (object)new EntitySocks5());
 								_ = 13;
 								continue;
 							case 22:
-								if (&obj == null)
+								if (((EqualityComparer<EnumGameType>)Unsafe.AsPointer(ref reference)).GetHashCode((EnumGameType)(int)(&obj)) == 0)
 								{
-									if (1 == 0)
+									_ = 1;
+									if (((CpsDetector)(object)CpsDetector._leftClicks)._rightClicks == null)
 									{
 										_ = 1;
 									}
@@ -296,47 +401,65 @@ public class GameProxy : GameInstance
 								}
 								goto case 6;
 							case 13:
-								if (obj != null)
+								if ((int)((CpsDetector)obj)._lastLeftCps != 0)
 								{
-									if (13 == 0)
+									num = 13;
+									if (((CpsDetector)CpsDetector._lastRightCps).OnCpsChange == null)
 									{
-										_ = 23;
+										num = 23;
 									}
 									continue;
 								}
 								goto case 18;
 							case 14:
-								_ = ref obj;
-								if (12 == 0)
+								((IByteBuffer)(object)Unsafe.AsPointer(ref OhMyGodEncryption.DecorateEfficientEmitter)).WritePrefixedArray((List<Slot>)(&obj), (Action<Slot>)Unsafe.AsPointer(ref this));
+								_ = 12;
+								if (OhMyGodHwid.ControlProcessor == null)
 								{
 									_ = 21;
 								}
 								continue;
 							case 5:
-								obj = obj;
+							{
+								((EntitySocks5)/*Error near IL_0460: Stack underflow*/).Deconstruct(out *(string*)/*Error near IL_0460: Stack underflow*/, out *(int*)/*Error near IL_0460: Stack underflow*/, out Unsafe.As<_003Caction_003Ej__TPar, EntitySocks5Account?>(ref reference));
+								object serverAddress = obj;
+								bool flag = EntitySocks5.ReflectConcreteEvent();
+								if (!flag)
+								{
+									EntitySocks5.DecorateConnectedWrapper();
+								}
+								((EntityLaunchGameProxy)/*Error near IL_047a: Stack underflow*/)._002Ector((DesktopSession)/*Error near IL_047a: Stack underflow*/, (string)/*Error near IL_047a: Stack underflow*/, (EnumGameType)/*Error near IL_047a: Stack underflow*/, (EnumGameVersion)/*Error near IL_047a: Stack underflow*/, (string)/*Error near IL_047a: Stack underflow*/, (string)/*Error near IL_047a: Stack underflow*/, (string)serverAddress, flag ? 1 : 0);
+								obj = Interlocked.CompareExchange<T>(ref *(T*)/*Error near IL_0486: Stack underflow*/, (T)/*Error near IL_0486: Stack underflow*/, (T)((EntityLaunchGameProxy)obj).EqualityContract);
 								_ = 20;
 								continue;
+							}
 							default:
-								obj = obj;
+								((EntityLaunchGameProxy)/*Error near IL_0497: Stack underflow*/).Session = (DesktopSession)Unsafe.AsPointer(ref reference);
+								if (((EntityLaunchGameProxy)obj).GameId == null)
+								{
+									((EntityLaunchGameProxy)/*Error near IL_04b1: Stack underflow*/).GameId = (string)obj;
+								}
+								((EntityLaunchGameProxy)((EntityLaunchGameProxy)/*Error near IL_04b6: Stack underflow*/).GameType).GameType = (EnumGameType)obj;
+								obj = ((DefaultInterpolatedStringHandler*)/*Error near IL_04c2: Stack underflow*/)->ToStringAndClear();
 								obj = 11;
 								continue;
 							case 4:
 							case 12:
-								goto end_IL_0019_2;
+								goto end_IL_0026_2;
 							}
 							break;
 						}
-						goto IL_01bb;
-						end_IL_0019_2:
+						goto IL_023d;
+						end_IL_0026_2:
 						break;
 					}
-					_ = -2;
-					_ = 3;
+					((VexViewGuiPacket)Unsafe.AsPointer(ref this)).Base__BackingField = -2;
+					obj2 = 3;
 					continue;
-					end_IL_0019:
+					end_IL_0026:
 					break;
 				}
-				obj = (object)Unsafe.AsPointer(ref this);
+				obj = VexViewCodec.OpenEmitter;
 				obj = 4;
 			}
 		}
@@ -350,13 +473,17 @@ public class GameProxy : GameInstance
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private sealed void _FF00_FF00_FF00_FF00_FF00_FF00_2F00(object P_0)
+		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00_FF00_2F00(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_003e: Expected Obj, but got Ref
+			//IL_0044: Expected VT, but got Obj
+			//IL_0044: Expected Obj, but got Ref
+			//IL_0058->IL0026: Incompatible stack heights: 3 vs 2
+			//IL_0063->IL0026: Incompatible stack heights: 3 vs 2
+			_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+			if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 			{
 			}
 			object obj = 1;
@@ -367,7 +494,9 @@ public class GameProxy : GameInstance
 				default:
 					return;
 				case 1:
-					if (0 == 0)
+					((EqualityComparer<_00210>)Unsafe.AsPointer(ref ((_003C_003Ef__AnonymousType1<, , >)Unsafe.AsPointer(ref this))._003Cuuid_003Ei__Field)).GetHashCode((_00210)P_0);
+					_ = 0;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 					{
 						_ = 0;
 					}
@@ -627,17 +756,48 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public GameProxy(EntityLaunchGameProxy args)
 	{
-		//IL_00b8: Expected I4, but got Obj
-		//IL_00a6->IL00af: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		//IL_002c: Expected Obj, but got VT
+		//IL_0031: Expected VT, but got I4
+		//IL_0047: Expected VT, but got Obj
+		//IL_0047: Expected Obj, but got VT
+		//IL_0073: Expected Obj, but got I4
+		//IL_0089: Expected I4, but got Obj
+		//IL_009f: Expected Obj, but got VT
+		//IL_00b5: Expected Obj, but got I4
+		//IL_00cb: Expected Obj, but got I4
+		//IL_00cb: Expected Obj, but got I
+		//IL_00e1: Expected I4, but got VT
+		//IL_00f2: Expected Obj, but got I4
+		//IL_00f7: Expected Obj, but got I4
+		//IL_011d: Expected I, but got Obj
+		//IL_012d: Expected Obj, but got VT
+		//IL_0138: Expected VT, but got Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		GameProxy gameProxy = this;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)args;
+		((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Curl_003Ei__Field = (_003Curl_003Ej__TPar)((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuser_id_003Ei__Field).GetHashCode();
+		((_003C_003Ef__AnonymousType2<, , , >)((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Cpayload_003Ei__Field)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
+		((_003C_003Ef__AnonymousType3<, >)(object)this)._003Csid_003Ei__Field = (_003Csid_003Ej__TPar)((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic).user_id;
+		_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate = ((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument).GetHashCode();
+		_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout = (byte)(int)_003C_003Ef__AnonymousType1<, , >.ReflectModularWriter() != 0;
+		((EntitySocks5Account)(object)this).Username__BackingField = ((_003C_003Ef__AnonymousType2<, , , >)(object)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_ascii_68FF03FEFFFF87FEFFFF07).context;
+		((EntitySocks5)(object)this).Address__BackingField = ((_003C_003Ef__AnonymousType2<, , , >)(object)this).Equals(((EntitySocks5Account)(object)this).Password__BackingField);
+		EntitySocks5.DecorateDynamicModule = _003C_003Ef__AnonymousType2<, , , >.CheckAccessibleObject();
+		((EntityLaunchGameProxy)(object)this).GameType__BackingField = (EnumGameType)((_003C_003Ef__AnonymousType3<, >)((EntityLaunchGameProxy)(object)this).Session__BackingField).sid;
+		((EntityLaunchGameProxy)(object)this).Name__BackingField = ((_003C_003Ef__AnonymousType3<, >)((EntityLaunchGameProxy)(object)this).GameVersion__BackingField).GetHashCode();
+		((EntityLaunchGameProxy)((EntityLaunchGameProxy)(object)this).ServerAddress__BackingField).Socks5__BackingField = _003C_003Ef__AnonymousType3<, >.DecorateIntegratedProgram();
+		((EntityLaunchGameProxy)(object)this).IsGame__BackingField = (nint)new RegexRunner();
+		_003Cargs_003EP = new ReadOnlySpan<char>();
+		MemoryExtensions.IndexOfAny<T>((ReadOnlySpan<T>)this, (SearchValues<T>)(object)this);
+		int num = 0;
+		if (((GameProxy)GameProxy._pinger).m_ConnectionChanged == null)
 		{
-			gameProxy = (GameProxy)0;
+			num = 0;
 		}
-		switch ((int)gameProxy)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -724,10 +884,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_EA00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -747,36 +909,29 @@ public class GameProxy : GameInstance
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private void _FF00_FF00_FF00_FF00_FF00_FF00_ED00(object P_0)
+	private unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_ED00(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0060->IL0019: Incompatible stack heights: 7 vs 1
-		//IL_006b->IL0019: Incompatible stack heights: 7 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_003f: Expected VT, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
-		object obj2 = obj;
-		while (true)
+		switch ((int)obj)
 		{
-			switch ((int)obj2)
+		case 0:
+			break;
+		case 1:
+			((EqualityComparer<_00210>)/*Error near IL_003f: Stack underflow*/).Equals((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)P_0);
+			obj = new
 			{
-			default:
-				return;
-			case 0:
-				return;
-			case 1:
-				obj = P_0;
-				_ = 0;
-				_ = 1;
-				_ = 1;
-				if (0 == 0)
-				{
-					_ = 0;
-				}
-				break;
-			}
+				value = P_0
+			};
+			((_003C_003Ef__AnonymousType0<>)(object)this).GetHashCode();
+			_ = new { };
+			/*Error near IL_0053: Member reference must be method, but was: Field*/;
 		}
 	}
 
@@ -799,26 +954,32 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00_F000(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got Obj
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -828,10 +989,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FF00_F100()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -845,172 +1008,83 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static void _FF00_FF00_FF00_FF00_FF00_FF00ﬀ()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_006a: Expected I4, but got Obj
-		//IL_0180: Expected Obj, but got I4
-		//IL_0108: Expected Obj, but got I4
-		//IL_015f: Expected Obj, but got I4
-		//IL_009a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00ab->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c3->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0196->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00d4->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0146->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_011a->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0174->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0080->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01b0->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0129->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00f1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0164->IL0015: Incompatible stack heights: 1 vs 0
-		//IL_01ff->IL0205: Incompatible stack heights: 0 vs 2
-		//IL_00b6->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01a1->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00df->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0151->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01e7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01d9->IL01d9: Incompatible stack heights: 2 vs 0
-		//IL_0134->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01cb->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_01bf->IL01bf: Incompatible stack heights: 2 vs 0
-		//IL_00fc->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0213->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_01f2->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_021e->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 17;
-		while (true)
-		{
-			object obj2 = obj;
-			while (true)
-			{
-				switch ((int)obj2)
-				{
-				case 11:
-					obj2 = 1;
-					if (18 != 0)
-					{
-						obj2 = 0;
-					}
-					continue;
-				default:
-					_ = 0;
-					_ = 5;
-					continue;
-				case 2:
-					obj2 = 0;
-					if (14 == 0)
-					{
-						obj2 = 10;
-					}
-					continue;
-				case 3:
-					obj2 = 10;
-					continue;
-				case 5:
-					obj2 = 0;
-					if (13 != 0)
-					{
-						obj2 = 5;
-					}
-					continue;
-				case 17:
-					obj2 = 0;
-					if (16 != 0)
-					{
-						obj2 = 3;
-					}
-					continue;
-				case 15:
-					obj = 7;
-					break;
-				case 7:
-					obj2 = 3;
-					continue;
-				case 14:
-					if (14 != 0)
-					{
-						obj2 = 15;
-					}
-					continue;
-				case 6:
-					obj2 = 0;
-					if (12 == 0)
-					{
-						obj2 = 5;
-					}
-					continue;
-				case 18:
-					_ = 0;
-					obj = 4;
-					break;
-				case 9:
-					_ = 0;
-					_ = 6;
-					continue;
-				case 10:
-					obj = 8;
-					break;
-				case 4:
-					obj2 = 0;
-					if (0 != 0)
-					{
-						obj2 = 0;
-					}
-					continue;
-				case 13:
-					_ = 0;
-					_ = 2;
-					continue;
-				case 8:
-					return;
-				case 16:
-					if ((int)/*Error near IL_01b3: Stack underflow*/ == 0)
-					{
-						_ = null;
-					}
-					_ = 0;
-					_ = 9;
-					continue;
-				case 12:
-					if ((int)/*Error near IL_01cd: Stack underflow*/ == 0)
-					{
-						_ = null;
-					}
-					obj2 = 0;
-					if (1 != 0)
-					{
-						obj2 = 0;
-					}
-					continue;
-				case 1:
-					if ((int)/*Error near IL_01f4: Stack underflow*/ == 0)
-					{
-						_ = null;
-					}
-					_ = 0;
-					if (7 != 0)
-					{
-						_ = 11;
-					}
-					continue;
-				}
-				break;
-			}
-		}
+		// ILSpy could not decompile this. Please report the exception below,
+		// along with the assembly it came from, at https://github.com/icsharpcode/ILSpy/issues/new
+		// System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+		//    at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+		//    at System.Linq.Enumerable.Skip[TSource](IEnumerable`1 source, Int32 count)
+		//    at ICSharpCode.Decompiler.CSharp.ArgumentList.GetArgumentResolveResultsDirect(Int32 skipCount) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 124
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Probe() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 493
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Run() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 438
+		//    at ICSharpCode.Decompiler.CSharp.Disambiguator.ForMethodReference(ExpressionBuilder expressionBuilder, IMethod method, IType targetType, TranslatedExpression target, Boolean requireTarget, ExpectedTargetDetails expectedTargetDetails, Boolean isExtensionMethodReference, Boolean castTargetUpFront) in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 131
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.DisambiguateDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1718
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1648
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildMethodReference(IMethod method, Boolean isVirtual) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1639
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitLdFtn(LdFtn inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 5058
+		//    at ICSharpCode.Decompiler.IL.LdFtn.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 3175
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitConv(Conv inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 2307
+		//    at ICSharpCode.Decompiler.IL.Conv.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2298
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildArgumentList(ExpectedTargetDetails expectedTargetDetails, ResolveResult target, IMethod method, Int32 firstParamIndex, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, Boolean writtenAsAssignment) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1070
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(OpCode callOpCode, IMethod method, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, IType constrainedTo) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 461
+		//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(CallInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 255
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitNewObj(NewObj inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 538
+		//    at ICSharpCode.Decompiler.IL.NewObj.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 4578
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitStObj(StObj inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 3219
+		//    at ICSharpCode.Decompiler.IL.StObj.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 4386
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitStLoc(StLoc inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 855
+		//    at ICSharpCode.Decompiler.IL.StLoc.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2590
+		//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitStLoc(StLoc inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 129
+		//    at ICSharpCode.Decompiler.IL.StLoc.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2586
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlock(Block block) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1311
+		//    at ICSharpCode.Decompiler.IL.Block.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 882
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitIfInstruction(IfInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 162
+		//    at ICSharpCode.Decompiler.IL.IfInstruction.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 1440
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlock(Block block) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1311
+		//    at ICSharpCode.Decompiler.IL.Block.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 882
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertSwitchSectionBody(SwitchSection astSection, ILInstruction bodyInst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 334
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.TranslateSwitch(BlockContainer switchContainer, SwitchInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 280
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1334
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1338
+		//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+		//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertAsBlock(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 87
+		//    at ICSharpCode.Decompiler.CSharp.CSharpDecompiler.DecompileBody(IMethod method, EntityDeclaration entityDecl, DecompileRun decompileRun, ITypeResolveContext decompilationContext, ExtensionInfo extensionInfo) in /_/ICSharpCode.Decompiler/CSharp/CSharpDecompiler.cs:line 2435
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal EnumGameType _FF00_FF00_FF00_FF00_FF00_FF00ﰀ()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (EnumGameType)this;
+		return (EnumGameType)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1024,10 +1098,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FE00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1049,20 +1125,23 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00Ȁ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal uint _FF00_FF00_FF00_FF00_FF00_FF00_FF00_0300()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1084,10 +1163,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_0600()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1101,10 +1182,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ࠀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1118,10 +1201,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_0A00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1143,26 +1228,32 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_0D00(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got I4
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1172,10 +1263,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_0E00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1197,26 +1290,32 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᄀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got Obj
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1234,11 +1333,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00ጀ()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1252,10 +1352,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᔀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1269,10 +1371,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᜀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1286,10 +1390,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᤀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1303,19 +1409,33 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_1B00(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_006b: Expected Obj, but got Ref
-		//IL_00b1->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_005b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_007b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0096->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00bc->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0066->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0086->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a1->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0092: Expected Obj, but got Ref
+		//IL_00ee: Expected VT, but got I4
+		//IL_00ee: Expected Obj, but got Ref
+		//IL_00fd: Expected Obj, but got I4
+		//IL_0065: Expected Obj, but got Ref
+		//IL_006c: Expected Obj, but got Ref
+		//IL_006c: Expected Obj, but got Ref
+		//IL_007b: Expected Obj, but got VT
+		//IL_00a0: Expected VT, but got I4
+		//IL_00a0: Expected Obj, but got Ref
+		//IL_00af: Expected Obj, but got VT
+		//IL_00c7: Expected Obj, but got Ref
+		//IL_004f: Expected VT, but got Ref
+		//IL_004f: Expected VT, but got Ref
+		//IL_0054: Expected VT, but got I4
+		//IL_0102->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0080->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00b4->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00db->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_010d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008b->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00bf->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e6->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 5;
@@ -1325,39 +1445,42 @@ public class GameProxy : GameInstance
 			switch ((int)obj2)
 			{
 			case 5:
-				_ = ref obj;
+				((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_0054: Stack underflow*/)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)((EqualityComparer<_00210>)/*Error near IL_004f: Stack underflow*/).Equals((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)(&obj));
 				_ = 4;
 				break;
 			case 2:
-				_ = ref obj;
-				_ = ref obj;
-				if (false)
+				((EventBus)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Register((Action<EventMinecraft>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter), (int)(&obj));
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field != 0)
 				{
 					_ = 0;
 				}
 				break;
 			default:
-				return (object)(&obj);
+				_ = ref ((_003C_003Ef__AnonymousType2<, , , >)(&obj))._003Cuser_id_003Ei__Field;
+				/*Error near IL_0092: Member reference must be method, but was: Field*/;
 			case 3:
-				_ = ref obj;
-				_ = -1;
-				if (2 == 0)
+				((_003C_003Ef__AnonymousType3<, >)(&obj))._003Centry_003Ei__Field = (_003Centry_003Ej__TPar)(-1);
+				obj2 = 2;
+				if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 4:
-				_ = ref obj;
-				if (0 == 0)
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance = (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0)(object)this;
+				obj2 = 0;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.StoreConverter == null)
 				{
-					_ = 1;
+					obj2 = 1;
 				}
 				break;
 			case 1:
-				_ = ref obj;
-				if (2 == 0)
+				_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_defaultTimeout = (TimeSpan)P_0;
+				obj2 = 2;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_ascii_68FF03FEFFFF87FEFFFF07 == null)
 				{
-					_ = 3;
+					obj2 = 3;
 				}
 				break;
 			}
@@ -1390,36 +1513,43 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal uint _FF00_FF00_FF00_FF00_FF00_FF00_FF00ἀ()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2000(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got I4
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1429,30 +1559,43 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal EnumGameVersion _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2100()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (EnumGameVersion)(int)this;
+		return (EnumGameVersion)(int)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2300()
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2300()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0042: Expected I4, but got Obj
-		//IL_0053: Expected Obj, but got I4
-		//IL_0058->IL0015: Incompatible stack heights: 2 vs 0
-		//IL_0071->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0100->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_009a->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00b8->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0084->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00d0->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_010b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00a5->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00ed->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004f: Expected I4, but got Obj
+		//IL_005b: Expected VT, but got I4
+		//IL_0064: Expected Obj, but got I4
+		//IL_006f: Expected VT, but got Obj
+		//IL_006f: Expected Obj, but got Ref
+		//IL_00c2: Expected Obj, but got VT
+		//IL_00dc: Expected Obj, but got I4
+		//IL_00e1: Expected VT, but got Obj
+		//IL_00e1: Expected VT, but got Ref
+		//IL_00eb: Expected Obj, but got I4
+		//IL_012a: Expected Obj, but got VT
+		//IL_0083->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0083->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_008e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008e->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00c7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f5->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f5->IL0026: Incompatible stack types: I4 vs Ref
+		//IL_00a5->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_0111->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_012f->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_013a->IL0026: Incompatible stack heights: 4 vs 2
+		ref readonly _003Caction_003Ej__TPar reference = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 7;
@@ -1464,54 +1607,63 @@ public class GameProxy : GameInstance
 				switch ((int)obj2)
 				{
 				case 4:
-					obj2 = this;
-					if (true)
+				{
+					int hashCode = ((EqualityComparer<_00210>)Unsafe.AsPointer(ref reference)).GetHashCode((_00210)this);
+					obj2 = 1;
+					reference = ref *(_003Caction_003Ej__TPar*)hashCode;
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 					{
 						obj2 = 1;
+						reference = ref *(_003Caction_003Ej__TPar*)hashCode;
 					}
 					continue;
+				}
 				case 7:
-					if (this == null)
+				{
+					bool flag = _003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+					if (!flag)
 					{
-						obj2 = 6;
+						_ = 6;
+						continue;
 					}
-					else
-					{
-						_ = 8;
-					}
+					((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_00e1: Stack underflow*/)._002Ector((_003Cname_003Ej__TPar)Unsafe.AsPointer(ref reference), (_003Cuuid_003Ej__TPar)this, (_003Cuser_id_003Ej__TPar)((_003C_003Ef__AnonymousType3<, >)flag)._003Centry_003Ei__Field);
+					int hashCode2 = ((_003C_003Ef__AnonymousType1<, , >)((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_00e6: Stack underflow*/).Equals((object)/*Error near IL_00e6: Stack underflow*/)).GetHashCode();
+					obj2 = 8;
+					reference = ref *(_003Caction_003Ej__TPar*)hashCode2;
 					continue;
+				}
 				case 1:
 					return;
 				case 2:
 				case 5:
-					if (this == null)
+					if ((int)((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Ccontext_003Ei__Field == 0)
 					{
-						if (true)
+						obj2 = 1;
+						if (_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic != null)
 						{
 							obj2 = 3;
 						}
+						continue;
 					}
-					else if (0 == 0)
-					{
-						obj2 = 0;
-					}
-					continue;
+					/*Error near IL_013f: Member reference must be method, but was: Field*/;
 				case 6:
 				case 8:
-					obj2 = this;
-					if (obj2 == null)
+					if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate == null)
 					{
 						obj2 = 2;
+						continue;
 					}
-					else if (0 == 0)
+					_003C_003Ef__AnonymousType1<, , >.ReflectScalableStack();
+					_ = 0;
+					if (!_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_hasTimeout)
 					{
-						obj2 = 5;
+						_ = 5;
 					}
 					continue;
 				}
 				break;
 			}
-			_ = 0;
+			((_003C_003Ef__AnonymousType0<>)(object)this)._002Ector((_003Caction_003Ej__TPar)0);
 			obj = 4;
 		}
 	}
@@ -1519,10 +1671,12 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2400()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1534,19 +1688,27 @@ public class GameProxy : GameInstance
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2600(Action<GameProxy> P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2600(Action<GameProxy> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_006b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0087->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0050->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0076->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0092->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_005b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b0->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00c3->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_008b: Expected Obj, but got VT
+		//IL_00a4: Expected Obj, but got VT
+		//IL_0059: Expected Obj, but got Ref
+		//IL_00cb: Expected VT, but got Obj
+		//IL_00cb: Expected VT, but got Obj
+		//IL_00cb: Expected Obj, but got Ref
+		//IL_00cc: Expected Obj, but got I4
+		//IL_0090->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e6->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_009b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c3->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0078->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f1->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0104->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -1556,15 +1718,21 @@ public class GameProxy : GameInstance
 			switch ((int)obj2)
 			{
 			case 2:
-				obj = obj;
-				if (5 == 0)
+			{
+				ref readonly _003Cuuid_003Ej__TPar reference = ref ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
+				((AsyncTaskMethodBuilder*)obj)->Start(ref *(_003CListenAsync_003Ed__69*)obj);
+				obj = (object)Unsafe.AsPointer(ref reference);
+				obj2 = 5;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
-					_ = 4;
+					obj2 = 4;
 				}
 				break;
+			}
 			default:
 				obj = obj;
-				if (3 != 0)
+				obj2 = 3;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field != 0)
 				{
 					obj2 = 3;
 				}
@@ -1572,18 +1740,19 @@ public class GameProxy : GameInstance
 			case 4:
 				return;
 			case 1:
-				obj = this;
-				if (0 == 0)
+				obj = ((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Cuser_id_003Ei__Field;
+				obj2 = 0;
+				if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field == 0)
 				{
 					obj2 = 0;
 				}
 				break;
 			case 3:
-				obj2 = obj;
-				obj = P_0;
-				if (0 == 0)
+				obj = (EqualityComparer<Type>)(object)((EqualityComparer<_00212>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).Equals((_00212?)obj, (_00212?)P_0);
+				_ = 0;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate == null)
 				{
-					obj2 = 2;
+					_ = 2;
 				}
 				break;
 			case 5:
@@ -1600,15 +1769,19 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2700(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0095->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0066->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0084->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0051->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0071->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003f: Expected I4, but got Obj
+		//IL_009e: Invalid comparison between VT and Obj
+		//IL_004b: Expected VT, but got Obj
+		//IL_005a: Expected Obj, but got VT
+		//IL_0086: Expected Obj, but got VT
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ad->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0096->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 3;
@@ -1618,28 +1791,28 @@ public class GameProxy : GameInstance
 			switch ((int)obj2)
 			{
 			default:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 1;
+					obj2 = 1;
 				}
 				break;
 			case 2:
-				if (this == null)
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Curl_003Ei__Field != 0)
 				{
-					if (0 == 0)
-					{
-						obj2 = 0;
-					}
+					/*Error near IL_00b3: Member reference must be method, but was: Field*/;
 				}
-				else
+				obj2 = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 				{
-					_ = 4;
+					obj2 = 0;
 				}
 				break;
 			case 1:
 				return;
 			case 3:
-				if (this != P_0)
+				if (((_003C_003Ef__AnonymousType2<, , , >)(object)this)._003Cuser_id_003Ei__Field != (_003Cuser_id_003Ej__TPar)P_0)
 				{
 					obj2 = 2;
 					break;
@@ -1666,19 +1839,27 @@ public class GameProxy : GameInstance
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2A00(Action<GameProxy> P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2A00(Action<GameProxy> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_00b7->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0087->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00c2->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0074->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_009c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00a7->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_0050: Expected Obj, but got VT
+		//IL_005f: Expected Obj, but got VT
+		//IL_0077: Expected Obj, but got Ref
+		//IL_007e: Expected Obj, but got VT
+		//IL_008d: Expected Obj, but got VT
+		//IL_00ac: Expected Obj, but got Ref
+		//IL_00d0: Expected Obj, but got VT
+		//IL_00f8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0092->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00b8->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0103->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_009d->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00d5->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e0->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -1690,28 +1871,30 @@ public class GameProxy : GameInstance
 			default:
 				return;
 			case 2:
-				obj = this;
-				if (true)
+				obj = ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
+				obj2 = 1;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
 					obj2 = 1;
 				}
 				continue;
 			case 3:
-				obj2 = obj;
-				obj = P_0;
-				if (5 == 0)
+				obj = (_00212)string.Format((IFormatProvider?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (string)obj, (object?[])(object)P_0);
+				_ = 5;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 				{
-					obj2 = 4;
+					_ = 4;
 				}
 				continue;
 			case 5:
-				obj = obj;
-				_ = 4;
+				obj = ((AbstractBootstrap<ServerBootstrap, IServerChannel>)(object)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)).Option<IByteBufferAllocator>((ChannelOption<IByteBufferAllocator>)obj, (IByteBufferAllocator)obj);
+				obj2 = 4;
 				continue;
 			case 4:
 				if (obj == obj)
 				{
-					if (false)
+					obj2 = 0;
+					if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument != null)
 					{
 						obj2 = 0;
 					}
@@ -1724,7 +1907,8 @@ public class GameProxy : GameInstance
 				return;
 			}
 			obj = obj;
-			if (3 != 0)
+			obj2 = 3;
+			if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate != null)
 			{
 				obj2 = 3;
 			}
@@ -1734,20 +1918,23 @@ public class GameProxy : GameInstance
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal uint _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2B00()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private object _FF00_FF00_FF00_FF00_FF00_FF00_FF00Ⰰ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

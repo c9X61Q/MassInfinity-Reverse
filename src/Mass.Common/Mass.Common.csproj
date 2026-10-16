@@ -14,7 +14,7 @@
   <ItemGroup>
     <Reference Include="Serilog" />
     <Reference Include="Mass.Domain">
-      <HintPath>mass-ildump/backfilled/Mass.Domain.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Domain.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

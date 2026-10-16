@@ -1,6 +1,10 @@
 using System;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using Serilog;
 
 namespace Mass.Game.Launcher.Java.LanGame;
 
@@ -53,22 +57,30 @@ public sealed class WebRtcCompressor
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public WebRtcCompressor()
+	public unsafe WebRtcCompressor()
 	{
-		//IL_005d: Expected I4, but got Obj
-		//IL_004b->IL0054: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got I4
+		//IL_0016: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0020: Expected VT, but got Unknown
+		//IL_0030: Expected VT, but got Obj
+		//IL_0045: Expected I4, but got Obj
+		//IL_0040: Expected native int or pointer, but got Obj
+		//IL_0055: Expected native int or pointer, but got Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		_ = -1;
-		_ = 1024;
-		_ = 1024;
-		WebRtcCompressor webRtcCompressor = this;
-		if (0 == 0)
+		Unsafe.Write(&((Authenticator._003CListenAsync_003Ed__7*)(nint)/*Error near IL_0020: Stack underflow*/)->_003C_003Et__builder, (AsyncTaskMethodBuilder)new ILogger((string)(object)this, (_0021_00210)(-1)));
+		Unsafe.Write(&((Authenticator._003CListenAsync_003Ed__7*)(nint)/*Error near IL_0030: Stack underflow*/)->_003C_003Eu__1, (TaskAwaiter)new Task((Func<Task?>)(object)this));
+		((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->_003C_003E1__state = (int)new ILogger[1024];
+		Unsafe.Write(&((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->listener, new int[1024]);
+		((TcpListener)this).Dispose();
+		int num = 0;
+		if (Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler == null)
 		{
-			webRtcCompressor = (WebRtcCompressor)0;
+			num = 0;
 		}
-		switch ((int)webRtcCompressor)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -96,23 +108,37 @@ public sealed class WebRtcCompressor
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_2900(object P_0)
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_2900(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_0060: Expected I4, but got Obj
-		//IL_009d: Expected Obj, but got I4
-		//IL_00c3: Expected I4, but got Obj
-		//IL_00f5: Expected Obj, but got I4
-		//IL_0047->IL004b: Incompatible stack types: I4 vs Obj
-		//IL_008c->IL004b: Incompatible stack heights: 1 vs 2
-		//IL_007f->IL004b: Incompatible stack types: I4 vs Obj
-		//IL_0142->IL01c8: Incompatible stack heights: 0 vs 1
-		//IL_00d9->IL00a6: Incompatible stack heights: 2 vs 3
-		//IL_013d->IL00a6: Incompatible stack heights: 7 vs 3
-		//IL_00e4->IL00a6: Incompatible stack heights: 2 vs 3
-		//IL_0118->IL00a6: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003a: Expected native int or pointer, but got Obj
+		//IL_0045: Expected I, but got Obj
+		//IL_0045: Expected Obj, but got I4
+		//IL_004f: Expected native int or pointer, but got Obj
+		//IL_0083: Expected native int or pointer, but got Obj
+		//IL_00bf: Expected native int or pointer, but got Obj
+		//IL_00c5: Expected native int or pointer, but got Obj
+		//IL_00d1: Expected Obj, but got VT
+		//IL_00da: Expected Obj, but got I4
+		//IL_0100: Expected I4, but got Obj
+		//IL_010c: Expected Ref, but got VT
+		//IL_0118: Expected native int or pointer, but got Obj
+		//IL_018b: Expected native int or pointer, but got Obj
+		//IL_0144: Expected native int or pointer, but got Obj
+		//IL_014a: Expected native int or pointer, but got Obj
+		//IL_0154: Expected Obj, but got VT
+		//IL_0156: Expected Obj, but got VT
+		//IL_013e: Expected Obj, but got I4
+		//IL_00a1->IL0068: Incompatible stack heights: 2 vs 1
+		//IL_00ac->IL0068: Incompatible stack heights: 2 vs 1
+		//IL_0122->IL00e3: Incompatible stack heights: 1 vs 2
+		//IL_01a2->IL00e3: Incompatible stack heights: 6 vs 2
+		//IL_016a->IL00e3: Incompatible stack heights: 1 vs 2
+		//IL_012d->IL00e3: Incompatible stack heights: 1 vs 2
+		//IL_0175->IL00e3: Incompatible stack heights: 1 vs 2
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -120,39 +146,45 @@ public sealed class WebRtcCompressor
 		{
 		case 1:
 		{
-			object obj2 = P_0;
-			if (0 == 0)
+			((Func<Task>)/*Error near IL_0045: Stack underflow*/)._002Ector((object)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state, (nint)P_0);
+			int num = 0;
+			if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 == 0)
 			{
-				obj2 = 0;
+				num = 0;
 			}
 			while (true)
 			{
-				switch ((int)obj2)
+				switch (num)
 				{
 				default:
-					obj2 = this;
-					if (1 == 0)
+					_ = ((AsyncTaskMethodBuilder*)Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton)->Task;
+					_ = 1;
+					if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003Et__builder).listener == null)
 					{
-						obj2 = 0;
+						_ = 0;
 					}
 					continue;
 				case 1:
-					obj = this;
-					_ = 2;
+					obj = new TcpListener();
+					num = 2;
 					continue;
 				case 2:
-					obj = this;
+				{
+					TaskAwaiter<TcpClient> taskAwaiter = ((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->_003C_003Eu__1;
+					obj = ((Task)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler).GetAwaiter();
 					obj = 4;
 					while (true)
 					{
-						object obj3 = obj;
+						object obj2 = obj;
 						while (true)
 						{
-							switch ((int)obj3)
+							switch ((int)obj2)
 							{
 							case 2:
-								obj = obj;
-								if (0 == 0)
+								((AsyncTaskMethodBuilder*)/*Error near IL_010c: Stack underflow*/)->AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref *(TAwaiter*)taskAwaiter, ref *(TStateMachine*)obj);
+								obj = (object)/*Error near IL_010e: Stack underflow*/;
+								_ = 0;
+								if (((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CReceiveAsync_003Ed__9._003C_003E4__this)->client == null)
 								{
 									_ = 0;
 								}
@@ -161,32 +193,36 @@ public sealed class WebRtcCompressor
 							case 4:
 								if ((nint)obj <= 0)
 								{
-									goto end_IL_00a6;
+									goto end_IL_00e3;
 								}
 								goto case 3;
 							case 5:
-								obj3 = this;
-								obj = this;
-								if (0 == 0)
+								((IAsyncStateMachine)((Authenticator._003CReceiveAsync_003Ed__9*)(nint)this)->_003C_003Eu__1).SetStateMachine((IAsyncStateMachine)Authenticator._003CReceiveAsync_003Ed__9.CheckCustomChain);
+								obj = taskAwaiter;
+								_ = 0;
+								if (((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10._003C_003Et__builder).client == null)
 								{
-									obj3 = 1;
+									_ = 1;
 								}
 								continue;
 							case 3:
+								_ = ((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)this)->_003C_003E4__this;
 								_ = 0;
+								((Task<TcpClient>)obj).GetAwaiter();
 								_ = 5;
 								continue;
 							}
-							goto end_IL_004b;
+							goto end_IL_0068;
 							continue;
-							end_IL_00a6:
+							end_IL_00e3:
 							break;
 						}
 						obj = 2;
 					}
+				}
 				case 3:
 					break;
-					end_IL_004b:
+					end_IL_0068:
 					break;
 				}
 				break;
@@ -206,12 +242,14 @@ public sealed class WebRtcCompressor
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_2B00()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_2B00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -223,13 +261,19 @@ public sealed class WebRtcCompressor
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00ⴀ()
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00ⴀ()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0063->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0067: Expected native int or pointer, but got Obj
+		//IL_003d: Expected native int or pointer, but got Obj
+		//IL_0051: Expected native int or pointer, but got Obj
+		//IL_0085->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_005b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0090->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0066->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -239,17 +283,19 @@ public sealed class WebRtcCompressor
 			switch ((int)obj2)
 			{
 			case 1:
-				obj2 = this;
-				if (0 == 0)
+				((Func<Task>)/*Error near IL_0047: Stack underflow*/)._002Ector((object)/*Error near IL_0047: Stack underflow*/, (nint)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state);
+				obj2 = 0;
+				if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 == 0)
 				{
 					obj2 = 0;
 				}
 				break;
 			default:
-				obj2 = this;
-				if (true)
+				_ = ((AsyncTaskMethodBuilder*)Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton)->Task;
+				_ = 1;
+				if (((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003Et__builder).listener != null)
 				{
-					obj2 = 2;
+					_ = 2;
 				}
 				break;
 			case 2:
@@ -275,23 +321,27 @@ public sealed class WebRtcCompressor
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_3100(object P_0)
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_3100(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_005c: Expected I4, but got Obj
-		//IL_00bf: Expected I4, but got Obj
-		//IL_0047->IL004b: Incompatible stack types: I4 vs Obj
-		//IL_0070->IL004b: Incompatible stack heights: 0 vs 2
-		//IL_009a->IL009e: Incompatible stack types: I4 vs Obj
-		//IL_007b->IL004b: Incompatible stack heights: 1 vs 2
-		//IL_00e5->IL009e: Incompatible stack heights: 6 vs 2
-		//IL_0152->IL01c2: Incompatible stack heights: 0 vs 1
-		//IL_00f4->IL009e: Incompatible stack types: I4 vs Obj
-		//IL_0124->IL009e: Incompatible stack heights: 1 vs 2
-		//IL_014d->IL009e: Incompatible stack types: I4 vs Obj
-		//IL_012f->IL009e: Incompatible stack heights: 1 vs 2
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003a: Expected native int or pointer, but got Obj
+		//IL_0045: Expected I, but got Obj
+		//IL_0045: Expected Obj, but got I4
+		//IL_004f: Expected native int or pointer, but got Obj
+		//IL_00a6: Expected native int or pointer, but got Obj
+		//IL_00ac: Expected native int or pointer, but got Obj
+		//IL_00c2: Expected native int or pointer, but got Obj
+		//IL_0085: Expected Obj, but got VT
+		//IL_0113: Expected native int or pointer, but got Obj
+		//IL_0189: Expected native int or pointer, but got Obj
+		//IL_018f: Expected native int or pointer, but got Obj
+		//IL_019b: Expected Obj, but got VT
+		//IL_012a->IL00db: Incompatible stack heights: 4 vs 1
+		//IL_01af->IL00db: Incompatible stack heights: 2 vs 1
+		//IL_01ba->IL00db: Incompatible stack heights: 2 vs 1
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -299,59 +349,68 @@ public sealed class WebRtcCompressor
 		{
 		case 1:
 		{
-			object obj2 = P_0;
-			if (1 == 0)
+			((Func<Task>)/*Error near IL_0045: Stack underflow*/)._002Ector((object)((Authenticator._003CListenAsync_003Ed__7*)(nint)this)->_003C_003E1__state, (nint)P_0);
+			int num = 1;
+			if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 == 0)
 			{
-				obj2 = 1;
+				num = 1;
 			}
 			while (true)
 			{
-				switch ((int)obj2)
+				switch (num)
 				{
 				case 1:
-					obj = this;
-					if (false)
+					obj = new AsyncTaskMethodBuilder(ref *(TStateMachine*)/*Error near IL_0083: Stack underflow*/);
+					num = 0;
+					if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E1__state)->_003C_003Et__builder != 0)
 					{
-						_ = 0;
+						num = 0;
 					}
 					continue;
 				default:
 				{
-					WebRtcCompressor webRtcCompressor = this;
-					obj = this;
-					if (3 == 0)
+					TcpListener tcpListener = ((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->listener;
+					((IAsyncStateMachine)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->_003C_003E4__this).MoveNext();
+					obj = tcpListener;
+					int num2 = 3;
+					if (((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler)->_003C_003E1__state == 0)
 					{
-						webRtcCompressor = (WebRtcCompressor)1;
+						num2 = 1;
 					}
 					while (true)
 					{
-						switch ((int)webRtcCompressor)
+						switch (num2)
 						{
 						case 1:
 						case 6:
+							_ = ((Authenticator._003CReceiveAsync_003Ed__9*)(nint)this)->_003C_003Et__builder;
 							_ = 0;
+							((TaskAwaiter*)obj)->GetResult();
 							_ = 5;
 							continue;
 						case 4:
-							obj = obj;
-							webRtcCompressor = (WebRtcCompressor)2;
+							((ILogger)/*Error near IL_0131: Stack underflow*/).Error((Exception)/*Error near IL_0131: Stack underflow*/, (string)obj);
+							obj = (object)/*Error near IL_0133: Stack underflow*/;
+							num2 = 2;
 							continue;
 						default:
 							if ((nint)obj > 0)
 							{
-								if (6 != 0)
+								num2 = 6;
+								if ((int)((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10._003C_003E1__state)->_003C_003Et__builder != 0)
 								{
-									_ = 2;
+									num2 = 2;
 								}
 								continue;
 							}
 							goto case 4;
 						case 5:
-							webRtcCompressor = this;
-							obj = this;
-							if (0 == 0)
+							_ = ((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)this)->client;
+							obj = ((Task<TcpClient>)(object)((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)this)->_003C_003E4__this).GetAwaiter();
+							_ = 0;
+							if (Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10.ReflectMixedGateway == null)
 							{
-								webRtcCompressor = (WebRtcCompressor)0;
+								_ = 0;
 							}
 							continue;
 						case 2:
@@ -389,12 +448,12 @@ public sealed class WebRtcCompressor
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00㐀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00㐀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 }

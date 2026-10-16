@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
@@ -20,19 +21,20 @@ public class BoolValueAttribute : Attribute
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public BoolValueAttribute(bool defaultValue)
+	public unsafe BoolValueAttribute(bool defaultValue)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got I4
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		BoolValueAttribute boolValueAttribute = this;
-		if (false)
+		DecorateIdentifiableAggregator = defaultValue;
+		((Dictionary<string, object>.Enumerator*)this)->MoveNext();
+		int num = 0;
+		if (((ConfigValue)ConfigValue.Key__BackingField).Icon__BackingField != ValueIcon.AccessTime)
 		{
-			boolValueAttribute = (BoolValueAttribute)0;
+			num = 0;
 		}
-		switch ((int)boolValueAttribute)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -62,11 +64,11 @@ public class BoolValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte _FF00_FF00_FF00最()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected I4, but got Obj
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -80,10 +82,10 @@ public class BoolValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00椀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return DecorateIdentifiableAggregator;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -105,11 +107,10 @@ public class BoolValueAttribute : Attribute
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00氀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		if (((KeyValuePair<string, object>)Unsafe.As<nint, object>(ref BoolValue.Value__BackingField)).Key == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (DecorateIdentifiableAggregator == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

@@ -1,12 +1,45 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
+using Mass.Domain.Mobile.Entities.SAuth;
+using Mass.Domain.Mobile.Interfaces;
 
 namespace Mass.Domain.Mobile.Entities;
 
 public class EntityPeAuthenticationDetail
 {
+	[CompilerGenerated]
+	private object AppChannel__BackingField;
+
+	[CompilerGenerated]
+	private object CoreNum__BackingField;
+
+	[CompilerGenerated]
+	private object CpuHz__BackingField;
+
+	[CompilerGenerated]
+	private object DeviceHeight__BackingField;
+
+	[CompilerGenerated]
+	private object DeviceWidth__BackingField;
+
+	[CompilerGenerated]
+	private nint Emulator__BackingField;
+
+	[CompilerGenerated]
+	private nint IsGuest__BackingField;
+
+	[CompilerGenerated]
+	private object MacAddress__BackingField;
+
+	[CompilerGenerated]
+	private object OsName__BackingField;
+
+	[CompilerGenerated]
+	private object OsVersion__BackingField;
+
 	internal static EntityPeAuthenticationDetail CheckSortedFactory;
 
 	[JsonPropertyName("app_channel")]
@@ -418,19 +451,44 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public EntityPeAuthenticationDetail()
+	public unsafe EntityPeAuthenticationDetail()
 	{
-		//IL_00b2: Expected I4, but got Obj
-		//IL_00a0->IL00a9: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_004a: Expected I4, but got Obj
+		//IL_00eb: Expected I, but got Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		EntityPeAuthenticationDetail entityPeAuthenticationDetail = this;
-		if (false)
+		((IMobileGame)/*Error near IL_001a: Stack underflow*/).EntityId = (string)(object)this;
+		((EntityAuthenticationDto)/*Error near IL_001f: Stack underflow*/).DisplayName__BackingField = (object)/*Error near IL_001f: Stack underflow*/;
+		((IMobileGame)/*Error near IL_002a: Stack underflow*/).Name = (string)(object)this;
+		((EntityAuthenticationDto)/*Error near IL_002f: Stack underflow*/).NeteaseSid__BackingField = (object)/*Error near IL_002f: Stack underflow*/;
+		((IMobileGame)/*Error near IL_003a: Stack underflow*/).Description = (string)(object)this;
+		((EntityAuthenticationDto)/*Error near IL_003f: Stack underflow*/).PatchVersion__BackingField = (object)/*Error near IL_003f: Stack underflow*/;
+		((IMobileGame)/*Error near IL_004a: Stack underflow*/).PlayerCount = (int)this;
+		EntityAuthenticationDto.CheckConcreteState = (object)/*Error near IL_004f: Stack underflow*/;
+		((IMobileGame)/*Error near IL_005a: Stack underflow*/).ImageUrl = (string)(object)this;
+		((EntityLinkServer)/*Error near IL_005f: Stack underflow*/).IspEnabled__BackingField = (nint)/*Error near IL_005f: Stack underflow*/;
+		((EntityAuthentication)/*Error near IL_006a: Stack underflow*/).Chain = (List<string>)(object)this;
+		((EntityLinkServer)/*Error near IL_006f: Stack underflow*/).ServerType__BackingField = (object)/*Error near IL_006f: Stack underflow*/;
+		((EntityLinkServer)this).Port__BackingField = (EntityAuthentication.CheckStaticSingleton() ? 1 : 0);
+		((EntityLoginOtpDto)/*Error near IL_008b: Stack underflow*/).Json__BackingField = this;
+		((EntityPeAuthenticationDetail)/*Error near IL_009b: Stack underflow*/).AppChannel__BackingField = ((EntityAuthenticationDto)this).ClientKey;
+		((EntityPeAuthenticationDetail)/*Error near IL_00ab: Stack underflow*/).CoreNum__BackingField = ((EntityAuthenticationDto)this).DisplayName;
+		((EntityPeAuthenticationDetail)/*Error near IL_00bb: Stack underflow*/).CpuHz__BackingField = ((EntityAuthenticationDto)this).EngineVersion;
+		((EntityPeAuthenticationDetail)/*Error near IL_00cb: Stack underflow*/).DeviceHeight__BackingField = ((EntityAuthenticationDto)this).NeteaseSid;
+		((EntityPeAuthenticationDetail)/*Error near IL_00db: Stack underflow*/).DeviceWidth__BackingField = ((EntityAuthenticationDto)this).OsName;
+		((EntityPeAuthenticationDetail)/*Error near IL_00eb: Stack underflow*/).Emulator__BackingField = (nint)((EntityAuthenticationDto)this).PatchVersion;
+		((EntityPeAuthenticationDetail)/*Error near IL_00fb: Stack underflow*/).IsGuest__BackingField = (int)((EntityAuthenticationDto)this).UserId;
+		((EntityAuthenticationDto)this)._002Ector();
+		((EntityPeAuthenticationDetail)/*Error near IL_010b: Stack underflow*/).MacAddress__BackingField = (object)/*Error near IL_010b: Stack underflow*/;
+		((JsonConverter<EntitySAuth>)this)._002Ector();
+		int num = 0;
+		if (((EntityPeAuthenticationDetail)EntityPeAuthenticationDetail.OsName__BackingField).OsVersion__BackingField != null)
 		{
-			entityPeAuthenticationDetail = (EntityPeAuthenticationDetail)0;
+			num = 0;
 		}
-		switch ((int)entityPeAuthenticationDetail)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -458,35 +516,40 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00숀()
+	internal unsafe object _FF00숀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00쌀(object P_0)
+	internal unsafe void _FF00쌀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -496,12 +559,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00쐀()
+	internal unsafe object _FF00쐀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -513,12 +577,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00였()
+	internal unsafe object _FF00였()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -530,12 +595,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00저()
+	internal unsafe object _FF00저()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -547,37 +613,43 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00쨀()
+	internal unsafe object _FF00쨀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00쬀(uint P_0)
+	internal unsafe void _FF00쬀(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected Obj, but got I4
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -601,21 +673,23 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00츀()
+	internal unsafe object _FF00츀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00케()
+	internal unsafe object _FF00케()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -627,12 +701,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00턀()
+	internal unsafe object _FF00턀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -644,28 +719,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00팀(object P_0)
+	internal unsafe void _FF00팀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -673,26 +752,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00퐀(object P_0)
+	internal unsafe void _FF00퐀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -710,26 +793,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00혀(object P_0)
+	internal unsafe void _FF00혀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -747,12 +834,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FFFD()
+	internal unsafe object _FF00_FFFD()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -764,12 +852,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FFFD()
+	internal unsafe object _FF00_FFFD()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -781,28 +870,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FFFD(object P_0)
+	internal unsafe void _FF00_FFFD(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -810,26 +903,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FFFD(object P_0)
+	internal unsafe void _FF00_FFFD(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -855,26 +952,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_E000(object P_0)
+	internal unsafe void _FF00_E000(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -892,12 +993,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_E200()
+	internal unsafe object _FF00_E200()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -909,28 +1011,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_E400(object P_0)
+	internal unsafe void _FF00_E400(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -954,28 +1060,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_E700(object P_0)
+	internal unsafe void _FF00_E700(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -983,28 +1093,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_F700(object P_0)
+	internal unsafe void _FF00_F700(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1020,13 +1134,14 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal uint _FF00豈()
+	internal unsafe uint _FF00豈()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001b: Expected I4, but got Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1046,28 +1161,33 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00ﰀ(byte P_0)
+	internal unsafe void _FF00ﰀ(byte P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected Obj, but got I4
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1075,26 +1195,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00ﴀ(object P_0)
+	internal unsafe void _FF00ﴀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -1104,26 +1228,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FE00(object P_0)
+	internal unsafe void _FF00_FE00(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -1141,26 +1269,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00Ā(object P_0)
+	internal unsafe void _FF00_FF00Ā(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -1178,12 +1310,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_0300()
+	internal unsafe object _FF00_FF00_0300()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1195,26 +1328,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00Ԁ(object P_0)
+	internal unsafe void _FF00_FF00Ԁ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -1232,12 +1369,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_0700()
+	internal unsafe object _FF00_FF00_0700()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1249,12 +1387,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_0900()
+	internal unsafe static object _FF00_FF00_0900()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityAuthenticationDto.ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1274,28 +1413,33 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_0C00(uint P_0)
+	internal unsafe void _FF00_FF00_0C00(uint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected Obj, but got I4
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1303,28 +1447,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_0D00(object P_0)
+	internal unsafe void _FF00_FF00_0D00(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1340,12 +1488,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00ༀ()
+	internal unsafe object _FF00_FF00ༀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1357,12 +1506,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00ᄀ()
+	internal unsafe object _FF00_FF00ᄀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1374,12 +1524,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00ጀ()
+	internal unsafe object _FF00_FF00ጀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1391,35 +1542,40 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00ᔀ()
+	internal unsafe object _FF00_FF00ᔀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00ᘀ(object P_0)
+	internal unsafe void _FF00_FF00ᘀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -1437,26 +1593,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_1800(object P_0)
+	internal unsafe void _FF00_FF00_1800(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -1474,13 +1634,14 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00ᨀ()
+	internal unsafe byte _FF00_FF00ᨀ()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001b: Expected I4, but got Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return (byte)(int)this;
+		return (byte)(int)((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1492,28 +1653,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00ᰀ(object P_0)
+	internal unsafe void _FF00_FF00ᰀ(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1537,12 +1702,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00ἀ()
+	internal unsafe object _FF00_FF00ἀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1562,26 +1728,30 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_2200(object P_0)
+	internal unsafe void _FF00_FF00_2200(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -1591,28 +1761,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_2300(object P_0)
+	internal unsafe void _FF00_FF00_2300(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (false)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField != null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1628,28 +1802,32 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_2500(object P_0)
+	internal unsafe void _FF00_FF00_2500(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityAuthenticationDto)this).ClientKey__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityAuthenticationDto)EntityAuthenticationDto.DisplayName__BackingField).EngineVersion__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -1657,12 +1835,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_2600()
+	internal unsafe object _FF00_FF00_2600()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1682,22 +1861,24 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_2900()
+	internal unsafe object _FF00_FF00_2900()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal uint _FF00_FF00_2A00()
+	internal unsafe uint _FF00_FF00_2A00()
 	{
-		//IL_000a: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		//IL_001b: Expected I4, but got Obj
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return (uint)(int)this;
+		return (uint)(int)((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1709,13 +1890,13 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00Ⰰ()
+	internal unsafe static byte _FF00_FF00Ⰰ()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityAuthenticationDto.ClientKey__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1727,11 +1908,12 @@ public class EntityPeAuthenticationDetail
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_2E00()
+	internal unsafe object _FF00_FF00_2E00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected VT, but got Ref
+		if ((object)((Type)(object)JsonConverter<>/*cast due to constrained. prefix*/).GetTypeFromHandle((RuntimeTypeHandle)Unsafe.AsPointer(ref EntityAuthentication.Chain__BackingField)) == null)
 		{
 		}
-		return this;
+		return ((EntityAuthenticationDto)this).ClientKey__BackingField;
 	}
 }

@@ -3,8 +3,10 @@ using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using Microsoft.UI.Xaml.Markup;
 using WinRT;
+using WinRT.Mass_WinUIGenericHelpers;
 using WinRT.Mass_WinUIVtableClasses;
 using Windows.Foundation.Metadata;
 
@@ -49,11 +51,14 @@ public sealed class XamlMetaDataProvider : IXamlMetadataProvider
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public XamlMetaDataProvider()
+	public unsafe XamlMetaDataProvider()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		ExceptionHelpers.GetHRForException((Exception)(object)this);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -77,13 +82,14 @@ public sealed class XamlMetaDataProvider : IXamlMetadataProvider
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00㤀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00㤀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -118,22 +124,27 @@ public sealed class XamlMetaDataProvider : IXamlMetadataProvider
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed object _FF00_FF00_FF00_FF00_FF00㴀(object P_0)
+	internal unsafe sealed object _FF00_FF00_FF00_FF00_FF00㴀(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0021: Expected Obj, but got I4
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return P_0;
+		_003CModule_003E.CheckAccessibleAttribute();
+		return IEnumerator_object.Initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed object _FF00_FF00_FF00_FF00_FF00㸀()
+	internal unsafe sealed object _FF00_FF00_FF00_FF00_FF00㸀()
 	{
-		//IL_000a: Expected Obj, but got I4
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return 0;
+		return new RegexRunner[0];
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -145,12 +156,16 @@ public sealed class XamlMetaDataProvider : IXamlMetadataProvider
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed object _FF00_FF00_FF00_FF00_FF00䀀(object P_0)
+	internal unsafe sealed object _FF00_FF00_FF00_FF00_FF00䀀(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0021: Expected Obj, but got I4
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return P_0;
+		_003CModule_003E.CheckAccessibleAttribute();
+		return IEnumerator_object.Initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -162,11 +177,14 @@ public sealed class XamlMetaDataProvider : IXamlMetadataProvider
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00䈀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00䈀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 }

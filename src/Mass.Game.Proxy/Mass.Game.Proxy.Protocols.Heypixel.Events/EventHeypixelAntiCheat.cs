@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using Mass.Application.Event;
 using Mass.Game.Proxy.Minecraft.Events;
 
@@ -33,17 +35,23 @@ public class EventHeypixelAntiCheat : EventMinecraft, IEventCancellable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public EventHeypixelAntiCheat(HeypixelProtocol protocol, string key)
 	{
-		//IL_0044: Expected I4, but got Obj
-		//IL_0032->IL003b: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		//IL_0027: Expected VT, but got Obj
+		//IL_0038: Expected Obj, but got I4
+		//IL_0047: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		HeypixelProtocol heypixelProtocol = protocol;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)protocol;
+		((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuser_id_003Ei__Field = (_003Cuser_id_003Ej__TPar)key;
+		((_003C_003Ef__AnonymousType0<>)((_003C_003Ef__AnonymousType0<>)(object)protocol).GetHashCode()).ToString();
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 		{
-			heypixelProtocol = (HeypixelProtocol)0;
+			num = 0;
 		}
-		switch ((int)heypixelProtocol)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -73,10 +81,12 @@ public class EventHeypixelAntiCheat : EventMinecraft, IEventCancellable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object 케()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -90,10 +100,12 @@ public class EventHeypixelAntiCheat : EventMinecraft, IEventCancellable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object 턀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -107,11 +119,12 @@ public class EventHeypixelAntiCheat : EventMinecraft, IEventCancellable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte 팀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -125,9 +138,11 @@ public class EventHeypixelAntiCheat : EventMinecraft, IEventCancellable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object 픀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)(object)this)._003Cuuid_003Ei__Field;
 	}
 }

@@ -1,6 +1,10 @@
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using ABI.System.Collections.Generic;
+using WinRT;
+using WinRT.Mass_WinUIGenericHelpers;
 
 namespace Microsoft.Windows.Foundation.UndockedRegFreeWinRTCS;
 
@@ -15,11 +19,14 @@ internal class AutoInitialize
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public AutoInitialize()
+	public unsafe AutoInitialize()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		ExceptionHelpers.GetHRForException((Exception)(object)this);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -43,12 +50,15 @@ internal class AutoInitialize
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00谀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00谀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -60,13 +70,14 @@ internal class AutoInitialize
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00踀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00踀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -86,15 +97,16 @@ internal class AutoInitialize
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static void _FF00_FF00_FF00_FF00_FF00鈀()
+	internal unsafe static void _FF00_FF00_FF00_FF00_FF00鈀()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0057->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_003e->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0062->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_007f: Expected Obj, but got I
+		//IL_0084->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_008f->IL0026: Incompatible stack types: I4 vs Obj
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
 		object obj = 1;
@@ -104,19 +116,16 @@ internal class AutoInitialize
 			switch ((int)obj2)
 			{
 			case 1:
-				if (false)
-				{
-					obj2 = 0;
-				}
-				break;
-			default:
-				if (0 == 0)
-				{
-					obj2 = 2;
-				}
-				break;
+				IEnumeratorMethods<object>.Abi_GetMany_3((IntPtr)/*Error near IL_0046: Stack underflow*/, ref *(object[]*)_003CModule_003E.CheckAccessibleAttribute());
+				/*Error near IL_0046: Member reference must be method, but was: Field*/;
 			case 2:
 				return;
+			}
+			IEnumerator_object.Do_Abi_get_Current_0((nint)/*Error near IL_006f: Stack underflow*/, (nint*)/*Error near IL_006f: Stack underflow*/);
+			obj2 = 0;
+			if (IEnumerator_System_ComponentModel_INotifyPropertyChanged.RunAttribute == null)
+			{
+				obj2 = 2;
 			}
 		}
 	}

@@ -3,8 +3,10 @@ using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using Microsoft.UI.Xaml.Markup;
 using WinRT;
+using WinRT.Mass_WinUIGenericHelpers;
 using WinRT.Mass_WinUIVtableClasses;
 
 namespace Mass.WinUI.Mass_WinUI_XamlTypeInfo;
@@ -157,40 +159,43 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public XamlSystemBaseType(string fullName, Type underlyingType)
+	public unsafe XamlSystemBaseType(string fullName, Type underlyingType)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0020->IL0029: Incompatible stack types: I4 vs Obj
-		//IL_0069->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_004f->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0074->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_005a->IL0029: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0086: Expected I, but got Obj
+		//IL_006f: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		XamlSystemBaseType xamlSystemBaseType = this;
-		if (1 == 0)
+		ExceptionHelpers.GetHRForException((Exception)(object)this);
+		int num = 1;
+		if (IEnumerable_System_ComponentModel_INotifyPropertyChanged._initialized == 0)
 		{
-			xamlSystemBaseType = (XamlSystemBaseType)1;
+			num = 1;
 		}
 		while (true)
 		{
-			switch ((int)xamlSystemBaseType)
+			switch (num)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 2:
-				if (0 == 0)
+				IEnumerable_System_ComponentModel_INotifyPropertyChanged.ReflectConfigurableAttribute = underlyingType;
+				num = 0;
+				if (IList_object.PatchAttribute == null)
 				{
-					_ = 0;
+					num = 0;
 				}
 				break;
 			case 1:
-				if (2 != 0)
+				IEnumerator_System_ComponentModel_INotifyPropertyChanged._initialized = (nint)fullName;
+				num = 2;
+				if (IReadOnlyList_System_IDisposable._initialized != 0)
 				{
-					_ = 2;
+					num = 2;
 				}
 				break;
 			}
@@ -254,21 +259,27 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᰀ()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᰀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᴀ(object P_0, object P_1, object P_2)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᴀ(object P_0, object P_1, object P_2)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -280,12 +291,15 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ἀ()
+	internal unsafe sealed object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ἀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001b: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -297,12 +311,15 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2100()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2100()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -314,12 +331,15 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2300()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2300()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -331,21 +351,27 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2500()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2500()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2600()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2600()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -357,12 +383,15 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2800()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2800()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -374,21 +403,27 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2A00()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2A00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2B00()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2B00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -408,12 +443,15 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2E00()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2E00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -433,22 +471,26 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal sealed object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_3100()
+	internal unsafe sealed object _FF00_FF00_FF00_FF00_FF00_FF00_FF00_3100()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001b: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_3200()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00_3200()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -468,21 +510,27 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00㔀()
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00㔀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00㘀()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00㘀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -494,21 +542,27 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00㠀()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00㠀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00㤀()
+	internal unsafe byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00㤀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -528,12 +582,15 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00㰀()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00㰀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -545,12 +602,15 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00㸀(object P_0)
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00㸀(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -562,21 +622,27 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00䀀(object P_0, object P_1)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00䀀(object P_0, object P_1)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00䄀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00䄀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected Obj, but got I
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return IReadOnlyList_System_ComponentModel_INotifyPropertyChanged._initialized;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -588,12 +654,15 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00䌀()
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00䌀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -605,11 +674,14 @@ internal class XamlSystemBaseType : IXamlType
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal object _FF00_FF00_FF00_FF00_FF00_FF00_FF00䔀(object P_0)
+	internal unsafe object _FF00_FF00_FF00_FF00_FF00_FF00_FF00䔀(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_0014: Unknown result type (might be due to invalid IL or missing references)
+		((ExceptionHelpers)Regex/*cast due to constrained. prefix*/).SetErrorInfo((Exception)Unsafe.AsPointer(ref _003CModule_003E.ExecuteAttribute));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		throw /*Error near IL_0009: Stack underflow*/;
+		throw new ExceptionHelpers((Exception)/*Error near IL_0019: Stack underflow*/);
 	}
 }

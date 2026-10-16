@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
+using Mass.Application.Mobile;
+using Mass.Application.Models;
 using Mass.Bedrock.Proxy.Network.Minecraft.Enums;
 using Mass.Bedrock.Proxy.Network.Packet;
 
@@ -29,19 +32,21 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ServerboundHeartBeatPacket()
+	public unsafe ServerboundHeartBeatPacket()
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected I4, but got Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		ServerboundHeartBeatPacket serverboundHeartBeatPacket = this;
-		if (false)
+		((EntityLaunchBedrockProxy)/*Error near IL_001f: Stack underflow*/).ServerAddress__BackingField = new StringBuilder((char)(int)this);
+		((EntityLaunchBedrockProxy)/*Error near IL_002a: Stack underflow*/).Session = (MobileSession)(object)this;
+		int num = 0;
+		if (BedrockProxy.Logger__BackingField != null)
 		{
-			serverboundHeartBeatPacket = (ServerboundHeartBeatPacket)0;
+			num = 0;
 		}
-		switch ((int)serverboundHeartBeatPacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -49,28 +54,30 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ServerboundHeartBeatPacket(Dictionary<object, object> content)
+	public unsafe ServerboundHeartBeatPacket(Dictionary<object, object> content)
 	{
-		//IL_0036: Expected I4, but got Obj
-		//IL_0020->IL0029: Incompatible stack types: I4 vs Obj
-		//IL_004a->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0055->IL0029: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_006f->IL0042: Incompatible stack heights: 4 vs 2
+		//IL_007a->IL0042: Incompatible stack heights: 4 vs 2
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		ServerboundHeartBeatPacket serverboundHeartBeatPacket = this;
-		if (0 == 0)
+		_ = ((EntityLaunchBedrockProxy)(object)this).EqualityContract;
+		int num = 0;
+		if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.ServerAddress__BackingField).ServerPort__BackingField == 0)
 		{
-			serverboundHeartBeatPacket = (ServerboundHeartBeatPacket)0;
+			num = 0;
 		}
 		while (true)
 		{
-			switch ((int)serverboundHeartBeatPacket)
+			switch (num)
 			{
 			case 1:
 				return;
 			}
-			if (false)
+			_ = ((EntityLaunchBedrockProxy)(object)content).GameId;
+			_ = 0;
+			if (((BedrockProxy)BedrockProxy.Logger__BackingField).Name != null)
 			{
 				_ = 1;
 			}
@@ -110,26 +117,30 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᔀ(Dictionary<object, object> P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᔀ(Dictionary<object, object> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((EntityLaunchBedrockProxy)(object)this).Name__BackingField = P_0;
+				obj2 = 0;
+				if (((EntityLaunchBedrockProxy)EntityLaunchBedrockProxy.ServerAddress__BackingField).ServerPort__BackingField == 0)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -147,13 +158,13 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᜀ()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᜀ()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityLaunchBedrockProxy.Name__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -165,12 +176,13 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal Dictionary<object, object> _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᤀ()
+	internal unsafe Dictionary<object, object> _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᤀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (Dictionary<object, object>)(object)this;
+		return (Dictionary<object, object>)((EntityLaunchBedrockProxy)(object)this).Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -182,29 +194,32 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_1B00(List<object> P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_1B00(List<object> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0049->IL0019: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006a->IL0026: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				_ = 0;
-				if (0 == 0)
+				((EntityLaunchBedrockProxy)(object)this).Session = (MobileSession)(object)(EqualityComparer<int>)(object)((StringBuilder)(object)P_0).Append('\0');
+				obj2 = 0;
+				if (BedrockProxy.Logger__BackingField == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -220,12 +235,13 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᴀ()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_FF00_FF00ᴀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityLaunchBedrockProxy.Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -245,13 +261,15 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2000(List<object> P_0)
+	internal unsafe void _FF00_FF00_FF00_FF00_FF00_FF00_FF00_2000(List<object> P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0054: Expected Obj, but got I
+		//IL_0059->IL0026: Incompatible stack heights: 2 vs 1
+		//IL_0064->IL0026: Incompatible stack heights: 2 vs 1
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
 		object obj = 1;
@@ -264,7 +282,9 @@ public class ServerboundHeartBeatPacket : PyRpcPacketBase
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((StringBuilder)(object)((EntityLaunchBedrockProxy)(object)this).EqualityContract)._002Ector();
+				_ = 0;
+				if ((object)EntityLaunchBedrockProxy.ReflectScheduledLogger == null)
 				{
 					_ = 0;
 				}

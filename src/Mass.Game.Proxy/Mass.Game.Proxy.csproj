@@ -13,22 +13,22 @@
   <ItemGroup />
   <ItemGroup>
     <Reference Include="Mass.Domain.Desktop">
-      <HintPath>mass-ildump/backfilled/Mass.Domain.Desktop.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Domain.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Application.Desktop">
-      <HintPath>mass-ildump/backfilled/Mass.Application.Desktop.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Application.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Domain">
-      <HintPath>mass-ildump/backfilled/Mass.Domain.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Mass.Application">
-      <HintPath>mass-ildump/backfilled/Mass.Application.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Application.dll</HintPath>
     </Reference>
     <Reference Include="Serilog" />
     <Reference Include="DotNetty.Transport" />
     <Reference Include="DotNetty.Buffers" />
     <Reference Include="Mass.Common">
-      <HintPath>mass-ildump/backfilled/Mass.Common.dll</HintPath>
+      <HintPath>../../bf-deobf/Mass.Common.dll</HintPath>
     </Reference>
     <Reference Include="MsgPack" />
     <Reference Include="RestSharp" />

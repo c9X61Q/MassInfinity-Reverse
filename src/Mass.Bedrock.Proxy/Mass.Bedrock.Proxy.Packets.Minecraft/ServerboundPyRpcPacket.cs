@@ -1,8 +1,11 @@
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text;
+using Mass.Application.Models;
 using Mass.Bedrock.Proxy.Network.Minecraft.Enums;
 using Mass.Bedrock.Proxy.Network.Packet;
+using Mass.Domain.Desktop.ValueObjects;
 
 namespace Mass.Bedrock.Proxy.Packets.Minecraft;
 
@@ -14,44 +17,57 @@ public class ServerboundPyRpcPacket : PyRpcPacket
 	public override EnumPacketDirection Direction => EnumPacketDirection.Serverbound;
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ServerboundPyRpcPacket()
+	public unsafe ServerboundPyRpcPacket()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
+		_ = ((EntityLaunchBedrockProxy)(object)this).EqualityContract;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public ServerboundPyRpcPacket(PyRpcPacketBase packet)
+	public unsafe ServerboundPyRpcPacket(PyRpcPacketBase packet)
 	{
-		//IL_0046->IL001c: Incompatible stack heights: 3 vs 2
-		//IL_0061->IL001c: Incompatible stack heights: 3 vs 2
-		//IL_0051->IL001c: Incompatible stack heights: 3 vs 2
-		//IL_006c->IL001c: Incompatible stack heights: 3 vs 2
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_004f: Expected Obj, but got I4
+		//IL_005e: Expected Obj, but got I
+		//IL_008e->IL002d: Incompatible stack types: I4 vs Obj
+		//IL_0099->IL002d: Incompatible stack types: I4 vs Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
+		Type type = ((EntityLaunchBedrockProxy)(object)this).EqualityContract;
+		int num = 2;
 		while (true)
 		{
-			switch (2)
+			switch (num)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				_ = 98247598;
-				if (0 == 0)
+				((EntityLaunchBedrockProxy)(object)this).ServerAddress__BackingField = 98247598;
+				num = 0;
+				if ((object)EntityLaunchBedrockProxy.ReflectScheduledLogger == null)
 				{
-					_ = 0;
+					num = 0;
 				}
 				break;
 			case 2:
-				if (false)
+			{
+				((EntityLaunchBedrockProxy)(object)this).GameId = (string)(object)packet;
+				EnumGameType gameType = ((EntityLaunchBedrockProxy)(object)type).GameType;
+				num = 0;
+				type = (Type)gameType;
+				if (((BedrockProxy)(object)BedrockProxy.GameId).GameType != 0)
 				{
-					_ = 1;
+					num = 1;
+					type = (Type)gameType;
 				}
 				break;
+			}
 			}
 		}
 	}
@@ -77,22 +93,23 @@ public class ServerboundPyRpcPacket : PyRpcPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00_FF00쀀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00_FF00쀀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (EntityLaunchBedrockProxy.Name__BackingField == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00_FF00섀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00_FF00섀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0011: Expected Obj, but got Ref
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return EntityLaunchBedrockProxy.Name__BackingField;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

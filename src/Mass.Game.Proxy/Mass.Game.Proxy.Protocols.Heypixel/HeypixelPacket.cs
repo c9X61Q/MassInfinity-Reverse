@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Text.RegularExpressions.Generated;
 using DotNetty.Buffers;
 using Mass.Common.Helpers;
 using Mass.Game.Proxy.Protocols.Heypixel.Clientbound;
@@ -32,19 +35,22 @@ public abstract class HeypixelPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	protected HeypixelPacket(HeypixelProtocol protocol)
+	protected unsafe HeypixelPacket(HeypixelProtocol protocol)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		//IL_0026: Expected VT, but got Obj
+		//IL_0026: Expected Obj, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		HeypixelPacket heypixelPacket = this;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)protocol;
+		((EqualityComparer<_00210>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).GetHashCode((_00210)this);
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 		{
-			heypixelPacket = (HeypixelPacket)0;
+			num = 0;
 		}
-		switch ((int)heypixelPacket)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -209,12 +215,14 @@ public abstract class HeypixelPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _0700(object P_0)
+	internal unsafe void _0700(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0019: Expected VT, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		throw /*Error near IL_000a: Stack underflow*/;
+		((_003C_003Ef__AnonymousType0<>)/*Error near IL_0019: Stack underflow*/)._002Ector((_003Caction_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+		throw new EqualityComparer<_00210>((_00210)/*Error near IL_001e: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -228,19 +236,23 @@ public abstract class HeypixelPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _0900()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _0B00(object P_0)
+	internal unsafe void _0B00(object P_0)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0019: Expected VT, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		throw /*Error near IL_000a: Stack underflow*/;
+		((_003C_003Ef__AnonymousType0<>)/*Error near IL_0019: Stack underflow*/)._002Ector((_003Caction_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+		throw new EqualityComparer<_00210>((_00210)/*Error near IL_001e: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -254,11 +266,12 @@ public abstract class HeypixelPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _0D00()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -272,11 +285,14 @@ public abstract class HeypixelPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static void ༀ(uint P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0044: Expected VT, but got Obj
+		//IL_0044: Expected Obj, but got I4
+		//IL_0058->IL0026: Incompatible stack heights: 4 vs 2
+		//IL_0063->IL0026: Incompatible stack heights: 4 vs 2
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -287,7 +303,10 @@ public abstract class HeypixelPacket
 			default:
 				return;
 			case 1:
-				if (false)
+				_ = _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
+				((EqualityComparer<_00210>)P_0).GetHashCode((_00210)P_1);
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 				{
 					_ = 0;
 				}
@@ -301,24 +320,30 @@ public abstract class HeypixelPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	protected void က(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_004e: Expected Obj, but got VT
+		//IL_0053->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005e->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			case 0:
@@ -344,21 +369,26 @@ public abstract class HeypixelPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void _1400()
+	internal unsafe void _1400()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_003e->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0066->IL006a: Incompatible stack heights: 1 vs 0
-		//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_010f->IL006a: Incompatible stack heights: 5 vs 0
-		//IL_009e->IL006a: Incompatible stack heights: 1 vs 0
-		//IL_00f3->IL006a: Incompatible stack heights: 2 vs 0
-		//IL_00b9->IL006a: Incompatible stack heights: 2 vs 0
-		//IL_00e0->IL006a: Incompatible stack heights: 1 vs 0
-		//IL_00a9->IL006a: Incompatible stack heights: 1 vs 0
-		//IL_00c4->IL006a: Incompatible stack heights: 2 vs 0
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_006a: Expected Obj, but got Ref
+		//IL_007b: Expected Obj, but got VT
+		//IL_0041: Expected VT, but got Ref
+		//IL_0052: Expected Obj, but got VT
+		//IL_0108: Expected VT, but got Obj
+		//IL_010a: Expected Obj, but got I4
+		//IL_0163: Expected Obj, but got I4
+		//IL_00bb: Expected Obj, but got VT
+		//IL_00e2: Expected VT, but got Obj
+		//IL_00e2: Expected VT, but got Obj
+		//IL_0057->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0062->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0189->IL0233: Incompatible stack heights: 0 vs 1
+		//IL_00cf->IL008f: Incompatible stack heights: 2 vs 1
+		//IL_00da->IL008f: Incompatible stack heights: 2 vs 1
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -368,53 +398,59 @@ public abstract class HeypixelPacket
 			switch ((int)obj2)
 			{
 			case 1:
-				obj = (object)/*Error near IL_0032: Stack underflow*/;
-				if (false)
+				obj = new EqualityComparer<_00210>((_00210?)/*Error near IL_0041: Stack underflow*/, (_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+				_ = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				continue;
 			case 2:
 				return;
 			}
-			obj = obj;
-			if (4 == 0)
+			obj = string.Format((IFormatProvider?)/*Error near IL_006a: Stack underflow*/, (string)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (object?[])obj);
+			int num = 4;
+			if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Cpayload_003Ei__Field)._003Ccontext_003Ei__Field == 0)
 			{
-				_ = 1;
+				num = 1;
 			}
 			while (true)
 			{
-				switch ((int)/*Error near IL_0087: Stack underflow*/)
+				switch (num)
 				{
 				case 3:
-					obj = obj;
-					if (true)
+					obj = ((_003C_003Ef__AnonymousType1<, , >)obj).name;
+					_ = 1;
+					if ((int)((_003C_003Ef__AnonymousType3<, >)_003C_003Ef__AnonymousType2<, , , >.DecorateGroupedDic)._003Centry_003Ei__Field != 0)
 					{
 						_ = 1;
 					}
 					break;
 				case 5:
-					if (false)
+					((_003C_003Ef__AnonymousType1<, , >)/*Error near IL_00e2: Stack underflow*/)._002Ector((_003Cname_003Ej__TPar)/*Error near IL_00e2: Stack underflow*/, (_003Cuuid_003Ej__TPar)this, (_003Cuser_id_003Ej__TPar)obj);
+					num = 0;
+					if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.Instance != null)
 					{
-						_ = 0;
+						num = 0;
 					}
 					break;
 				default:
-					obj = obj;
-					if (3 == 0)
+					obj = ((EqualityComparer<_00211>)/*Error near IL_0108: Stack underflow*/).GetHashCode((_00211)obj);
+					num = 3;
+					if ((int)_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__Utilities.s_defaultTimeout == 0)
 					{
-						_ = 2;
+						num = 2;
 					}
 					break;
 				case 4:
-					obj = obj;
-					_ = ref obj;
-					_ = 5;
-					break;
+					/*Error near IL_012b: Member reference must be method, but was: Field*/;
 				case 1:
+					((_003C_003Ef__AnonymousType2<, , , >)/*Error near IL_0153: Stack underflow*/)._002Ector((_003Curl_003Ej__TPar)/*Error near IL_0153: Stack underflow*/, (_003Cpayload_003Ej__TPar)/*Error near IL_0153: Stack underflow*/, (_003Ccontext_003Ej__TPar)/*Error near IL_0153: Stack underflow*/, ((_003C_003Ef__AnonymousType2<, , , >)this).user_id);
+					((EqualityComparer<_00213>)/*Error near IL_0158: Stack underflow*/).Equals((_00213?)/*Error near IL_0158: Stack underflow*/, (_00213?)/*Error near IL_0158: Stack underflow*/);
+					((_003C_003Ef__AnonymousType2<, , , >)((_003C_003Ef__AnonymousType2<, , , >)this).GetHashCode()).ToString();
 					_ = ((Array)obj).Length + 1;
-					_ = 2;
-					break;
+					_003C_003Ef__AnonymousType2<, , , >.CheckAccessibleObject();
+					/*Error near IL_0170: Member reference must be method, but was: Field*/;
 				case 2:
 					return;
 				}
@@ -431,25 +467,26 @@ public abstract class HeypixelPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal void ᜀ()
+	internal unsafe void ᜀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0019: Expected VT, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		throw /*Error near IL_000a: Stack underflow*/;
+		((_003C_003Ef__AnonymousType0<>)/*Error near IL_0019: Stack underflow*/)._002Ector((_003Caction_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+		throw new EqualityComparer<_00210>((_00210)/*Error near IL_001e: Stack underflow*/);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static object _1800(object P_0, uint P_1)
+	private unsafe static object _1800(object P_0, uint P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0032: Expected I4, but got Obj
-		//IL_0066: Expected Obj, but got I4
-		//IL_00dc->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00fb->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00e7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0106->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003f: Expected I4, but got Obj
+		//IL_0079: Expected Obj, but got I4
+		//IL_0079: Expected Obj, but got Ref
+		//IL_011d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0128->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -461,64 +498,60 @@ public abstract class HeypixelPacket
 			case 4:
 				return null;
 			default:
-			{
-				int num = (int)P_1;
-				((object[])1)[0] = P_0;
-				obj = 1;
-				if (false)
-				{
-					num = 0;
-				}
-				return num switch
-				{
-					_ => obj, 
-				};
-			}
+				string.Format((IFormatProvider?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (string)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter, (object?[])P_1);
+				(new string[1])[0] = (string)P_0;
+				/*Error near IL_0083: Member reference must be method, but was: Field*/;
 			case 3:
 				return null;
 			case 1:
-				if (0 == 0)
+				obj2 = 0;
+				if (_003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.ReflectLocalTemplate == null)
 				{
 					obj2 = 0;
 				}
 				break;
 			case 2:
-				if (P_1 != 0)
-				{
-					if (1 == 0)
-					{
-						obj2 = 1;
-					}
-					break;
-				}
-				goto case 3;
+				_ = _003CRegexGenerator_g_003EFE26B9200A6BC2C3D514D911C1DF88A90313018C3ED11EC3076198847E4099DA3__SimpleValue_0.RunnerFactory.Runner.StoreConverter;
+				/*Error near IL_012e: Member reference must be method, but was: Field*/;
 			}
 		}
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte ᤀ(object P_0, object P_1)
+	internal unsafe static byte ᤀ(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0042: Expected I4, but got Obj
-		//IL_0186: Expected Obj, but got I4
-		//IL_0145: Expected I4, but got Obj
-		//IL_00ae: Expected Obj, but got I4
-		//IL_00b7: Expected Obj, but got I4
-		//IL_0070: Expected I4, but got Obj
-		//IL_018b->IL0015: Incompatible stack heights: 1 vs 0
-		//IL_0137->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_01b8->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_019c->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0057->IL005b: Incompatible stack types: I4 vs Obj
-		//IL_0142->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0156->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_01a7->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0177->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00a0->IL005b: Incompatible stack heights: 2 vs 1
-		//IL_008f->IL005b: Incompatible stack types: I4 vs Obj
-		//IL_00ab->IL005b: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004f: Expected I4, but got Obj
+		//IL_01ea: Expected Obj, but got I4
+		//IL_01f3: Expected Obj, but got I4
+		//IL_0229: Expected VT, but got Obj
+		//IL_0229: Expected VT, but got Obj
+		//IL_0229: Expected Obj, but got Ref
+		//IL_005c: Expected VT, but got Obj
+		//IL_005c: Expected VT, but got Ref
+		//IL_005e: Expected Obj, but got I4
+		//IL_0196: Expected I4, but got Obj
+		//IL_01b5: Expected Obj, but got VT
+		//IL_01ba: Expected VT, but got Obj
+		//IL_01ba: Expected VT, but got Obj
+		//IL_01ba: Expected VT, but got Ref
+		//IL_01c1: Expected Obj, but got I4
+		//IL_00d7: Expected Obj, but got I4
+		//IL_00e0: Expected Obj, but got I4
+		//IL_00c4: Expected Obj, but got VT
+		//IL_0081: Expected I4, but got Obj
+		//IL_01f8->IL0022: Incompatible stack heights: 3 vs 1
+		//IL_0235->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_0068->IL006c: Incompatible stack types: I4 vs Obj
+		//IL_01a7->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_01d5->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_01e0->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00a1->IL006c: Incompatible stack heights: 2 vs 1
+		//IL_00c9->IL006c: Incompatible stack heights: 4 vs 1
+		//IL_00ea->IL0193: Incompatible stack heights: 0 vs 1
+		//IL_00ac->IL006c: Incompatible stack heights: 2 vs 1
+		//IL_00d4->IL006c: Incompatible stack heights: 4 vs 1
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -531,21 +564,24 @@ public abstract class HeypixelPacket
 				{
 				case 7:
 				{
-					obj = obj;
+					obj = ((EqualityComparer<_00210>)/*Error near IL_005c: Stack underflow*/).Equals((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)obj);
 					object obj3 = 2;
 					while (true)
 					{
 						switch ((int)obj3)
 						{
 						case 1:
-							obj3 = obj;
-							if (0 == 0)
+							((_003C_003Ef__AnonymousType0<>)/*Error near IL_008d: Stack underflow*/).Equals(obj);
+							_ = 0;
+							if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 							{
-								obj3 = 0;
+								_ = 0;
 							}
 							continue;
 						case 2:
-							if (1 == 0)
+							_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+							_ = 1;
+							if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 							{
 								_ = 0;
 							}
@@ -563,12 +599,7 @@ public abstract class HeypixelPacket
 					goto case 8;
 				}
 				case 1:
-					obj = P_1;
-					if (false)
-					{
-						obj2 = 0;
-					}
-					continue;
+					/*Error near IL_016d: Member reference must be method, but was: Field*/;
 				case 8:
 					return (byte)(int)obj;
 				case 3:
@@ -581,28 +612,25 @@ public abstract class HeypixelPacket
 				case 5:
 					return 0;
 				case 6:
-					obj2 = P_1;
-					obj = P_0;
-					if (2 == 0)
+					((_003C_003Ef__AnonymousType2<, , , >)/*Error near IL_01ba: Stack underflow*/)._002Ector((_003Curl_003Ej__TPar)/*Error near IL_01ba: Stack underflow*/, (_003Cpayload_003Ej__TPar)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_003Ccontext_003Ej__TPar)P_1, (_003Cuser_id_003Ej__TPar)((EntitySocks5Account)((_003C_003Ef__AnonymousType2<, , , >)P_0).context).Username__BackingField);
+					obj = ((_003C_003Ef__AnonymousType2<, , , >)/*Error near IL_01bf: Stack underflow*/).Equals((object)/*Error near IL_01bf: Stack underflow*/);
+					_ = 2;
+					if (((EntitySocks5)EntitySocks5.Address__BackingField).Port__BackingField == 0)
 					{
-						obj2 = 1;
+						_ = 1;
 					}
 					continue;
 				case 4:
-					obj = obj;
-					if (true)
-					{
-						obj2 = 7;
-					}
-					continue;
+					/*Error near IL_01fa: Member reference must be method, but was: Field*/;
 				case 2:
-					obj = obj;
+					((_003C_003Ef__AnonymousType3<, >)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Centry_003Ej__TPar)obj, (_003Csid_003Ej__TPar)obj);
+					obj = (object)/*Error near IL_022b: Stack underflow*/;
 					_ = 4;
 					continue;
 				}
 				break;
 			}
-			obj = obj;
+			obj = _003C_003Ef__AnonymousType2<, , , >.CheckAccessibleObject();
 			obj = 3;
 		}
 	}
@@ -626,11 +654,13 @@ public abstract class HeypixelPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private static uint ᰀ(object P_0)
 	{
-		//IL_000b: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001f: Expected VT, but got Obj
+		//IL_001f: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (uint)(int)P_0;
+		return (uint)((EqualityComparer<_00210>)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field).GetHashCode((_00210)P_0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -642,13 +672,15 @@ public abstract class HeypixelPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal uint Ḁ()
+	internal unsafe uint Ḁ()
 	{
-		//IL_000b: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_001f: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (uint)(int)this;
+		return ((_003C_003Ef__AnonymousType0<>)/*Error near IL_001f: Stack underflow*/).Equals((object)((EqualityComparer<_00210>)/*Error near IL_001a: Stack underflow*/).Equals((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this)) ? 1u : 0u;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -670,9 +702,11 @@ public abstract class HeypixelPacket
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	protected object _2100()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 }

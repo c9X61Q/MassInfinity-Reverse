@@ -363,3 +363,97 @@ emit(0x80, *(int32*)(0x1800602c0 + rax*4) | (rcx >> 4));
 2. 逆描述符的**头部布局**（`+0x00..+0x40`：IL 长度、局部变量数、EH 数、标志）。
 3. 逆 `sub_18001d830` / `sub_18001eca0` / `sub_18001e2b0` 三个发射原语，确认 u32/u64 操作数的写序。
 4. 写离线解码器（Python/C#），对 7,851 个受保护方法逐个还原 IL，再走已有的 dnlib 回填链路。
+
+---
+
+## 8. 收尾：最终口径与已完成的产物
+
+### 8.1 bit23 标志（可逆的 token 混淆）
+
+`sub_180016ed0` 的发射式是 `token = TABLE[v & 0xF] | (v >> 4)`
+（`TABLE` = `0x1800602c0`，见 §7.2），而描述符里存的 `v` 带了一个 **bit23 标志**，
+于是生成的 IL 里出现 `0x04800001 / 0x01800002 / 0x0a800003 / 0x06000004` 这类
+**RID ≥ 0x800000 的越界 token**。
+
+**实测：清掉 bit23（即 RID 减 `0x800000`）就还原成合法 token**：
+
+```
+0x04800001 → 0x04000001  (FieldDef  RID 1)
+0x01800002 → 0x01000002  (TypeRef   RID 2)
+0x0a000003 → 0x0a000003  (MemberRef RID 3)
+0x06800004 → 0x06000004  (MethodDef RID 4)
+```
+
+清完之后 ILSpy 对整批程序集的解析错误（`Stack underflow` / `Expected … but got …`）
+**归零**，token 全部解析成真实名字。工具：`tools/analysis/deobf_tokens.py`
+（42,153 条里 7,851 条命中，共修正 **129,726 个** token）。
+
+### 8.2 DNGuard 的受保护方法桩（还原后的真实形状）
+
+清掉 bit23 之后，7,851 条生成码 + 27,586 条桩体都可读。**受保护方法的体是统一的桩**：
+
+```
+ldnull ; ldc.i4.0 ; ldc.i4.0 ; newobj Exception::.ctor(string)
+ldsfld  ZYXDNGuarder.a                         ← handler 函数指针字段
+call    MethodBase.GetCurrentMethod()
+ldc.i4  <k>                                    ← 调用约定/元数类别
+ldc.i4  <progid>                               ← 每方法唯一，0x6ABD0000 + 14bit
+ldc.i8  <描述符地址>                            ← JIT 时烧入，逐次运行不同
+newobj  IntPtr::.ctor(long)
+ldc.i4.s 15
+call    ZYXDNGuarder.a
+calli                                          ← 调原生 VM 入口
+ldnull ; ret
+```
+
+反编译出来是：
+
+```csharp
+internal unsafe SafeProxy() {
+    ((delegate* unmanaged[Stdcall]<AppDomain,int,nint,void>)
+        ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778624, new IntPtr(2737336615676L), 15))
+        (null, 0, new IntPtr(0L));
+}
+```
+
+**27,586 条桩体全部 ≤ 64 字节** —— 是彻底的体替换，不是"加了前缀"。
+
+### 8.3 最终口径
+
+| 类别 | 数量 | 占比 |
+|---|---|---|
+| DNGuard VM 桩体 | 27,586 | 53.4% |
+| DNGuard 生成码（bit23） | 7,851 | 15.2% |
+| DNGuard VM 桩（16 B） | 7,847 | 15.2% |
+| **原始代码（可读）** | **5,971** | **11.6%** |
+| 转发桩 | 1,655 | 3.2% |
+| DVM 派发桩 | 745 | 1.4% |
+| 合计 | 51,655 | |
+
+**保护率 88.4%** —— 这是本目标保护强度的最终量化。
+
+### 8.4 已产出的 VM 方法登记表（反虚拟化的输入）
+
+`data/vm-stub-table.jsonl.gz`：**28,331 条**
+
+```json
+{"mvid":"fdc9b55e…","token":"060013c8","type":"ZYXDNGuarder","method":"dvm",
+ "k":0,"progid":1790775463,"desc":436597226764}
+```
+
+| 统计 | 值 |
+|---|---|
+| 条目 | 28,331 |
+| k 分布 | 0: 27,611 / 2: 431 / 1: 262 / 3: 19 / 4: 5 / 5-7: 各 1 |
+| progid 范围 | `0x6ABD0000 .. 0x6ABD3FFF`（**14 bit = 16,384** 的表索引） |
+| 不同 progid | 10,471 |
+| 不同描述符地址 | 770（相同体的方法**共享描述符**） |
+
+### 8.5 仍然开放的部分（如实标注）
+
+1. **45,684 个方法的原始语义仍在原生 VM 里**。桩表给出了 `(方法 → k/progid/描述符)`，
+   但描述符→原始 IL 的转换需要继续逆 `sub_180016ed0` 的完整发射逻辑 +
+   描述符格式（§7.5 的 ①②③ 步）。描述符不是简单线性表：每方法一个惰性分配的堆对象，
+   相同体共享，地址步长无固定关系。
+2. 局部变量类型仍是 `object` 占位（保护器不提供签名）。
+3. 原生侧 `0x18001c860–0x18001ede0`（约 9.6 KB）的 VM 核心族尚未逐个逆完。

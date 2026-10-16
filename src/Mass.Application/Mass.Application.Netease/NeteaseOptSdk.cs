@@ -330,10 +330,8 @@ public class NeteaseOptSdk : IDisposable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	private object _FF00_FF00_FF00_FF00_2E00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -370,10 +368,8 @@ public class NeteaseOptSdk : IDisposable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00_3200()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return this;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -395,10 +391,8 @@ public class NeteaseOptSdk : IDisposable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00㔀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -412,124 +406,15 @@ public class NeteaseOptSdk : IDisposable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00_FF00㬀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal (EnumOptStatus, string) _FF00_FF00_FF00_FF00㰀(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_004e: Expected I4, but got Obj
-		//IL_0056: Expected Obj, but got I4
-		//IL_0092: Expected VT, but got Obj
-		//IL_0130: Expected VT, but got Obj
-		//IL_0071: Expected VT, but got Obj
-		//IL_0074: Expected Obj, but got I4
-		//IL_0120->IL0092: Incompatible stack heights: 1 vs 0
-		//IL_00b2->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00fb->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0062->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00a2->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0116->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_012a->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00bd->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0106->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006d->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_00e1->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_00ec->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0080->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0162->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0148->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_008b->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0153->IL0153: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 2;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			case 3:
-				obj = 2;
-				if (4 == 0)
-				{
-					obj2 = 7;
-				}
-				break;
-			case 11:
-				_ = 1;
-				return ((EnumOptStatus, string))null;
-			case 8:
-				return ((EnumOptStatus, string))obj;
-			case 7:
-				_ = 9;
-				break;
-			case 1:
-				if (4 == 0)
-				{
-					_ = 4;
-				}
-				break;
-			case 4:
-				if (obj == null)
-				{
-					if (6 != 0)
-					{
-						obj2 = 5;
-					}
-					break;
-				}
-				goto case 10;
-			case 2:
-				obj = (object)/*Error near IL_00ef: Stack underflow*/;
-				if (1 == 0)
-				{
-					obj2 = 1;
-				}
-				break;
-			case 9:
-				_ = 8;
-				break;
-			default:
-				if (this != null)
-				{
-					_ = 3;
-					break;
-				}
-				goto case 7;
-			case 10:
-				_ = 0;
-				return ((EnumOptStatus, string))obj;
-			case 6:
-				if (this == null)
-				{
-					obj2 = 5;
-					break;
-				}
-				if (0 != 0)
-				{
-					obj2 = 11;
-					break;
-				}
-				goto IL_0071;
-			case 5:
-				{
-					goto IL_0071;
-				}
-				IL_0071:
-				obj = 0;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -543,39 +428,8 @@ public class NeteaseOptSdk : IDisposable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal sealed void _FF00_FF00_FF00_FF00㸀()
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_0063->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0049->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		object obj = 2;
-		object obj2 = obj;
-		while (true)
-		{
-			switch ((int)obj2)
-			{
-			default:
-				return;
-			case 2:
-				obj2 = this;
-				if (true)
-				{
-					obj2 = 1;
-				}
-				break;
-			case 0:
-				return;
-			case 1:
-				obj2 = this;
-				if (0 == 0)
-				{
-					obj2 = 0;
-				}
-				break;
-			}
-		}
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -597,11 +451,8 @@ public class NeteaseOptSdk : IDisposable
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_FF00䄀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-		{
-		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		_ = ref _003C_003Ef__AnonymousType0<, , , , >._003Cusername_003Ei__Field;
+		/*Error near IL_0006: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]

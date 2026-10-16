@@ -1,5 +1,7 @@
 using System.Runtime.CompilerServices;
+using System.Text;
 using DotNetty.Buffers;
+using Mass.Application.Models;
 using Mass.Bedrock.Proxy.Network.Packet;
 
 namespace Mass.Bedrock.Proxy.Packets.RakNet.Online;
@@ -16,10 +18,13 @@ public class DisconnectionNotification : IRakNetPacket
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public DisconnectionNotification()
+	public unsafe DisconnectionNotification()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		//IL_0011: Expected Obj, but got Ref
+		//IL_001a: Expected I4, but got Obj
+		if (((StringBuilder)(object)(*(GameInstance*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/).Append((string?)Unsafe.AsPointer(ref EntityLaunchBedrockProxy.Session__BackingField)) == null)
 		{
 		}
+		((StringBuilder)/*Error near IL_001a: Stack underflow*/).Append((char)(int)this);
 	}
 }

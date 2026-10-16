@@ -1,7 +1,19 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Mass.Domain.Desktop.Entities.Mods;
+using Mass.Game.Launcher.Entities.Fever;
+using Mass.Game.Launcher.Java;
+using Mass.Game.Launcher.Models;
+using Mass.Game.Launcher.Values;
+using RestSharp;
+using Serilog;
 
 namespace Mass.Game.Launcher.Paths;
 
@@ -34,340 +46,414 @@ public class ComponentPath : GamePath
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public unsafe ComponentPath(string @base, EntityItemDownload download, EntitySubItemDownload subItem)
 	{
-		//IL_00ee: Expected I4, but got Obj
-		//IL_029c: Expected Obj, but got I4
-		//IL_01e8: Expected Obj, but got I4
-		//IL_013b: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0151: Expected I4, but got Unknown
-		//IL_0103: Expected Obj, but got I4
-		//IL_02b2: Unknown result type (might be due to invalid IL or missing references)
-		//IL_02c8: Expected I4, but got Unknown
-		//IL_041e: Expected Obj, but got I4
-		//IL_048d: Expected Obj, but got I4
-		//IL_0015->IL0029: Incompatible stack types: Obj vs Ref
-		//IL_0020->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_0433->IL0029: Incompatible stack heights: 4 vs 1
-		//IL_04b1->IL0029: Incompatible stack heights: 4 vs 1
-		//IL_01ed->IL0025: Incompatible stack heights: 1 vs 0
-		//IL_0327->IL0029: Incompatible stack heights: 4 vs 1
-		//IL_04c0->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_01d0->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_02af->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0378->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_01a1->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_02f1->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_02e2->IL0029: Incompatible stack heights: 4 vs 1
-		//IL_0351->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_03ca->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_0138->IL0029: Incompatible stack heights: 4 vs 1
-		//IL_0360->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_0255->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_03e4->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0443->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_030b->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_0108->IL0025: Incompatible stack heights: 3 vs 0
-		//IL_0118->IL0029: Incompatible stack heights: 4 vs 1
-		//IL_04da->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_0470->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0388->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_021a->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0401->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_0275->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_0029->IL0029: Incompatible stack types: Obj vs Ref
-		//IL_01b6->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0192->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_04cb->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_01db->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_015d->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_02fc->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_03d5->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_036b->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_0260->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_03ef->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_044e->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_0316->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_047b->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0225->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_040c->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_02d2->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_023a->IL0029: Incompatible stack heights: 0 vs 1
-		//IL_0280->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_01c1->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0168->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_0245->IL0029: Incompatible stack types: I4 vs Ref
-		//IL_053f->IL0029: Incompatible stack heights: 3 vs 1
-		//IL_0514->IL0029: Incompatible stack heights: 3 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0570: Expected Obj, but got Ref
+		//IL_0365: Expected Obj, but got I4
+		//IL_062f: Expected native int or pointer, but got Obj
+		//IL_0263: Expected Obj, but got Ref
+		//IL_0268: Expected I4, but got Obj
+		//IL_0268: Expected I4, but got Obj
+		//IL_0271: Expected Obj, but got I4
+		//IL_0405: Expected native int or pointer, but got Obj
+		//IL_0485: Expected I4, but got Obj
+		//IL_017c: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0192: Expected I4, but got Unknown
+		//IL_03c8: Expected native int or pointer, but got Obj
+		//IL_0209: Expected Obj, but got Ref
+		//IL_0450: Expected Obj, but got VT
+		//IL_04e6: Expected native int or pointer, but got Obj
+		//IL_04f6: Expected Ref, but got VT
+		//IL_04fb: Expected VT, but got Obj
+		//IL_04f6: Expected native int or pointer, but got Obj
+		//IL_0505: Expected native int or pointer, but got Obj
+		//IL_0160: Expected native int or pointer, but got Obj
+		//IL_016a: Expected native int or pointer, but got Obj
+		//IL_045f: Expected I4, but got Obj
+		//IL_0521: Expected VT, but got Obj
+		//IL_051c: Expected native int or pointer, but got Obj
+		//IL_052b: Expected native int or pointer, but got Obj
+		//IL_05a2: Expected I4, but got Obj
+		//IL_05a2: Expected VT, but got Obj
+		//IL_05ae: Expected native int or pointer, but got Obj
+		//IL_03e4: Expected Obj, but got I4
+		//IL_03ee: Expected native int or pointer, but got Obj
+		//IL_0114: Expected native int or pointer, but got Obj
+		//IL_0123: Expected VT, but got Obj
+		//IL_011e: Expected native int or pointer, but got Obj
+		//IL_012c: Expected Obj, but got I4
+		//IL_0134: Expected native int or pointer, but got Obj
+		//IL_0143: Expected VT, but got Obj
+		//IL_013e: Expected native int or pointer, but got Obj
+		//IL_0671: Expected Ref, but got VT
+		//IL_04a3: Expected Obj, but got I4
+		//IL_054a: Expected Obj, but got I4
+		//IL_0554: Expected native int or pointer, but got Obj
+		//IL_0383: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0399: Expected I4, but got Unknown
+		//IL_0212: Expected native int or pointer, but got Obj
+		//IL_0583: Expected Obj, but got I4
+		//IL_019c: Expected native int or pointer, but got Obj
+		//IL_06d3: Expected I4, but got Obj
+		//IL_0612: Expected Obj, but got I4
+		//IL_02d9: Expected native int or pointer, but got Obj
+		//IL_06a8: Expected I, but got Obj
+		//IL_06aa: Invalid comparison between Unknown and I4
+		//IL_01e0->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_063e->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0276->IL003e: Incompatible stack heights: 1 vs 0
+		//IL_0659->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0491->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_050f->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0179->IL0042: Incompatible stack heights: 3 vs 2
+		//IL_0475->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_030a->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_05b8->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0131->IL003e: Incompatible stack heights: 1 vs 0
+		//IL_067b->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_05f5->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_04ad->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_02bb->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_055e->IL0042: Incompatible stack heights: 3 vs 2
+		//IL_0042->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_01eb->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0664->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0588->IL003e: Incompatible stack heights: 1 vs 0
+		//IL_051a->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0480->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0315->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_05c3->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0600->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_02c6->IL0042: Incompatible stack heights: 1 vs 2
+		//IL_0617->IL003e: Incompatible stack heights: 1 vs 0
+		//IL_0569->IL0042: Incompatible stack heights: 3 vs 2
+		//IL_0696->IL06b1: Incompatible stack heights: 2 vs 1
+		//IL_06e8->IL06e9: Incompatible stack heights: 2 vs 3
+		//IL_06b1->IL06b2: Incompatible stack heights: 1 vs 2
+		//IL_06c1->IL0042: Incompatible stack heights: 1 vs 2
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		ref object reference = ref *(object*)this;
-		if (4 != 0)
+		object obj = ((Authenticator)(object)this).Listener;
+		int num = 4;
+		if (((Authenticator._003CListenAsync_003Ed__7)Authenticator._003CListenAsync_003Ed__7._003C_003Et__builder)._003C_003E4__this != null)
 		{
-			reference = ref *(object*)4;
+			num = 4;
 		}
-		object obj = default;
+		object awaiter = default;
 		while (true)
 		{
-			switch ((uint)Unsafe.AsPointer(ref reference))
+			switch (num)
 			{
-			case 36u:
-				obj = 40;
-				goto IL_0025;
-			case 37u:
-				_ = 8;
+			case 36:
+				((TcpListener)(object)download).Start();
+				Unsafe.Write(&((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->_003C_003Et__builder, (AsyncTaskMethodBuilder)((AsyncTaskMethodBuilder*)Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton)->Task);
+				awaiter = 40;
 				break;
-			case 29u:
+			case 37:
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->listener.Dispose();
+				Unsafe.Write(&((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)this)->_003C_003Eu__1, (TaskAwaiter<TcpClient>)@base);
+				num = 8;
+				break;
+			case 29:
+				Unsafe.Write(&((Authenticator._003CReceiveAsync_003Ed__9*)(nint)awaiter)->_003C_003Et__builder, (AsyncTaskMethodBuilder)((Task)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler).GetAwaiter());
 				_ = 33;
 				break;
-			case 20u:
-				switch (obj - 3)
+			case 20:
+				switch (awaiter - 3)
 				{
 				case 0:
-					goto IL_0246;
+					goto IL_02ef;
 				case 2:
-					goto IL_02d2;
+					goto IL_03a3;
 				case 1:
-					goto IL_0343;
+					goto IL_0448;
 				case 3:
-					goto IL_04b1;
+					goto IL_063e;
 				}
-				if (5 != 0)
+				num = 5;
+				if (((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CReceiveAsync_003Ed__9._003C_003E4__this)->client != null)
 				{
-					reference = ref *(object*)2;
+					num = 2;
 				}
 				break;
-			case 7u:
-				reference = ref obj;
-				if (23 != 0)
+			case 7:
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&awaiter))->MoveNext();
+				((AsyncTaskMethodBuilder*)obj)->SetResult();
+				_ = 23;
+				if ((int)((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10._003C_003E1__state)->_003C_003Et__builder != 0)
 				{
-					reference = ref *(object*)42;
+					_ = 42;
 				}
 				break;
-			case 19u:
-				_ = ref obj;
-				_ = 22;
+			case 19:
+				obj = RestRequestExtensions.AddQueryParameter<int>((RestRequest)/*Error near IL_01f8: Stack underflow*/, (string)obj, (int)(&awaiter), ((TaskAwaiter<TcpClient>*)download)->IsCompleted);
+				num = 22;
 				break;
-			case 22u:
-				throw ref obj;
-			case 6u:
-			case 13u:
-			case 28u:
-				if (34 == 0)
+			case 22:
+				((Task<TcpClient>)(&awaiter)).GetAwaiter();
+				throw new TaskAwaiter<TcpClient>();
+			case 6:
+			case 13:
+			case 28:
+				Unsafe.Write(&Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10.ReflectMixedGateway, awaiter);
+				num = 34;
+				if (((FeverInstaller)FeverInstaller._003CfeverVersion_003EP)._003CappId_003EP == null)
 				{
-					_ = 9;
+					num = 9;
 				}
 				break;
-			case 12u:
-				obj = (object)/*Error near IL_01c4: Stack underflow*/;
-				if (17 == 0)
+			case 12:
+				awaiter = Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10.HandleNotifier();
+				num = 17;
+				if (((FeverInstaller)FeverInstaller.McBedrock__BackingField).Client__BackingField == null)
 				{
-					reference = ref *(object*)28;
+					num = 28;
 				}
 				break;
-			case 9u:
-				_ = ref obj;
-				obj = 19;
-				goto IL_0025;
-			case 42u:
-				_ = ref obj;
-				if (false)
+			case 9:
+				((Stream)/*Error near IL_0268: Stack underflow*/).Read((byte[])/*Error near IL_0268: Stack underflow*/, (int)obj, (int)((FeverInstaller)(&awaiter)).Client);
+				awaiter = 19;
+				break;
+			case 42:
+				((RestClientOptions)download)._002Ector();
+				((AsyncTaskMethodBuilder*)obj)->Start(ref *(Rpc._003CListenControlConnectAsync_003Ed__35*)(&awaiter));
+				_ = 0;
+				if ((int)((FeverInstaller._003CGetFeverAppVersionAsync_003Ed__14*)FeverInstaller._003CGetFeverAppVersionAsync_003Ed__14._003C_003E1__state)->_003C_003Et__builder != 0)
 				{
 					_ = 0;
 				}
 				break;
-			case 46u:
-				if ((nint)obj != 18)
+			case 46:
+				if ((nint)awaiter != 18)
 				{
-					if (6 != 0)
+					num = 6;
+					if ((int)((FeverInstaller._003CGetFeverAppVersionAsync_003Ed__14*)(nint)FeverInstaller._003CGetFeverAppVersionAsync_003Ed__14._003C_003E4__this)->_003C_003Eu__1 != 0)
 					{
-						reference = ref *(object*)43;
+						num = 43;
 					}
 					break;
 				}
-				goto case 30u;
-			case 2u:
+				goto case 30;
+			case 2:
 				return;
-			case 32u:
-				goto IL_0246;
-			case 15u:
-				throw ref obj;
-			case 1u:
-			case 16u:
-				obj = obj;
-				if (17 == 0)
+			case 32:
+				goto IL_02ef;
+			case 15:
+				throw new AsyncTaskMethodBuilder<EntityFeverManifestInfo>(ref *(TStateMachine*)((AsyncTaskMethodBuilder<EntityFeverManifestInfo>*)(&awaiter))->Task);
+			case 1:
+			case 16:
+				awaiter = awaiter;
+				num = 17;
+				if (FeverInstaller._003CGetFeverManifestAsync_003Ed__12.ReflectReporter == null)
 				{
-					reference = ref *(object*)15;
+					num = 15;
 				}
 				break;
-			case 4u:
-				obj = download;
-				obj = 45;
-				goto IL_0025;
-			case 14u:
-				_ = ref obj;
-				_ = 38;
+			case 4:
+				((AsyncTaskMethodBuilder<EntityFeverAppVersion>*)obj)->Start<TStateMachine>(ref *(TStateMachine*)download);
+				awaiter = (object)/*Error near IL_035c: Stack underflow*/;
+				awaiter = 45;
 				break;
-			case 45u:
-				switch (obj - 3)
+			case 14:
+				((FeverInstaller._003CGetFeverManifestAsync_003Ed__12*)(&awaiter))->MoveNext();
+				/*Error near IL_0371: Member reference must be method, but was: Field*/;
+			case 45:
+				switch (awaiter - 3)
 				{
 				case 0:
 					break;
 				default:
-					goto IL_02c8;
+					goto IL_0399;
 				case 3:
-					goto IL_02e2;
+					goto IL_03b7;
 				case 1:
-					goto IL_02fc;
+					goto IL_03dd;
 				case 2:
-					goto IL_03ef;
+					goto IL_0540;
 				}
-				goto case 12u;
-			case 5u:
-			case 24u:
-				goto IL_02d2;
-			case 21u:
-				goto IL_02e2;
-			case 35u:
-				goto IL_02fc;
-			case 10u:
-				_ = 27;
-				break;
-			case 26u:
-				goto IL_0343;
-			case 30u:
-				obj = (object)/*Error near IL_0354: Stack underflow*/;
-				if (0 == 0)
+				goto case 12;
+			case 5:
+			case 24:
+				goto IL_03a3;
+			case 21:
+				goto IL_03b7;
+			case 35:
+				goto IL_03dd;
+			case 10:
+				_ = ((FeverInstaller._003CInstallAsync_003Ed__11*)(nint)this)->_003C_003Eu__2;
+				/*Error near IL_040b: Member reference must be method, but was: Field*/;
+			case 26:
+				goto IL_0448;
+			case 30:
+				((Rpc)/*Error near IL_045f: Stack underflow*/).NeedCha = (byte)(int)obj != 0;
+				awaiter = (object)/*Error near IL_0461: Stack underflow*/;
+				_ = 0;
+				if (((Rpc)Rpc.Writer__BackingField).Listener__BackingField == null)
 				{
-					reference = ref *(object*)1;
+					_ = 1;
 				}
 				break;
-			case 18u:
-				obj = (object)/*Error near IL_036e: Stack underflow*/;
-				reference = ref *(object*)16;
+			case 18:
+				((Rpc)/*Error near IL_0485: Stack underflow*/)._002Ector((ILogger)/*Error near IL_0485: Stack underflow*/, (byte)(int)obj != 0);
+				awaiter = (object)/*Error near IL_0487: Stack underflow*/;
+				_ = 16;
 				break;
-			case 40u:
-				obj = download;
-				reference = ref *(object*)47;
+			case 40:
+				((AsyncTaskMethodBuilder<EntityFeverAppVersion>*)obj)->SetResult((EntityFeverAppVersion)(object)download);
+				((Rpc)/*Error near IL_049c: Stack underflow*/).SendMessage((BinaryWriter)/*Error near IL_049c: Stack underflow*/, (object[])/*Error near IL_049c: Stack underflow*/);
+				awaiter = ((TaskAwaiter<EntityFeverApp>*)/*Error near IL_04a1: Stack underflow*/)->IsCompleted;
+				_ = 47;
 				break;
-			case 27u:
-				if (2 == 0)
+			case 27:
+				((AsyncTaskMethodBuilder<EntityFeverAppVersion>*)((Rpc._003CListenAsync_003Ed__34*)(nint)this)->_003C_003Eu__1)->SetException((Exception)(object)((TaskAwaiter<EntityFeverApp>*)subItem)->GetResult());
+				Unsafe.Write(&((Rpc._003CListenControlConnectAsync_003Ed__35*)(nint)obj)->_003C_003Et__builder, (AsyncTaskMethodBuilder)this);
+				_ = 2;
+				if (((Rpc._003CListenControlConnectAsync_003Ed__35*)(nint)Rpc._003CListenControlConnectAsync_003Ed__35.listener)->_003C_003E4__this == null)
 				{
 					_ = 2;
 				}
 				break;
-			case 33u:
-				if (37 == 0)
+			case 33:
+				Unsafe.Write(&((Rpc._003CListenControlConnectAsync_003Ed__35*)(nint)this)->_003C_003Eu__1, (TaskAwaiter<TcpClient>)subItem);
+				num = 37;
+				if (((Rpc._003CReceiveAsync_003Ed__28*)(nint)Rpc._003CListenControlConnectAsync_003Ed__35.ReflectSymbolicDecorator)->_003C_003E1__state == 0)
 				{
-					_ = 14;
+					num = 14;
 				}
 				break;
-			case 25u:
-			case 44u:
-				goto IL_03ef;
+			case 25:
+			case 44:
+				goto IL_0540;
 			default:
-				throw ref obj;
-			case 17u:
-			case 23u:
-			case 31u:
-				obj = obj;
-				obj = 36;
-				goto IL_0025;
-			case 3u:
-				_ = ref obj;
-				_ = 11;
-				_ = 1;
-				_ = 14;
+				((AsyncTaskMethodBuilder<EntityFeverManifestInfo>*)obj)->SetResult((EntityFeverManifestInfo)(&awaiter));
+				throw new TaskAwaiter<EntityFeverManifestInfo>();
+			case 17:
+			case 23:
+			case 31:
+				awaiter = awaiter;
+				awaiter = 36;
 				break;
-			case 34u:
-				obj = download;
-				if (20 == 0)
+			case 3:
+				((AsyncTaskMethodBuilder<EntityFeverManifestInfo>*)(&awaiter))->AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref *(TAwaiter*)11, ref *(TStateMachine*)1);
+				num = 14;
+				break;
+			case 34:
+				awaiter = RestRequestExtensions.AddQueryParameter<_0021_00210>((RestRequest)/*Error near IL_05a2: Stack underflow*/, (string)/*Error near IL_05a2: Stack underflow*/, (_0021_00210)obj, (byte)(int)download != 0);
+				_ = 20;
+				if ((int)((Rpc._003CRemoteCallBackAsync_003Ed__21*)(nint)Rpc._003CRemoteCallBackAsync_003Ed__21.callBack)->_003C_003Eu__1 == 0)
 				{
-					reference = ref *(object*)8;
+					_ = 8;
 				}
 				break;
-			case 39u:
-				_ = (nint)download == 6;
-				if (29 != 0)
+			case 39:
+				((Rpc._003CSyncChaChaAsync_003Ed__38*)(nint)/*Error near IL_05e1: Stack underflow*/)->_003C_003E1__state = (((nint)((string)obj).Replace((string)(object)this, (string?)(object)download) == 6) ? 1 : 0);
+				_ = 29;
+				if (((Rpc._003CSyncChaChaAsync_003Ed__38)Rpc._003CSyncChaChaAsync_003Ed__38._003C_003Et__builder)._003C_003E4__this != null)
 				{
 					_ = 2;
 				}
 				break;
-			case 43u:
-				if ((nint)obj == 19)
+			case 43:
+				if ((nint)awaiter == 19)
 				{
-					obj = 18;
-					goto IL_0025;
-				}
-				goto case 3u;
-			case 8u:
-				_ = 10;
-				break;
-			case 11u:
-				goto IL_04b1;
-			case 38u:
-				_ = ref obj;
-				_ = 15;
-				break;
-			case 47u:
-				_ = 41;
-				break;
-			case 41u:
-				{
-					_ = 39;
+					awaiter = 18;
 					break;
 				}
-				IL_02d2:
-				_ = ref obj;
-				_ = 9;
-				_ = 1;
-				_ = 7;
+				goto case 3;
+			case 8:
+				((AsyncTaskMethodBuilder<EntityFeverManifestInfo>*)@base)->SetStateMachine((IAsyncStateMachine)awaiter);
+				Unsafe.Write(&Rpc._003CSyncChaChaAsync_003Ed__38.RateStack, this);
+				_ = 10;
 				break;
-				IL_0343:
-				obj = download;
-				reference = ref *(object*)46;
+			case 11:
+				goto IL_063e;
+			case 38:
+				((AsyncTaskMethodBuilder*)obj)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter<EntityAuthItem>*)(&awaiter), ref *(JavaGame._003CPrepareComponentsAsync_003Ed__28*)((Task<EntityFeverManifest>)(object)download).GetAwaiter());
+				_ = 15;
 				break;
-				IL_0246:
-				obj = (object)/*Error near IL_0249: Stack underflow*/;
-				if (2 == 0)
+			case 47:
+				if (download != null)
 				{
-					reference = ref *(object*)23;
+					((Dictionary<ushort, Func<RpcCallBack, Task>>)(object)download)._002Ector();
+					if ((nint)this == 4)
+					{
+						((Func<RpcCallBack, Task>)/*Error near IL_06a8: Stack underflow*/)._002Ector(obj, (nint)download);
+						_ = (int)/*Error near IL_06ac: Stack underflow*/ == 18;
+						goto IL_06b2;
+					}
+				}
+				goto IL_06b2;
+			case 41:
+				{
+					if (download != null && (nint)BitConverter.GetBytes((ushort)(int)download) == 4)
+					{
+						_ = (nint)Enumerable.Concat<TSource>((IEnumerable<TSource>)this, (IEnumerable<TSource>)download) == 19;
+					}
+					else
+					{
+					}
+					((JavaGameValue)(object)this).GuiScale__BackingField = 0;
+					num = 39;
+					break;
+				}
+				IL_0448:
+				awaiter = ((Task<RestResponse<EntityFeverResponse<_00210>>>)(object)download).GetAwaiter();
+				num = 46;
+				break;
+				IL_063e:
+				((Rpc._003CRemoteCallBackAsync_003Ed__21*)obj)->MoveNext();
+				awaiter = (object)/*Error near IL_0645: Stack underflow*/;
+				_ = 18;
+				if (((GameValue)CppGameValue.DecorateAlphabeticList).MaxConcurrency__BackingField == 0)
+				{
+					_ = 31;
 				}
 				break;
-				IL_0025:
-				reference = ref *(object*)obj;
-				break;
-				IL_03ef:
-				_ = ref obj;
+				IL_03a3:
+				_ = ref awaiter;
 				_ = 9;
 				_ = 1;
-				if (6 != 0)
+				/*Error near IL_03a8: Member reference must be method, but was: Field*/;
+				IL_06b2:
+				((JavaGameValue)obj).SaveOptions__BackingField = 0;
+				_ = 41;
+				break;
+				IL_02ef:
+				((FeverInstaller._003CFeverRequest_003Ed__15<>*)obj)->MoveNext();
+				awaiter = (object)/*Error near IL_02f6: Stack underflow*/;
+				_ = 2;
+				if ((int)((FeverInstaller._003CGetFeverManifestAsync_003Ed__12*)FeverInstaller._003CGetFeverManifestAsync_003Ed__12._003C_003E1__state)->_003C_003Et__builder == 0)
+				{
+					_ = 23;
+				}
+				break;
+				IL_0540:
+				_ = ref awaiter;
+				((AsyncTaskMethodBuilder<EntityFeverManifest>*)9)->SetException((Exception)1);
+				_ = 6;
+				if (((Rpc._003CReceiveAsync_003Ed__28*)(nint)Rpc._003CReceiveAsync_003Ed__28.client)->_003C_003E4__this != null)
 				{
 					_ = 9;
 				}
 				break;
-				IL_02fc:
-				obj = (object)/*Error near IL_02ff: Stack underflow*/;
-				if (6 == 0)
+				IL_03dd:
+				awaiter = FeverInstaller._003CGetFeverManifestInfoAsync_003Ed__13.CallGateway();
+				num = 6;
+				if ((int)((FeverInstaller._003CInstallAsync_003Ed__11*)(nint)FeverInstaller._003CInstallAsync_003Ed__11._003C_003E4__this)->_003C_003Eu__1 == 0)
 				{
-					reference = ref *(object*)1;
+					num = 1;
 				}
 				break;
-				IL_02e2:
-				obj = (object)/*Error near IL_02e5: Stack underflow*/;
-				if (13 != 0)
+				IL_03b7:
+				awaiter = FeverInstaller._003CGetFeverManifestAsync_003Ed__12.ReceiveEnumerator();
+				num = 13;
+				if (((FeverInstaller._003CInstallAsync_003Ed__11*)(nint)FeverInstaller._003CGetFeverManifestInfoAsync_003Ed__13.CheckScalableWorker)->_003C_003E1__state != 0)
 				{
-					reference = ref *(object*)2;
+					num = 2;
 				}
 				break;
-				IL_02c8:
-				reference = ref *(object*)25;
-				break;
-				IL_04b1:
-				obj = (object)/*Error near IL_04b4: Stack underflow*/;
-				if (18 == 0)
-				{
-					reference = ref *(object*)31;
-				}
+				IL_0399:
+				num = 25;
 				break;
 			}
 		}
@@ -394,12 +480,14 @@ public class ComponentPath : GamePath
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00爀()
+	internal unsafe static object _FF00_FF00爀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -419,12 +507,12 @@ public class ComponentPath : GamePath
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00笀()
+	internal unsafe static byte _FF00_FF00笀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 }

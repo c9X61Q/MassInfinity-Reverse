@@ -21,9 +21,11 @@ public class ApiResponse : ApiResponseBase<ApiResponse>
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public ApiResponse()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		/*Error near IL_0015: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -37,10 +39,11 @@ public class ApiResponse : ApiResponseBase<ApiResponse>
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00最()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return new SecureCallbackMethodAttribute();
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -53,14 +56,18 @@ public class ApiResponse : ApiResponseBase<ApiResponse>
 }
 public class ApiResponse<T> : ApiResponseBase<ApiResponse<T>>
 {
+	[CompilerGenerated]
+	private T? Data__BackingField;
+
 	public T? Data
 	{
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[CompilerGenerated]
 		get
 		{
-			//IL_000a: Expected VT, but got Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0017: Expected VT, but got Obj
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			return (T?)this;
@@ -69,7 +76,8 @@ public class ApiResponse<T> : ApiResponseBase<ApiResponse<T>>
 		[CompilerGenerated]
 		set
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+			((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+			if ((int)/*Error near IL_0013: Stack underflow*/ != 0)
 			{
 			}
 		}
@@ -78,17 +86,20 @@ public class ApiResponse<T> : ApiResponseBase<ApiResponse<T>>
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public ApiResponse<T> SetData(T data)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return this;
+		/*Error near IL_0016: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	public ApiResponse()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ != 0)
+		((ApiResponseBase<ApiResponse>)Unsafe.As<T?, object>(ref ApiResponse<>.Data__BackingField)/*cast due to constrained. prefix*/)._002Ector();
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
+		/*Error near IL_0015: Member reference must be method, but was: Field*/;
 	}
 }

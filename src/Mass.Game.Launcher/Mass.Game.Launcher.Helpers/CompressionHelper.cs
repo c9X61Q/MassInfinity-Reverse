@@ -1,12 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Mass.Common.Extensions;
+using Mass.Game.Launcher.Entities.Fever;
+using Mass.Game.Launcher.Paths;
+using Mass.Game.Launcher.Values;
+using RestSharp;
 using Serilog;
 
 namespace Mass.Game.Launcher.Helpers;
@@ -81,28 +89,35 @@ public static class CompressionHelper
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private sealed void _FF00_FF00_FF00_FF00_FF00_0C00(object P_0)
+		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00_0C00(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_0045: Expected I, but got Obj
+			//IL_0045: Expected Obj, but got Ref
+			//IL_004f: Expected native int or pointer, but got Obj
+			//IL_0059->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+			((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 1;
+			object obj2 = obj;
 			while (true)
 			{
-				switch ((int)obj)
+				switch ((int)obj2)
 				{
 				default:
 					return;
 				case 0:
 					return;
 				case 1:
-					if (0 == 0)
+					((Func<Task>)/*Error near IL_0045: Stack underflow*/)._002Ector((object)Unsafe.AsPointer(ref ((Authenticator._003CListenAsync_003Ed__7)this)._003C_003E1__state), (nint)P_0);
+					obj2 = 0;
+					if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 == 0)
 					{
-						_ = 0;
+						obj2 = 0;
 					}
 					break;
 				}
@@ -118,12 +133,14 @@ public static class CompressionHelper
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static object _FF00_FF00_FF00_FF00_FF00_0E00()
+		internal unsafe static object _FF00_FF00_FF00_FF00_FF00_0E00()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Expected Obj, but got I4
+			((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -137,293 +154,338 @@ public static class CompressionHelper
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00က()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_04a3: Expected Obj, but got Ref
-			//IL_00b9: Expected Obj, but got I4
-			//IL_0286: Expected Obj, but got Ref
-			//IL_0289: Expected Obj, but got Ref
+			//IL_001d: Expected Obj, but got I4
+			//IL_0043: Expected I4, but got Obj
+			//IL_068c: Expected Obj, but got Ref
+			//IL_0691: Expected Obj, but got Ref
+			//IL_062d: Expected I, but got Obj
+			//IL_062d: Expected Obj, but got Ref
+			//IL_063c: Expected Obj, but got I
+			//IL_0666: Expected Obj, but got Ref
+			//IL_0675: Expected Obj, but got I
+			//IL_0652: Expected Obj, but got Ref
+			//IL_0654: Expected Obj, but got I
+			//IL_0538: Expected native int or pointer, but got Obj
+			//IL_0554: Expected native int or pointer, but got Obj
+			//IL_04f4: Expected Obj, but got Ref
+			//IL_04f9: Expected VT, but got Obj
+			//IL_0503: Expected native int or pointer, but got Obj
+			//IL_00b2: Expected Obj, but got VT
+			//IL_00ad: Expected native int or pointer, but got Obj
+			//IL_00e2: Expected Obj, but got I4
+			//IL_0250: Expected Obj, but got Ref
+			//IL_034c: Expected Obj, but got I4
+			//IL_0144: Expected I4, but got Obj
+			//IL_0312: Expected Obj, but got Ref
+			//IL_0312: Expected Obj, but got Ref
+			//IL_031c: Expected native int or pointer, but got Obj
+			//IL_02e5: Expected VT, but got Obj
+			//IL_027e: Expected Obj, but got I4
+			//IL_0283: Expected Obj, but got I4
+			//IL_0283: Expected Obj, but got Ref
+			//IL_02d8: Expected Obj, but got I4
+			//IL_022b: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0231: Expected Obj, but got Unknown
+			//IL_022c: Expected native int or pointer, but got VT
+			//IL_01e6: Expected native int or pointer, but got Obj
+			//IL_01ed: Expected Obj, but got I4
 			//IL_0292: Expected Obj, but got I4
-			//IL_011b: Expected I4, but got Obj
-			//IL_0200: Expected Obj, but got I4
-			//IL_0239: Expected Obj, but got Ref
-			//IL_0242: Expected Obj, but got I4
-			//IL_01c1: Unknown result type (might be due to invalid IL or missing references)
-			//IL_0198: Expected Obj, but got Ref
-			//IL_0210: Expected Obj, but got I4
-			//IL_02b3: Expected Obj, but got Ref
-			//IL_02bc: Expected Obj, but got Ref
-			//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-			//IL_0494->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_04bd->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_04ad->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_04e3->IL0019: Incompatible stack types: I4 vs Ref
-			//IL_049f->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_04c8->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0403->IL005e: Incompatible stack types: I4 vs Ref
-			//IL_004f->IL005e: Incompatible stack heights: 0 vs 1
-			//IL_005a->IL005e: Incompatible stack types: I4 vs Ref
-			//IL_03f8->IL005e: Incompatible stack heights: 2 vs 1
-			//IL_03d2->IL005e: Incompatible stack heights: 2 vs 1
-			//IL_03eb->IL005e: Incompatible stack heights: 3 vs 1
-			//IL_03a6->IL005e: Incompatible stack heights: 3 vs 1
-			//IL_009d->IL005e: Incompatible stack heights: 2 vs 1
-			//IL_03dd->IL005e: Incompatible stack heights: 2 vs 1
-			//IL_03c0->IL005e: Incompatible stack types: I4 vs Ref
-			//IL_00a8->IL005e: Incompatible stack heights: 2 vs 1
-			//IL_00c2->IL00c2: Incompatible stack types: Obj vs Ref
-			//IL_01f0->IL00c2: Incompatible stack heights: 0 vs 1
-			//IL_01fb->IL00c2: Incompatible stack types: I4 vs Ref
-			//IL_0274->IL00c2: Incompatible stack heights: 3 vs 1
-			//IL_0255->IL00c2: Incompatible stack heights: 3 vs 1
-			//IL_020b->IL00c2: Incompatible stack heights: 3 vs 1
-			//IL_01cd->IL00c2: Incompatible stack heights: 3 vs 1
-			//IL_01a2->IL00c2: Incompatible stack types: I4 vs Ref
-			//IL_0262->IL00c2: Incompatible stack heights: 2 vs 1
-			//IL_021b->IL00c2: Incompatible stack heights: 3 vs 1
-			//IL_0188->IL00c2: Incompatible stack heights: 0 vs 1
-			//IL_027f->IL00c2: Incompatible stack heights: 3 vs 1
-			//IL_0235->IL00c2: Incompatible stack types: I4 vs Ref
-			//IL_02a9->IL02b6: Incompatible stack heights: 3 vs 5
-			//IL_02ee->IL00c2: Incompatible stack heights: 0 vs 1
-			//IL_01bc->IL00c2: Incompatible stack types: I4 vs Ref
-			//IL_0193->IL00c2: Incompatible stack types: I4 vs Ref
-			//IL_02c8->IL00c2: Incompatible stack heights: 5 vs 1
-			//IL_02f9->IL00c2: Incompatible stack types: I4 vs Ref
-			//IL_031f->IL00c2: Incompatible stack heights: 2 vs 1
-			//IL_02d3->IL00c2: Incompatible stack heights: 5 vs 1
-			//IL_032a->IL00c2: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_0297: Expected Obj, but got I4
+			//IL_0297: Expected Obj, but got Ref
+			//IL_035b: Expected native int or pointer, but got Obj
+			//IL_020d: Expected native int or pointer, but got Obj
+			//IL_01cb: Expected native int or pointer, but got Obj
+			//IL_03e4: Expected Obj, but got I
+			//IL_03ff: Expected Obj, but got Ref
+			//IL_0404: Expected Obj, but got I
+			//IL_040b: Expected Obj, but got Ref
+			//IL_0422: Expected Obj, but got I4
+			//IL_06a5->IL0026: Incompatible stack heights: 2 vs 1
+			//IL_0641->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_067a->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_065e->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_06b0->IL0026: Incompatible stack heights: 2 vs 1
+			//IL_064c->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0685->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_026e->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_0279->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_0326->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_02ef->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_028d->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_02bc->IL00eb: Incompatible stack heights: 2 vs 1
+			//IL_023b->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_01f7->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_0304->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_02a1->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_0217->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_01d5->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_0331->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_02c7->IL00eb: Incompatible stack heights: 2 vs 1
+			//IL_03e9->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_0222->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_01e0->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_03f4->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_0436->IL00eb: Incompatible stack types: I4 vs Obj
+			//IL_0441->IL00eb: Incompatible stack types: I4 vs Obj
+			((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 5;
-			ref _003CExtractAllAsync_003Ed__3 reference = ref *(_003CExtractAllAsync_003Ed__3*)obj;
+			object obj2 = obj;
 			while (true)
 			{
-				ref _003CExtractAllAsync_003Ed__3 reference2;
-				switch ((uint)Unsafe.AsPointer(ref reference))
+				int num;
+				switch ((int)obj2)
 				{
-				case 4u:
+				case 4:
 					if (obj != null)
 					{
-						if (6 != 0)
+						num = 6;
+						if ((int)((Authenticator._003CListenAsync_003Ed__7*)Authenticator._003CListenAsync_003Ed__7._003C_003E1__state)->_003C_003Et__builder != 0)
 						{
-							reference2 = ref *(_003CExtractAllAsync_003Ed__3*)5;
+							num = 5;
 						}
-						goto IL_005e;
+						goto IL_0073;
 					}
-					goto IL_03f8;
-				case 1u:
-					_ = null;
-					if (false)
+					goto IL_0579;
+				case 1:
+					((JavaGameValue)Unsafe.AsPointer(ref this)).ReconnectDelay__BackingField = unchecked((nint)null);
+					obj2 = 0;
+					if (((JavaGameValue)JavaGameValue.SaveOptions__BackingField).SetChinese__BackingField != 0)
 					{
-						_ = 0;
+						obj2 = 0;
 					}
 					break;
-				case 5u:
-					obj = (object)Unsafe.AsPointer(ref this);
-					reference = ref *(_003CExtractAllAsync_003Ed__3*)4;
+				case 5:
+					obj = ((JavaGameValue)Unsafe.AsPointer(ref this)).SetGuiScale__BackingField;
+					obj2 = 4;
 					break;
-				case 2u:
-					goto IL_04ad;
-				case 3u:
+				case 2:
+					goto IL_065e;
+				case 3:
 					return;
 				default:
 					{
-						reference = ref this;
-						if (2 == 0)
+						_ = ((MemberInfo)Unsafe.AsPointer(ref ((JavaGameValue)Unsafe.AsPointer(ref this)).WindowHeight__BackingField)).Name;
+						_ = 2;
+						if (((BedrockGamePath)(object)BedrockGamePath.NeteaseData).Launcher == null)
 						{
-							reference = ref *(_003CExtractAllAsync_003Ed__3*)3;
+							_ = 3;
 						}
 						break;
 					}
-					IL_04ad:
-					_ = -2;
-					if (true)
-					{
-						_ = 1;
-					}
-					break;
-					IL_03f8:
-					reference2 = ref *(_003CExtractAllAsync_003Ed__3*)5;
-					goto IL_005e;
-					IL_005e:
+					IL_0579:
+					num = 5;
+					goto IL_0073;
+					IL_0073:
 					while (true)
 					{
-						ref byte reference3;
-						switch ((uint)Unsafe.AsPointer(ref reference2))
+						object obj3;
+						switch (num)
 						{
-						case 8u:
-							if (true)
+						case 8:
+							Unsafe.Write(&Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton, (object)((Authenticator._003CListenAsync_003Ed__7)this)._003C_003Eu__1);
+							num = 1;
+							if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E1__state)->_003C_003Et__builder != 0)
 							{
-								_ = 0;
+								num = 0;
 							}
 							continue;
-						case 5u:
+						case 5:
 							if (obj == null)
 							{
 								obj = 16;
-								goto IL_00be;
+								goto IL_00e7;
 							}
-							goto IL_01dc;
-						case 7u:
-							_ = 4;
+							goto IL_024a;
+						case 7:
+							((AsyncTaskMethodBuilder<EntityFeverManifest>*)/*Error near IL_04df: Stack underflow*/)->AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref Unsafe.As<_003CExtractAllAsync_003Ed__3, TAwaiter>(ref this), ref *(TStateMachine*)((Rpc._003CListenControlConnectAsync_003Ed__35)this)._003C_003E4__this);
+							Unsafe.Write(&Rpc._003CListenControlConnectAsync_003Ed__35.ReflectSymbolicDecorator, /*Error near IL_04e4: Stack underflow*/);
+							num = 4;
 							continue;
-						case 6u:
-							reference2 = ref this;
-							if (6 == 0)
+						case 6:
+							Unsafe.Write(&((Rpc._003CReceiveAsync_003Ed__28*)(nint)/*Error near IL_04f9: Stack underflow*/)->_003C_003Et__builder, (AsyncTaskMethodBuilder)new Rpc((object)Unsafe.AsPointer(ref this)));
+							num = 6;
+							if (((Rpc._003CReceiveAsync_003Ed__28*)(nint)Rpc._003CReceiveAsync_003Ed__28.client)->_003C_003E4__this == null)
 							{
-								reference2 = ref *(_003CExtractAllAsync_003Ed__3*)8;
+								num = 8;
 							}
 							continue;
-						case 1u:
-							if (3 == 0)
+						case 1:
+							((AsyncTaskMethodBuilder<EntityFeverManifestInfo>*)/*Error near IL_0529: Stack underflow*/)->AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref *(TAwaiter*)Rpc._003CReceiveAsync_003Ed__28.CheckMonoProgram, ref *(TStateMachine*)((Rpc._003CRemoteCallBackAsync_003Ed__21)this)._003C_003E1__state);
+							Unsafe.Write(&((Rpc._003CRemoteCallBackAsync_003Ed__21*)(nint)/*Error near IL_052e: Stack underflow*/)->_003C_003E4__this, /*Error near IL_052e: Stack underflow*/);
+							num = 3;
+							if ((int)((Rpc._003CRemoteCallBackAsync_003Ed__21*)(nint)Rpc._003CRemoteCallBackAsync_003Ed__21.callBack)->_003C_003Eu__1 == 0)
 							{
-								_ = 2;
+								num = 2;
 							}
 							continue;
-						case 3u:
-							_ = 0;
-							_ = 7;
+						case 3:
+							((Rpc._003CSyncChaChaAsync_003Ed__38*)(nint)Rpc._003CRemoteCallBackAsync_003Ed__21.MeasureCalc)->_003C_003E1__state = 0;
+							num = 7;
 							continue;
 						default:
-							goto IL_03eb;
-						case 4u:
+							goto IL_0563;
+						case 4:
 							break;
-						case 2u:
-							goto IL_04ad;
-							IL_00be:
-							reference3 = ref *(byte*)obj;
-							goto IL_00c2;
-							IL_00c2:
+						case 2:
+							goto IL_065e;
+							IL_00e7:
+							obj3 = obj;
+							goto IL_00eb;
+							IL_00eb:
 							while (true)
 							{
-								switch ((uint)Unsafe.AsPointer(ref reference3))
+								switch ((int)obj3)
 								{
-								case 9u:
+								case 9:
 									return;
 								default:
-									if (&obj != null)
+									((TaskAwaiter*)(&obj))->GetResult();
+									if ((int)/*Error near IL_01c1: Stack underflow*/ != 0)
 									{
-										if (4 == 0)
+										obj3 = 4;
+										if ((int)((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CReceiveAsync_003Ed__9.client)->_003C_003Eu__1 == 0)
 										{
-											reference3 = ref *(byte*)4;
+											obj3 = 4;
 										}
 										continue;
 									}
-									goto case 6u;
-								case 12u:
-									obj = (object)Unsafe.AsPointer(ref this);
-									reference3 = ref *(byte*)10;
+									goto case 6;
+								case 12:
+									obj = ((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)Authenticator._003CReceiveAsync_003Ed__9.CheckCustomChain)->_003C_003E1__state;
+									obj3 = 10;
 									continue;
-								case 19u:
-									reference3 = ref Unsafe.As<_003CExtractAllAsync_003Ed__3, byte>(ref this);
-									if (15 != 0)
+								case 19:
+									Unsafe.As<AsyncTaskMethodBuilder, @null>(ref ((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10)this)._003C_003Et__builder) = null;
+									obj3 = 15;
+									if (((Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10*)(nint)Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10._003C_003E4__this)->_003Cstream_003E5__2 != null)
 									{
-										reference3 = ref *(byte*)15;
+										obj3 = 15;
 									}
 									continue;
-								case 10u:
-									_ = obj + 1;
-									_ = 18;
+								case 10:
+									Unsafe.Write(&Authenticator._003CReceiveAuthenticationDataAsync_003Ed__10.ReflectMixedGateway, (object)(obj + 1));
+									obj3 = 18;
 									continue;
-								case 1u:
-								case 11u:
-								case 14u:
+								case 1:
+								case 11:
+								case 14:
 									break;
-								case 6u:
+								case 6:
 									obj = 0;
-									_ = 3;
+									((FeverInstaller)Unsafe.AsPointer(ref this)).Client__BackingField = 0;
+									obj3 = 3;
 									continue;
-								case 15u:
+								case 15:
 									obj = -1;
-									_ = 7;
+									FeverInstaller.ReflectVisualArgument = -1;
+									obj3 = 7;
 									continue;
-								case 4u:
-								case 7u:
-									reference3 = ref *(byte*)(&obj);
-									if (12 != 0)
+								case 4:
+								case 7:
+									((Stream)/*Error near IL_02a8: Stack underflow*/).Read((byte[])/*Error near IL_02a8: Stack underflow*/, (int)/*Error near IL_02a8: Stack underflow*/, (int)(&obj));
+									_ = 12;
+									if (((FeverInstaller._003CFeverRequest_003Ed__15<>)FeverInstaller._003CFeverRequest_003Ed__15<>._003C_003Et__builder)._003C_003E4__this != null)
 									{
-										reference3 = ref *(byte*)6;
+										_ = 6;
 									}
 									continue;
-								case 8u:
-								case 16u:
-									goto IL_0235;
-								case 3u:
-									_ = 2;
+								case 8:
+								case 16:
+									goto IL_02c7;
+								case 3:
+									((FeverInstaller._003CFeverRequest_003Ed__15<>)this)._003C_003Eu__1 = (TaskAwaiter<RestResponse<EntityFeverResponse<T>>>)obj;
+									obj3 = 2;
 									continue;
-								case 13u:
-									_ = 17;
+								case 13:
+									((RestClient)/*Error near IL_02fa: Stack underflow*/)._002Ector((RestClientOptions)/*Error near IL_02fa: Stack underflow*/, (ConfigureHeaders)/*Error near IL_02fa: Stack underflow*/, (ConfigureSerialization)/*Error near IL_02fa: Stack underflow*/, (byte)Unsafe.AsPointer(ref ((FeverInstaller._003CGetFeverAppVersionAsync_003Ed__14)this)._003C_003E1__state) != 0);
+									obj3 = 17;
 									continue;
-								case 2u:
-									_ = ref obj;
-									if (9 == 0)
+								case 2:
+									Unsafe.As<FeverInstaller, ILogger>(ref ((FeverInstaller._003CGetFeverAppVersionAsync_003Ed__14)this)._003C_003E4__this).Debug<IPAddress>((string)(&obj), (IPAddress)Unsafe.AsPointer(ref this));
+									obj3 = 9;
+									if (((FeverInstaller._003CGetFeverManifestAsync_003Ed__12*)(nint)FeverInstaller._003CGetFeverAppVersionAsync_003Ed__14.CheckBasicEncryptor)->_003C_003E1__state == 0)
 									{
-										_ = 4;
+										obj3 = 4;
 									}
 									continue;
-								case 5u:
-									goto IL_027f;
-								case 17u:
-									if (Unsafe.AsPointer(ref this) == null)
-									{
-										obj = (object)Unsafe.AsPointer(ref this);
-									}
-									obj = (object)Unsafe.AsPointer(ref this);
-									if (false)
-									{
-										_ = 0;
-									}
-									continue;
-								case 18u:
-									goto IL_02d3;
-								case 20u:
-									goto IL_03eb;
+								case 5:
+									goto IL_0331;
+								case 17:
+									goto IL_0351;
+								case 18:
+									goto IL_03be;
+								case 20:
+									goto IL_0563;
 								}
 								break;
-								IL_02d3:
-								if (Unsafe.AsPointer(ref this) == null)
+								IL_03be:
+								object obj4 = FeverInstaller._003CInstallAsync_003Ed__11.ReflectAccessibleWatcher;
+								if (obj4 == null)
 								{
-									if (true)
+									obj3 = 1;
+									if (((Rpc)Rpc.ProcessId__BackingField).Logger__BackingField != null)
 									{
-										reference3 = ref *(byte*)1;
+										obj3 = 1;
 									}
 									continue;
 								}
-								_ = (int)((double)(ref this) / (double)(ref this) * 100.0);
-								if (11 != 0)
+								((AsyncTaskMethodBuilder<_00210>*)obj4)->SetException((Exception)(int)((double)((Rpc)((Rpc)Unsafe.AsPointer(ref this)).NeedCha__BackingField).UseCha__BackingField / (double)((Rpc)(object)((Rpc)Unsafe.AsPointer(ref this)).Callbacks__BackingField).Writer__BackingField * 100.0));
+								obj3 = 11;
+								if (((Rpc)Rpc._chaChaEn)._chaChaDe != null)
 								{
-									_ = 4;
+									obj3 = 4;
 								}
 							}
-							goto IL_01dc;
-							IL_03eb:
-							_ = 2;
+							goto IL_024a;
+							IL_0563:
+							Unsafe.As<AsyncTaskMethodBuilder, ReadOnlyMemory<byte>>(ref ((Rpc._003CSyncChaChaAsync_003Ed__38)this)._003C_003Et__builder) = default;
+							num = 2;
 							continue;
-							IL_01dc:
-							if (Unsafe.AsPointer(ref this) == null)
+							IL_024a:
+							if (((Encoding)/*Error near IL_0255: Stack underflow*/).GetString((byte[])/*Error near IL_0255: Stack underflow*/, (int)/*Error near IL_0255: Stack underflow*/, (int)Unsafe.AsPointer(ref ((FeverInstaller)Unsafe.AsPointer(ref this))._003CfeverVersion_003EP)) == null)
 							{
-								if (0 == 0)
+								obj3 = 0;
+								if (FeverInstaller.McBedrock__BackingField == null)
 								{
-									reference3 = ref *(byte*)20;
+									obj3 = 20;
 								}
-								goto IL_00c2;
+								goto IL_00eb;
 							}
-							goto IL_027f;
-							IL_0235:
-							obj = (object)Unsafe.AsPointer(ref this);
+							goto IL_0331;
+							IL_02c7:
+							obj = ((FeverInstaller._003CFeverRequest_003Ed__15<>)this).request;
 							obj = 19;
-							goto IL_00be;
-							IL_027f:
-							obj = (object)Unsafe.AsPointer(ref this);
-							obj = (object)Unsafe.AsPointer(ref this);
+							goto IL_00e7;
+							IL_0331:
+							obj = (obj = Unsafe.As<AsyncTaskMethodBuilder<EntityFeverManifest>, AsyncTaskMethodBuilder<EntityFeverManifestInfo>>(ref ((FeverInstaller._003CGetFeverManifestAsync_003Ed__12)this)._003C_003Et__builder).Task);
 							obj = 13;
-							goto IL_00be;
+							goto IL_00e7;
 						}
 						break;
 					}
-					goto IL_03f8;
+					goto IL_0579;
+					IL_065e:
+					((JavaGameValue)Unsafe.AsPointer(ref this)).GuiScale__BackingField = -2;
+					obj2 = 1;
+					if (((JavaGameValue)JavaGameValue.SetSize__BackingField).WindowWidth__BackingField != 0)
+					{
+						obj2 = 1;
+					}
+					break;
+					IL_0351:
+					if (((FeverInstaller._003CGetFeverManifestInfoAsync_003Ed__13*)(nint)FeverInstaller._003CGetFeverManifestAsync_003Ed__12.ReflectReporter)->_003C_003E1__state == 0)
+					{
+						_ = ((FeverInstaller._003CGetFeverManifestInfoAsync_003Ed__13)this)._003C_003Et__builder;
+						_ = ((FeverInstaller._003CGetFeverManifestInfoAsync_003Ed__13)this)._003C_003E4__this;
+						_ = (delegate*<bool>)(&FeverInstaller._003CGetFeverManifestAsync_003Ed__12.SearchChain);
+						/*Error near IL_037e: Member reference must be method, but was: Field*/;
+					}
+					_ = ((FeverInstaller._003CInstallAsync_003Ed__11)this)._003C_003E1__state;
+					FeverInstaller._003CGetFeverManifestInfoAsync_003Ed__13.CallGateway();
+					/*Error near IL_0398: Member reference must be method, but was: Field*/;
 				}
 			}
 		}
@@ -437,13 +499,13 @@ public static class CompressionHelper
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static byte _FF00_FF00_FF00_FF00_FF00ሀ()
+		internal unsafe static byte _FF00_FF00_FF00_FF00_FF00ሀ()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -533,28 +595,35 @@ public static class CompressionHelper
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private sealed void _FF00_FF00_FF00_FF00_FE00(object P_0)
+		private unsafe sealed void _FF00_FF00_FF00_FF00_FE00(object P_0)
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0026: Expected I4, but got Obj
-			//IL_003c->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0047->IL0019: Incompatible stack heights: 2 vs 1
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001d: Expected Obj, but got I4
+			//IL_0033: Expected I4, but got Obj
+			//IL_0045: Expected I, but got Obj
+			//IL_0045: Expected Obj, but got Ref
+			//IL_004f: Expected native int or pointer, but got Obj
+			//IL_0059->IL0026: Incompatible stack types: I4 vs Obj
+			//IL_0064->IL0026: Incompatible stack types: I4 vs Obj
+			((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
 			object obj = 1;
+			object obj2 = obj;
 			while (true)
 			{
-				switch ((int)obj)
+				switch ((int)obj2)
 				{
 				default:
 					return;
 				case 0:
 					return;
 				case 1:
-					if (false)
+					((Func<Task>)/*Error near IL_0045: Stack underflow*/)._002Ector((object)Unsafe.AsPointer(ref ((Authenticator._003CListenAsync_003Ed__7)this)._003C_003E1__state), (nint)P_0);
+					obj2 = 0;
+					if ((int)((Authenticator._003CListenAsync_003Ed__7*)(nint)Authenticator._003CListenAsync_003Ed__7._003C_003E4__this)->_003C_003Eu__1 != 0)
 					{
-						_ = 0;
+						obj2 = 0;
 					}
 					break;
 				}
@@ -562,12 +631,14 @@ public static class CompressionHelper
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static object _FF00_FF00_FF00_FF00_FF00()
+		internal unsafe static object _FF00_FF00_FF00_FF00_FF00()
 		{
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			//IL_001a: Expected Obj, but got I4
+			((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return (object)/*Error near IL_0009: Stack underflow*/;
+			return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -579,528 +650,100 @@ public static class CompressionHelper
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private unsafe sealed void _FF00_FF00_FF00_FF00_FF00ࠀ()
+		private sealed void _FF00_FF00_FF00_FF00_FF00ࠀ()
 		{
-			//IL_0010: Expected Obj, but got I4
-			//IL_0036: Expected I4, but got Obj
-			//IL_003f: Expected Obj, but got Ref
-			//IL_081b: Expected Obj, but got I4
-			//IL_00f5: Expected Obj, but got I4
-			//IL_0162: Expected Obj, but got Ref
-			//IL_075d: Expected Obj, but got I4
-			//IL_053a: Expected Obj, but got Ref
-			//IL_0250: Expected Obj, but got Ref
-			//IL_0506: Expected Obj, but got Ref
-			//IL_05fd: Expected Obj, but got Ref
-			//IL_02bb: Expected Obj, but got I4
-			//IL_02a5: Expected Obj, but got Ref
-			//IL_0556: Expected Obj, but got I4
-			//IL_05d3: Expected Obj, but got I4
-			//IL_0302: Expected Obj, but got I4
-			//IL_0479: Expected Obj, but got Ref
-			//IL_03d8: Expected Obj, but got Ref
-			//IL_0392: Expected Obj, but got I4
-			//IL_0410: Expected Obj, but got I4
-			//IL_0375: Expected Obj, but got I4
-			//IL_0437: Expected Obj, but got I4
-			//IL_004b->IL0019: Incompatible stack heights: 0 vs 1
-			//IL_0063->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0072->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_0820->IL0015: Incompatible stack heights: 2 vs 0
-			//IL_0090->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_0056->IL0019: Incompatible stack types: I4 vs Obj
-			//IL_007d->IL0019: Incompatible stack heights: 2 vs 1
-			//IL_077a->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_01a4->IL0094: Incompatible stack heights: 13 vs 0
-			//IL_0136->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_00ef->IL0094: Incompatible stack heights: 3 vs 0
-			//IL_06ff->IL0094: Incompatible stack heights: 3 vs 0
-			//IL_078b->IL0094: Incompatible stack heights: 3 vs 0
-			//IL_0101->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_072a->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_0745->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_011b->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_06e5->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_0152->IL0094: Incompatible stack heights: 2 vs 0
-			//IL_0710->IL0094: Incompatible stack heights: 2 vs 0
-			//IL_01af->IL0094: Incompatible stack heights: 13 vs 0
-			//IL_0141->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_010c->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_0735->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_0179->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_0750->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_0126->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_06f0->IL0094: Incompatible stack heights: 1 vs 0
-			//IL_0094->IL0094: Incompatible stack heights: 2 vs 0
-			//IL_015d->IL0094: Incompatible stack heights: 2 vs 0
-			//IL_071b->IL0094: Incompatible stack heights: 2 vs 0
-			//IL_0535->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_01ce->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_05f9->IL01d2: Incompatible stack heights: 2 vs 0
-			//IL_0284->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_0575->IL01d2: Incompatible stack heights: 2 vs 0
-			//IL_02cd->IL01d2: Incompatible stack heights: 3 vs 0
-			//IL_02eb->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_0617->IL01d2: Incompatible stack heights: 4 vs 0
-			//IL_025a->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_026a->IL01d2: Incompatible stack heights: 2 vs 0
-			//IL_0607->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_02c0->IL01ce: Incompatible stack types: I4 vs Obj
-			//IL_02af->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_0561->IL01d2: Incompatible stack heights: 3 vs 0
-			//IL_05e0->IL01d2: Incompatible stack heights: 2 vs 0
-			//IL_0501->IL01d2: Incompatible stack heights: 4 vs 0
-			//IL_0483->IL032a: Incompatible stack types: I4 vs Ref
-			//IL_031b->IL032a: Incompatible stack heights: 0 vs 2
-			//IL_02a1->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_028f->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_05a3->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_0580->IL01d2: Incompatible stack heights: 2 vs 0
-			//IL_02f6->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_0551->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_05ce->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_0591->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_051d->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_0275->IL01d2: Incompatible stack heights: 2 vs 0
-			//IL_01d2->IL01d2: Incompatible stack heights: 3 vs 0
-			//IL_0629->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_05eb->IL01d2: Incompatible stack heights: 2 vs 0
-			//IL_036b->IL0470: Incompatible stack heights: 1 vs 0
-			//IL_0326->IL032a: Incompatible stack heights: 1 vs 2
-			//IL_0648->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_03e2->IL032a: Incompatible stack types: I4 vs Ref
-			//IL_039d->IL032a: Incompatible stack heights: 4 vs 2
-			//IL_0382->IL032a: Incompatible stack heights: 3 vs 2
-			//IL_0463->IL032a: Incompatible stack heights: 3 vs 2
-			//IL_03b8->IL032a: Incompatible stack heights: 4 vs 2
-			//IL_043c->IL0326: Incompatible stack heights: 3 vs 4
-			//IL_03aa->IL032a: Incompatible stack heights: 4 vs 2
-			//IL_0470->IL032a: Incompatible stack heights: 3 vs 2
-			//IL_0370->IL0470: Incompatible stack heights: 1 vs 0
-			//IL_0653->IL01d2: Incompatible stack heights: 1 vs 0
-			//IL_032a->IL032a: Incompatible stack heights: 5 vs 2
-			//IL_038d->IL032a: Incompatible stack heights: 3 vs 2
-			//IL_03f6->IL032a: Incompatible stack heights: 1 vs 2
-			//IL_0456->IL032a: Incompatible stack types: I4 vs Ref
-			//IL_0401->IL032a: Incompatible stack heights: 1 vs 2
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
-			{
-			}
-			object obj = 1;
-			while (true)
-			{
-				object obj2 = obj;
-				while (true)
-				{
-					switch ((int)obj2)
-					{
-					case 1:
-						obj = (object)Unsafe.AsPointer(ref this);
-						if (0 == 0)
-						{
-							obj2 = 0;
-						}
-						continue;
-					case 2:
-						_ = 3;
-						continue;
-					case 4:
-						_ = null;
-						if (1 == 0)
-						{
-							_ = 2;
-						}
-						continue;
-					default:
-						if ((nuint)(nint)obj > (nuint)1u)
-						{
-							_ = 12;
-							goto IL_0094;
-						}
-						goto IL_0762;
-					case 5:
-						break;
-					case 3:
-						return;
-						IL_0762:
-						if (5 == 0)
-						{
-							_ = 5;
-						}
-						goto IL_0094;
-						IL_0094:
-						while (true)
-						{
-							switch ((int)/*Error near IL_00dd: Stack underflow*/)
-							{
-							case 3:
-								break;
-							case 7:
-								_ = 21;
-								obj = 2;
-								if (2 != 0)
-								{
-									_ = 2;
-								}
-								continue;
-							case 11:
-								if (5 == 0)
-								{
-									_ = 6;
-								}
-								continue;
-							case 2:
-								_ = ref obj;
-								if (4 == 0)
-								{
-									_ = 4;
-								}
-								continue;
-							case 14:
-								if (9 == 0)
-								{
-									_ = 11;
-								}
-								continue;
-							case 9:
-								obj = (object)(&obj);
-								if (false)
-								{
-									_ = 0;
-								}
-								continue;
-							default:
-								_ = 1;
-								_ = 0;
-								_ = 1;
-								_ = 1;
-								if (1 == 0)
-								{
-									_ = 0;
-								}
-								continue;
-							case 5:
-								goto IL_01af;
-							case 12:
-								if (9 != 0)
-								{
-									_ = 14;
-								}
-								continue;
-							case 4:
-								_ = ref obj;
-								_ = 10;
-								continue;
-							case 16:
-								_ = ref obj;
-								if (10 == 0)
-								{
-									_ = 13;
-								}
-								continue;
-							case 8:
-								if (12 != 0)
-								{
-									_ = 15;
-								}
-								continue;
-							case 10:
-								_ = ref obj;
-								if (16 == 0)
-								{
-									_ = 1;
-								}
-								continue;
-							case 13:
-								_ = ref obj;
-								obj = 9;
-								continue;
-							case 1:
-								goto end_IL_0094;
-							case 6:
-								_ = 7;
-								continue;
-							case 15:
-								throw null;
-							}
-							goto IL_00e2;
-							IL_01af:
-							if (obj != null)
-							{
-								if (16 == 0)
-								{
-									_ = 19;
-								}
-								goto IL_01d2;
-							}
-							goto IL_051d;
-							IL_00e2:
-							_ = null;
-							_ = 8;
-							continue;
-							IL_01d2:
-							while (true)
-							{
-								scoped ref _003CExtractAsync_003Ed__4 reference;
-								object obj3;
-								ref object reference2;
-								switch ((int)/*Error near IL_0247: Stack underflow*/)
-								{
-								case 24:
-									break;
-								case 14:
-									obj = (object)Unsafe.AsPointer(ref this);
-									_ = 9;
-									continue;
-								case 16:
-									if (1 == 0)
-									{
-										_ = 10;
-									}
-									continue;
-								case 4:
-									_ = ref obj;
-									if (5 == 0)
-									{
-										_ = 17;
-									}
-									continue;
-								case 2:
-									if ((nint)obj == 1)
-									{
-										_ = 21;
-										continue;
-									}
-									goto case 27;
-								case 20:
-									obj = (object)Unsafe.AsPointer(ref this);
-									_ = 2;
-									continue;
-								case 18:
-									reference = ref this;
-									obj = 3;
-									obj3 = 0;
-									continue;
-								case 7:
-									_ = null;
-									_ = 18;
-									continue;
-								case 22:
-									return;
-								case 9:
-									if (16 == 0)
-									{
-										_ = 23;
-									}
-									continue;
-								case 27:
-									reference = ref this;
-									obj3 = null;
-									obj = 24;
-									continue;
-								default:
-									if (obj == null)
-									{
-										if (0 == 0)
-										{
-											_ = 1;
-										}
-										goto IL_032a;
-									}
-									goto IL_0470;
-								case 26:
-									_ = 7;
-									continue;
-								case 15:
-									obj = (object)(&obj);
-									if (3 == 0)
-									{
-										_ = 5;
-									}
-									continue;
-								case 3:
-									goto IL_051d;
-								case 11:
-									goto IL_0535;
-								case 23:
-									obj = -1;
-									_ = 4;
-									continue;
-								case 6:
-									if (false)
-									{
-										_ = 12;
-									}
-									continue;
-								case 13:
-									if (obj != null)
-									{
-										_ = 8;
-										continue;
-									}
-									goto case 20;
-								case 5:
-									if (&obj == null)
-									{
-										_ = 25;
-										continue;
-									}
-									goto case 4;
-								case 12:
-									if (1 == 0)
-									{
-										_ = 1;
-									}
-									continue;
-								case 25:
-									obj = 1;
-									if (16 != 0)
-									{
-										_ = 2;
-									}
-									continue;
-								case 1:
-									_ = 26;
-									continue;
-								case 17:
-									obj = (object)Unsafe.AsPointer(ref this);
-									_ = 13;
-									continue;
-								case 10:
-									_ = ref obj;
-									_ = 22;
-									continue;
-								case 19:
-									if ((nint)obj != 1)
-									{
-										_ = 6;
-										continue;
-									}
-									goto case 14;
-								case 8:
-									goto IL_0629;
-								case 21:
-									goto end_IL_0019;
-									IL_0470:
-									obj = (object)Unsafe.AsPointer(ref this);
-									reference2 = ref *(object*)11;
-									goto IL_032a;
-									IL_032a:
-									while (true)
-									{
-										switch ((uint)Unsafe.AsPointer(ref reference2))
-										{
-										case 6u:
-											obj = 0;
-											if (9 == 0)
-											{
-												_ = 1;
-											}
-											continue;
-										case 4u:
-											obj = -1;
-											_ = 12;
-											continue;
-										case 13u:
-											_ = 1;
-											_ = 7;
-											continue;
-										case 9u:
-											_ = 5;
-											continue;
-										case 1u:
-										case 2u:
-											obj = (object)Unsafe.AsPointer(ref this);
-											reference2 = ref *(object*)14;
-											continue;
-										case 11u:
-											if (&obj == null)
-											{
-												if (6 != 0)
-												{
-													_ = 2;
-												}
-												continue;
-											}
-											goto case 12u;
-										case 5u:
-											_ = ref obj;
-											obj = 3;
-											continue;
-										case 3u:
-											return;
-										case 10u:
-											_ = 100;
-											obj = 13;
-											continue;
-										case 12u:
-											reference2 = ref obj;
-											if (1 == 0)
-											{
-												reference2 = ref *(object*)8;
-											}
-											continue;
-										case 8u:
-											_ = 10;
-											continue;
-										case 14u:
-											_ = 4;
-											continue;
-										case 7u:
-											goto IL_0535;
-										}
-										break;
-									}
-									goto IL_0470;
-									IL_0535:
-									obj = (object)Unsafe.AsPointer(ref this);
-									if (15 == 0)
-									{
-										_ = 2;
-									}
-									continue;
-								}
-								break;
-								IL_0629:
-								if (obj == null)
-								{
-									throw obj;
-								}
-								if (16 != 0)
-								{
-									_ = 20;
-								}
-							}
-							goto IL_00e2;
-							IL_051d:
-							if (0 == 0)
-							{
-								_ = 0;
-							}
-							goto IL_01d2;
-							continue;
-							end_IL_0094:
-							break;
-						}
-						goto IL_0762;
-						end_IL_0019:
-						break;
-					}
-					break;
-				}
-				_ = -2;
-				obj = 4;
-			}
+			// ILSpy could not decompile this. Please report the exception below,
+			// along with the assembly it came from, at https://github.com/icsharpcode/ILSpy/issues/new
+			// System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+			//    at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+			//    at System.Linq.Enumerable.Skip[TSource](IEnumerable`1 source, Int32 count)
+			//    at ICSharpCode.Decompiler.CSharp.ArgumentList.GetArgumentResolveResultsDirect(Int32 skipCount) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 124
+			//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Probe() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 493
+			//    at ICSharpCode.Decompiler.CSharp.Disambiguator.Run() in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 438
+			//    at ICSharpCode.Decompiler.CSharp.Disambiguator.ForMethodReference(ExpressionBuilder expressionBuilder, IMethod method, IType targetType, TranslatedExpression target, Boolean requireTarget, ExpectedTargetDetails expectedTargetDetails, Boolean isExtensionMethodReference, Boolean castTargetUpFront) in /_/ICSharpCode.Decompiler/CSharp/Disambiguator.cs:line 131
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.DisambiguateDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1718
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildDelegateReference(IMethod method, IMethod invokeMethod, ExpectedTargetDetails expectedTargetDetails, ILInstruction thisArg) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1648
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildMethodReference(IMethod method, Boolean isVirtual) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1639
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitLdFtn(LdFtn inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 5058
+			//    at ICSharpCode.Decompiler.IL.LdFtn.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 3175
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitConv(Conv inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 2307
+			//    at ICSharpCode.Decompiler.IL.Conv.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2298
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildArgumentList(ExpectedTargetDetails expectedTargetDetails, ResolveResult target, IMethod method, Int32 firstParamIndex, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, Boolean writtenAsAssignment) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1070
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(OpCode callOpCode, IMethod method, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, IType constrainedTo) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 461
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(CallInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 255
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitNewObj(NewObj inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 538
+			//    at ICSharpCode.Decompiler.IL.NewObj.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 4578
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.BuildArgumentList(ExpectedTargetDetails expectedTargetDetails, ResolveResult target, IMethod method, Int32 firstParamIndex, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, Boolean writtenAsAssignment) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 1070
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(OpCode callOpCode, IMethod method, IReadOnlyList`1 callArguments, IReadOnlyList`1 argumentToParameterMap, IType constrainedTo) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 461
+			//    at ICSharpCode.Decompiler.CSharp.CallBuilder.Build(CallInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/CallBuilder.cs:line 255
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitCall(Call inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 2530
+			//    at ICSharpCode.Decompiler.IL.Call.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2192
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitConv(Conv inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 2307
+			//    at ICSharpCode.Decompiler.IL.Conv.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 2298
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.VisitStObj(StObj inst, TranslationContext context) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 3219
+			//    at ICSharpCode.Decompiler.IL.StObj.AcceptVisitor[C,T](ILVisitor`2 visitor, C context) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 4386
+			//    at ICSharpCode.Decompiler.CSharp.ExpressionBuilder.Translate(ILInstruction inst, IType typeHint) in /_/ICSharpCode.Decompiler/CSharp/ExpressionBuilder.cs:line 173
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitStObj(StObj inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 140
+			//    at ICSharpCode.Decompiler.IL.StObj.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 4382
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlock(Block block) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1311
+			//    at ICSharpCode.Decompiler.IL.Block.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 882
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertSwitchSectionBody(SwitchSection astSection, ILInstruction bodyInst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 334
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.TranslateSwitch(BlockContainer switchContainer, SwitchInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 280
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1334
+			//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+			//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+			//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.TranslateSwitch(BlockContainer switchContainer, SwitchInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 307
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1334
+			//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+			//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertLoop(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1354
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1325
+			//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockStatement blockStatement, BlockContainer container, IEnumerable`1 blocks, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1565
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertBlockContainer(BlockContainer container, Boolean isLoop) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1452
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.VisitBlockContainer(BlockContainer container) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 1338
+			//    at ICSharpCode.Decompiler.IL.BlockContainer.AcceptVisitor[T](ILVisitor`1 visitor) in /_/ICSharpCode.Decompiler/IL/Instructions.cs:line 857
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.Convert(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 82
+			//    at ICSharpCode.Decompiler.CSharp.StatementBuilder.ConvertAsBlock(ILInstruction inst) in /_/ICSharpCode.Decompiler/CSharp/StatementBuilder.cs:line 87
+			//    at ICSharpCode.Decompiler.CSharp.CSharpDecompiler.DecompileBody(IMethod method, EntityDeclaration entityDecl, DecompileRun decompileRun, ITypeResolveContext decompilationContext, ExtensionInfo extensionInfo) in /_/ICSharpCode.Decompiler/CSharp/CSharpDecompiler.cs:line 2435
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		internal static byte _FF00_FF00_FF00_FF00_FF00_0900()
+		internal unsafe static byte _FF00_FF00_FF00_FF00_FF00_0900()
 		{
-			//IL_0009: Invalid comparison between Unknown and Obj
-			if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+			((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+			if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 			{
 			}
-			return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+			return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1192,63 +835,71 @@ public static class CompressionHelper
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe static object _FF00_FF00_FF00_FF00_FF00䌀(List<(string, string)> P_0, Action<int> P_1, CancellationToken P_2)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003a: Expected I4, but got Obj
-		//IL_0044: Expected Obj, but got Ref
-		//IL_0064->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0052->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_007d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a8->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_008d->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00c1->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_006f->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b3->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0098->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0047: Expected I4, but got Obj
+		//IL_009f: Expected Obj, but got Ref
+		//IL_00dd: Expected VT, but got I4
+		//IL_00e7: Expected native int or pointer, but got Obj
+		//IL_00b6: Expected VT, but got Obj
+		//IL_00c0: Expected native int or pointer, but got Obj
+		//IL_008d->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006b->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ae->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00f1->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ca->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_010e->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0098->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00fc->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00d5->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = 3;
-		object obj2 = obj;
+		object stateMachine = 3;
+		object obj = stateMachine;
 		while (true)
 		{
-			switch ((int)obj2)
+			switch ((int)obj)
 			{
 			default:
-				return (object)(&obj);
+				((Func<Task>)/*Error near IL_0058: Stack underflow*/)._002Ector((object)/*Error near IL_0058: Stack underflow*/, (nint)(&((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003E1__state));
+				return (object)/*Error near IL_0059: Stack underflow*/;
 			case 2:
-				_ = ref obj;
-				_ = 5;
+				((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003E4__this = (Authenticator)(object)P_0;
+				obj = 5;
 				break;
 			case 1:
-				_ = ref obj;
-				_ = ref obj;
-				if (0 == 0)
+				((AsyncTaskMethodBuilder*)/*Error near IL_0079: Stack underflow*/)->AwaitUnsafeOnCompleted(ref ((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003Eu__1, ref *(Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine));
+				obj = 0;
+				if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E1__state)->_003C_003Et__builder == 0)
 				{
-					_ = 0;
+					obj = 0;
 				}
 				break;
 			case 3:
-				_ = ref obj;
-				_ = 2;
+				GC.SuppressFinalize((object)(&stateMachine));
+				Unsafe.Write(&((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(nint)/*Error near IL_00a4: Stack underflow*/)->_003C_003E4__this, /*Error near IL_00a4: Stack underflow*/);
+				obj = 2;
 				break;
 			case 5:
-				_ = ref obj;
-				if (6 == 0)
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003Eu__1 = (TaskAwaiter<TcpClient>)P_1;
+				obj = 6;
+				if (((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler)->_003C_003E1__state == 0)
 				{
-					_ = 4;
+					obj = 4;
 				}
 				break;
 			case 4:
-				_ = ref obj;
-				_ = -1;
-				if (1 == 0)
+				((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003Et__builder = (AsyncTaskMethodBuilder)(-1);
+				obj = 1;
+				if (((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CReceiveAsync_003Ed__9._003C_003E4__this)->client == null)
 				{
-					_ = 1;
+					obj = 1;
 				}
 				break;
 			case 6:
-				_ = ref obj;
-				_ = 4;
+				((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003Eu__1 = (TaskAwaiter)P_2;
+				obj = 4;
 				break;
 			}
 		}
@@ -1263,80 +914,90 @@ public static class CompressionHelper
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static object _FF00_FF00_FF00_FF00_FF00䔀()
+	internal unsafe static object _FF00_FF00_FF00_FF00_FF00䔀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe static object _FF00_FF00_FF00_FF00_FF00䘀(object P_0, object P_1, Action<int> P_2, CancellationToken P_3)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_003e: Expected I4, but got Obj
-		//IL_00d3: Expected Obj, but got Ref
-		//IL_0019->IL0019: Incompatible stack types: Obj vs Ref
-		//IL_00ce->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0095->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_0053->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00a5->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0087->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_00c0->IL0019: Incompatible stack heights: 3 vs 1
-		//IL_005e->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_00b0->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0079->IL0019: Incompatible stack types: I4 vs Ref
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_004b: Expected I4, but got Obj
+		//IL_00bc: Expected Obj, but got I4
+		//IL_0058: Expected I4, but got VT
+		//IL_00ce: Expected VT, but got Obj
+		//IL_00d8: Expected native int or pointer, but got Obj
+		//IL_007e: Expected Obj, but got Ref
+		//IL_0117->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00c6->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_006c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00e2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00b4->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0097->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0105->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0077->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00ed->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00a2->IL0026: Incompatible stack types: I4 vs Obj
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		object obj = 5;
-		ref object reference = ref *(object*)obj;
+		object stateMachine = 5;
+		object obj = stateMachine;
 		while (true)
 		{
-			switch ((uint)Unsafe.AsPointer(ref reference))
+			switch ((int)obj)
 			{
-			case 2u:
-				_ = ref obj;
-				if (1 == 0)
+			case 2:
+				((Authenticator._003CListenAsync_003Ed__7*)(&stateMachine))->_003C_003E1__state = (int)P_3;
+				obj = 1;
+				if (((Authenticator._003CListenAsync_003Ed__7)Authenticator._003CListenAsync_003Ed__7._003C_003Et__builder)._003C_003E4__this == null)
 				{
-					_ = 0;
+					obj = 0;
 				}
 				break;
-			case 5u:
-				reference = ref obj;
-				if (4 == 0)
+			case 5:
+				((TcpListener)(&stateMachine)).Start();
+				Unsafe.Write(&Authenticator._003CListenAsync_003Ed__7.CheckInternalSingleton, /*Error near IL_0083: Stack underflow*/);
+				obj = 4;
+				if ((int)((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8._003C_003E1__state)->_003C_003Et__builder == 0)
 				{
-					reference = ref *(object*)3;
+					obj = 3;
 				}
 				break;
-			case 4u:
-				_ = ref obj;
-				_ = 3;
+			case 4:
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->listener = (TcpListener)P_0;
+				obj = 3;
 				break;
-			case 1u:
-				_ = ref obj;
-				_ = -1;
-				_ = 6;
+			case 1:
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003E4__this = (Authenticator)(-1);
+				obj = 6;
 				break;
-			case 3u:
-				_ = ref obj;
-				if (0 == 0)
+			case 3:
+				((Authenticator._003CListenAuthenticationConnectAsync_003Ed__8*)(&stateMachine))->_003C_003Eu__1 = (TaskAwaiter<TcpClient>)P_1;
+				obj = 0;
+				if (((Authenticator._003CReceiveAsync_003Ed__9*)(nint)Authenticator._003CListenAuthenticationConnectAsync_003Ed__8.DecorateAdjustableHandler)->_003C_003E1__state == 0)
 				{
-					_ = 0;
+					obj = 0;
 				}
 				break;
-			case 6u:
-				_ = ref obj;
-				_ = ref obj;
-				_ = 7;
+			case 6:
+				((AsyncTaskMethodBuilder<_00210>*)/*Error near IL_00fb: Stack underflow*/)->AwaitUnsafeOnCompleted(ref *(TaskAwaiter<RestResponse<EntityFeverResponse<_00210>>>*)(&((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003Et__builder), ref *(FeverInstaller._003CFeverRequest_003Ed__15<_00210>*)(&stateMachine));
+				obj = 7;
 				break;
 			default:
-				_ = ref obj;
-				_ = 2;
+				((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->client = (TcpClient)(object)P_2;
+				obj = 2;
 				break;
-			case 7u:
-				return (object)(&obj);
+			case 7:
+				((AsyncTaskMethodBuilder*)(&((Authenticator._003CReceiveAsync_003Ed__9*)(&stateMachine))->_003C_003Eu__1))->SetResult();
+				return (object)/*Error near IL_0124: Stack underflow*/;
 			}
 		}
 	}
@@ -1358,12 +1019,14 @@ public static class CompressionHelper
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	private static object _FF00_FF00_FF00_FF00_FF00䤀()
+	private unsafe static object _FF00_FF00_FF00_FF00_FF00䤀()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got I4
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return Authenticator._003CListenAsync_003Ed__7._003C_003E1__state;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -1383,12 +1046,12 @@ public static class CompressionHelper
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_FF00䰀()
+	internal unsafe static byte _FF00_FF00_FF00_FF00_FF00䰀()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		((TcpListener)(object)(*(ValueType*)/*Error near IL_0011: Stack underflow*/)/*cast due to constrained. prefix*/)._002Ector((IPAddress)/*Error near IL_0011: Stack underflow*/, (int)Unsafe.AsPointer(ref Authenticator._003Clogger_003EP));
+		if ((int)/*Error near IL_0013: Stack underflow*/ == 0)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (Authenticator._003CListenAsync_003Ed__7._003C_003E1__state == unchecked((nint)null)) ? ((byte)1) : ((byte)0);
 	}
 }

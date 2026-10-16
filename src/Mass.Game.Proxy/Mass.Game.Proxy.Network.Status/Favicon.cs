@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Mass.Game.Proxy.Network.Status;
 
@@ -37,19 +39,22 @@ public record Favicon
 	private static object DirectConsumer;
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public Favicon(byte[] IconBytes)
+	public unsafe Favicon(byte[] IconBytes)
 	{
-		//IL_003a: Expected I4, but got Obj
-		//IL_0028->IL0031: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		//IL_0026: Expected VT, but got Obj
+		//IL_0026: Expected Obj, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		Favicon favicon = this;
-		if (0 == 0)
+		((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)IconBytes;
+		((EqualityComparer<_00210>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).GetHashCode((_00210)this);
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 		{
-			favicon = (Favicon)0;
+			num = 0;
 		}
-		switch ((int)favicon)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -57,19 +62,21 @@ public record Favicon
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	public Favicon(string formatString)
+	public unsafe Favicon(string formatString)
 	{
-		//IL_0034: Expected I4, but got Obj
-		//IL_0022->IL002b: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		//IL_0020: Expected Obj, but got Ref
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		string text = formatString;
-		if (false)
+		((_003C_003Ef__AnonymousType0<>)this)._002Ector((_003Caction_003Ej__TPar)formatString);
+		((_003C_003Ef__AnonymousType0<>)/*Error near IL_0020: Stack underflow*/).Equals((object)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+		int num = 0;
+		if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
 		{
-			text = (string)0;
+			num = 0;
 		}
-		switch ((int)text)
+		switch (num)
 		{
 		case 0:
 			break;
@@ -111,30 +118,33 @@ public record Favicon
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	[CompilerGenerated]
-	protected Favicon(Favicon original)
+	protected unsafe Favicon(Favicon original)
 	{
-		//IL_0036: Expected I4, but got Obj
-		//IL_0020->IL0029: Incompatible stack types: I4 vs Obj
-		//IL_004b->IL0029: Incompatible stack heights: 2 vs 1
-		//IL_0056->IL0029: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		//IL_001a: Expected VT, but got Ref
+		//IL_0029: Expected Obj, but got VT
+		//IL_006f: Expected Obj, but got VT
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		Favicon favicon = this;
-		if (true)
+		((EqualityComparer<_00210>)/*Error near IL_001a: Stack underflow*/).Equals((_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field), (_00210?)this);
+		int num = 1;
+		if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 		{
-			favicon = (Favicon)1;
+			num = 1;
 		}
 		while (true)
 		{
-			switch ((int)favicon)
+			switch (num)
 			{
 			default:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType2<, , , >)this)._003Cpayload_003Ei__Field = (_003Cpayload_003Ej__TPar)((_003C_003Ef__AnonymousType2<, , , >)(object)original)._003Curl_003Ei__Field;
+				num = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType2<, , , >._003Ccontext_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 				{
-					_ = 0;
+					num = 0;
 				}
 				break;
 			case 0:
@@ -173,14 +183,15 @@ public record Favicon
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_E500(object P_0, object P_1)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002a: Expected I4, but got Obj
-		//IL_006e: Expected I4, but got Obj
-		//IL_0041->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_005f->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_004c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_006a->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0037: Expected I4, but got Obj
+		//IL_0051: Expected Obj, but got VT
+		//IL_0056->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_007c->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0061->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_0087->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
@@ -189,28 +200,31 @@ public record Favicon
 		{
 			switch ((int)obj2)
 			{
-			case 1:
-				if (P_0 != P_1)
+			default:
+				if (P_0 == null)
 				{
-					if (false)
-					{
-						obj2 = 0;
-					}
-					continue;
+					return 0;
 				}
-				return 1;
-			case 2:
-				return (byte)(int)P_1;
-			}
-			if (P_0 != null)
-			{
-				if (2 == 0)
+				obj2 = 2;
+				if ((int)((_003C_003Ef__AnonymousType1<, , >)_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field)._003Cuser_id_003Ei__Field == 0)
 				{
 					obj2 = 1;
 				}
-				continue;
+				break;
+			case 1:
+				if (P_0 == P_1)
+				{
+					return 1;
+				}
+				obj2 = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field != 0)
+				{
+					obj2 = 0;
+				}
+				break;
+			case 2:
+				return _003C_003Ef__AnonymousType0<>.ReflectActiveCalc() ? ((byte)1) : ((byte)0);
 			}
-			return 0;
 		}
 	}
 
@@ -225,11 +239,11 @@ public record Favicon
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal byte _FF00_FF00_FF00_E700(object P_0)
 	{
-		//IL_000c: Expected I4, but got Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (byte)(int)P_0;
+		return ((_003C_003Ef__AnonymousType0<>)(object)this).Equals((object)(P_0 as _003C_003Ef__AnonymousType2<, , , >)) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -249,12 +263,14 @@ public record Favicon
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	protected object _FF00_FF00_FF00_EA00()
+	protected unsafe object _FF00_FF00_FF00_EA00()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001e: Expected Obj, but got Ref
+		//IL_001f: Expected Obj, but got I4
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_000a: Stack underflow*/;
+		return ((EqualityComparer<_00210>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)).GetHashCode((_00210)typeof(_003C_003Ef__AnonymousType2<, , , >).TypeHandle);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -268,26 +284,31 @@ public record Favicon
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal unsafe void _FF00_FF00_FF00_EC00(nint P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0046->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_003f: Expected VT, but got Obj
+		//IL_003f: Expected Obj, but got I
+		//IL_0040: Expected Obj, but got Ref
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_005f->IL0026: Incompatible stack heights: 1 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
-		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj2)
+			switch ((int)obj)
 			{
 			default:
 				return;
 			case 1:
-				Unsafe.Write((void*)P_0, this);
-				if (false)
+				((_003C_003Ef__AnonymousType0<>)P_0)._002Ector((_003Caction_003Ej__TPar)this);
+				Unsafe.Write((void*)(nint)/*Error near IL_0040: Stack underflow*/, (object)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field));
+				_ = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter != null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
 				break;
 			case 0:
@@ -307,11 +328,12 @@ public record Favicon
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static byte _FF00_FF00_FF00_EE00()
 	{
-		//IL_0009: Invalid comparison between Unknown and Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Invalid comparison between VT and Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+		return (_003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field == (_003Cuuid_003Ej__TPar)(object)null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -323,15 +345,19 @@ public record Favicon
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal uint _FF00_FF00_FF00_F000()
+	internal unsafe uint _FF00_FF00_FF00_F000()
 	{
-		//IL_0010: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0015: Unknown result type (might be due to invalid IL or missing references)
-		//IL_0017: Expected I4, but got Unknown
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_0019: Expected VT, but got Ref
+		//IL_001f: Expected Obj, but got I4
+		//IL_0024: Expected Obj, but got I4
+		//IL_0029: Unknown result type (might be due to invalid IL or missing references)
+		//IL_002f: Expected Obj, but got Unknown
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (uint)(this * -1521134295 + this);
+		string.Format((IFormatProvider?)/*Error near IL_002f: Stack underflow*/, (string)/*Error near IL_002f: Stack underflow*/, (object?[])(((object)((_003C_003Ef__AnonymousType0<>)((EqualityComparer<_00210>)/*Error near IL_0019: Stack underflow*/).Equals((_00210?)/*Error near IL_0019: Stack underflow*/, (_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))).Equals(this)).ToString() * -1521134295));
+		_ = ((_003C_003Ef__AnonymousType2<, , , >)this)._003Cpayload_003Ei__Field;
+		/*Error near IL_0035: Member reference must be method, but was: Field*/;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -345,24 +371,31 @@ public record Favicon
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_F200()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected VT, but got Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return new
+		{
+			action = (_003Caction_003Ej__TPar)this
+		};
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal byte _FF00_FF00_FF00_F300(object P_0)
+	internal unsafe byte _FF00_FF00_FF00_F300(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0036: Expected I4, but got Obj
-		//IL_0042: Expected I4, but got Obj
-		//IL_00bf: Expected Obj, but got I4
-		//IL_005f->IL003b: Incompatible stack heights: 1 vs 0
-		//IL_0089->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0094->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0076->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0043: Expected I4, but got Obj
+		//IL_004d: Expected VT, but got Ref
+		//IL_005e: Expected Obj, but got VT
+		//IL_005e: Expected Obj, but got I4
+		//IL_005f: Expected I4, but got Obj
+		//IL_0100: Expected Obj, but got I4
+		//IL_00bd: Expected Obj, but got VT
+		//IL_00c2->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_00cd->IL0026: Incompatible stack types: I4 vs Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
@@ -374,26 +407,20 @@ public record Favicon
 				switch ((int)obj2)
 				{
 				case 4:
-					return (byte)(int)P_0;
+					return (byte)(int)string.Format((IFormatProvider?)((EqualityComparer<_00210>)/*Error near IL_004d: Stack underflow*/).Equals((_00210?)/*Error near IL_004d: Stack underflow*/, (_00210?)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field)), (string)((_003C_003Ef__AnonymousType1<, , >)this)._003Cuser_id_003Ei__Field, (object?[])_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter);
 				default:
 					return 0;
 				case 3:
-					obj2 = this;
-					if (P_0 == null)
-					{
-						if (false)
-						{
-							obj2 = 0;
-						}
-						continue;
-					}
-					goto case 4;
+					_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+					_003C_003Ef__AnonymousType0<>.ReflectJoinedTree();
+					/*Error near IL_007e: Member reference must be method, but was: Field*/;
 				case 2:
 					if (this == P_0)
 					{
 						return 1;
 					}
-					if (1 == 0)
+					obj2 = 1;
+					if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument == null)
 					{
 						obj2 = 1;
 					}
@@ -420,43 +447,47 @@ public record Favicon
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	protected byte _FF00_FF00_FF00_F600(object P_0)
+	protected unsafe byte _FF00_FF00_FF00_F600(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_002e: Expected I4, but got Obj
-		//IL_0043->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_0079->IL0019: Incompatible stack heights: 0 vs 1
-		//IL_006c->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_004e->IL0019: Incompatible stack types: I4 vs Obj
-		//IL_0084->IL0019: Incompatible stack types: I4 vs Obj
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_003b: Expected I4, but got Obj
+		//IL_0046: Expected VT, but got Obj
+		//IL_0046: Expected Obj, but got Ref
+		//IL_00ad: Expected Obj, but got VT
+		//IL_0060->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00b2->IL0026: Incompatible stack heights: 3 vs 2
+		//IL_006b->IL0026: Incompatible stack heights: 1 vs 2
+		//IL_00bd->IL0026: Incompatible stack heights: 3 vs 2
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 2;
-		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj2)
+			switch ((int)obj)
 			{
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType0<>)Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field))._002Ector((_003Caction_003Ej__TPar)P_0);
+				((EqualityComparer<_00210>)/*Error near IL_004b: Stack underflow*/).GetHashCode((_00210)/*Error near IL_004b: Stack underflow*/);
+				_ = 0;
+				if ((int)((_003C_003Ef__AnonymousType2<, , , >)_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter)._003Curl_003Ei__Field == 0)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
-				continue;
+				break;
 			case 3:
 				return 1;
+			default:
+				_003C_003Ef__AnonymousType0<>.ReflectActiveCalc();
+				/*Error near IL_0074: Member reference must be method, but was: Field*/;
 			case 2:
-				if (1 == 0)
+				_ = EqualityComparer<_00212>.Default;
+				_ = 1;
+				if (_003C_003Ef__AnonymousType3<, >.ReflectAutomatableArgument == null)
 				{
-					obj2 = 0;
+					_ = 0;
 				}
-				continue;
-			}
-			obj2 = P_0;
-			if (3 != 0)
-			{
-				obj2 = 3;
+				break;
 			}
 		}
 	}
@@ -472,26 +503,32 @@ public record Favicon
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal void _FF00_FF00_FF00_F800(object P_0)
 	{
-		//IL_0010: Expected Obj, but got I4
-		//IL_0026: Expected I4, but got Obj
-		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
-		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001d: Expected Obj, but got I4
+		//IL_0033: Expected I4, but got Obj
+		//IL_0040: Expected VT, but got Obj
+		//IL_004f: Expected Obj, but got VT
+		//IL_0054->IL0026: Incompatible stack types: I4 vs Obj
+		//IL_005f->IL0026: Incompatible stack types: I4 vs Obj
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
 		object obj = 1;
+		object obj2 = obj;
 		while (true)
 		{
-			switch ((int)obj)
+			switch ((int)obj2)
 			{
 			default:
 				return;
 			case 0:
 				return;
 			case 1:
-				if (0 == 0)
+				((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field = (_003Cuuid_003Ej__TPar)P_0;
+				obj2 = 0;
+				if (_003C_003Ef__AnonymousType1<, , >.CheckLiteralFilter == null)
 				{
-					_ = 0;
+					obj2 = 0;
 				}
 				break;
 			}
@@ -517,10 +554,12 @@ public record Favicon
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal static object _FF00_FF00_FF00ﬀ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001a: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (object)/*Error near IL_0009: Stack underflow*/;
+		return _003C_003Ef__AnonymousType1<, , >._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -549,10 +588,12 @@ public record Favicon
 	[MethodImpl(MethodImplOptions.NoInlining)]
 	internal object _FF00_FF00_FF00_FF00Ȁ()
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected Obj, but got VT
+		_ = ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field;
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return this;
+		return ((_003C_003Ef__AnonymousType1<, , >)this)._003Cuuid_003Ei__Field;
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
@@ -587,12 +628,14 @@ public record Favicon
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
-	internal static byte _FF00_FF00_FF00_FF00_0600(object P_0, object P_1)
+	internal unsafe static byte _FF00_FF00_FF00_FF00_0600(object P_0, object P_1)
 	{
-		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		//IL_001b: Expected VT, but got Obj
+		if (((EqualityComparer<_00210>)(object)Regex).Default == null)
 		{
 		}
-		return (P_1 == null) ? ((byte)1) : ((byte)0);
+		((_003C_003Ef__AnonymousType0<>)P_0)._002Ector((_003Caction_003Ej__TPar)P_1);
+		return (Unsafe.AsPointer(ref _003C_003Ef__AnonymousType0<>._003Caction_003Ei__Field) == null) ? ((byte)1) : ((byte)0);
 	}
 
 	[MethodImpl(MethodImplOptions.NoInlining)]
