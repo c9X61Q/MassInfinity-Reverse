@@ -1623,3 +1623,53 @@ il_sha256 = 9c64662f77c38886d5d91037a317df17ded504660bb39b0c05283965c0c90210   �
 | `RunHVM()` 用 MethodSpec(0x2B) → 与 §14 的 TABLE 互印 | ✅ |
 | `ZYXDNGuarder` 5436 个方法、绝大多数同体 11 字节守卫桩 | ✅ |
 | 作废 round 5 的表偏移推导 | ✅ 已更正 |
+
+---
+
+## 24. Round 9：描述符表 16 槽全部解出（② 完整闭环）
+
+用 REA 的 `member_refs`（**全程序集覆盖**）页码取 `Mass.WinUI.dll` 行 `0xb19..0xb3b`，
+把 §15 那张表里所有 MemberRef 槽解析成真实成员：
+
+| MemberRef | 父类型 | 成员 |
+|---|---|---|
+| `0x0a000b21` | `System.Object` | **`GetHashCode()`** |
+| `0x0a000b22` | `HashTable` | `.ctor()` |
+| `0x0a000b23` | `System.IntPtr` | **`.ctor(int32)`** |
+| `0x0a000b24` | `System.IntPtr` | **`.ctor(int64)`** |
+| `0x0a000b25` | `System.IntPtr` | `get_Size` |
+| `0x0a000b26` | `System.Exception` | **`.ctor(string)`** |
+| `0x0a000b27` | `System.Reflection.MethodBase` | **`GetCurrentMethod()`** |
+| `0x0a000b28` / `b29` | `Marshal` | `Copy` / `PtrToStringAnsi` |
+| `0x0a000b2a` | `System.AppDomain` | **`get_CurrentDomain`** |
+| `0x0a000b2b` | `System.AppDomain` | `GetAssemblies()` |
+| `0x0a000b2c` / `b2d` | `System.Reflection.Assembly` | `Load(u1[])` / `GetType(string)` |
+| `0x0a000b2f` / `b30` | `AssemblyName` | `get_Name` / `GetPublicKeyToken()` |
+| `0x0a000b31` / `b32` / `b38` / `b39` / `b3a` | `System.String` | `get_Length` / `get_Chars` / `.ctor(char[],i4,i4)` / `Intern` / `Empty` |
+| `0x0a000b33` | `System.Type` | `GetMethod(string, valuetype)` |
+| `0x0a000b34` | `System.Reflection.MethodBase` | `Invoke(object, object[])` |
+| `0x0a000b35` / `b36` / `b37` | `System.Collections.Hashtable` | `ContainsKey` / `get_Item` / `set_Item` |
+| `0x0a000b3b` | `System.AppDomain` | **`get_Id`** |
+
+**加上** §23 已解析的 MethodDef 槽（`CheckString` / `dvm` / `ZYXDNGuarder+d`）
+与 Field 槽（`ZYXDNGuarder.a` 的 `0x8b1/0x8b2/0x8b5`），
+**16 个槽全部落地**，完整表见
+[`描述符表-完整还原.md`](描述符表-完整还原.md)。
+
+### 24.1 铁证：桩体逐条对应槽位
+
+```cil
+newobj Exception::.ctor(string)   ← 0xb26（+ 槽 2/3 造 IntPtr 参数）
+ldsfld ZYXDNGuarder.a             ← 槽 4（Field 0x8b1）
+call   MethodBase::GetCurrentMethod()  ← 槽 13（0xb27）   ★
+newobj IntPtr::.ctor(long)        ← 槽 3（0xb24）          ★
+call ZYXDNGuarder.a ; calli       ← 槽 6（Field 0x8b2）+ 槽 5（StandAloneSig = calli 签名）
+```
+
+**桩模板引用的每一个成员都在表里** ⇒ 描述符表 = 「程序集的桩模板所需成员集合」。
+
+### 24.2 ② 的最终结论
+
+描述符格式（§14 从原生代码读出编码 + §15 运行时 dump 到内容 + §23/§24 REA 解析出全部成员）
+**三路互印、完全闭合**。它**不携带方法语义**，因此原 ③「从描述符还原 7,851 个方法的 IL」
+不存在数据基础 —— 这是第 5 条独立证据。
