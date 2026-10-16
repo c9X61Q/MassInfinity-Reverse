@@ -1508,3 +1508,118 @@ callers = `sub_1800093c0`（守卫）+ `sub_18037ad24`；callees = `sub_180376bf
 
 **经验**：Hopper 的整程序查询（`xrefs`/`search_procedures`）在此二进制上会超时，
 但**逐函数**分析稳定且给出完整 CFG/调用者/字符串，是这套目标上最可靠的工作流。
+
+---
+
+## 23. Round 8：REA 托管侧一次解开多个死结（并作废我自己的两处错误推断）
+
+用 **`inspect_managed_members`**（REA 托管元数据工具，我此前一直没用）指到
+`Mass.WinUI.dll`（sha256 `57d50302…`，MVID `fdc9b55e-b654-40ad-966d-0f9697aa6981`），
+只选 `ZYXDNGuarder` 一个类型。
+
+### 23.1 `ZYXDNGuarder` 的 6 个字段**全叫 `a`**，只有类型不同
+
+| token | 名字 | 类型 | flags |
+|---|---|---|---|
+| `0x040008b0` | `a` | **bool** | 19 |
+| `0x040008b1` | `a` | **native-int** | 19 |
+| `0x040008b2` | `a` | **native-int** | 19 |
+| `0x040008b3` | `a` | **i4** | 19 |
+| `0x040008b4` | `a` | **object** | 19 |
+| `0x040008b5` | `a` | **object** | 19 |
+
+⇒ 之前用反射读「`ZYXDNGuarder.a` 字段 == `0x1800093e0`」会混乱，正是因为**六个同名字段**。
+两个 `native-int` 才是放原生函数指针的地方；`Startup` 里 `ldsfld 0x040008b0`（**bool**）是初始化标志。
+
+### 23.2 `.cctor` / `Startup` / `RunHVM` 的权威 IL
+
+**`.cctor`（`0x060013c3`，23 字节，7 条指令）**
+```
+newobj 0x0a000b22 ; stsfld 0x040008b4 ; ldc.i4.0 ; stsfld 0x040008b0 ; ldc.i4.0 ; stsfld 0x040008b3 ; ret
+```
+
+**`Startup`（`0x060013c8`，83 字节，31 条指令，3 个异常区）**
+```
+ldsfld 0x040008b0 (bool a) ; brfalse.s
+    call 0x060013c6 (RunHVM()) ; stsfld 0x040008b0
+...
+ldsfld 0x040008b3 (i4 a) ; call 0x0a000b25 ; bne.un.s
+    call 0x060013c4 (CheckRuntime) / call 0x060013c5 (CheckRuntime64)
+...
+call 0x060013c7 (RunHVM()) ; stsfld 0x040008b0
+...
+ldstr 0x70000004 ; newobj 0x0a000b26 ; throw
+```
+
+**`RunHVM()`（`0x060013c6`，17 字节）**
+```
+br.s 9 ; call 0x0a800b26 ; brtrue.s ; ldc.i4 0 ; br.s
+```
+★ `0x0a800b26` 是 **MethodSpec（0x2B 表）** —— 与 §14 解出的
+`TABLE[6] = 0x2B000000 MethodSpec` **互相印证**。
+
+### 23.3 ★ 描述符表的 MethodDef 槽**全部对上号了**
+
+把 §15 的 16 槽模板按 **本程序集的真实 token** 还原：
+
+| 槽 | 类别 | RID | **实际成员（REA 权威）** |
+|---|---|---|---|
+| 7 | MethodDef | `0x13c2` | **`ZYXDNGuarder::CheckString`** |
+| 12 | MethodDef | `0x13ca` | **`ZYXDNGuarder::dvm`** |
+| 10 | MethodDef | `0x4c5b` | `ZYXDNGuarder+d`（嵌套类型成员） |
+
+⇒ **描述符表 = 「生成的桩会引用到的 DNGuard 自身运行时入口集合」**。
+每程序集一张，是因为各程序集的 RID 不同；**语义上就是同一组入口**。
+
+### 23.4 托管→原生的桥：`InternalCall`
+
+| 方法 | token | `impl_flags` | `rva` | 托管体 |
+|---|---|---|---|---|
+| `CheckRuntime` | `0x060013c4` | **128 (InternalCall)** | **0` | **无** |
+| `CheckRuntime64` | `0x060013c5` | **128 (InternalCall)** | `0` | **无** |
+
+⇒ 这两个方法**没有托管体、由原生实现** —— 这就是 DNGuard 在托管侧暴露原生命的正规通道
+（对应 `Mass.Runtime64.dll` 里的导出/内部实现）。
+
+### 23.5 `ZYXDNGuarder` 声明了 **5436 个方法**，绝大多数是同一个 11 字节守卫桩
+
+页码取到的方法（含 unicode 随机名如 `᠀` `∀` `刀` `匀` `吀` `嘀` `圀` `堀` `頀` `먀`…）
+**体完全相同**：
+
+```
+rva 8414, file_offset 734, header tiny, il_size 11
+ldstr 0x70000127 ; newobj 0x0a000b26 ; throw
+il_sha256 = 9c64662f77c38886d5d91037a317df17ded504660bb39b0c05283965c0c90210   ← 全部一致
+```
+
+`RunHVM(int,int,int,int)`（`0x060013c9`）、`dvm`（`0x060013ca`）也是这同一个 11 字节体。
+
+⇒ **这是 DNGuard 注入的「槽位池」**：5436 个名字随机化、体为守卫桩的方法，
+供保护器在运行时按需替换/引用。（对应第一轮我们看到的「5,426 个操作码命名方法」—— 现在有权威解释。）
+
+### 23.6 ★ 自我纠错：作废 round 5 的「方法体」读数
+
+我此前用「按表宽累加」推算 MethodDef 表文件偏移（得 `0x21230e`）并据此读方法体，
+但那份推导**行宽用错了**：本程序集 `#Strings` 堆 `0x38e58 > 64KiB`，
+**名字索引是 4 字节**，MethodDef 行宽应为 **16**（RVA4 + ImplFlags2 + Flags2 + Name4 + Sig2 + ParamList2），
+不是 14。⇒ 我算出的表偏移是错的。
+
+**作废**：round 5 中「按 MethodDef.RVA 读方法体、发现读到的是资源字符串」那一组推断
+（以及由此得出的「方法数据不在原地留明文」的**方法学依据**）。那个现象的真实原因是**我读错了表位置**。
+
+**替代**：REA 的 `inspect_managed_members` 每行都带权威 `rva` / `file_offset` /
+`body.status` / `il_size` / `opcode_counts` / `anchors`，是这类问题的正确工具。
+
+（§20.4 关于「加密块运行时差异 46,192 字节 / 2.69%、差异处熵 8.00→3.4~6.0 是明文」的
+**块级**观察不受影响 —— 那部分不依赖方法表；受影响的只是「方法数据是否原地解密」的推论。）
+
+### 23.7 本轮结论
+
+| 项 | 状态 |
+|---|---|
+| `ZYXDNGuarder` 六同名字段（含 2 个 native-int） | ✅ REA 权威 |
+| `CheckRuntime`/`CheckRuntime64` = InternalCall 无托管体 | ✅ |
+| 描述符表 MethodDef 槽 → `CheckString` / `dvm` / `ZYXDNGuarder+d` | ✅ |
+| `RunHVM()` 用 MethodSpec(0x2B) → 与 §14 的 TABLE 互印 | ✅ |
+| `ZYXDNGuarder` 5436 个方法、绝大多数同体 11 字节守卫桩 | ✅ |
+| 作废 round 5 的表偏移推导 | ✅ 已更正 |
