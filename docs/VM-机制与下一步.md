@@ -1316,3 +1316,81 @@ RVA 0x10000: 63 00 63 00 6f 00 75 00 6e 00 74 00 4d 00 6f 00 64 00 65 00 6c   �
    改用 `VirtualProtect` 把页设为只读 + VEH，或改用 C# 侧 `Marshal` + 页保护切换）；
 2. 或静态找写该区域的代码：扫 `.text` 里对加密区 RVA（如 WinUI 的 `0x10c00`）的引用；
 3. 或直接 hook `clrjit` 侧已有的覆盖点，把「解密后的方法数据」与「生成的桩」配对。
+
+---
+
+## 21. Round 6：REA 正规化分析 + 两条被推翻的假设
+
+### 21.1 REA provider 卡死与恢复（方法记录）
+
+用 Hopper provider 时，整程序查询全部超时（`search_procedures`、`xrefs`、
+连 `current_document` 也超时），但 MCP 服务本身仍能回错 —— 判定为 **provider 后端卡死**。
+恢复路径（REA 正规做法）：
+
+1. `close_binary`（关闭活动目标及其全部 provider 资源）
+2. `open_binary{provider_id:"hopper"}` 重新绑定同一文件（sha256 `c245cd03…`）
+3. 之后**逐函数**查询（`resolve_containing_procedure` / `analyze_function`）全部正常
+
+教训：Hopper 在这个 3.7 MB 混淆二进制上，**整程序查询（xrefs / search_procedures）不可靠，
+逐函数查询可靠**。混合策略 = 有界本地扫描拿候选地址 + REA 做逐函数语义。
+
+### 21.2 假设被推翻①：那些 `GetProcAddress` 簇不是保护器在隐藏导入
+
+对 `GetProcAddress` 的 15 个调用点做 REA 逐函数分析，结果**全是 MSVC CRT**：
+
+| 函数 | REA 判定 |
+|---|---|
+| `sub_18004a060` | CRT 的 `.mixcrt` / `EncodePointer` 启动助手：`FlsGetValue(dword_1800a62e8)` → 取 TLS 结构 `+0x2a8` → 调回调；并在自身节表里**按名匹配 `.mixcrt` 节** |
+| `sub_180057b20` | CRT 的 **MessageBox 错误上报器**：`LoadLibraryA("USER32.DLL")` → 解析 `MessageBoxA` / `GetActiveWindow` / `GetLastActivePopup` / `GetUserObjectInformationA` / `GetProcessWindowStation`，并做**窗口站隔离检查**（`var_38 & 1`） |
+| `sub_180052940` | 同族 CRT 站点 |
+
+→ 这正好对应 §19.2 解出的那 14 条弹窗守卫串（都是 CRT/`_CrtDbgReport` 风格）。
+**保护器没有做导入隐藏**（Hopper 能解析出全部 `imp_*` 名字，导入表完好）。
+
+### 21.3 假设被推翻②：`VirtualProtect` 是死导入，DNGuard 从不改页属性
+
+IAT 槽 `0x18005e0e8` = `VirtualProtect`、`0x18005e1a0` = `VirtualQuery`（均已导入），
+但全 `.text` 扫描 `call *disp32(%rip)` / `mov disp32(%rip),reg` 两种引用形式：
+
+```
+VirtualProtect  引用 0 处
+VirtualQuery    引用 0 处
+LoadLibraryA    引用 2 处
+GetProcAddress  引用 15 处
+```
+
+⇒ **DNGuard 从不调用任何改页保护的 API**。
+
+这**修正并解释了 §20.4**：既然镜像的 `.text` 是只读的、又不改页属性，
+那 2.69% 明文**不可能**写进只读镜像 —— 说明我用指纹定位并 dump 到的那块，
+是 DNGuard 的**可写工作副本**（自身加密块的解密目标），而不是 PE 镜像本身。
+**模型更新：DNGuard 把加密区复制到可写缓冲、按需解密到该缓冲/临时缓冲。**
+
+### 21.4 密钥流分析：不是重复密钥 XOR
+
+用 §20.4 得到的 46,192 组明密文对做代数分析：
+
+| 检验 | 结果 |
+|---|---|
+| XOR 密钥流取值种类 | **255 种**（满值） |
+| 是否存在 `p ≤ 4096` 使 `k(i)` 仅依赖 `i mod p` | **不存在** |
+| 块 4 / 8 / 16 的「每槽不同值」平均 | **255.0 / 255.0 / 255.0**（无固定块密钥结构） |
+
+⇒ 不是重复密钥 XOR、不是固定块密钥，而是**带完整密钥流的流密码**（或链式模式块密码）。
+**结论：剩余 97.3% 无法仅凭这批明密文对还原**，必须拿到解密函数或足够多的明密文对。
+
+### 21.5 Round 6 结论与下一手
+
+| 项 | 状态 |
+|---|---|
+| REA provider 恢复并改用逐函数分析 | ✅ |
+| `GetProcAddress` 簇 = MSVC CRT（非保护器） | ✅ REA 判定 |
+| `VirtualProtect`/`VirtualQuery` 零引用 → 不改页属性 | ✅ |
+| 模型更新：解密目标是**可写副本**，非只读镜像 | ✅ |
+| 密钥流不可周期性恢复 | ✅（255 满值、无周期） |
+
+**下一手（round 7）**：既然解密目标是可写副本，且 Decryption 是**按需**的，
+就对那份副本做**连续高频 dump**（例如每 150 ms 一帧，若干帧），
+用「帧间差异首次出现的位置」+ 该时刻的 Frida 栈采样，**把解密写入与调用栈关联起来**，
+从而定位解密函数；同时可把「副本在长时间运行后的明文覆盖率」量出来
+（若方法数据最终也会在副本里变明文，那可直接整块导出）。
