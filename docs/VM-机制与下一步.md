@@ -518,3 +518,75 @@ progid 就在 `+20..+23`）。
 - `Mass.Runtime64.dll` 的 `.text` 含**反汇编混淆**：`0x18000944f` 处
   `push rbp; pushf; movabs $0x4e0b68924c888304,%rbp; test $0x672d0b98,%ebp; jae <远处>`
   之后是一片 junk 字节 —— 线性反汇编会失步（Hopper 对该地址反复超时也是这个原因）。
+
+---
+
+## 10. 路线 A 的尝试与负结果（本轮实测）
+
+### 10.1 handler 字段已定位（反射实证）
+
+`tools/MassDumper` 里加了 `DumpGuardFields()`：反射读每个程序集 `ZYXDNGuarder` 的静态字段。
+`data/guard-fields.tsv` 显示**每个程序集的 `a`（IntPtr）都等于 `0x1800093e0`**：
+
+```
+Mass.WinUI               | a | IntPtr | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Application.Desktop | a | IntPtr | 0x1800093e0   ★
+Mass.Domain              | a | IntPtr | 0x1800093e0   ★
+…（11 个程序集全同）
+```
+
+其余字段（Boolean=True / IntPtr=堆地址 / Int32=0 / Hashtable / `ZYXDNGuarder+d`）是运行时状态。
+
+### 10.2 `0x1800093e0` 是守卫+转发（27 字节）
+
+```asm
+mov %r8d,%eax            ; eax = progid（第 3 参）
+mov %rcx,%r8             ; r8  = method（第 1 参）
+mov 0x1800a7d40,%ecx     ; 全局密钥
+xor %rdx,%rcx            ; key ^ k（第 2 参）
+jne 0x180001310          ; ≠0 → 尾跳 (method, progid)
+xor %eax,%eax
+ret                      ; ==0 → 返回 0
+```
+
+→ 桩里的 `desc` 与常量 `15` 被这一层**忽略**；真入口是 `0x180001310`。
+
+### 10.3 `0x180001310` 也不是 VM 编译器
+
+```asm
+180001341  mov %rcx,%rbx
+180001344  cmpq $0x0, 0x3b8(%rcx)      ; 要求 arg1+0x3b8 != 0，否则 return 0
+18000136f  lea 0x18005e680,%rcx        ; 一个字符串（错误消息）
+180001376  jmp 0x180376bfb             ; 错误/日志路径
+18000137b  ret
+18000137c  <偏移/长度表> 21 00 00 00 | 58 6c 01 00 | ae 6c 01 00 | e4 f8 03 00 | 19 0a 02 00 …
+1800013ad  pushf ; movabs $0x5b1985bebb29f914,%rsi ; neg %rsi ; call 0x18004332c   ← 反分析惯用法
+```
+
+### 10.4 驱动实验（`tools/hook-drive.js`）—— 负结果
+
+```
+collected=4000  hit=84  nullret=924  errs=2992
+```
+84 次"成功"返回的值是 **`0x480` / `0x10` 这类小整数**，不是代码指针。
+→ 结论：**第一参必须是托管 `MethodBase` 对象引用，而不是我们传的 MethodDesc\***；
+且 `0x180001310` 本身不是"编译并返回代码指针"的函数。
+
+同时本轮 `hook-vmnative.js` 采到的 `nativeEntry`（1,170 条，多数是真实 x86-64 序言）
+是**桩自己的编译产物**（`ldsfld a; …; call; calli; ret` 的机器码），不是被虚拟化方法的语义。
+→ **"dump nativeEntry 即得语义" 这条捷径不成立。**
+
+### 10.5 剩余工作的准确描述
+
+要还原 45,684 个受保护方法的语义，必须**真正驱动或实现这个 VM**：
+
+1. **驱动法**：在托管进程内以正确类型调用 `ZYXDNGuarder.a`（第一参传托管 `MethodBase`
+   对象），拿 VM 编译结果 —— 需要从 C# 侧发起（Frida 侧拿不到托管对象引用），
+   而 C# 侧读不到 DNGuard 生成的桩 IL（`GetMethodBody()` 只给文件里的体）。
+   → 打通它需要：C# 读方法句柄 + Frida 供 `(k, progid)`，两侧对齐。
+2. **离线法**：击败 `.text` 的反汇编混淆（`pushf` + `movabs`+`neg` + junk 字节 + 偏移表），
+   逆透 `0x180376bfb` / `0x18004332c` 与分派表，再解 `.hvm0` 描述符。
+   工作量与一个中型原生逆向项目相当。
+
+**本仓库已经把这条路的全部地图、常量、表、样本和负结果都留下了**，
+后续接手不需要重新摸索。

@@ -1,0 +1,79 @@
+#Mass.Runtime64 映像: 0x180000000 .. 0x1803a3000
+Mass.WinUI                   | a                                        | Boolean        | True
+Mass.WinUI                   | a                                        | IntPtr         | 0x19fa3e9de5c
+Mass.WinUI                   | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.WinUI                   | a                                        | Int32          | 0
+Mass.WinUI                   | a                                        | Object         | System.Collections.Hashtable
+Mass.WinUI                   | a                                        | Object         | ZYXDNGuarder+d
+Mass.Application.Desktop     | a                                        | Boolean        | True
+Mass.Application.Desktop     | a                                        | IntPtr         | 0x19fa37231fc
+Mass.Application.Desktop     | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Application.Desktop     | a                                        | Int32          | 0
+Mass.Application.Desktop     | a                                        | Object         | System.Collections.Hashtable
+Mass.Application.Desktop     | a                                        | Object         | ZYXDNGuarder+d
+Mass.Application             | a                                        | Boolean        | True
+Mass.Application             | a                                        | IntPtr         | 0x19fa3a30ffc
+Mass.Application             | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Application             | a                                        | Int32          | 0
+Mass.Application             | a                                        | Object         | System.Collections.Hashtable
+Mass.Application             | a                                        | Object         | ZYXDNGuarder+d
+Mass.Domain                  | a                                        | Boolean        | True
+Mass.Domain                  | a                                        | IntPtr         | 0x19fa3ad0e9c
+Mass.Domain                  | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Domain                  | a                                        | Int32          | 0
+Mass.Domain                  | a                                        | Object         | System.Collections.Hashtable
+Mass.Domain                  | a                                        | Object         | ZYXDNGuarder+d
+Mass.Application.Mobile      | a                                        | Boolean        | True
+Mass.Application.Mobile      | a                                        | IntPtr         | 0x19fa372d8ec
+Mass.Application.Mobile      | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Application.Mobile      | a                                        | Int32          | 0
+Mass.Application.Mobile      | a                                        | Object         | System.Collections.Hashtable
+Mass.Application.Mobile      | a                                        | Object         | ZYXDNGuarder+d
+Mass.Domain.Desktop          | a                                        | Boolean        | True
+Mass.Domain.Desktop          | a                                        | IntPtr         | 0x19fa3ad668c
+Mass.Domain.Desktop          | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Domain.Desktop          | a                                        | Int32          | 0
+Mass.Domain.Desktop          | a                                        | Object         | System.Collections.Hashtable
+Mass.Domain.Desktop          | a                                        | Object         | ZYXDNGuarder+d
+Mass.Domain.Mobile           | a                                        | Boolean        | True
+Mass.Domain.Mobile           | a                                        | IntPtr         | 0x19fa3ad137c
+Mass.Domain.Mobile           | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Domain.Mobile           | a                                        | Int32          | 0
+Mass.Domain.Mobile           | a                                        | Object         | System.Collections.Hashtable
+Mass.Domain.Mobile           | a                                        | Object         | ZYXDNGuarder+d
+Mass.Game.Launcher           | a                                        | Boolean        | True
+Mass.Game.Launcher           | a                                        | IntPtr         | 0x19fa3a8fb2c
+Mass.Game.Launcher           | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Game.Launcher           | a                                        | Int32          | 0
+Mass.Game.Launcher           | a                                        | Object         | System.Collections.Hashtable
+Mass.Game.Launcher           | a                                        | Object         | ZYXDNGuarder+d
+Matrix.Core                  | a                                        | Boolean        | True
+Matrix.Core                  | a                                        | IntPtr         | 0x19fa366bb2c
+Matrix.Core                  | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Matrix.Core                  | a                                        | Int32          | 0
+Matrix.Core                  | a                                        | Object         | System.Collections.Hashtable
+Matrix.Core                  | a                                        | Object         | ZYXDNGuarder+d
+Mass.Game.Proxy              | a                                        | Boolean        | True
+Mass.Game.Proxy              | a                                        | IntPtr         | 0x19fa3a8f1bc
+Mass.Game.Proxy              | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Game.Proxy              | a                                        | Int32          | 0
+Mass.Game.Proxy              | a                                        | Object         | System.Collections.Hashtable
+Mass.Game.Proxy              | a                                        | Object         | ZYXDNGuarder+d
+Mass.Bedrock.Proxy           | a                                        | Boolean        | True
+Mass.Bedrock.Proxy           | a                                        | IntPtr         | 0x19fa3ac0d2c
+Mass.Bedrock.Proxy           | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Bedrock.Proxy           | a                                        | Int32          | 0
+Mass.Bedrock.Proxy           | a                                        | Object         | System.Collections.Hashtable
+Mass.Bedrock.Proxy           | a                                        | Object         | ZYXDNGuarder+d
+Mass.Common                  | a                                        | Boolean        | True
+Mass.Common                  | a                                        | IntPtr         | 0x19fa3ad4dcc
+Mass.Common                  | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+Mass.Common                  | a                                        | Int32          | 0
+Mass.Common                  | a                                        | Object         | System.Collections.Hashtable
+Mass.Common                  | a                                        | Object         | ZYXDNGuarder+d
+DNGuard.Runtime              | a                                        | Boolean        | True
+DNGuard.Runtime              | a                                        | IntPtr         | 0x19fa3e9ec3c
+DNGuard.Runtime              | a                                        | IntPtr         | 0x1800093e0   ★ 落在 Mass.Runtime64 映像内
+DNGuard.Runtime              | a                                        | Int32          | 8
+DNGuard.Runtime              | a                                        | Object         | System.Object
+DNGuard.Runtime              | a                                        | Object         | null
