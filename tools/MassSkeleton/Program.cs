@@ -26,6 +26,7 @@ class Program
             W.WriteLine("// 生成器：tools/MassSkeleton（dnlib 读元数据），不依赖反编译文本。");
             W.WriteLine("#nullable disable");
             W.WriteLine("using System;");
+
             W.WriteLine();
             int t = 0, m = 0;
             foreach (var type in mod.GetTypes())
@@ -117,12 +118,22 @@ class Program
     {
         { var save = TagOfAsm; TagOfAsm = TagOf(td.Module != null && td.Module.Assembly != null ? td.Module.Assembly.Name.String : ""); return FlatT(td); }
     }
+    static string ObjArgs(int n) => "<" + string.Join(", ", Enumerable.Repeat("object", Math.Max(1, n))) + ">";
     static string FlatT(TypeDef td)
     {
         var raw = td.Name.String;
         var i = raw.IndexOf('`'); if (i > 0) raw = raw.Substring(0, i);
         var n = Leaf(raw, false);
-        if (td.DeclaringType != null) return FlatT(td.DeclaringType) + "." + n;
+        if (td.DeclaringType != null)
+        {
+            // 泛型类型的嵌套类型：父层必须带实参（C# 要求 Outer<arg>.Nested）
+            var parent = FlatT(td.DeclaringType);
+            var pc = td.DeclaringType.GenericParameters.Count;
+            if (pc > 0) parent += ObjArgs(pc);
+            return parent + "." + n;
+        }
+        // 不在此处补顶层自身实参：GenericInstSig / TypeDefOrRefSig 路径已分别处理，
+        // 否则会叠成 X<object><Y> 造成语法错误。
         return Full(td.Namespace, raw);
     }
     static string TagOfAsm = "";
@@ -140,7 +151,7 @@ class Program
         {
             case GenericInstSig g:
                 var b = TN(g.GenericType.TypeDefOrRef);
-                if (g.GenericArguments == null || g.GenericArguments.Count == 0) return b;
+                if (g.GenericArguments == null || g.GenericArguments.Count == 0) return "object";
                 var argsS = g.GenericArguments.Select(a => { var x = TN2(a); return string.IsNullOrWhiteSpace(x) ? "object" : x; });
                 return b + "<" + string.Join(", ", argsS) + ">";
             case SZArraySig a: return TN2(a.Next) + "[]";
@@ -151,7 +162,15 @@ class Program
             case CorLibTypeSig c: return c.TypeDefOrRef != null ? TN(c.TypeDefOrRef) : "object";
             case TypeDefOrRefSig t:
                 var r = t.TypeDefOrRef != null ? TN(t.TypeDefOrRef) : "object";
-                return r == "System.Void" ? "object" : r;
+                if (r == "System.Void") return "object";
+                try
+                {
+                    var td2 = t.TypeDefOrRef != null ? t.TypeDefOrRef.ResolveTypeDef() : null;
+                    if (td2 != null && td2.GenericParameters.Count > 0)
+                        return r + "<" + string.Join(", ", Enumerable.Repeat("object", td2.GenericParameters.Count)) + ">";
+                }
+                catch { }
+                return r;
             default: return "object";
         }
     }
@@ -194,9 +213,12 @@ class Program
         var p = new string('\t', ind);
         var arity = type.GenericParameters.Count;
         var rawName = type.Name.String;
-        var n = type.DeclaringType == null ? LeafOf(type.Namespace, rawName, AsmTag) : Id(rawName);
+        // 嵌套类型同样要剥掉 `n 元数（否则声明 __c__1_1 与引用 __c__1 不一致 → CS0426）
+        var rawNoArity = rawName;
+        { var bi = rawNoArity.IndexOf('`'); if (bi >= 0) rawNoArity = rawNoArity.Substring(0, bi); }
+        var n = type.DeclaringType == null ? LeafOf(type.Namespace, rawName, AsmTag) : Id(rawNoArity);
         string kind = type.IsInterface ? "interface" : type.IsEnum ? "enum" : type.IsValueType ? "struct" : "class";
-        var mods = type.IsNested ? (type.IsNestedPublic ? "public " : type.IsNestedAssembly ? "internal " : type.IsNestedFamily ? "protected " : "") : (type.IsPublic ? "public " : "internal ");
+        var mods = type.IsNested ? "public " : (type.IsPublic ? "public " : "internal ");
         var hasRealBase = type.BaseType != null && type.BaseType.FullName != "System.Object"
                           && type.BaseType.FullName != "System.ValueType" && type.BaseType.FullName != "System.Enum";
         var sealedType = kind == "class" && type.IsSealed;
