@@ -193,3 +193,85 @@ calls=40736  changed=0  same=40734  unreadable=0
 | 「3 个巨型 switch 体可以提状态图」 | ❌ 那是数据结构，提出来是 VM 的**数据**，不是语义 |
 | 需逆向的目标 | **`Mass.Runtime64.dll` 的明文 `.text`（378,880B）+ `.hvm0`（3,058,112B）** |
 | 仍成立的 | 34,127 条真 IL 已完整拿到并回填；7,851 条应标为「数据」而非「代码」 |
+
+---
+
+## 6. 原生侧第一层已打通（`Mass.Runtime64.dll` 静态逆向）
+
+DLL 基址固定 `0x180000000`、`.text` 明文，以下全是反汇编实测。
+
+### 6.1 `0x1800446b0` = JIT 劫持槽，但它只是搬运工（294 B / 3 块）
+
+```asm
+mov rbx, r8                              ; rbx = info (CORINFO_METHOD_INFO*)
+mov r8d, 0x110 ; call sub_180047390      ; memcpy(dst, info, 0x110)
+lea rcx/rdx … call sub_18003f910 / sub_1800152f0   ; 在栈上构造两个 DNGuard 自己的对象
+mov rcx, [qword_1800a6220] ; call [rax+0x18]  ; 取 TLS/全局对象
+call sub_180006fc0                       ; 校验/日志
+mov r9,  [arg_20]                        ; nativeEntry
+mov r11, [arg_28]                        ; nativeSizeOfCode
+call sub_1800161b0                       ; ← 核心：(wrapperB, wrapperA, info, nativeEntry, nativeSizeOfCode)
+… call sub_180047390                     ; memcpy 回去
+call sub_1800200f0 / sub_18003d360       ; 析构
+```
+
+**两个硬结论**：
+1. **`sizeof(CORINFO_METHOD_INFO) == 0x110`** —— 由这里的 `memcpy(…, 0x110)` 实证（此前只是推测）。
+2. **真 `ICorJitInfo*` 不传入核心函数**：传的是 DNGuard 自己构造的两个 vtable 对象。
+   所以核心函数里所有 `[reg]→vtable[8] / [0x70] → call` 都是**调 DNGuard 自己的接口**，
+   不是 coreclr 的 `ICorJitInfo`。这也解释了之前的 `comp` vtable 观测量为何自相矛盾。
+
+### 6.2 `0x1800161b0` = 分派器（692 B / 32 块），判据是精确字节签名
+
+```asm
+0x180016203  mov eax, [r8+0x18]        ; info->ILCodeSize
+0x180016207  mov rdi, [r8+0x10]        ; info->ILCode
+0x18001620b  xor ecx,ecx / mov [rdx+0x20],ecx / mov [rdx+8],rcx    ; 清 wrapper 字段
+0x180016214  cmp eax, 0x11             ; == 17
+0x18001621d  cmp byte [rdi],     0x2b
+0x180016226  cmp byte [rdi+1],   0x07
+0x180016230  cmp byte [rdi+8],   0x07
+0x18001623a  cmp byte [rdi+0xe], 0x2b
+0x180016244  cmp byte [rdi+0xf], 0xf2
+0x18001624e  cmp byte [rdi+9],   0x20
+0x180016258  cmp byte [rdi+0x10],0x2a
+0x180016266  mov r15d, [r12+0x15]      ; 桩里的 u32 参数
+```
+
+把签名拼出来 —— 这是一条 **17 字节自旋死循环**：
+
+```
+0x00: 2B 07      br.s +7      → 0x09
+0x02: .. .. .. .. .. .. 07                      ← 7 字节体
+0x09: 20 ?? ?? ?? ??          ldc.i4 <v>
+0x0E: 2B F2      br.s -14     → 回 0x02，永不退出
+0x10: 2A         ret
+```
+
+**含义**：这是**保护器运行时尚未装好时的占位体**（忙等），
+紧跟 IL 之后（`ILCode+0x11` / `+0x15`）还塞了两个 u32 参数。
+→ 所以我们的语料里 0 条匹配（每次都在 `RunModuleConstructor` 之后才抓）。
+
+**签名支路的调用链**：
+```
+sub_180016050(global=qword_1800a7d38, ftn)   ; 全局→每方法 查表
+  失败: sub_180013f30(...)                    ; 分配条目；条目布局 +0xa4(u32) +0xb0(qword) +0x16 +0x29
+  成功: 读/写条目缓存字段
+→ sub_180016ed0(entry, wrapper, info, nativeEntry, …)      ★ 真正的 VM 编译/派发
+```
+**非签名支路**：查 `qword_1800a7d38` 全局表 → 未命中即报错（消息字符串紧邻 `aMscorjitdll`）
+→ 否则最后调 wrapper 的 `vtable[14]`。
+
+### 6.3 下一批靶子（按依赖顺序）
+
+| 地址 | 作用（待确认） | 为什么先逆它 |
+|---|---|---|
+| **`0x180016ed0`** | VM 编译/派发主函数 | 签名支路唯一出口，VM 逻辑的入口 |
+| `0x180016050` | `<全局, ftn>` → 每方法条目 | 条目结构定义 ≈ VM 方法元数据布局 |
+| `0x180013f30` | 条目分配器 | 同上，且给出条目大小 |
+| `0x1800a7d38` | **全局状态对象指针**（用到 `+0x4 / +0x14 / +0x28`） | 解引用即得 VM 全部状态表 |
+| `0x1800a6220` | TLS/全局对象（`:0x18` 是取对象的成员） | 初始化与反调试状态 |
+
+已知可用常量：
+- `.hvm0` 固定 VA `0x1800b2000`（内容与磁盘一致，熵 7.297，解码在读取时进行）
+- `ldc.i8` 常量只有两类去向：`0x180001000` 段（本 DLL 代码）/ 堆 IL 缓冲池
