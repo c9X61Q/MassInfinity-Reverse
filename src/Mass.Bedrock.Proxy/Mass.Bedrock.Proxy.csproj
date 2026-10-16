@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Mass.Bedrock.Proxy</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Mass.Domain.Desktop">
+      <HintPath>mass-ildump/backfilled/Mass.Domain.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Mass.Application.Mobile">
+      <HintPath>mass-ildump/backfilled/Mass.Application.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Mass.Application">
+      <HintPath>mass-ildump/backfilled/Mass.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="Mass.Domain.Mobile">
+      <HintPath>mass-ildump/backfilled/Mass.Domain.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog" />
+    <Reference Include="DotNetty.Buffers" />
+    <Reference Include="Mass.Common">
+      <HintPath>mass-ildump/backfilled/Mass.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagePack" />
+  </ItemGroup>
+</Project>

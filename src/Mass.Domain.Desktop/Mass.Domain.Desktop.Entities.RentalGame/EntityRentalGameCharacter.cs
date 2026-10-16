@@ -1,0 +1,655 @@
+using System;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
+using Mass.Domain.Desktop.Converters;
+using Mass.Domain.Desktop.Interfaces;
+using Mass.Domain.Desktop.ValueObjects;
+
+namespace Mass.Domain.Desktop.Entities.RentalGame;
+
+public class EntityRentalGameCharacter : IDesktopGameCharacter
+{
+	internal static EntityRentalGameCharacter ManageFilter;
+
+	[JsonPropertyName("entity_id")]
+	public string GameId
+	{
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		get
+		{
+			return (string)_FF00_FF00_FF00_FF00Ⰰ();
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		set
+		{
+			_FF00_FF00_FF00_FF00_1B00(value);
+		}
+	}
+
+	[JsonPropertyName("server_id")]
+	public string ServerId
+	{
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		get
+		{
+			return (string)_FF00_FF00_FF00_FF00_2200();
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		set
+		{
+			_FF00_FF00_FF00_FF00ᜀ(value);
+		}
+	}
+
+	[JsonPropertyName("user_id")]
+	public string UserId
+	{
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		get
+		{
+			return (string)_FF00_FF00_FF00_FF00ᄀ();
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		set
+		{
+			_FF00_FF00_FF00_FF00_2700(value);
+		}
+	}
+
+	[JsonPropertyName("name")]
+	public string Name
+	{
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		get
+		{
+			return (string)_FF00_FF00_FF00_FF00ᔀ();
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		set
+		{
+			_FF00_FF00_FF00_FF00_0B00(value);
+		}
+	}
+
+	[JsonPropertyName("create_ts")]
+	[JsonConverter(typeof(TimestampConverter))]
+	public DateTime CreateTime
+	{
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		get
+		{
+			return _FF00_FF00_FF00_FF00ጀ();
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		set
+		{
+			_FF00_FF00_FF00_FF00_0E00(value);
+		}
+	}
+
+	[JsonConverter(typeof(TimestampConverter))]
+	[JsonPropertyName("delete_ts")]
+	public DateTime DeleteTime
+	{
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		get
+		{
+			return _FF00_FF00_FF00_FF00_2300();
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		set
+		{
+			_FF00_FF00_FF00_FF00_2600(value);
+		}
+	}
+
+	[JsonPropertyName("is_online")]
+	public bool IsOnline
+	{
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		get
+		{
+			return _FF00_FF00_FF00_FF00_2000() != 0;
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		set
+		{
+			_FF00_FF00_FF00_FF00Ḁ(value ? ((byte)1) : ((byte)0));
+		}
+	}
+
+	[JsonPropertyName("status")]
+	public EnumPlayerStatus Status
+	{
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		get
+		{
+			return _FF00_FF00_FF00_FF00_2A00();
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[CompilerGenerated]
+		set
+		{
+			_FF00_FF00_FF00_FF00ༀ(value);
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	public EntityRentalGameCharacter()
+	{
+		//IL_0052: Expected I4, but got Obj
+		//IL_0040->IL0049: Incompatible stack types: I4 vs Obj
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		EntityRentalGameCharacter entityRentalGameCharacter = this;
+		if (false)
+		{
+			entityRentalGameCharacter = (EntityRentalGameCharacter)0;
+		}
+		switch ((int)entityRentalGameCharacter)
+		{
+		case 0:
+			break;
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal static bool WatchStack()
+	{
+		throw new Exception("Error, DNGuard Runtime library not loaded!");
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal static EntityRentalGameCharacter ReflectTransferableList()
+	{
+		throw new Exception("Error, DNGuard Runtime library not loaded!");
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe sealed void _FF00_FF00_FF00_FF00_0A00(object P_0)
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778673, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		_ = null;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal sealed void _FF00_FF00_FF00_FF00_0B00(object P_0)
+	{
+		//IL_0010: Expected Obj, but got I4
+		//IL_0026: Expected I4, but got Obj
+		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
+		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		object obj = 1;
+		while (true)
+		{
+			switch ((int)obj)
+			{
+			default:
+				return;
+			case 1:
+				if (false)
+				{
+					_ = 0;
+				}
+				break;
+			case 0:
+				return;
+			}
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe sealed void _FF00_FF00_FF00_FF00_0C00(object P_0)
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778702, new IntPtr(2737337533564L), 15))(null, 0, new IntPtr(0L));
+		_ = null;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe sealed void _FF00_FF00_FF00_FF00_0D00(DateTime P_0)
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778703, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		_ = null;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal sealed void _FF00_FF00_FF00_FF00_0E00(DateTime P_0)
+	{
+		//IL_0010: Expected Obj, but got I4
+		//IL_0026: Expected I4, but got Obj
+		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
+		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		object obj = 1;
+		while (true)
+		{
+			switch ((int)obj)
+			{
+			default:
+				return;
+			case 0:
+				return;
+			case 1:
+				if (0 == 0)
+				{
+					_ = 0;
+				}
+				break;
+			}
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal void _FF00_FF00_FF00_FF00ༀ(EnumPlayerStatus P_0)
+	{
+		//IL_0010: Expected Obj, but got I4
+		//IL_0026: Expected I4, but got Obj
+		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
+		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		object obj = 1;
+		while (true)
+		{
+			switch ((int)obj)
+			{
+			default:
+				return;
+			case 0:
+				return;
+			case 1:
+				if (0 == 0)
+				{
+					_ = 0;
+				}
+				break;
+			}
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe object _FF00_FF00_FF00_FF00က()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778700, new IntPtr(2737337533564L), 15))(null, 0, new IntPtr(0L));
+		return (object)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal object _FF00_FF00_FF00_FF00ᄀ()
+	{
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return this;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe object _FF00_FF00_FF00_FF00ሀ()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778701, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		return (object)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal sealed DateTime _FF00_FF00_FF00_FF00ጀ()
+	{
+		//IL_000a: Expected VT, but got Obj
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return (DateTime)this;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe sealed DateTime _FF00_FF00_FF00_FF00_1400()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778698, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		return (DateTime)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal sealed object _FF00_FF00_FF00_FF00ᔀ()
+	{
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return this;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe sealed object _FF00_FF00_FF00_FF00ᘀ()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778699, new IntPtr(2737337533564L), 15))(null, 0, new IntPtr(0L));
+		return (object)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal void _FF00_FF00_FF00_FF00ᜀ(object P_0)
+	{
+		//IL_0010: Expected Obj, but got I4
+		//IL_0026: Expected I4, but got Obj
+		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
+		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		object obj = 1;
+		while (true)
+		{
+			switch ((int)obj)
+			{
+			default:
+				return;
+			case 0:
+				return;
+			case 1:
+				if (0 == 0)
+				{
+					_ = 0;
+				}
+				break;
+			}
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal static object _FF00_FF00_FF00_FF00_1800()
+	{
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return (object)/*Error near IL_0009: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe static object _FF00_FF00_FF00_FF00ᤀ()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778696, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		return (object)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe sealed void _FF00_FF00_FF00_FF00ᨀ(object P_0)
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778697, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		_ = null;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal sealed void _FF00_FF00_FF00_FF00_1B00(object P_0)
+	{
+		//IL_0010: Expected Obj, but got I4
+		//IL_0026: Expected I4, but got Obj
+		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
+		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		object obj = 1;
+		while (true)
+		{
+			switch ((int)obj)
+			{
+			default:
+				return;
+			case 0:
+				return;
+			case 1:
+				if (false)
+				{
+					_ = 0;
+				}
+				break;
+			}
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe sealed void _FF00_FF00_FF00_FF00ᰀ(object P_0)
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778694, new IntPtr(2737337522124L), 15))(null, 0, new IntPtr(0L));
+		_ = null;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe void _FF00_FF00_FF00_FF00ᴀ(byte P_0)
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778695, new IntPtr(2737337533564L), 15))(null, 0, new IntPtr(0L));
+		_ = null;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal void _FF00_FF00_FF00_FF00Ḁ(byte P_0)
+	{
+		//IL_0010: Expected Obj, but got I4
+		//IL_0026: Expected I4, but got Obj
+		//IL_003a->IL0019: Incompatible stack heights: 2 vs 1
+		//IL_0045->IL0019: Incompatible stack heights: 2 vs 1
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		object obj = 1;
+		while (true)
+		{
+			switch ((int)obj)
+			{
+			default:
+				return;
+			case 1:
+				if (false)
+				{
+					_ = 0;
+				}
+				break;
+			case 0:
+				return;
+			}
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe void _FF00_FF00_FF00_FF00ἀ(byte P_0)
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778692, new IntPtr(2737337533564L), 15))(null, 0, new IntPtr(0L));
+		_ = null;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal byte _FF00_FF00_FF00_FF00_2000()
+	{
+		//IL_000a: Expected I4, but got Obj
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return (byte)(int)this;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe byte _FF00_FF00_FF00_FF00_2100()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778693, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		return (byte)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal object _FF00_FF00_FF00_FF00_2200()
+	{
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return this;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal DateTime _FF00_FF00_FF00_FF00_2300()
+	{
+		//IL_000a: Expected VT, but got Obj
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return (DateTime)this;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe static byte _FF00_FF00_FF00_FF00_2400()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778690, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		return (byte)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal static byte _FF00_FF00_FF00_FF00_2500()
+	{
+		//IL_0009: Invalid comparison between Unknown and Obj
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return ((object)/*Error near IL_000b: Stack underflow*/ == null) ? ((byte)1) : ((byte)0);
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal void _FF00_FF00_FF00_FF00_2600(DateTime P_0)
+	{
+		//IL_0010: Expected Obj, but got I4
+		//IL_0026: Expected I4, but got Obj
+		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
+		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		object obj = 1;
+		while (true)
+		{
+			switch ((int)obj)
+			{
+			default:
+				return;
+			case 0:
+				return;
+			case 1:
+				if (false)
+				{
+					_ = 0;
+				}
+				break;
+			}
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal void _FF00_FF00_FF00_FF00_2700(object P_0)
+	{
+		//IL_0010: Expected Obj, but got I4
+		//IL_0026: Expected I4, but got Obj
+		//IL_003b->IL0019: Incompatible stack heights: 2 vs 1
+		//IL_0046->IL0019: Incompatible stack heights: 2 vs 1
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		object obj = 1;
+		while (true)
+		{
+			switch ((int)obj)
+			{
+			default:
+				return;
+			case 0:
+				return;
+			case 1:
+				if (0 == 0)
+				{
+					_ = 0;
+				}
+				break;
+			}
+		}
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe void _FF00_FF00_FF00_FF00_2800(object P_0)
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778691, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		_ = null;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe EnumPlayerStatus _FF00_FF00_FF00_FF00_2900()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778688, new IntPtr(2737337533564L), 15))(null, 0, new IntPtr(0L));
+		return (EnumPlayerStatus)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal EnumPlayerStatus _FF00_FF00_FF00_FF00_2A00()
+	{
+		//IL_000a: Expected I4, but got Obj
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return (EnumPlayerStatus)this;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe EnumPlayerStatus _FF00_FF00_FF00_FF00_2B00()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778689, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		return (EnumPlayerStatus)/*Error near IL_0033: Stack underflow*/;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal sealed object _FF00_FF00_FF00_FF00Ⰰ()
+	{
+		if ((int)/*Error near IL_0006: Stack underflow*/ == 0)
+		{
+		}
+		return this;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	internal unsafe sealed object _FF00_FF00_FF00_FF00ⴀ()
+	{
+		//IL_0008: Expected I8, but got I4
+		((delegate* unmanaged[Stdcall]<AppDomain, int, nint, void>)ZYXDNGuarder.a(MethodBase.GetCurrentMethod(), 0, 1790778718, new IntPtr(2737337521084L), 15))(null, 0, new IntPtr(0L));
+		return (object)/*Error near IL_0033: Stack underflow*/;
+	}
+}

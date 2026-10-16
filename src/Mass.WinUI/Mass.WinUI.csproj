@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Mass.WinUI</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Mass.WinUI.Localization.Strings.resources" />
+    <EmbeddedResource Include="Mass.WinUI.Localization.Strings.resources" LogicalName="Mass.WinUI.Localization.Strings.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WinRT.Runtime" />
+    <Reference Include="Microsoft.WinUI" />
+    <Reference Include="Serilog" />
+    <Reference Include="Microsoft.InteractiveExperiences.Projection" />
+    <Reference Include="Mass.Application.Desktop">
+      <HintPath>mass-ildump/backfilled/Mass.Application.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Mass.Application.Mobile">
+      <HintPath>mass-ildump/backfilled/Mass.Application.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="CommunityToolkit.Mvvm" />
+    <Reference Include="Mass.Common">
+      <HintPath>mass-ildump/backfilled/Mass.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.SDK.NET" />
+    <Reference Include="Mass.Domain">
+      <HintPath>mass-ildump/backfilled/Mass.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Mass.Domain.Desktop">
+      <HintPath>mass-ildump/backfilled/Mass.Domain.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Mass.Application">
+      <HintPath>mass-ildump/backfilled/Mass.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="Mass.Domain.Mobile">
+      <HintPath>mass-ildump/backfilled/Mass.Domain.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core.Projection" />
+    <Reference Include="Mass.Game.Proxy">
+      <HintPath>mass-ildump/backfilled/Mass.Game.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Matrix.Core" />
+    <Reference Include="Mass.Game.Launcher">
+      <HintPath>mass-ildump/backfilled/Mass.Game.Launcher.dll</HintPath>
+    </Reference>
+    <Reference Include="Mass.Bedrock.Proxy">
+      <HintPath>mass-ildump/backfilled/Mass.Bedrock.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="CommunityToolkit.WinUI.Controls.SettingsControls" />
+    <Reference Include="FluentIcons.WinUI" />
+    <Reference Include="FluentIcons.Common" />
+  </ItemGroup>
+</Project>
