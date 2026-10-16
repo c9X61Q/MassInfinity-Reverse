@@ -170,10 +170,27 @@ Frida  侧：抓 (MethodDesc → IL 字节)
 
 ---
 
+## 可编译性进展
+
+| 指标 | 数值 |
+|---|---|
+| 逐成员缺口台账 | **43,789** 个成员体：桩 **33,514（76.5%）** / 真实 **10,275（23.5%）** |
+| 文件级洁净度 | 无桩且无反编译残留 **110** 个；假干净 26 个；纯桩 12 个；两者都有 1,043 个 |
+| **首个可编译产物** | `reconstructed/` → **0 警告 / 0 错误**，产出 `MassReconstructed.dll`（114 KB） |
+| 为编译补的缺口 | 仅 **4 个符号**（3 个占位声明 + 1 个假干净文件的构造体） |
+| 权威依赖清单 | REA 读 `AssemblyRef` 得 34 条；工程引 10 个 NuGet 包（DotNetty 0.7.6 / MessagePack / RestSharp 112.1.1 / BouncyCastle 2.0 / CodeGuard 3.2.43 / SharpZipLib 1.4.2 / Serilog 4.3 …） |
+
+详见 [`docs/可编译性-缺口台账.md`](docs/可编译性-缺口台账.md) 与
+[`data/gap-ledger.tsv.gz`](data/gap-ledger.tsv.gz)。
+
+---
+
 ## 目录结构
 
 ```
-├── src/                     反编译出的 C# 源码（11 个项目，见 `find src -name '*.cs' | wc -l`）
+├── src/                     反编译出的 C# 源码（11 个项目，1,191 个文件）
+├── reconstructed/           ★ 可编译重建工程（110 个无桩文件 + 3 个占位 shim，0 错误通过）
+├── refs/                    上游公开资源（官方 Mass.Sdk，MIT，原样副本）
 ├── docs/
 │   ├── 逆向指南.md          完整方法论（含每一步的命令与踩坑）
 │   ├── 逆向进度.md          进度快照与技术细节
