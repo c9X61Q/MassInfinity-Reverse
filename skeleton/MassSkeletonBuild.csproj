@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>CS0169;CS0649;CS0067;CS0108;CS0114;CS0162;CS0168;CS0219;CS0414;CS8632;CS0101;CS0102;CS0111;CS0305;CS0465;CS0693;CS0626</NoWarn>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DotNetty.Buffers" Version="0.7.6" />
+    <PackageReference Include="DotNetty.Transport" Version="0.7.6" />
+    <PackageReference Include="DotNetty.Codecs" Version="0.7.6" />
+    <PackageReference Include="DotNetty.Common" Version="0.7.6" />
+    <PackageReference Include="MessagePack" Version="2.5.198" />
+    <PackageReference Include="RestSharp" Version="112.1.1-alpha.0.12" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.0.0" />
+    <PackageReference Include="BarsGroup.CodeGuard" Version="3.2.43" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+    <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.25" />
+  </ItemGroup>
+  <ItemGroup><Compile Include="out/*.cs" /></ItemGroup>
+</Project>
