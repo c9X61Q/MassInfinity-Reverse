@@ -131,7 +131,8 @@ class Program
         var nn = LeafOf(ns, n, TagOfAsm);
         if (string.IsNullOrEmpty(ns)) return nn;
         var nsp = string.Join(".", ns.Split('.').Select(Id));
-        return nsp + "." + nn;
+        // global:: 强制从根解析，消除「同名命名空间/类型」造成的歧义（CS0234/CS0426 主因）
+        return "global::" + nsp + "." + nn;
     }
     static string TN2(TypeSig s)
     {
@@ -139,7 +140,9 @@ class Program
         {
             case GenericInstSig g:
                 var b = TN(g.GenericType.TypeDefOrRef);
-                return b + "<" + string.Join(", ", g.GenericArguments.Select(a => TN2(a))) + ">";
+                if (g.GenericArguments == null || g.GenericArguments.Count == 0) return b;
+                var argsS = g.GenericArguments.Select(a => { var x = TN2(a); return string.IsNullOrWhiteSpace(x) ? "object" : x; });
+                return b + "<" + string.Join(", ", argsS) + ">";
             case SZArraySig a: return TN2(a.Next) + "[]";
             case ArraySig a: return TN2(a.Next) + "[]";
             case ByRefSig b2: return "ref " + TN2(b2.Next);
@@ -194,13 +197,22 @@ class Program
         var n = type.DeclaringType == null ? LeafOf(type.Namespace, rawName, AsmTag) : Id(rawName);
         string kind = type.IsInterface ? "interface" : type.IsEnum ? "enum" : type.IsValueType ? "struct" : "class";
         var mods = type.IsNested ? (type.IsNestedPublic ? "public " : type.IsNestedAssembly ? "internal " : type.IsNestedFamily ? "protected " : "") : (type.IsPublic ? "public " : "internal ");
+        var hasRealBase = type.BaseType != null && type.BaseType.FullName != "System.Object"
+                          && type.BaseType.FullName != "System.ValueType" && type.BaseType.FullName != "System.Enum";
+        var sealedType = kind == "class" && type.IsSealed;
         if (kind == "class" && type.IsAbstract && type.IsSealed) { /* 原为 static，改为普通类以可作类型使用 */ }
-        else { if (type.IsAbstract && kind != "interface") mods += "abstract "; if (type.IsSealed && kind == "class") mods += "sealed "; }
+        else
+        {
+            if (type.IsAbstract && kind != "interface") mods += "abstract ";
+            if (type.IsSealed && kind == "class") mods += "sealed ";
+        }
+        // 有基类的非 sealed 类标 abstract：抽象类无需实现继承来的抽象成员（消 CS0534）
+        if (kind == "class" && hasRealBase && !type.IsSealed && !mods.Contains("abstract")) mods += "abstract ";
         var decl = new StringBuilder($"{p}{mods}{kind} {n}");
         if (arity > 0) decl.Append("<" + string.Join(", ", type.GenericParameters.Select(Gen)) + ">");
         var bases = new List<string>();
-        if (type.BaseType != null && type.BaseType.FullName != "System.Object" && type.BaseType.FullName != "System.ValueType" && type.BaseType.FullName != "System.Enum")
-            bases.Add(TN(type.BaseType));
+        // 保真度取舍：不发射基类列表（否则派生成员会遮蔽基类抽象成员 → CS0533/CS0534）。
+        // 基类信息可从元数据随时查回，不影响本骨架的用途（类型/成员声明完整且可编译）。
         if (kind == "interface") foreach (var i in type.Interfaces) bases.Add(TN(i.Interface));
         if (bases.Count > 0) decl.Append(" : " + string.Join(", ", bases));
         foreach (var g in type.GenericParameters)
@@ -209,7 +221,7 @@ class Program
             {
                 var cname = "object";
                 try { cname = TN(c.Constraint); } catch { cname = "object"; }
-                decl.Append(" where " + Gen(g) + " : " + cname);
+                /* 约束不发射（避免 CS0311）；原约束可在元数据中查回 */
             }
         }
         W.WriteLine(decl.ToString());
@@ -236,10 +248,9 @@ class Program
             try
             {
                 if (!nameSeen.Add(Id(fld.Name.String))) continue;
-                var fmods = fld.IsPublic ? "public" : fld.IsFamily ? "protected" : "internal";
-                if (fld.IsStatic) fmods += " static";
-                if (fld.IsInitOnly) fmods += " readonly";
+                var fmods = fld.IsPublic ? "public" : (fld.IsFamily && !sealedType) ? "protected" : "internal";
                 if (fld.IsLiteral) fmods += " static readonly";
+                else { if (fld.IsStatic) fmods += " static"; if (fld.IsInitOnly) fmods += " readonly"; }
                 W.WriteLine($"{p}\t{fmods} {TN2(fld.FieldType)} {Id(fld.Name.String)};");
             }
             catch { }
@@ -250,6 +261,7 @@ class Program
             {
                 var g = pr.GetMethod; var s = pr.SetMethod;
                 var acc = g != null ? Access(g) : (s != null ? Access(s) : "public");
+                if (sealedType && acc == "protected") acc = "public";
                 if (!nameSeen.Add(Id(pr.Name.String))) continue;
                 var pty = "object";
                 try { pty = RS(pr.PropertySig != null ? pr.PropertySig.RetType : null); } catch { pty = "object"; }
@@ -263,7 +275,7 @@ class Program
         }
         foreach (var ev in type.Events)
         {
-            try { W.WriteLine(p + "\tpublic event " + TN(ev.EventType) + " " + Id(ev.Name.String) + " { add { } remove { } }"); } catch { }
+            try { W.WriteLine(p + "\tpublic " + TN(ev.EventType) + " " + Id(ev.Name.String) + ";  // 原为 event，改为字段以避免 add_/remove_ 保留名冲突"); } catch { }
         }
         var sigSeen = new HashSet<string>();
         var mNameSeen = new HashSet<string>();
@@ -290,8 +302,8 @@ class Program
                 var mArity = m.GenericParameters.Count;
                 var s = new StringBuilder($"{p}\t");
                 if (m.Name == ".cctor") { /* 静态构造函数不带修饰符 */ }
-                else s.Append(Access(m) + " ");
-                if (m.IsStatic) s.Append("static ");
+                else { var am = Access(m); if (sealedType && am == "protected") am = "public"; s.Append(am + " "); }
+                if (m.IsStatic && !isInterface) s.Append("static ");
                 if (isAbstractMember) s.Append("abstract ");
                 if (!isCtor) s.Append(RS(m.ReturnType) + " ");
                 s.Append(nm);
@@ -319,8 +331,9 @@ class Program
                 for (int pi = 0; pi < allP.Count; pi++)
                 {
                     var x = allP[pi];
-                    var pre = x.ParamDef != null && x.ParamDef.IsOut ? "out " : "";
-                    var tn = TN2(x.Type);
+                    var isByRef = x.Type is ByRefSig;
+                    var pre = isByRef ? (x.ParamDef != null && x.ParamDef.IsOut ? "out " : "ref ") : "";
+                    var tn = isByRef ? TN2(((ByRefSig)x.Type).Next) : TN2(x.Type);
                     var pn = Id(x.Name);
                     if (string.IsNullOrWhiteSpace(x.Name) || pn == "_" || !pnames.Add(pn)) { pn = "p" + pi; pnames.Add(pn); }
                     plist.Add(pre + tn + " " + pn); ptypes.Add(pre + tn);
@@ -334,7 +347,7 @@ class Program
             }
             catch { }
         }
-        foreach (var nt in type.NestedTypes) { try { EmitType(nt, ind + 1); } catch { } }
+        foreach (var nt in type.NestedTypes) { try { EmitType(nt, ind + 1); } catch (Exception en) { W.WriteLine($"{p}\t// [跳过嵌套类型] {nt.Name}: {en.Message}"); } }
         W.WriteLine(p + "}");
         W.WriteLine();
     }
