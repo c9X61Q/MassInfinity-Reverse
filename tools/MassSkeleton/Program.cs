@@ -12,9 +12,12 @@ class Program
         var inputs = argv.Length > 0 ? argv : new[] { "." };
         var outDir = Environment.GetEnvironmentVariable("SKEL_OUT") ?? "skeleton-out";
         Directory.CreateDirectory(outDir);
+        foreach (var asm in inputs) { try { using var m0 = ModuleDefMD.Load(asm); Prep(m0); } catch { } }
+        MarkCollisions();
         foreach (var asm in inputs)
         {
             var name = Path.GetFileNameWithoutExtension(asm);
+            AsmTag = TagOf(name);
             using var mod = ModuleDefMD.Load(asm);
             var path = Path.Combine(outDir, name + ".cs");
             using var f = File.CreateText(path);
@@ -58,27 +61,74 @@ class Program
         return r;
     }
 
+    static string AsmTag = "";
+    static Func<string> CurAsmName = () => "";
+    static string TagOf(string asmName) => "_a" + Math.Abs((asmName ?? "").GetHashCode() % 997);
+    static readonly Dictionary<string, int> NameCount = new();
+    static readonly HashSet<string> Collide = new();
+
+    // 预扫描：统计顶层类型全名，跨出现多次的标记为需加后缀
+    static void Prep(ModuleDefMD mod)
+    {
+        foreach (var t in mod.GetTypes())
+        {
+            if (t.IsNested || t.IsGlobalModuleType) continue;
+            var raw = t.Name.String; var i = raw.IndexOf('`'); if (i >= 0) raw = raw.Substring(0, i);
+            var key = (t.Namespace ?? "") + "|" + raw;
+            NameCount[key] = NameCount.TryGetValue(key, out var c) ? c + 1 : 1;
+        }
+    }
+    static void MarkCollisions()
+    {
+        foreach (var kv in NameCount) if (kv.Value > 1) Collide.Add(kv.Key);
+    }
+    static string LeafOf(string ns, string raw) => LeafOf(ns, raw, AsmTag);
+    static string LeafOf(string ns, string raw, string tag)
+    {
+        var n = raw; var i = n.IndexOf('`'); if (i >= 0) n = n.Substring(0, i);
+        if (n.StartsWith("<") || Collide.Contains((ns ?? "") + "|" + n)) n += tag;
+        return Id(n);
+    }
+
+    // 叶子名：编译器生成名（以 '<' 开头）加每程序集后缀，避免跨程序集同命名空间撞名
+    static string Leaf(string raw) => Leaf(raw, true);
+    static string Leaf(string raw, bool topLevel)
+    {
+        var n = raw;
+        var i = n.IndexOf('`'); if (i >= 0) n = n.Substring(0, i);
+        if (topLevel && n.StartsWith("<")) n += AsmTag;
+        return Id(n);
+    }
+
     // ---- 类型名 ----
     static string TN(ITypeDefOrRef t) => t switch
     {
         TypeDef td => Flat(td),
-        TypeRef tr => Full(tr.Namespace, tr.Name),
+        TypeRef tr => FullTag(tr.DefinitionAssembly != null ? tr.DefinitionAssembly.Name : null, tr.Namespace, tr.Name),
         TypeSpec ts => TN2(ts.TypeSig),
         _ => "object"
     };
+    static string FullTag(UTF8String asmName, string ns, string n)
+    {
+        var save = TagOfAsm; TagOfAsm = TagOf(((object)asmName != null) ? asmName.String : "");
+        try { return Full(ns, n); } finally { TagOfAsm = save; }
+    }
     static string Flat(TypeDef td)
+    {
+        { var save = TagOfAsm; TagOfAsm = TagOf(td.Module != null && td.Module.Assembly != null ? td.Module.Assembly.Name.String : ""); return FlatT(td); }
+    }
+    static string FlatT(TypeDef td)
     {
         var raw = td.Name.String;
         var i = raw.IndexOf('`'); if (i > 0) raw = raw.Substring(0, i);
-        var n = Id(raw);
-        if (td.DeclaringType != null) return Flat(td.DeclaringType) + "." + n;
+        var n = Leaf(raw, false);
+        if (td.DeclaringType != null) return FlatT(td.DeclaringType) + "." + n;
         return Full(td.Namespace, raw);
     }
+    static string TagOfAsm = "";
     static string Full(string ns, string n)
     {
-        var i = n.IndexOf('`'); if (i > 0) n = n.Substring(0, i);
-        var parts = n.Replace('/', '.').Split('.').Select(Id);
-        var nn = string.Join(".", parts);
+        var nn = LeafOf(ns, n, TagOfAsm);
         if (string.IsNullOrEmpty(ns)) return nn;
         var nsp = string.Join(".", ns.Split('.').Select(Id));
         return nsp + "." + nn;
@@ -93,14 +143,23 @@ class Program
             case SZArraySig a: return TN2(a.Next) + "[]";
             case ArraySig a: return TN2(a.Next) + "[]";
             case ByRefSig b2: return "ref " + TN2(b2.Next);
-            case PtrSig p: return TN2(p.Next) + "*";
+            case PtrSig p: return "System.IntPtr";
             case GenericVar gv: return "T" + gv.Number;
             case CorLibTypeSig c: return c.TypeDefOrRef != null ? TN(c.TypeDefOrRef) : "object";
-            case TypeDefOrRefSig t: return t.TypeDefOrRef != null ? TN(t.TypeDefOrRef) : "object";
+            case TypeDefOrRefSig t:
+                var r = t.TypeDefOrRef != null ? TN(t.TypeDefOrRef) : "object";
+                return r == "System.Void" ? "object" : r;
             default: return "object";
         }
     }
-    static string RS(TypeSig s) => s == null ? "void" : TN2(s);
+    static string RS(TypeSig s)
+    {
+        if (s == null) return "void";
+        if (s is CorLibTypeSig c && c.ElementType == ElementType.Void) return "void";
+        var n = TN2(s);
+        return n == "System.Void" ? "void" : n;
+    }
+    static string NsStr(string ns) => string.IsNullOrEmpty(ns) ? "" : string.Join(".", ns.Split('.').Select(Id));
 
     static string Access(MethodDef m)
     {
@@ -116,22 +175,33 @@ class Program
 
     static void EmitType(TypeDef type, int ind)
     {
-        var p = new string('\t', ind);
         if (type.IsGlobalModuleType) return;
+        if (type.DeclaringType == null && !string.IsNullOrEmpty(type.Namespace))
+        {
+            W.WriteLine("namespace " + NsStr(type.Namespace) + " {");
+            EmitTypeCore(type, 1);
+            W.WriteLine("}");
+            return;
+        }
+        EmitTypeCore(type, ind);
+    }
+
+    static void EmitTypeCore(TypeDef type, int ind)
+    {
+        var p = new string('\t', ind);
         var arity = type.GenericParameters.Count;
         var rawName = type.Name.String;
-        if (arity > 0) { var bi = rawName.IndexOf('`'); if (bi > 0) rawName = rawName.Substring(0, bi); }
-        var n = Id(rawName);
+        var n = type.DeclaringType == null ? LeafOf(type.Namespace, rawName, AsmTag) : Id(rawName);
         string kind = type.IsInterface ? "interface" : type.IsEnum ? "enum" : type.IsValueType ? "struct" : "class";
         var mods = type.IsNested ? (type.IsNestedPublic ? "public " : type.IsNestedAssembly ? "internal " : type.IsNestedFamily ? "protected " : "") : (type.IsPublic ? "public " : "internal ");
-        if (kind == "class" && type.IsAbstract && type.IsSealed) mods += "static ";
+        if (kind == "class" && type.IsAbstract && type.IsSealed) { /* 原为 static，改为普通类以可作类型使用 */ }
         else { if (type.IsAbstract && kind != "interface") mods += "abstract "; if (type.IsSealed && kind == "class") mods += "sealed "; }
         var decl = new StringBuilder($"{p}{mods}{kind} {n}");
         if (arity > 0) decl.Append("<" + string.Join(", ", type.GenericParameters.Select(Gen)) + ">");
         var bases = new List<string>();
         if (type.BaseType != null && type.BaseType.FullName != "System.Object" && type.BaseType.FullName != "System.ValueType" && type.BaseType.FullName != "System.Enum")
             bases.Add(TN(type.BaseType));
-        foreach (var i in type.Interfaces) bases.Add(TN(i.Interface));
+        if (kind == "interface") foreach (var i in type.Interfaces) bases.Add(TN(i.Interface));
         if (bases.Count > 0) decl.Append(" : " + string.Join(", ", bases));
         foreach (var g in type.GenericParameters)
         {
@@ -159,11 +229,13 @@ class Program
             W.WriteLine(p + "}"); W.WriteLine(); return;
         }
 
+        var nameSeen = new HashSet<string>();
         foreach (var fld in type.Fields)
         {
             if ((fld.Attributes & FieldAttributes.FieldAccessMask) == FieldAttributes.Private) continue;
             try
             {
+                if (!nameSeen.Add(Id(fld.Name.String))) continue;
                 var fmods = fld.IsPublic ? "public" : fld.IsFamily ? "protected" : "internal";
                 if (fld.IsStatic) fmods += " static";
                 if (fld.IsInitOnly) fmods += " readonly";
@@ -178,12 +250,14 @@ class Program
             {
                 var g = pr.GetMethod; var s = pr.SetMethod;
                 var acc = g != null ? Access(g) : (s != null ? Access(s) : "public");
+                if (!nameSeen.Add(Id(pr.Name.String))) continue;
                 var pty = "object";
                 try { pty = RS(pr.PropertySig != null ? pr.PropertySig.RetType : null); } catch { pty = "object"; }
                 var accs = "";
-                if (g != null) accs += (g.IsStatic ? "static " : "") + "get; ";
+                if (g != null) accs += "get; ";
                 if (s != null) accs += "set; ";
-                W.WriteLine(p + "\t" + acc + " " + pty + " " + Id(pr.Name.String) + " { " + accs + "}");
+                var st2 = ((g != null && g.IsStatic) || (s != null && s.IsStatic)) ? "static " : "";
+                W.WriteLine(p + "\t" + acc + " " + st2 + pty + " " + Id(pr.Name.String) + " { " + accs + "}");
             }
             catch { }
         }
@@ -192,30 +266,69 @@ class Program
             try { W.WriteLine(p + "\tpublic event " + TN(ev.EventType) + " " + Id(ev.Name.String) + " { add { } remove { } }"); } catch { }
         }
         var sigSeen = new HashSet<string>();
+        var mNameSeen = new HashSet<string>();
+        var csSeen = new HashSet<string>();
         foreach (var m in type.Methods)
         {
             try
             {
-                var sigKey = m.Name.String + "/" + m.GenericParameters.Count + "/" + m.Parameters.Count + "/" + (m.ReturnType?.FullName ?? "v");
-                if (!sigSeen.Add(sigKey)) continue;
+                var mn = m.Name.String;
+                var skipAcc = mn.StartsWith("get_") || mn.StartsWith("set_") ||
+                              mn.StartsWith("add_") || mn.StartsWith("remove_");
+                if (skipAcc && nameSeen.Contains(Id(mn.Substring(mn.IndexOf('_') + 1)))) continue;
+                var sigKeyEarly = m.Name.String + "/" + m.GenericParameters.Count;
+                if (!sigSeen.Add(sigKeyEarly)) { /* 占位：真正去重在参数列表构建后进行 */ }
                 var isCtor = m.IsConstructor;
+                var isInterface = type.IsInterface;
+                var isAbstractMember = (m.IsAbstract && type.IsAbstract) || isInterface;
                 var nm = isCtor ? Id(n) : Id(m.Name.String);
+                if (!isCtor)
+                {
+                    var baseNm = nm; var k = 1;
+                    while (!mNameSeen.Add(nm)) { k++; nm = baseNm + "_" + k; }
+                }
                 var mArity = m.GenericParameters.Count;
                 var s = new StringBuilder($"{p}\t");
-                s.Append(Access(m) + " ");
+                if (m.Name == ".cctor") { /* 静态构造函数不带修饰符 */ }
+                else s.Append(Access(m) + " ");
                 if (m.IsStatic) s.Append("static ");
-                if (m.IsAbstract || m.IsRuntime) s.Append("abstract ");
-                else if (m.IsVirtual && !m.IsNewSlot) s.Append("override ");
+                if (isAbstractMember) s.Append("abstract ");
                 if (!isCtor) s.Append(RS(m.ReturnType) + " ");
                 s.Append(nm);
                 if (mArity > 0) s.Append("<" + string.Join(", ", m.GenericParameters.Select(Gen)) + ">");
-                s.Append("(" + string.Join(", ", m.Parameters.Select(x =>
+                var pnames = new HashSet<string>();
+                var plist = new List<string>();
+                var ptypes = new List<string>();
+                var allP = new List<Parameter>();
+                for (int q = 0; q < m.Parameters.Count; q++) allP.Add(m.Parameters[q]);
+                // dnlib 的 Parameters 含隐藏 this：无名且类型等于声明类型的首参，剔除
+                if (!m.IsStatic && allP.Count > 0)
                 {
+                    var f0 = allP[0];
+                    var isSelf = false;
+                    try
+                    {
+                        ITypeDefOrRef tdr = null;
+                        if (f0.Type is GenericInstSig g2) tdr = g2.GenericType.TypeDefOrRef;
+                        else if (f0.Type is TypeDefOrRefSig t2) tdr = t2.TypeDefOrRef;
+                        if (tdr != null) isSelf = tdr.ResolveTypeDef() == type;
+                    }
+                    catch { isSelf = false; }
+                    if (isSelf) allP.RemoveAt(0);
+                }
+                for (int pi = 0; pi < allP.Count; pi++)
+                {
+                    var x = allP[pi];
                     var pre = x.ParamDef != null && x.ParamDef.IsOut ? "out " : "";
+                    var tn = TN2(x.Type);
                     var pn = Id(x.Name);
-                    return pre + TN2(x.Type) + " " + pn;
-                })) + ")");
-                var body = m.IsAbstract || m.IsRuntime || type.IsInterface;
+                    if (string.IsNullOrWhiteSpace(x.Name) || pn == "_" || !pnames.Add(pn)) { pn = "p" + pi; pnames.Add(pn); }
+                    plist.Add(pre + tn + " " + pn); ptypes.Add(pre + tn);
+                }
+                var csKey = nm + "(" + string.Join(",", ptypes) + ")";
+                if (!csSeen.Add(csKey)) continue;
+                s.Append("(" + string.Join(", ", plist) + ")");
+                var body = isAbstractMember;
                 s.Append(body ? ";" : $" {{ throw new System.NotImplementedException(\"未还原 (DNGuard HVM)\"); }}");
                 W.WriteLine(s.ToString());
             }
