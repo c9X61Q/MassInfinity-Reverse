@@ -130,6 +130,28 @@ Frida  侧：抓 (MethodDesc → IL 字节)
 
 ---
 
+## 上游 SDK 与「可编译的 Mass」
+
+**客户端本体没有开源**；但 Mass 服务的**官方客户端 SDK 是 MIT 开源的**，而且它覆盖的
+恰好是本客户端里**被 DNGuard 保护掉的那一层**（HTTP/API 客户端）：
+
+- [`massarolucien/Mass.Sdk`](https://github.com/massarolucien/Mass.Sdk)（C#，MIT）—— 已以原样副本入库于
+  [`refs/upstream-mass-sdk`](refs/upstream-mass-sdk)，含 20 个 API 端点、全部 DTO / 枚举 / 序列化器 / 示例工程
+- [`massarolucien/mass-java-sdk`](https://github.com/massarolucien/mass-java-sdk)（Java，MIT）
+
+**交叉验证**：SDK 的端点字符串在目标 DLL 里**一个都找不到**（⇒ 客户端的 HTTP 层本身就被保护了），
+但类型与领域模型对得上（`DesktopSession`、`EntityNetGameDetails`、`EntitySearchSkinItemDto`…）。
+⇒ SDK 与目标程序面向**同一个 Mass 服务协议**。
+
+**已恢复源码盘点**（`src/`，1,191 文件 / 23.4 M 字符 / 43,997 个成员声明 / 37,809 处桩标记 ≈ **14% 可读**）：
+体量最大的可读文件包括 `XamlTypeInfoProvider.cs`（约 56%）、`JavaGame.cs`（43%）、
+`WebRtc.cs`（42%）、`DesktopSession.cs`（32%）；完全无桩的文件 37 个。
+
+**要拿到"能编译的 Mass"的缺口与推进顺序**，见
+[`docs/上游-SDK与可编译性评估.md`](docs/上游-SDK与可编译性评估.md)。
+
+---
+
 ## 完整流水线
 
 ```
