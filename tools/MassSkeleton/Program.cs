@@ -12,6 +12,7 @@ class Program
         var inputs = argv.Length > 0 ? argv : new[] { "." };
         var outDir = Environment.GetEnvironmentVariable("SKEL_OUT") ?? "skeleton-out";
         Directory.CreateDirectory(outDir);
+        for (int i = 0; i < inputs.Length; i++) AsmIndex[Path.GetFileNameWithoutExtension(inputs[i])] = i;
         foreach (var asm in inputs) { try { using var m0 = ModuleDefMD.Load(asm); Prep(m0); } catch { } }
         MarkCollisions();
         foreach (var asm in inputs)
@@ -64,7 +65,19 @@ class Program
 
     static string AsmTag = "";
     static Func<string> CurAsmName = () => "";
-    static string TagOf(string asmName) => "_a" + Math.Abs((asmName ?? "").GetHashCode() % 997);
+    static readonly Dictionary<string, int> AsmIndex = new();
+    static uint Fnv(string s)
+    {
+        uint h = 2166136261;
+        foreach (var c in s ?? "") { h ^= c; h *= 16777619; }
+        return h;
+    }
+    // 确定性后缀：优先用「输入列表序号」（唯一），否则用 FNV-1a（无随机化、跨运行稳定）
+    static string TagOf(string asmName)
+    {
+        if (!string.IsNullOrEmpty(asmName) && AsmIndex.TryGetValue(asmName, out var i)) return "_a" + i;
+        return "_a" + (Fnv(asmName) % 997);
+    }
     static readonly Dictionary<string, int> NameCount = new();
     static readonly HashSet<string> Collide = new();
 
@@ -364,7 +377,7 @@ class Program
                 if (!csSeen.Add(csKey)) continue;
                 s.Append("(" + string.Join(", ", plist) + ")");
                 var body = isAbstractMember;
-                s.Append(body ? ";" : $" {{ throw new System.NotImplementedException(\"未还原 (DNGuard HVM)\"); }}");
+                s.Append(body ? ";" : $" {{ throw new global::System.NotImplementedException(\"未还原 (DNGuard HVM)\"); }}");
                 W.WriteLine(s.ToString());
             }
             catch { }
